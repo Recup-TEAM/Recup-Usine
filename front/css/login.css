@@ -1,0 +1,67 @@
+html {
+    background-color: #f9f9f9;
+}
+
+h1 {
+    margin: 90px 0;
+    -webkit-text-stroke: 0.5px #4e5055;
+    color: #e0e0e0;
+    font-size: 50px;
+    font-family: "Heltivica";
+}
+
+#formLogin,
+#formRegister {
+    background-color: #e0e0e0;
+    max-width: 450px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    margin-top: 80px;
+    flex-direction: column;
+    padding: 30px 30px;
+}
+
+#formRegister {
+    display: none;
+}
+
+#formLogin > input,
+#formRegister > input {
+    margin: 5px 0;
+    padding: 8px 10px;
+    outline: none;
+    border: rgb(141, 141, 141) solid 1px;
+    border-radius: 5px;
+}
+
+#formLogin > button,
+#formRegister > button {
+    margin: 5px 0;
+    padding: 8px 10px;
+    outline: none;
+    border: rgb(141, 141, 141) solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #4e5055;
+}
+
+
+#formLogin > select,
+#formRegister > select {
+    border: rgb(141, 141, 141) solid 1px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#register,
+#login {
+    cursor: pointer;
+    color: #4e5055;
+    margin: 20px 0 0 0;
+}
+
+#promo {
+    margin: 5px 0;
+    padding: 8px 5px;
+}
