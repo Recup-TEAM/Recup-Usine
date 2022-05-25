@@ -11,6 +11,8 @@ module.exports = function (express, app, http) {
     app.use(session);
     const db = require("./database");
     const socket = require("./socket")(http, session, db);
+    const conn = require("./connect")(http, session, db);
+
     const api = require("./api")(app, session, db);
     const path = require("path");
     const bodyParser = require("body-parser");
@@ -24,7 +26,6 @@ module.exports = function (express, app, http) {
     app.get("/", (req, res) => {
         if (!req.session.email) {
             // Utilisateur non connecté
-            //res.sendFile(path.join(__dirname, "../front/html/index.html"));
             res.sendFile(path.join(__dirname, "../front/html/login.html"));
         } else {
             // Utilisateur connecté
@@ -36,8 +37,9 @@ module.exports = function (express, app, http) {
 
 
     // Connexion
-    app.post("/login", urlencodedParser, socket.login);
+    app.post("/login", urlencodedParser, conn.login);
 
     // Inscription
-    app.post("/signup", urlencodedParser, socket.signup);
+    app.post("/signup", urlencodedParser, conn.signup);
+
 };

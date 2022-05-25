@@ -1,3 +1,6 @@
+//je pleure en voyant ce js aled
+//faudra faire les verifs de mail et hash de pswd ici
+
 const formLogin = document.getElementById("formLogin");
 const formRegister = document.getElementById("formRegister");
 const email = document.getElementById("emailLogin");

@@ -15,20 +15,18 @@ var conn = mysql.createConnection({
   });
   global.db = conn;
 
-  // node native promisify
+  // node native promisify (support async/await)
 const query = util.promisify(db.query).bind(db);
 
 module.exports = {
     // get un user
     getUser: async ({email, password}) => {
-        console.log("get user -> email : "+ email + " pw : "  +password);
         let sql = "SELECT * FROM user WHERE email='" + email + "' and password = '" + password + "'";
         var rq = await query(sql);
 
         global.resultArray = Object.values(JSON.parse(JSON.stringify(rq)))
-        resultArray.forEach((v) => console.log(v));
+        //resultArray.forEach((v) => console.log(v));
 
-        console.log("resultt : "+ resultArray);
         if (resultArray.length == 0) {
             return false;
         } else {
@@ -39,18 +37,11 @@ module.exports = {
 
     // Créer un compte
     createUser: async (dataUser) => {
-        const student = "User créé avec succès";
-        return student;
+        let sql = "INSERT INTO `user` (`id`, `email`, `password`, `compteLevel`)" +
+                   "VALUES (NULL, '" + dataUser.email + "', '" + dataUser.password + "', '" + dataUser.compteLevel + "');"
+
+        var rq = await query(sql);
+        return rq;
     },
 
-    getTokens: async () => {
-        let users = await Users.find({}).select("-_id -__v");
-        let tokens = [];
-        for (const user of users) {
-            if (user.admin == true) {
-                tokens.push(md5(user.email + user.password));
-            }
-        }
-        return tokens;
-    },
 };
