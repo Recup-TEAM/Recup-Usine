@@ -9,15 +9,12 @@ module.exports = function (express, app, http) {
         },
     });
     app.use(session);
+    const path = require("path");
+    
     const db = require("./database");
     const socket = require("./socket")(http, session, db);
-    const conn = require("./connect")(http, session, db);
-
     const api = require("./api")(app, session, db);
-    const path = require("path");
-    const bodyParser = require("body-parser");
-    const { body, validationResult } = require("express-validator");
-    const urlencodedParser = bodyParser.urlencoded({ extended: false });
+    
 
     // Config des dossiers de fichiers front
     app.use(express.static(path.join(__dirname, "../front")));
@@ -33,13 +30,5 @@ module.exports = function (express, app, http) {
         }
     });
 
-
-
-
-    // Connexion
-    app.post("/login", urlencodedParser, conn.login);
-
-    // Inscription
-    app.post("/signup", urlencodedParser, conn.signup);
 
 };

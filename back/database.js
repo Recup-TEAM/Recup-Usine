@@ -19,8 +19,22 @@ var conn = mysql.createConnection({
 const query = util.promisify(db.query).bind(db);
 
 module.exports = {
-    // get un user
-    getUser: async ({email, password}) => {
+    // Get user by email
+    getUser: async (email) => {
+        let sql = "SELECT * FROM user WHERE email='" + email + "'";
+        var rq = await query(sql);
+        console.log(sql);
+        console.log(rq);
+        // if user return true else return false
+        if (rq.length == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    },
+
+    // Connexion
+    login: async ({email, password}) => {
         let sql = "SELECT * FROM user WHERE email='" + email + "' and password = '" + password + "'";
         var rq = await query(sql);
 
@@ -43,5 +57,31 @@ module.exports = {
         var rq = await query(sql);
         return rq;
     },
+    
+    // Changer le mot de passe
+    updateUserPassword: async ({email, password, newpassword}) => {
+        let sql = "UPDATE `user` SET `password` = '" + newpassword + "' WHERE `user`.`email` = '" + email + "' and `user`.`password` = '" + password + "';";
+        var rq = await query(sql);
+        return rq;
+    },
+
+
+    // Changer le level d'un compte
+    updateUSerLevel: async ({email, compteLevel}) => {
+        console.log(compteLevel);
+        let sql = "UPDATE `user` SET `compteLevel` = '" + compteLevel + "' WHERE `user`.`email` = '" + email + "';";
+        var rq = await query(sql);
+        return rq;
+    },
+
+    // Get all user
+    getAllUsers: async () => {
+        let sql = "SELECT * FROM user";
+        var rq = await query(sql);
+        return rq;
+    }
+
+
+
 
 };
