@@ -30,6 +30,15 @@ module.exports = function (session, db) {
             }
         },
 
+        // Get current subscription of user
+        getSubscription: (req, res) => {
+            console.log("API -> getSubscription");
+            if(check.checkUserConnected(req, res)) {
+                db.getSubscription(req.session.userId).then((data) => {
+                    res.json({"err" : "", "code" : 1, "data" : data});
+                });
+            }
+        },
 
         /* POST */
         // Connexion
@@ -54,7 +63,7 @@ module.exports = function (session, db) {
                         
                         req.session.email = user[0].email;
                         req.session.password = user[0].password;
-                        req.session.compteLevel = user[0].compteLevel;
+                        req.session.compteLevel = user[0].compte_level;
                         req.session.userId = user[0].id_user;
                         req.session.save();
                         console.log("L'utilisateur ", {email}, " s'est connecté ! (compte level : ", { type: user[0].compteLevel }, ")");
@@ -138,6 +147,21 @@ module.exports = function (session, db) {
                 });
             }
         },
+        
+        // Subscription  (TODO : if already subscribed)
+        subscribe: (req, res) => {
+            console.log("API -> subscribe");
+            if(check.checkUserConnected(req, res)) {
+                let userId = req.session.userId;
+                let subscriptionLevel = req.body.subscriptionLevel;
+
+                db.subscribe({userId, subscriptionLevel}).then(() => {
+                    console.log("L'utilisateur \"" + userId + " ('" + req.session.email +"')" + '" s\'est abonné au niveau ' + subscriptionLevel);
+                    res.json({"err" : "", "code" : 1});
+                });
+            }
+        },
+
 
 
 

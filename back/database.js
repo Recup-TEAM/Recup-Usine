@@ -43,13 +43,13 @@ module.exports = {
     return rq;
     },
 
- 
-    // Changer le mot de passe
-    updateUserPassword: async ({email, password, newpassword}) => {
-        let sql = "UPDATE `user` SET `password` = '" + newpassword + "' WHERE `user`.`email` = '" + email + "' and `user`.`password` = '" + password + "';";
+    // Get current subscription of user
+    getSubscription: async (userId) => {
+        let sql = "SELECT * FROM subscription WHERE id_user='" + userId + "'";
         var rq = await query(sql);
         return rq;
     },
+
 
     /* POST */
     // Connexion
@@ -76,12 +76,31 @@ module.exports = {
         var rq = await query(sql);
         return rq;
     },
+
+    // Changer le mot de passe
+    updateUserPassword: async ({email, password, newpassword}) => {
+        let sql = "UPDATE `user` SET `password` = '" + newpassword + "' WHERE `user`.`email` = '" + email + "' and `user`.`password` = '" + password + "';";
+        var rq = await query(sql);
+        return rq;
+    },
+
     // Changer le level d'un compte
     updateUSerLevel: async ({email, compteLevel}) => {
         let sql = "UPDATE `user` SET `compteLevel` = '" + compteLevel + "' WHERE `user`.`email` = '" + email + "';";
         var rq = await query(sql);
         return rq;
     },
+
+    // Subscribe
+    subscribe: async ({userId, subscriptionLevel}) => {
+        let sql = "INSERT INTO `subscription` (`id_subscription`, `id_user`, `subscription_level`, `start_date`)" +
+                "VALUES (NULL, '" + userId + "', '" + subscriptionLevel + "', NULL);"
+        console.log(sql);
+        rq = await query(sql);
+        return rq;
+    },
+
+
 
  
 

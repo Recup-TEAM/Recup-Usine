@@ -15,6 +15,9 @@ module.exports = function (app, session, db) {
     
     // Get all users (admin only)
     app.get("/api/user/get/allUsers", urlencodedParser, apiFunction.getAllUsers);
+
+    // Get current subscription of user
+    app.get("/api/user/get/subscription", urlencodedParser, apiFunction.getSubscription);
     
     
     /* POST */
@@ -24,11 +27,14 @@ module.exports = function (app, session, db) {
     // Inscription
     app.post("/user/signup", urlencodedParser, apiFunction.signup);
 
+    // Changer le mot de passe
+    app.post("/api/user/update/changePassword", urlencodedParser, apiFunction.changePassword);
+
     // Update le level d'un compte (admin only)
     app.post("/api/user/update/updateCompteLevel", urlencodedParser, apiFunction.updateCompteLevel);
 
-    // Changer le mot de passe
-    app.post("/api/user/update/changePassword", urlencodedParser, apiFunction.changePassword);
+    // Subscribe to a plan
+    app.post("/api/user/update/subscribe", urlencodedParser, apiFunction.subscribe);
 
 
 
