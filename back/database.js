@@ -111,7 +111,7 @@ module.exports = {
     },
 
     // Get un produit
-    getProduct: async (id) => {
+    getProductById: async (id) => {
         let sql = "SELECT * FROM produit WHERE id='" + id + "'";
         var rq = await query(sql);
         return rq;

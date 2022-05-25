@@ -43,7 +43,8 @@ module.exports = function (app, session, db) {
     app.get("/api/get/getAllProducts", urlencodedParser, apiFunction.getAllProducts);
 
     // Get un produit par son id
-    app.get("/api/get/getProduct/:id", urlencodedParser, apiFunction.getProduct);
+    app.get("/api/get/getProduct/:id", urlencodedParser, apiFunction.getProductById);
+
 
     
 };
