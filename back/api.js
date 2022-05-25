@@ -8,24 +8,28 @@ module.exports = function (app, session, db) {
     /***************
      *    User     *
      ***************/
-
+    
+    /* GET */
+    // Get le level du compte
+    app.get("/api/user/get/compteLevel", urlencodedParser, apiFunction.getCompteLevel);
+    
+    // Get all users (admin only)
+    app.get("/api/user/get/allUsers", urlencodedParser, apiFunction.getAllUsers);
+    
+    
+    /* POST */
     // Connexion
-    app.post("/login", urlencodedParser, apiFunction.login);
+    app.post("/user/login", urlencodedParser, apiFunction.login);
 
     // Inscription
-    app.post("/signup", urlencodedParser, apiFunction.signup);
-
-    // Get le level du compte
-    app.get("/api/get/compteLevel", urlencodedParser, apiFunction.getCompteLevel);
+    app.post("/user/signup", urlencodedParser, apiFunction.signup);
 
     // Update le level d'un compte (admin only)
-    app.post("/api/update/updateCompteLevel", urlencodedParser, apiFunction.updateCompteLevel);
+    app.post("/api/user/update/updateCompteLevel", urlencodedParser, apiFunction.updateCompteLevel);
 
     // Changer le mot de passe
-    app.post("/api/update/changePassword", urlencodedParser, apiFunction.changePassword);
+    app.post("/api/user/update/changePassword", urlencodedParser, apiFunction.changePassword);
 
-    // Get all users (admin only)
-    app.get("/api/get/allUsers", urlencodedParser, apiFunction.getAllUsers);
 
 
 
@@ -33,17 +37,26 @@ module.exports = function (app, session, db) {
      * Entreprise  *
      ***************/
 
+    /* GET */
     // Get all entreprises 
-    app.get("/api/get/allEntreprises", urlencodedParser, apiFunction.getAllEntreprises);
+    app.get("/api/entreprises/get/allEntreprises", urlencodedParser, apiFunction.getAllEntreprises);
 
     // Get tout les produits une entreprise
-    app.get("/api/get/getAllProductsFrom/:id", urlencodedParser, apiFunction.getAllProducts);
+    app.get("/api/products/get/allProductsFrom/:id", urlencodedParser, apiFunction.getAllProductsFrom);
 
     // Get tout les produits
-    app.get("/api/get/getAllProducts", urlencodedParser, apiFunction.getAllProducts);
+    app.get("/api/products/get/allProducts", urlencodedParser, apiFunction.getAllProducts);
 
     // Get un produit par son id
-    app.get("/api/get/getProduct/:id", urlencodedParser, apiFunction.getProductById);
+    app.get("/api/products/get/productId/:id", urlencodedParser, apiFunction.getProductById);
+
+
+    /* POST */
+    // Ajouter une entreprise
+    app.post("/api/entreprises/add", urlencodedParser, apiFunction.addEntreprise);
+
+    // Ajouter un produit
+    app.post("/api/products/add", urlencodedParser, apiFunction.addProduct);
 
 
     

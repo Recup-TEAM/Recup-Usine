@@ -4,7 +4,7 @@ let logger = (function(){
         console.log(email + ' essaye de se connecter');
         $.ajax({
             type: "POST",
-            url: "/login/",
+            url: "/user/login/",
             data: {
                 email: email,
                 password: password
@@ -21,7 +21,7 @@ let logger = (function(){
         console.log(email + ' essaye de se connecter');
         $.ajax({
             type: "POST",
-            url: "/signup/",
+            url: "/user/signup/",
             data: {
                 email: email,
                 password: password

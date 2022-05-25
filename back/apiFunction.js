@@ -8,6 +8,30 @@ module.exports = function (session, db) {
          *    User     *
          ***************/
 
+         /* GET */
+        // GetcomteLevel
+        getCompteLevel: (req, res) => {
+            console.log("API -> getCompteLevel");
+            if(checkUserConnected(req, res)) {
+                res.json({"err": "", "code": 1, "data": {"compteLevel" : req.session.compteLevel}});
+            }
+            
+
+
+        },
+
+        // Get all users (admin only)
+        getAllUsers: (req, res) => {
+            console.log("API -> getAllUsers");
+            if(check.checkUserAdmin(req, res)) {
+                db.getAllUsers().then((users) => {
+                    res.json({"err" : "", "code" : 1, "data" : users});
+                });
+            }
+        },
+
+
+        /* POST */
         // Connexion
         login: (req, res) => {
             console.log("API -> login");
@@ -31,6 +55,7 @@ module.exports = function (session, db) {
                         req.session.email = user[0].email;
                         req.session.password = user[0].password;
                         req.session.compteLevel = user[0].compteLevel;
+                        req.session.userId = user[0].id_user;
                         req.session.save();
                         console.log("L'utilisateur ", {email}, " s'est connecté ! (compte level : ", { type: user[0].compteLevel }, ")");
                     }
@@ -66,17 +91,6 @@ module.exports = function (session, db) {
                     res.json({"err" : "L'utilisateur \"" + email + '" existe déjà', "code": 0})
                 }
             });
-        },
-
-        // GetcomteLevel
-        getCompteLevel: (req, res) => {
-            console.log("API -> getCompteLevel");
-            if(checkUserConnected(req, res)) {
-                res.json({"err": "", "code": 1, "data": {"compteLevel" : req.session.compteLevel}});
-            }
-            
-
-
         },
 
         // Changer le mot de passe
@@ -125,22 +139,12 @@ module.exports = function (session, db) {
             }
         },
 
-        // Get all users (admin only)
-        getAllUsers: (req, res) => {
-            console.log("API -> getAllUsers");
-            if(check.checkUserAdmin(req, res)) {
-                db.getAllUsers().then((users) => {
-                    res.json({"err" : "", "code" : 1, "data" : users});
-                });
-            }
-        },
 
 
         /***************
          * Entreprise  *
          ***************/
-
-
+        /* GET */
         // Get all entreprises
         getAllEntreprises: (req, res) => {
             console.log("API -> getAllEntreprises");
@@ -149,11 +153,10 @@ module.exports = function (session, db) {
             });
         },
 
-
         // Get tout les produits d'une entreprise
         getAllProductsFrom: (req, res) => {
             console.log("API -> getAllProductsFrom");
-            let entrepriseId = req.params.salle;
+            let entrepriseId = req.params.id;
             db.getAllProductsFrom(entrepriseId).then((products) => {
                 res.json({"err" : "", "code" : 1, "data" : products});
             });
@@ -174,6 +177,43 @@ module.exports = function (session, db) {
             db.getProductById(productId).then((product) => {
                 res.json({"err" : "", "code" : 1, "data" : product});
             });
+        },
+
+        /* POST */
+        // Ajouter une entreprise
+        addEntreprise: (req, res) => {
+            console.log("API -> addEntreprise");
+            //check if user is connected
+            if(check.checkUserConnected(req, res)) {
+                let name = req.query.name;
+                let adresse = req.query.adresse;
+
+                let id_dirigeant = req.session.userId;
+                dataEntreprise = {name, id_dirigeant, adresse}
+                console.log(req.session);
+                
+                db.addEntreprise(dataEntreprise).then(() => {
+                    res.json({"err" : "", "code" : 1});
+                });
+            }
+        },
+
+
+        // Ajouter un produit
+        addProduct: (req, res) => {
+            console.log("API -> addProduct");
+            //check if user is connected
+            if(check.checkUserConnected(req, res)) {
+
+                let entrepriseId = req.query.entrepriseId;
+                let description = req.query.description;
+                let price = req.query.price;
+                //let productImage = req.body.productImage;
+
+                db.addProduct({entrepriseId, description, price}).then(() => {
+                    res.json({"err" : "", "code" : 1});
+                });
+            }
         },
 
     };
