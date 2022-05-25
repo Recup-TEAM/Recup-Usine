@@ -19,12 +19,15 @@ var conn = mysql.createConnection({
 const query = util.promisify(db.query).bind(db);
 
 module.exports = {
+
+    /***************
+     *    User     *
+     ***************/
+
     // Get user by email
     getUser: async (email) => {
         let sql = "SELECT * FROM user WHERE email='" + email + "'";
-        var rq = await query(sql);
-        console.log(sql);
-        console.log(rq);
+        rq = await query(sql);
         // if user return true else return false
         if (rq.length == 0) {
             return false;
@@ -68,7 +71,6 @@ module.exports = {
 
     // Changer le level d'un compte
     updateUSerLevel: async ({email, compteLevel}) => {
-        console.log(compteLevel);
         let sql = "UPDATE `user` SET `compteLevel` = '" + compteLevel + "' WHERE `user`.`email` = '" + email + "';";
         var rq = await query(sql);
         return rq;
@@ -79,8 +81,41 @@ module.exports = {
         let sql = "SELECT * FROM user";
         var rq = await query(sql);
         return rq;
-    }
+    },
 
+
+
+    /***************
+     * Entreprise  *
+     ***************/
+
+    // Get all entreprise
+    getAllEntreprises: async () => {
+        let sql = "SELECT * FROM entreprise";
+        var rq = await query(sql);
+        return rq;
+    },
+
+    // Get tout les produits une entreprise
+    getAllProductsFrom: async (id) => {
+        let sql = "SELECT * FROM produit WHERE entreprise_id='" + id + "'";
+        var rq = await query(sql);
+        return rq;
+    },
+
+    // Get tout les produits
+    getAllProducts: async () => {
+        let sql = "SELECT * FROM produit";
+        var rq = await query(sql);
+        return rq;
+    },
+
+    // Get un produit
+    getProduct: async (id) => {
+        let sql = "SELECT * FROM produit WHERE id='" + id + "'";
+        var rq = await query(sql);
+        return rq;
+    },
 
 
 

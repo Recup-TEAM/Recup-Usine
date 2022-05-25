@@ -1,6 +1,6 @@
 module.exports = function (express, app, http) {
     const session = require("express-session")({
-        secret: "eb8fcc253281389225b4f7872f2336918ddc7f689e1fc41b64d5c4f378cdc438",
+        secret: "eb8fcc253281389225b4f787ca542f2336918ddc7f689e1fc41b64d5c4f378cdc438",
         resave: true,
         saveUninitialized: true,
         cookie: {
@@ -10,12 +10,10 @@ module.exports = function (express, app, http) {
     });
     app.use(session);
     const path = require("path");
-    
     const db = require("./database");
     const socket = require("./socket")(http, session, db);
     const api = require("./api")(app, session, db);
     
-
     // Config des dossiers de fichiers front
     app.use(express.static(path.join(__dirname, "../front")));
 
@@ -28,6 +26,11 @@ module.exports = function (express, app, http) {
             // Utilisateur connecté
             res.sendFile(path.join(__dirname, "../front/html/index.html"));
         }
+    });
+
+    // Login
+    app.get("/login", (req, res) => {
+        res.sendFile(path.join(__dirname, "../front/html/login.html"));
     });
 
 

@@ -1,37 +1,13 @@
-
-
-
 module.exports = function (session, db) {
     const { body, validationResult } = require("express-validator");
-    //function check if user connected
-    function checkUserConnected(req, res) {
-        if (!req.session.email) {
-            res.json({"err": "Vous n'êtes pas connecté !", "code": 0});
-            return false
-        }
-        else {
-            return true
-        }
-    }
-
-    //function check if user is admin
-    function checkUserAdmin(req, res) {
-        //check if user is connected
-        if (!checkUserConnected(req, res)) {
-            return false
-        }
-        if (req.session.compteLevel!=0) {
-            res.json({"err": "Vous n'êtes pas administrateur !", "code": 0});
-            return false
-        }
-        else {
-            return true
-        }
-    }
-
+    const check = require("./modules/check")();
 
     // Fonctions utilisables dans "./routes.js"
     return {
+         /***************
+         *    User     *
+         ***************/
+
         // Connexion
         login: (req, res) => {
             console.log("API -> login");
@@ -130,7 +106,7 @@ module.exports = function (session, db) {
         // Changer le level d'un compte (admin only)
         updateCompteLevel: (req, res) => {
             console.log("API -> updateCompteLevel");
-            if(checkUserAdmin(req, res)) {
+            if(check.checkUserAdmin(req, res)) {
                 let email = req.body.email;
                 let compteLevel = req.body.compteLevel;
 
@@ -140,7 +116,7 @@ module.exports = function (session, db) {
                         console.log("L'utilisateur \"" + email + '" n\'existe pas');
                         res.json({"err" : "L'utilisateur \"" + email + '" n\'existe pas', "code" : 0});
                     } else {
-                        db.updateUSerLevel(email, compteLevel).then(() => {
+                        db.updateUSerLevel({email, compteLevel}).then(() => {
                             console.log("L'utilisateur \"" + email + '" a changé son compte level');
                             res.json({"err" : "", "code" : 1});
                         });
@@ -152,11 +128,52 @@ module.exports = function (session, db) {
         // Get all users (admin only)
         getAllUsers: (req, res) => {
             console.log("API -> getAllUsers");
-            if(checkUserAdmin(req, res)) {
+            if(check.checkUserAdmin(req, res)) {
                 db.getAllUsers().then((users) => {
                     res.json({"err" : "", "code" : 1, "data" : users});
                 });
             }
+        },
+
+
+        /***************
+         * Entreprise  *
+         ***************/
+
+
+        // Get all entreprises
+        getAllEntreprises: (req, res) => {
+            console.log("API -> getAllEntreprises");
+            db.getAllEntreprises().then((entreprises) => {
+                res.json({"err" : "", "code" : 1, "data" : entreprises});
+            });
+        },
+
+
+        // Get tout les produits d'une entreprise
+        getAllProductsFrom: (req, res) => {
+            console.log("API -> getAllProductsFrom");
+            let entrepriseId = req.params.salle;
+            db.getAllProductsFrom(entrepriseId).then((products) => {
+                res.json({"err" : "", "code" : 1, "data" : products});
+            });
+        },
+
+        // Get tout les produits
+        getAllProducts: (req, res) => {
+            console.log("API -> getAllProducts");
+            db.getAllProducts().then((products) => {
+                res.json({"err" : "", "code" : 1, "data" : products});
+            });
+        },
+
+        // Get un produit par son id
+        getProductById: (req, res) => {
+            console.log("API -> getProductById");
+            let productId = req.params.id;
+            db.getProductById(productId).then((product) => {
+                res.json({"err" : "", "code" : 1, "data" : product});
+            });
         },
 
     };
