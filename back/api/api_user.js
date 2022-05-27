@@ -1,8 +1,11 @@
-module.exports = function (session, db) {
+module.exports = function (session, db_query) {
     const { body, validationResult } = require("express-validator");
-    const check = require("./modules/check")();
+    const check = require("./check")();
+    const db_user = require("../database/db_user")(db_query);
+    const db_entreprise = require("../database/db_entreprise")(db_query);
+    const db_product = require("../database/db_product")(db_query);
 
-    // Fonctions utilisables dans "./routes.js"
+    // Fonctions utilisables dans "./api_user.js"
     return {
          /***************
          *    User     *
@@ -24,7 +27,7 @@ module.exports = function (session, db) {
         getAllUsers: (req, res) => {
             console.log("API -> getAllUsers");
             if(check.checkUserAdmin(req, res)) {
-                db.getAllUsers().then((users) => {
+                db_user.getAllUsers().then((users) => {
                     res.json({"err" : "", "code" : 1, "data" : users});
                 });
             }
@@ -34,7 +37,7 @@ module.exports = function (session, db) {
         getSubscription: (req, res) => {
             console.log("API -> getSubscription");
             if(check.checkUserConnected(req, res)) {
-                db.getSubscription(req.session.userId).then((data) => {
+                db_user.getSubscription(req.session.userId).then((data) => {
                     res.json({"err" : "", "code" : 1, "data" : data});
                 });
             }
@@ -48,7 +51,7 @@ module.exports = function (session, db) {
             const password = req.body.password;
 
             // On regarde dans la DB si l'email et le mot de passe existent
-            db.login({ email, password }).then((user) => {
+            db_user.login({ email, password }).then((user) => {
                 if (user == false) {
                     // L'utilisateur n'existe pas
                     console.log("L'utilisateur", { email, password }, "n'existe pas");
@@ -81,11 +84,11 @@ module.exports = function (session, db) {
             let compteLevel = 1; // Pas admin par défaut
 
             // On regarde dans la DB si l'email existe déjà
-            db.getUser(email).then((user) => {
+            db_user.getUser(email).then((user) => {
 
                 if (user == false) { // L'utilisateur n'existe pas encore
                     dataUser = {email, password, compteLevel }
-                    db.createUser(dataUser).then(() => {
+                    db_user.createUser(dataUser).then(() => {
                         req.session.email = email;
                         req.session.password = password;
                         req.session.compteLevel = compteLevel;
@@ -110,7 +113,7 @@ module.exports = function (session, db) {
             let newPassword = req.body.newPassword;
 
             // On regarde dans la DB si l'email existe déjà
-            db.getUser(email).then((user) => {
+            db_user.getUser(email).then((user) => {
 
                 if (user == false) { // L'utilisateur n'existe pas encore
                     console.log("L'utilisateur \"" + email + '" n\'existe pas');
@@ -118,7 +121,7 @@ module.exports = function (session, db) {
                 } else {
                     // L'utilisateur existe déjà
                     dataUser = {email, password, newPassword }
-                    db.updateUserPassword(dataUser).then(() => {
+                    db_user.updateUserPassword(dataUser).then(() => {
                         console.log("L'utilisateur \"" + email + '" a changé son mot de passe');
                         res.json({"err" : "", "code" : 1});
                     });
@@ -134,12 +137,12 @@ module.exports = function (session, db) {
                 let compteLevel = req.body.compteLevel;
 
                 //check if user existe
-                db.getUser(email).then((user) => {
+                db_user.getUser(email).then((user) => {
                     if (user == false) {
                         console.log("L'utilisateur \"" + email + '" n\'existe pas');
                         res.json({"err" : "L'utilisateur \"" + email + '" n\'existe pas', "code" : 0});
                     } else {
-                        db.updateUSerLevel({email, compteLevel}).then(() => {
+                        db_user.updateUSerLevel({email, compteLevel}).then(() => {
                             console.log("L'utilisateur \"" + email + '" a changé son compte level');
                             res.json({"err" : "", "code" : 1});
                         });
@@ -155,90 +158,13 @@ module.exports = function (session, db) {
                 let userId = req.session.userId;
                 let subscriptionLevel = req.body.subscriptionLevel;
 
-                db.subscribe({userId, subscriptionLevel}).then(() => {
+                db_user.subscribe({userId, subscriptionLevel}).then(() => {
                     console.log("L'utilisateur \"" + userId + " ('" + req.session.email +"')" + '" s\'est abonné au niveau ' + subscriptionLevel);
                     res.json({"err" : "", "code" : 1});
                 });
             }
         },
 
-
-
-
-        /***************
-         * Entreprise  *
-         ***************/
-        /* GET */
-        // Get all entreprises
-        getAllEntreprises: (req, res) => {
-            console.log("API -> getAllEntreprises");
-            db.getAllEntreprises().then((entreprises) => {
-                res.json({"err" : "", "code" : 1, "data" : entreprises});
-            });
-        },
-
-        // Get tout les produits d'une entreprise
-        getAllProductsFrom: (req, res) => {
-            console.log("API -> getAllProductsFrom");
-            let entrepriseId = req.params.id;
-            db.getAllProductsFrom(entrepriseId).then((products) => {
-                res.json({"err" : "", "code" : 1, "data" : products});
-            });
-        },
-
-        // Get tout les produits
-        getAllProducts: (req, res) => {
-            console.log("API -> getAllProducts");
-            db.getAllProducts().then((products) => {
-                res.json({"err" : "", "code" : 1, "data" : products});
-            });
-        },
-
-        // Get un produit par son id
-        getProductById: (req, res) => {
-            console.log("API -> getProductById");
-            let productId = req.params.id;
-            db.getProductById(productId).then((product) => {
-                res.json({"err" : "", "code" : 1, "data" : product});
-            });
-        },
-
-        /* POST */
-        // Ajouter une entreprise
-        addEntreprise: (req, res) => {
-            console.log("API -> addEntreprise");
-            //check if user is connected
-            if(check.checkUserConnected(req, res)) {
-                let name = req.query.name;
-                let adresse = req.query.adresse;
-
-                let id_dirigeant = req.session.userId;
-                dataEntreprise = {name, id_dirigeant, adresse}
-                console.log(req.session);
-                
-                db.addEntreprise(dataEntreprise).then(() => {
-                    res.json({"err" : "", "code" : 1});
-                });
-            }
-        },
-
-
-        // Ajouter un produit
-        addProduct: (req, res) => {
-            console.log("API -> addProduct");
-            //check if user is connected
-            if(check.checkUserConnected(req, res)) {
-
-                let entrepriseId = req.query.entrepriseId;
-                let description = req.query.description;
-                let price = req.query.price;
-                //let productImage = req.body.productImage;
-
-                db.addProduct({entrepriseId, description, price}).then(() => {
-                    res.json({"err" : "", "code" : 1});
-                });
-            }
-        },
 
     };
 };
