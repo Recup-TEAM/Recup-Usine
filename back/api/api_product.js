@@ -1,9 +1,9 @@
 module.exports = function (session, db_query) {
     const { body, validationResult } = require("express-validator");
     const check = require("./check")();
-    const db_user = require("../database/db_user")(db_query);
-    const db_entreprise = require("../database/db_entreprise")(db_query);
     const db_product = require("../database/db_product")(db_query);
+    //const db_user = require("../database/db_user")(db_query);
+    //const db_entreprise = require("../database/db_entreprise")(db_query);
 
     return {
         /***************
@@ -46,7 +46,7 @@ module.exports = function (session, db_query) {
             });
         },
         
-        
+
        /* POST */
         // Ajouter un produit
         addProduct: (req, res) => {
