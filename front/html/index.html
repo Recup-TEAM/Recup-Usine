@@ -2,22 +2,62 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hello World</title>
+    <title>Index.html</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/btnHrvAnimation.css">
     <script src="main.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <!-- import ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--Animate on Scroll-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
-<body>
-
-    <h1>Hello World</h1>
-    
+<body class="animate__animated animate__fadeIn">
+    <div class="header">
+        <h1>RECUP USINE</h1>
+    </div>
+    <div class="gamePresentation">
+        <h1>Bienvenue</h1>
+        <p>
+            Lorem ipsum dolor sit amet. Id numquam sequi aut soluta provident quo laborum provident est debitis officia sit quia rerum? Et expedita reprehenderit est dolor autem eos maiores atque sed quis alias non possimus placeat vel odit quia.
+            <br><br>
+            Et nisi reiciendis aut quos porro et eius nihil sit ducimus aliquid? Aut praesentium doloremque ut harum vero ut ipsum debitis ut cupiditate architecto eos dolorem totam.
+            <br><br>
+            Id consequatur incidunt qui consectetur nemo cum sint labore ex vitae velit ab soluta velit. Sed harum nobis aut fugiat ullam aut mollitia atque et fugiat maxime qui nemo vitae et iste voluptates qui voluptatem voluptatem! Aut quibusdam quidem qui voluptas eligendi eos dolore repudiandae ut mollitia facere et quia aperiam. Et sunt dolores est ipsam blanditiis cum impedit illo a obcaecati vitae id natus modi est rerum necessitatibus aut laboriosam ullam!
+        </p>
+        <button class="buttonStart hvr-sweep-to-right" href="#">GAMING</button>
+    </div>
+    <div class="gamePresentation" data-aos="fade-up">
+        <h1>Bienvenue</h1>
+        <p>
+            Lorem ipsum dolor sit amet. Id numquam sequi aut soluta provident quo laborum provident est debitis officia sit quia rerum? Et expedita reprehenderit est dolor autem eos maiores atque sed quis alias non possimus placeat vel odit quia.
+            <br><br>
+            Et nisi reiciendis aut quos porro et eius nihil sit ducimus aliquid? Aut praesentium doloremque ut harum vero ut ipsum debitis ut cupiditate architecto eos dolorem totam.
+            <br><br>
+            Id consequatur incidunt qui consectetur nemo cum sint labore ex vitae velit ab soluta velit. Sed harum nobis aut fugiat ullam aut mollitia atque et fugiat maxime qui nemo vitae et iste voluptates qui voluptatem voluptatem! Aut quibusdam quidem qui voluptas eligendi eos dolore repudiandae ut mollitia facere et quia aperiam. Et sunt dolores est ipsam blanditiis cum impedit illo a obcaecati vitae id natus modi est rerum necessitatibus aut laboriosam ullam!
+        </p>
+        <button class="buttonStart hvr-sweep-to-right" href="#">GAMING</button>
+    </div>
+    <div class="gamePresentation" data-aos="fade-up">
+        <h1>Bienvenue</h1>
+        <p>
+            Lorem ipsum dolor sit amet. Id numquam sequi aut soluta provident quo laborum provident est debitis officia sit quia rerum? Et expedita reprehenderit est dolor autem eos maiores atque sed quis alias non possimus placeat vel odit quia.
+            <br><br>
+            Et nisi reiciendis aut quos porro et eius nihil sit ducimus aliquid? Aut praesentium doloremque ut harum vero ut ipsum debitis ut cupiditate architecto eos dolorem totam.
+            <br><br>
+            Id consequatur incidunt qui consectetur nemo cum sint labore ex vitae velit ab soluta velit. Sed harum nobis aut fugiat ullam aut mollitia atque et fugiat maxime qui nemo vitae et iste voluptates qui voluptatem voluptatem! Aut quibusdam quidem qui voluptas eligendi eos dolore repudiandae ut mollitia facere et quia aperiam. Et sunt dolores est ipsam blanditiis cum impedit illo a obcaecati vitae id natus modi est rerum necessitatibus aut laboriosam ullam!
+        </p>
+        <button class="buttonStart hvr-sweep-to-right" href="#">GAMING</button>
+    </div>
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     let socket = io();
+    AOS.init();
 </script>
 </html>
