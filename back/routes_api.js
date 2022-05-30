@@ -1,7 +1,7 @@
-module.exports = function (app, session, db_query) {
-    const api_user = require("./api/api_user")(session, db_query);
-    const api_entreprise = require("./api/api_entreprise")(session, db_query);
-    const api_product = require("./api/api_product")(session, db_query);
+module.exports = function (app, session) {
+    const api_user = require("./api/api_user")(session);
+    const api_entreprise = require("./api/api_entreprise")(session);
+    const api_product = require("./api/api_product")(session);
 
     const bodyParser = require("body-parser");
     const { body, validationResult } = require("express-validator");

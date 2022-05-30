@@ -1,5 +1,7 @@
 const mysql = require('mysql');
+const util = require('util');
 
+module.exports = function () {
 var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -13,5 +15,8 @@ var conn = mysql.createConnection({
   });
 
 
+  return {
   // node native promisify (support async/await)
-global.db_query = util.promisify(conn.query).bind(conn);
+  db_query : util.promisify(conn.query).bind(conn)
+  };
+};

@@ -10,9 +10,9 @@ module.exports = function (express, app, http) {
     });
     app.use(session);
     const path = require("path");
-    const db_query = require("./db_config");
+    const conn = require("./db_config");
     const socket = require("./socket/socket")(http, session);
-    const api = require("./routes_api")(app, session, db_query);
+    const api = require("./routes_api")(app, session, conn);
     
     // Config des dossiers de fichiers front
     app.use(express.static(path.join(__dirname, "../front")));
