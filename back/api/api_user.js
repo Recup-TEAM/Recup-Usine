@@ -69,7 +69,7 @@ module.exports = function (session) {
                         req.session.compteLevel = user[0].compte_level;
                         req.session.userId = user[0].id_user;
                         req.session.save();
-                        console.log("L'utilisateur ", {email}, " s'est connecté ! (compte level : ", { type: user[0].compteLevel }, ")");
+                        console.log("L'utilisateur ", {email}, " s'est connecté ! (compte level : ", { type: user[0].compte_level }, ")");
                     }
                     res.json({"err": "", "code" : 1});
                 }

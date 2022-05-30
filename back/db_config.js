@@ -3,16 +3,21 @@ const util = require('util');
 
 module.exports = function () {
 var conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    connectionLimit : 10,
+    //host     : '152.228.171.235',
+    //port     :  80,
+      user: "root",
+    //user: 'recupUser',
+    //password: 'r3cupUserP4ss',
     database: 'recupusine'
   });
+
   
   conn.connect(function(err) {
     if (err) throw err;
     console.log('Database is connected successfully !');
   });
+
 
 
   return {
