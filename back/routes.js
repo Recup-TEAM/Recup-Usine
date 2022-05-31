@@ -13,12 +13,7 @@ module.exports = function (express, app, http) {
     const conn = require("./db_config");
     const socket = require("./socket/socket")(http, session);
     const api = require("./routes_api")(app, session);
-
-    // get db_query
-    /*const db_query  = require("./db_config")().db_query;;
-    setInterval(async function () {
-        await db_query('SELECT 1');
-    }, 5000);*/
+    
 
     // Config des dossiers de fichiers front
     app.use(express.static(path.join(__dirname, "../front")));

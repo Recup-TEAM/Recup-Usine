@@ -1,6 +1,6 @@
 let logger = (function(){
 
-    function request_connexion(email, password) {
+    function request_login(email, password) {
         console.log(email + ' essaye de se connecter');
         $.ajax({
             type: "POST",
@@ -9,15 +9,11 @@ let logger = (function(){
                 email: email,
                 password: password
             },
-            success: () => {
-                window.location.href = "/";
-            }
-
-
+            success: () => { window.location.href = "/"; }
         });
     }
 
-    function request_incription(email, password) {
+    function request_signup(email, password) {
         console.log(email + ' essaye de se connecter');
         $.ajax({
             type: "POST",
@@ -26,18 +22,17 @@ let logger = (function(){
                 email: email,
                 password: password
             },
-            success: () => {
-                window.location.href = "/";
-            }
+            success: () => { window.location.href = "/"; }
         });
     }
 
     return {
-        connexion(email, password) {
-            request_connexion(email, password);
+        login(email, password) {
+            request_login(email, password);
         },
-        inscription( email, password) {
-            request_incription( email, password);
+
+        sign_up( email, password) {
+            request_signup( email, password);
         }
     }
 })();

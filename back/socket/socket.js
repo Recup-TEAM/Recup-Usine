@@ -1,7 +1,7 @@
 const md5 = require("md5");
 
 module.exports = function (http, session) {
-    const io = require("socket.io")({http, allowEIO3: true});
+    const io = require("socket.io")({http, allowEIO3: false});
     
     const sharedsession = require("express-socket.io-session");
     const { body, validationResult } = require("express-validator");

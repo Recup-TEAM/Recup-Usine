@@ -17,12 +17,12 @@ let join = false;
 
 formLogin.addEventListener("submit", (event) => {
     event.preventDefault();
-    logger.connexion(email.value, password.value);
+    logger.login(email.value, password.value);
 });
 
 formRegister.addEventListener("submit", (event) => {
     event.preventDefault();
-    logger.inscription(emailRegister.value, passwordRegister.value);
+    logger.sign_up(emailRegister.value, passwordRegister.value);
 });
 
 register.addEventListener("click", () => {

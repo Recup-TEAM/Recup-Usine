@@ -42,7 +42,7 @@ module.exports = function() {
 
             resultArray = Object.values(JSON.parse(JSON.stringify(rq)))
             //resultArray.forEach((v) => console.log(v));
-
+            
             if (resultArray.length == 0) {
                 return false;
             } else {

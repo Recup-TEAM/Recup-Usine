@@ -18,9 +18,6 @@ module.exports = function (session) {
             if(checkUserConnected(req, res)) {
                 res.json({"err": "", "code": 1, "data": {"compteLevel" : req.session.compteLevel}});
             }
-            
-
-
         },
 
         // Get all users (admin only)
