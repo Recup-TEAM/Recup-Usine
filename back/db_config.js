@@ -1,15 +1,20 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const util = require('util');
 
 module.exports = function () {
 var conn = mysql.createConnection({
     connectionLimit : 10,
-    //host     : '152.228.171.235',
-    //port     :  80,
-      user: "root",
-    //user: 'recupUser',
-    //password: 'r3cupUserP4ss',
-    database: 'recupusine'
+    host     : '152.228.171.235',
+    port: 3006,
+    user: 'RecupUsineBDD',
+    password: 'r3cupUserP4ss',
+    database: 'recupusine',
+    
+    /* Setting for localhost */
+    /*host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'recupusine'*/
   });
 
   
