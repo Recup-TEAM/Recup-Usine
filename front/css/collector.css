@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,600|Mulish:400");
+
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+
+.collector {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 618px;
+    overflow: hidden;
+    width: 360px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.collecteur-info-div {
+    align-items: flex-start;
+    display: flex;
+    height: 348px;
+    margin-left: 3px;
+    margin-top: 71px;
+    min-width: 371px;
+}
+
+.overlap-group2 {
+    align-items: center;
+    background-color: #e8f6f3;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 348px;
+    padding: 9px 25px;
+    width: 355px;
+}
+
+.flex-row {
+    align-items: flex-end;
+    display: flex;
+    height: 165px;
+    margin-left: 0;
+    min-width: 277px;
+}
+
+.flex-col {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 165px;
+    width: 154px;
+}
+
+.departure-header {
+    align-self: flex-start;
+    letter-spacing: 0;
+    margin-top: 31px;
+    min-height: 19px;
+    width: 127px;
+}
+
+.distance-placeholder {
+    letter-spacing: 0;
+    margin-right: 28.07px;
+    margin-top: 12px;
+    min-height: 19px;
+    width: 61px;
+}
+
+.departure-placeholder {
+    letter-spacing: 0;
+    margin-right: 37.12px;
+    margin-top: 12px;
+    min-height: 19px;
+    width: 42px;
+}
+
+.distance-header {
+    letter-spacing: 0;
+    margin-right: 28.07px;
+    margin-top: 32px;
+    min-height: 19px;
+    width: 69px;
+}
+
+.minimize {
+    align-self: flex-end;
+    height: 2px;
+    width: 32px;
+}
+
+.flex-col-1 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 9px;
+    min-height: 132px;
+    width: 114px;
+}
+
+.vehicule-placeholder {
+    letter-spacing: 0;
+    margin-left: 1.01px;
+    margin-top: 12px;
+    min-height: 19px;
+    width: 72px;
+}
+
+.estimated-time-placeholder {
+    letter-spacing: 0;
+    margin-left: 1.01px;
+    margin-top: 12px;
+    min-height: 19px;
+    width: 40px;
+}
+
+.vehicule-header {
+    letter-spacing: 0;
+    margin-left: 0;
+    min-height: 19px;
+    width: 67px;
+}
+
+.estimated-time-header {
+    letter-spacing: 0;
+    margin-top: 32px;
+    min-height: 19px;
+    width: 114px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background-color: var(--emerald);
+    border-radius: 20px;
+    display: flex;
+    height: 42px;
+    margin-left: 1px;
+    margin-top: 40px;
+    min-width: 300px;
+    padding: 11px 114.4px;
+}
+
+.placeholder {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xs3);
+    font-weight: 600;
+    letter-spacing: 0;
+    min-height: 19px;
+    width: 69px;
+}
+
+.btn-info {
+    align-items: flex-start;
+    align-self: flex-end;
+    cursor: pointer;
+    display: flex;
+    margin-top: 16px;
+    min-width: 302px;
+}
+
+.overlap-group1 {
+    align-items: flex-start;
+    border: 1px solid var(--emerald);
+    border-radius: 20px;
+    display: flex;
+    height: 42px;
+    min-width: 300px;
+    padding: 10px 105.4px;
+}
+
+.placeholder-1 {
+    color: var(--emerald);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xs3);
+    font-weight: 600;
+    letter-spacing: 0;
+    min-height: 19px;
+    width: 85px;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.collecteur-header {
+    align-self: center;
+    color: var(--black);
+    font-family: var(--font-family-calibri-bold);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    height: 50px;
+    letter-spacing: 0;
+    margin-top: 48px;
+    width: 282px;
+}
+
+.header {
+    height: 61px;
+    margin-top: -4px;
+    width: 360px;
+}

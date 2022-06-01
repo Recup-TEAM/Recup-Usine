@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,600|Mulish:400");
+
+.collectorinfo {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 715px;
+    width: 360px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.btn-return {
+    align-items: flex-start;
+    align-self: flex-start;
+    cursor: pointer;
+    display: flex;
+    margin-left: 11px;
+    margin-top: 18px;
+    min-width: 104px;
+}
+
+.overlap-group4 {
+    height: 36px;
+    position: relative;
+    width: 102px;
+}
+
+.background {
+    background-color: #1bab8d;
+    border-radius: 4px;
+    height: 36px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 98px;
+}
+
+.placeholder-1 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xs3);
+    font-weight: 500;
+    left: 41px;
+    letter-spacing: 0;
+    position: absolute;
+    top: 8px;
+    width: 61px;
+}
+
+.shape {
+    height: 15px;
+    left: 13px;
+    position: absolute;
+    top: 11px;
+    width: 20px;
+}
+
+.header-1 {
+    height: 61px;
+    margin-top: -4px;
+    width: 360px;
+}
+
+.more-info-div {
+    align-items: flex-start;
+    display: flex;
+    height: 122px;
+    margin-left: 4px;
+    margin-top: 18px;
+    min-width: 342px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background-color: var(--aqua-squeeze);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px #0000000d;
+    display: flex;
+    flex-direction: column;
+    min-height: 122px;
+    padding: 20px 33px;
+    width: 338px;
+}
+
+.placeholder {
+    letter-spacing: -0.17px;
+    margin-top: 7px;
+    min-height: 38px;
+}
+
+.header {
+    letter-spacing: -0.17px;
+    min-height: 19px;
+    width: 271px;
+}

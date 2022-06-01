@@ -6639,3 +6639,1595 @@ root {
     font-weight: 300;
     font-style: normal;
 }
+
+/*Collector Info*/
+:root {
+    --black
+    : rgba(0, 0, 0, 1);
+    --blue-ribbon
+    : rgba(0, 102, 255, 1);
+    --emerald
+    : rgba(27, 171, 141, 1);
+    --shark
+    : rgba(35, 38, 47, 1);
+    --mine-shaft
+    : rgba(51, 51, 51, 1);
+    --nevada
+    : rgba(95, 108, 123, 1);
+    --pale-sky
+    : rgba(107, 114, 128, 1);
+    --dove-gray
+    : rgba(112, 109, 109, 1);
+    --sonic-silver
+    : rgba(117, 117, 117, 1);
+    --cardinal
+    : rgba(171, 27, 57, 1);
+    --alto
+    : rgba(217, 217, 217, 1);
+    --aqua-squeeze
+    : rgba(232, 246, 243, 1);
+    --soft-peach
+    : rgba(246, 232, 235, 1);
+    --white
+    : rgba(255, 255, 255, 1);
+
+    --font-size-xxxs
+    : 14px;
+    --font-size-xs
+    : 18px;
+    --font-size-m
+    : 22px;
+    --font-size-l
+    : 25px;
+    --font-size-l
+    : 26px;
+    --font-size-xl
+    : 30px;
+    --font-size-xl
+    : 50px;
+    --font-size-xxl
+    : 40px;
+    --font-size-xxl
+    : 64px;
+    --font-size-m2
+    : 20px;
+    --font-size-xs2
+    : 12px;
+    --font-size-xs3
+    : 16px;
+
+    --font-family-articulat_cf-bold
+    : "Articulat CF-Bold";
+    --font-family-calibri-bold
+    : "Calibri-Bold";
+    --font-family-calibri-light
+    : "Calibri-Light";
+    --font-family-calibri-regular
+    : "Calibri-Regular";
+    --font-family-k2d
+    : "K2D";
+    --font-family-mulish
+    : "Mulish";
+    --font-family-mulish-regular
+    : "Mulish-Regular";
+}
+
+/* Classes */
+
+
+
+
+
+.articulatcf-bold-black-50px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.border-2px-emerald
+{
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--emerald
+    );
+}
+
+
+
+
+.calibri-regular-normal-white-20px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.articulatcf-bold-white-64px
+{
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-nevada-18px
+{
+    color: var(--nevada
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-18px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.mulish-regular-normal-blue-ribbon-12px
+{
+    color: var(--blue-ribbon
+    );
+    font-family: var(--font-family-mulish-regular
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-22px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-black-14px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xxxs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-mine-shaft-16px
+{
+    color: var(--mine-shaft
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs3
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-26px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-pale-sky-12px
+{
+    color: var(--pale-sky
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-black-22px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-sonic-silver-20px
+{
+    color: var(--sonic-silver
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.k2d-medium-black-30px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-k2d
+    );
+    font-size: var(--font-size-xl
+    );
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+
+.mulish-normal-blue-ribbon-12px
+{
+    color: var(--blue-ribbon
+    );
+    font-family: var(--font-family-mulish
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-mine-shaft-26px
+{
+    color: var(--mine-shaft
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-22px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-pale-sky-14px
+{
+    color: var(--pale-sky
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xxxs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-black-12px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-black-20px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-sonic-silver-16px
+{
+    color: var(--sonic-silver
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs3
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-shark-20px
+{
+    color: var(--shark
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.k2d-medium-dove-gray-20px
+{
+    color: var(--dove-gray
+    );
+    font-family: var(--font-family-k2d
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+
+.articulatcf-bold-emerald-64px
+{
+    color: var(--emerald
+    );
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-26px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-12px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-white-26px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-22px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-20px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-20px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+/*Collector*/
+:root {
+    --black
+    : rgba(0, 0, 0, 1);
+    --blue-ribbon
+    : rgba(0, 102, 255, 1);
+    --emerald
+    : rgba(27, 171, 141, 1);
+    --shark
+    : rgba(35, 38, 47, 1);
+    --mine-shaft
+    : rgba(51, 51, 51, 1);
+    --nevada
+    : rgba(95, 108, 123, 1);
+    --pale-sky
+    : rgba(107, 114, 128, 1);
+    --dove-gray
+    : rgba(112, 109, 109, 1);
+    --sonic-silver
+    : rgba(117, 117, 117, 1);
+    --cardinal
+    : rgba(171, 27, 57, 1);
+    --alto
+    : rgba(217, 217, 217, 1);
+    --aqua-squeeze
+    : rgba(232, 246, 243, 1);
+    --soft-peach
+    : rgba(246, 232, 235, 1);
+    --white
+    : rgba(255, 255, 255, 1);
+
+    --font-size-xxxs
+    : 14px;
+    --font-size-xs
+    : 18px;
+    --font-size-m
+    : 22px;
+    --font-size-l
+    : 25px;
+    --font-size-l
+    : 26px;
+    --font-size-xl
+    : 30px;
+    --font-size-xl
+    : 50px;
+    --font-size-xxl
+    : 40px;
+    --font-size-xxl
+    : 64px;
+    --font-size-m2
+    : 20px;
+    --font-size-xs2
+    : 12px;
+    --font-size-xs3
+    : 16px;
+
+    --font-family-articulat_cf-bold
+    : "Articulat CF-Bold";
+    --font-family-calibri-bold
+    : "Calibri-Bold";
+    --font-family-calibri-light
+    : "Calibri-Light";
+    --font-family-calibri-regular
+    : "Calibri-Regular";
+    --font-family-k2d
+    : "K2D";
+    --font-family-mulish
+    : "Mulish";
+    --font-family-mulish-regular
+    : "Mulish-Regular";
+}
+
+/* Classes */
+
+
+
+
+
+.articulatcf-bold-black-50px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.border-2px-emerald
+{
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--emerald
+    );
+}
+
+
+
+
+.calibri-regular-normal-white-20px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.articulatcf-bold-white-64px
+{
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-nevada-18px
+{
+    color: var(--nevada
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-18px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.mulish-regular-normal-blue-ribbon-12px
+{
+    color: var(--blue-ribbon
+    );
+    font-family: var(--font-family-mulish-regular
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-22px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-black-14px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xxxs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-mine-shaft-16px
+{
+    color: var(--mine-shaft
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs3
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-26px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-pale-sky-12px
+{
+    color: var(--pale-sky
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-black-22px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-sonic-silver-20px
+{
+    color: var(--sonic-silver
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.k2d-medium-black-30px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-k2d
+    );
+    font-size: var(--font-size-xl
+    );
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+
+.mulish-normal-blue-ribbon-12px
+{
+    color: var(--blue-ribbon
+    );
+    font-family: var(--font-family-mulish
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-mine-shaft-26px
+{
+    color: var(--mine-shaft
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-22px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-pale-sky-14px
+{
+    color: var(--pale-sky
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xxxs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-black-12px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-black-20px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-sonic-silver-16px
+{
+    color: var(--sonic-silver
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs3
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-shark-20px
+{
+    color: var(--shark
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.k2d-medium-dove-gray-20px
+{
+    color: var(--dove-gray
+    );
+    font-family: var(--font-family-k2d
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+
+.articulatcf-bold-emerald-64px
+{
+    color: var(--emerald
+    );
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-26px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-12px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-white-26px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-22px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-20px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-20px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+/*Collector Connection*/
+:root {
+    --black
+    : rgba(0, 0, 0, 1);
+    --blue-ribbon
+    : rgba(0, 102, 255, 1);
+    --emerald
+    : rgba(27, 171, 141, 1);
+    --shark
+    : rgba(35, 38, 47, 1);
+    --mine-shaft
+    : rgba(51, 51, 51, 1);
+    --nevada
+    : rgba(95, 108, 123, 1);
+    --pale-sky
+    : rgba(107, 114, 128, 1);
+    --dove-gray
+    : rgba(112, 109, 109, 1);
+    --sonic-silver
+    : rgba(117, 117, 117, 1);
+    --cardinal
+    : rgba(171, 27, 57, 1);
+    --alto
+    : rgba(217, 217, 217, 1);
+    --aqua-squeeze
+    : rgba(232, 246, 243, 1);
+    --soft-peach
+    : rgba(246, 232, 235, 1);
+    --white
+    : rgba(255, 255, 255, 1);
+
+    --font-size-xxxs
+    : 14px;
+    --font-size-xs
+    : 18px;
+    --font-size-m
+    : 22px;
+    --font-size-l
+    : 25px;
+    --font-size-l
+    : 26px;
+    --font-size-xl
+    : 30px;
+    --font-size-xl
+    : 50px;
+    --font-size-xxl
+    : 40px;
+    --font-size-xxl
+    : 64px;
+    --font-size-m2
+    : 20px;
+    --font-size-xs2
+    : 12px;
+    --font-size-xs3
+    : 16px;
+
+    --font-family-articulat_cf-bold
+    : "Articulat CF-Bold";
+    --font-family-calibri-bold
+    : "Calibri-Bold";
+    --font-family-calibri-light
+    : "Calibri-Light";
+    --font-family-calibri-regular
+    : "Calibri-Regular";
+    --font-family-k2d
+    : "K2D";
+    --font-family-mulish
+    : "Mulish";
+    --font-family-mulish-regular
+    : "Mulish-Regular";
+}
+
+/* Classes */
+
+
+
+
+
+.articulatcf-bold-black-50px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.border-2px-emerald
+{
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--emerald
+    );
+}
+
+
+
+
+.calibri-regular-normal-white-20px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.articulatcf-bold-white-64px
+{
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-nevada-18px
+{
+    color: var(--nevada
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-18px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.mulish-regular-normal-blue-ribbon-12px
+{
+    color: var(--blue-ribbon
+    );
+    font-family: var(--font-family-mulish-regular
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-22px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-black-14px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xxxs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-mine-shaft-16px
+{
+    color: var(--mine-shaft
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs3
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-26px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-pale-sky-12px
+{
+    color: var(--pale-sky
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-black-22px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-sonic-silver-20px
+{
+    color: var(--sonic-silver
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.k2d-medium-black-30px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-k2d
+    );
+    font-size: var(--font-size-xl
+    );
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+
+.mulish-normal-blue-ribbon-12px
+{
+    color: var(--blue-ribbon
+    );
+    font-family: var(--font-family-mulish
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-mine-shaft-26px
+{
+    color: var(--mine-shaft
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-22px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-pale-sky-14px
+{
+    color: var(--pale-sky
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-xxxs
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-black-12px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-black-20px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-sonic-silver-16px
+{
+    color: var(--sonic-silver
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs3
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-shark-20px
+{
+    color: var(--shark
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.k2d-medium-dove-gray-20px
+{
+    color: var(--dove-gray
+    );
+    font-family: var(--font-family-k2d
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+
+.articulatcf-bold-emerald-64px
+{
+    color: var(--emerald
+    );
+    font-family: var(--font-family-articulat_cf-bold
+    );
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-regular-normal-white-26px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-regular
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-12px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-xs2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-white-26px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-l
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-22px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m
+    );
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+.calibri-bold-black-20px
+{
+    color: var(--black
+    );
+    font-family: var(--font-family-calibri-bold
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+.calibri-light-white-20px
+{
+    color: var(--white
+    );
+    font-family: var(--font-family-calibri-light
+    );
+    font-size: var(--font-size-m2
+    );
+    font-weight: 300;
+    font-style: normal;
+}
