@@ -26,12 +26,15 @@
     src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
 }
 
+body{
+    margin:0px;
+}
 .index {
     align-items: center;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    min-height: 2714px;
+    min-height: 100%;
     width: 100%;
 }
 
@@ -44,9 +47,8 @@
 .footer {
     align-items: flex-start;
     display: flex;
-    margin-left: 2px;
     margin-top: 115px;
-    min-width: 1442px;
+    min-width: 100%;
 }
 
 .overlap-group7 {
@@ -54,7 +56,7 @@
     background-color: var(--emerald);
     display: flex;
     height: 240px;
-    min-width: 1440px;
+    min-width: 100%;
 }
 
 .social-media {
@@ -114,7 +116,7 @@
     font-weight: 300;
     letter-spacing: 0;
     margin-right: 4px;
-    margin-top: 84px;
+    margin-top: 15%;
     min-height: 31px;
     width: 182px;
 }
@@ -123,6 +125,7 @@
     height: 115px;
     object-fit: cover;
     width: 218px;
+    margin-top: 15%;
 }
 
 .creators-container {
@@ -193,7 +196,8 @@
     align-items: center;
     display: flex;
     margin-left: 4px;
-    margin-top: 115px;
+    padding-top: 78px;
+    margin-top: 37px;
     min-width: 1291px;
 }
 
@@ -227,7 +231,9 @@
 
 .earth {
     height: 458px;
-    width: 620px;
+    width: 486px;
+    margin-left: 77px;
+    margin-right: 77px;
 }
 
 .context-1 {
@@ -235,7 +241,8 @@
     display: flex;
     flex-direction: column;
     margin-left: 26px;
-    margin-top: 115px;
+    padding-top: 78px;
+    margin-top: 37px;
     min-height: 443px;
     width: 1312px;
 }
@@ -350,6 +357,14 @@
     position: absolute;
     top: 0;
     width: 7px;
+}
+.bigLine{
+    position: absolute;
+    width: 934px;
+    height: 3px;
+    left: 134px;
+    top: 37px;
+    background-color: #1BAB8D;
 }
 
 .line20 {
@@ -512,7 +527,8 @@
     display: flex;
     flex-direction: column;
     margin-left: 2px;
-    margin-top: 115px;
+    padding-top: 78px;
+    margin-top: 37px;
     min-height: 456px;
     width: 1194px;
 }
@@ -566,8 +582,9 @@
 .header {
     align-items: flex-start;
     display: flex;
-    margin-left: 8px;
-    min-width: 1448px;
+    position: fixed;
+    min-width: 100%;
+    z-index: 1;
 }
 
 .overlap-group1 {
@@ -575,7 +592,7 @@
     background-color: var(--emerald);
     display: flex;
     height: 78px;
-    min-width: 1440px;
+    min-width: 100%;
 }
 
 .login-button {
@@ -607,7 +624,6 @@
 }
 
 .login {
-    -webkit-text-stroke: 1px var(--black);
     color: var(--emerald);
     font-family: var(--font-family-calibri-regular);
     font-size: var(--font-size-m);
@@ -629,10 +645,11 @@
     position: absolute;
     top: 2px;
     width: 32px;
+    margin-left: 165px;
+    margin-top: 13px;
 }
 
-.place {
-    -webkit-text-stroke: 1px var(--black);
+.contact {
     height: 54px;
     letter-spacing: 0;
     margin-left: 81px;
@@ -643,10 +660,8 @@
 }
 
 .context {
-    -webkit-text-stroke: 1px var(--black);
     cursor: pointer;
     height: 54px;
-    letter-spacing: 0;
     margin-left: 271px;
     margin-top: 2px;
     text-align: center;
@@ -655,7 +670,6 @@
 }
 
 .missions {
-    -webkit-text-stroke: 1px var(--black);
     cursor: pointer;
     height: 54px;
     letter-spacing: 0;
@@ -668,6 +682,7 @@
 
 .factory-logo {
     align-self: flex-start;
+    margin-left: 12px;
     cursor: pointer;
     height: 58px;
     object-fit: cover;
@@ -675,7 +690,6 @@
 }
 
 .recupartenaires {
-    -webkit-text-stroke: 1px var(--black);
     height: 54px;
     letter-spacing: 0;
     margin-left: 81px;
@@ -689,11 +703,18 @@
     align-items: flex-start;
     display: flex;
     margin-left: 4px;
-    margin-top: 115px;
+    padding-top: 78px;
+    margin-top: 37px;
     min-width: 1237px;
 }
 
 .overlap-group2 {
+    height: 464px;
+    position: relative;
+    width: 620px;
+}
+
+.overlap-group2-2{
     background-image: url(https://anima-uploads.s3.amazonaws.com/projects/628df60bf60c1bf90ab4bae6/releases/6294b6b1f76c9a7b71fe9f3f/img/video@1x.png);
     background-position: 50% 50%;
     background-size: cover;
@@ -712,7 +733,7 @@
 
 .recupartenaire {
     height: 84px;
-    left: 0;
+    margin-left: 268px;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -762,10 +783,13 @@
     letter-spacing: 0;
     position: absolute;
     text-shadow: 0px 4px 4px #00000040;
-    top: 45px;
+    top: 5px;
     width: 509px;
 }
 
 .span0 {
     color: var(--emerald);
+}
+.span1 {
+    color: var(--black);
 }
