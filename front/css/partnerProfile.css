@@ -19,6 +19,7 @@
     src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
 }
 
+
 .partnerprofile {
     align-items: flex-start;
     background-color: var(--white);
@@ -60,7 +61,8 @@
     box-shadow: 0px 4px 39px 9px #51459f17;
     display: flex;
     flex-direction: column;
-    margin-top: 61px;
+    margin-top: 20px;
+    margin-left: 550px;
     min-height: 407px;
     width: 741px;
 }
@@ -242,6 +244,8 @@
     flex-direction: column;
     min-height: 407px;
     width: 741px;
+    margin-left: 550px;
+    margin-top: -985px;
 }
 
 .overlap-group-container {
@@ -249,7 +253,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 112px;
-    margin-top: 145px;
+    margin-top: 145x;
     min-height: 746px;
     width: 369px;
     z-index: 1;
@@ -274,7 +278,6 @@
     border-radius: 10px;
     display: flex;
     height: 42px;
-    margin-right: 21px;
     margin-top: 22px;
     min-width: 268px;
     padding: 0 44px;
@@ -285,6 +288,8 @@
     min-height: 22px;
     text-align: center;
     width: 179px;
+    margin-left: 40px;
+
 }
 
 .trash-total-collected-header {
@@ -337,6 +342,7 @@
     min-height: 348px;
     padding: 23px 22px;
     width: 355px;
+    margin-top: 100px;
 }
 
 .mail-info-placeholder {
