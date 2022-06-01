@@ -5,6 +5,12 @@
     <title>Connexion</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/connection.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/styleGuide.css">
+
+    <!-- import ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/login/sign_in.js"></script>
+    <script src="../js/login/modules/logger.js"></script>
+
 </head>
 <body class="body">
 <div class="connectionPage screen">
@@ -20,13 +26,13 @@
       <div class="mailDiv">
         <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Adresse mail</div>
         <div class="input">
-          <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" type="text" placeholder="you@example.com">
+          <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="email" type="text" placeholder="you@example.com">
         </div>
       </div>
       <div class="passwordDiv">
         <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Mot de passe</div>
         <div class="input">
-          <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" type="password" placeholder="••••••••">
+          <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="password" type="password" placeholder="••••••••">
           <img class="iconPassword" src="../img/iconPassword.png" />
         </div>
       </div>
@@ -35,7 +41,7 @@
         <div class="switchToRegister valign-text-middle mulish-normal-blue-ribbon-12px">Pas encore de compte ?</div>
       </div>
       <div class="overlap-group">
-        <div class="connectionButton valign-text-middle">Connexion</div>
+        <div id="connectionButton" class="connectionButton valign-text-middle">Connexion</div>
       </div>
     </div>
   </div>

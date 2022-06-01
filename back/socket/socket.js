@@ -14,6 +14,8 @@ module.exports = function (http, session) {
 
         socket.on("disconnect", () => {
             // L'utilisateur ferme la page
+            delete socket.handshake.session.email;
+            socket.handshake.session.save();
         });
 
         socket.on("leave", () => {
@@ -23,14 +25,24 @@ module.exports = function (http, session) {
         });
 
 
-        socket.on("askToken", () => {
+        /*socket.on("askToken", () => {
             if (socket.handshake.session.admin) {
                 console.log(socket.handshake.session.email + socket.handshake.session.password);
                 console.log(md5(socket.handshake.session.email + socket.handshake.session.password));
                 socket.emit("getToken", md5(socket.handshake.session.email + socket.handshake.session.password));
             }
-        });
+        });*/
 
+        // get email
+        socket.on("getEmail", () => {
+            if (socket.handshake.session.email) {
+                socket.emit("getEmail", socket.handshake.session.email);
+            }
+            else {
+                socket.emit("getEmail", false);
+            }
+        }
+        );
  
     });
 

@@ -84,5 +84,6 @@ module.exports = function (app, session) {
     // Ajouter un produit
     app.post("/api/products/add", urlencodedParser, api_product.addProduct);
 
-
+    // delete a product by id
+    app.post("/api/products/delete/:id", urlencodedParser, api_product.deleteProduct);
 };

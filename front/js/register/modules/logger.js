@@ -1,9 +1,9 @@
 let logger = (function () {
-  function request_login(email, password) {
+  function request_signup(email, password) {
     console.log(email + " essaye de se connecter");
     $.ajax({
       type: "POST",
-      url: "/user/login/",
+      url: "/user/signup/",
       data: {
         email: email,
         password: password,
@@ -16,8 +16,8 @@ let logger = (function () {
   }
 
   return {
-    sign_in(email, password) {
-      request_login(email, password);
+    sign_up(email, password) {
+      request_signup(email, password);
     },
   };
 })();
