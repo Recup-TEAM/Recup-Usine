@@ -1,0 +1,431 @@
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+
+.partnerprofile {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    height: 1079px;
+    width: 1440px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.header {
+    height: 88px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 1440px;
+    z-index: 3;
+}
+
+.overlap-group-container-1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 101px;
+    margin-top: 145px;
+    min-height: 875px;
+    width: 743px;
+    z-index: 2;
+}
+
+.overlap-group3 {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 4px 39px 9px #51459f17;
+    display: flex;
+    flex-direction: column;
+    margin-top: 61px;
+    min-height: 407px;
+    width: 741px;
+}
+
+.frame-34445 {
+    align-items: flex-start;
+    display: flex;
+    height: 20px;
+    margin-left: 26px;
+    margin-top: 3px;
+    min-width: 651px;
+}
+
+.feb-2022 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-left: 66px;
+    margin-top: -1px;
+    min-height: 20px;
+    min-width: 53px;
+    white-space: nowrap;
+}
+
+.name {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-left: 66px;
+    margin-top: -1px;
+    min-height: 20px;
+    min-width: 51px;
+    white-space: nowrap;
+}
+
+.nov-2021 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-left: 66px;
+    margin-top: -1px;
+    min-height: 20px;
+    min-width: 55px;
+    white-space: nowrap;
+}
+
+.dec-2021 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-left: 66px;
+    margin-top: -1px;
+    min-height: 20px;
+    min-width: 54px;
+    white-space: nowrap;
+}
+
+.mar-2022 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-left: 66px;
+    margin-top: -1px;
+    min-height: 20px;
+    white-space: nowrap;
+}
+
+.oct-2021 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1px;
+    min-height: 20px;
+    min-width: 52px;
+    white-space: nowrap;
+}
+
+.flex-row {
+    align-items: center;
+    display: flex;
+    height: 272px;
+    margin-right: 14px;
+    margin-top: 24px;
+    min-width: 679px;
+}
+
+.horizontal-lines {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 21px;
+    margin-top: 4px;
+    min-height: 252px;
+    width: 645px;
+}
+
+.line {
+    height: 1px;
+    margin-top: 41px;
+    width: 645px;
+}
+
+.line-5 {
+    height: 1px;
+    width: 645px;
+}
+
+.frame-34446 {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    min-height: 272px;
+    width: 13px;
+}
+
+.number-2 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: 22px;
+    min-height: 20px;
+    min-width: 7px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.number-1 {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: 22px;
+    min-height: 20px;
+    min-width: 13px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.number {
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1px;
+    min-height: 20px;
+    min-width: 13px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.overlap-group {
+    align-self: flex-start;
+    height: 64px;
+    position: relative;
+    width: 677px;
+}
+
+.vector-18 {
+    height: 60px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 649px;
+}
+
+.dchets {
+    left: 24px;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 24px;
+    white-space: nowrap;
+}
+
+.vector-19 {
+    height: 60px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 677px;
+}
+
+.overlap-group4 {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 4px 39px 9px #51459f17;
+    display: flex;
+    flex-direction: column;
+    min-height: 407px;
+    width: 741px;
+}
+
+.overlap-group-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 112px;
+    margin-top: 145px;
+    min-height: 746px;
+    width: 369px;
+    z-index: 1;
+}
+
+.overlap-group1 {
+    align-items: flex-start;
+    background-color: var(--aqua-squeeze);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 29px;
+    min-height: 369px;
+    padding: 25px 22px;
+    width: 355px;
+}
+
+.overlap-group-2 {
+    align-items: center;
+    align-self: flex-end;
+    background-color: #ab1b39;
+    border-radius: 10px;
+    display: flex;
+    height: 42px;
+    margin-right: 21px;
+    margin-top: 22px;
+    min-width: 268px;
+    padding: 0 44px;
+}
+
+.btn-ask-collect-placeholder {
+    letter-spacing: 0;
+    min-height: 22px;
+    text-align: center;
+    width: 179px;
+}
+
+.trash-total-collected-header {
+    letter-spacing: 0;
+    margin-top: 15px;
+    min-height: 22px;
+    width: 279px;
+}
+
+.trash-to-collect-header {
+    letter-spacing: 0;
+    margin-top: 32px;
+    min-height: 22px;
+    width: 308px;
+}
+
+.trash-total-collected-placeholder {
+    letter-spacing: 0;
+    margin-top: 9px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.trash-to-collect-placeholder {
+    letter-spacing: 0;
+    margin-top: 9px;
+    min-height: 48px;
+    width: 197px;
+}
+
+.trash-type-placeholder {
+    letter-spacing: 0;
+    margin-top: 9px;
+    min-height: 44px;
+    width: 308px;
+}
+
+.trash-type-header {
+    letter-spacing: 0;
+    min-height: 22px;
+    width: 164px;
+}
+
+.overlap-group2 {
+    align-items: flex-start;
+    background-color: var(--aqua-squeeze);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 348px;
+    padding: 23px 22px;
+    width: 355px;
+}
+
+.mail-info-placeholder {
+    letter-spacing: 0;
+    margin-top: 7px;
+    min-height: 22px;
+    width: 308px;
+}
+
+.overlap-group-1 {
+    align-self: flex-end;
+    background-color: #1bab8d;
+    border-radius: 10px;
+    height: 42px;
+    margin-right: 21px;
+    margin-top: 22px;
+    position: relative;
+    width: 268px;
+}
+
+.btn-edit-placeholder {
+    left: 0;
+    letter-spacing: 0;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 242px;
+}
+
+.icon {
+    height: 20px;
+    left: 188px;
+    position: absolute;
+    top: 11px;
+    width: 20px;
+}
+
+.mail-info-header {
+    letter-spacing: 0;
+    margin-top: 21px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.flex-row-1 {
+    align-items: flex-start;
+    display: flex;
+    min-width: 308px;
+}
+
+.profil-img {
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    height: 90px;
+    width: 90px;
+}
+
+.flex-col {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 21px;
+    min-height: 90px;
+    width: 197px;
+}
+
+.inscription-date-placeholder {
+    letter-spacing: 0;
+    margin-top: 7px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.inscription-date-header {
+    letter-spacing: 0;
+    margin-top: 15px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.name-1 {
+    letter-spacing: 0;
+    min-height: 24px;
+    width: 197px;
+}
+
+.subscription {
+    letter-spacing: 0;
+    margin-top: 15px;
+    min-height: 22px;
+    width: 308px;
+}

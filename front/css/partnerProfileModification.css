@@ -1,0 +1,62 @@
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.partnerprofilemodification {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    height: 1079px;
+    width: 1440px;
+}
+
+.header {
+    height: 88px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 1440px;
+    z-index: 2;
+}
+
+.overlap-group {
+    height: 521px;
+    position: relative;
+    width: 470px;
+    z-index: 1;
+}
+
+.mail-modif-div {
+    height: 432px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 470px;
+}
+
+.partner-info-div {
+    height: 348px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 363px;
+}
+
+.return-btn {
+    cursor: pointer;
+    height: 47px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 121px;
+}
+
+.password-modif-div {
+    height: 521px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 470px;
+}

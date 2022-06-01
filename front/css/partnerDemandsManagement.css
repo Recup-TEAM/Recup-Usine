@@ -1,0 +1,221 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+.partnerdemandsmanagement {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    height: 916px;
+    width: 1440px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.flex-col {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+    margin-top: 111px;
+    min-height: 726px;
+    width: 459px;
+    z-index: 1;
+}
+
+.overlap-group {
+    align-items: center;
+    background-color: var(--soft-peach);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2px;
+    margin-top: 66px;
+    min-height: 291px;
+    width: 350px;
+}
+
+.logo {
+    background-color: var(--alto);
+    border-radius: 15px;
+    height: 200px;
+    margin-top: 24px;
+    width: 300px;
+}
+
+.name {
+    height: 67px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 300px;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlap-group3 {
+    align-items: center;
+    background-color: var(--soft-peach);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2px;
+    margin-top: 31px;
+    min-height: 291px;
+    width: 350px;
+}
+
+.search-input {
+    align-items: flex-start;
+    align-self: flex-start;
+    background-color: var(--white);
+    border: 2px solid var(--emerald);
+    border-radius: 10px;
+    display: flex;
+    height: 47px;
+    min-width: 348px;
+    padding: 3.5px 12px;
+}
+
+.research-icon {
+    align-self: center;
+    height: 27px;
+    margin-left: 12px;
+    object-fit: cover;
+    width: 26px;
+}
+
+.placeholder {
+    color: #757575;
+    font-family: var(--font-family-calibri-light);
+    font-size: var(--font-size-m2);
+    font-weight: 300;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 286px;
+}
+
+.overlap-group-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 51px;
+    margin-top: 224px;
+    min-height: 613px;
+    width: 352px;
+    z-index: 3;
+}
+
+.overlap-group2 {
+    align-items: center;
+    background-color: var(--soft-peach);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 291px;
+    width: 350px;
+}
+
+.overlap-group4 {
+    align-items: center;
+    background-color: var(--soft-peach);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 31px;
+    min-height: 291px;
+    width: 350px;
+}
+
+.flex-col-1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 51px;
+    margin-top: 116px;
+    min-height: 399px;
+    width: 459px;
+    z-index: 2;
+}
+
+.return-btn {
+    align-items: flex-start;
+    align-self: flex-end;
+    cursor: pointer;
+    display: flex;
+    min-width: 123px;
+}
+
+.overlap-group5 {
+    align-items: flex-start;
+    background-color: var(--emerald);
+    border-radius: 4px;
+    display: flex;
+    height: 47px;
+    justify-content: flex-end;
+    min-width: 121px;
+    padding: 10px 11.9px;
+}
+
+.shape {
+    align-self: center;
+    height: 21px;
+    margin-bottom: 0.03px;
+    width: 25px;
+}
+
+.placeholder-1 {
+    color: var(--white);
+    font-family: var(--font-family-calibri-regular);
+    font-size: var(--font-size-m2);
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-left: 10px;
+    min-height: 25px;
+    width: 59px;
+}
+
+.overlap-group1 {
+    align-items: center;
+    background-color: var(--soft-peach);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 61px;
+    min-height: 291px;
+    width: 350px;
+}
+
+.header {
+    height: 88px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 1440px;
+    z-index: 4;
+}
