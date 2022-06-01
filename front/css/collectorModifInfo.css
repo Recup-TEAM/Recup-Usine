@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,600|Mulish:400");
+
+.collectormodifinfo {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 999px;
+    width: 360px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modif-password-div {
+    align-items: flex-start;
+    display: flex;
+    height: 445px;
+    margin-left: 2px;
+    margin-top: 31px;
+    min-width: 357px;
+}
+
+.overlap-group1 {
+    align-items: flex-end;
+    background-color: var(--aqua-squeeze);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 445px;
+    padding: 29px 23px;
+    width: 355px;
+}
+
+.overlap-group-1 {
+    align-items: flex-start;
+    background-color: var(--emerald);
+    border-radius: 20px;
+    display: flex;
+    height: 42px;
+    justify-content: flex-end;
+    margin-top: 29px;
+    min-width: 300px;
+    padding: 11px 98px;
+}
+
+.placeholder-4 {
+    letter-spacing: 0;
+    min-height: 19px;
+    text-align: center;
+    width: 103px;
+}
+
+.old-password-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    min-height: 74px;
+    width: 300px;
+}
+
+.header {
+    height: 19px;
+    letter-spacing: 0;
+    margin-top: -1px;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.x-input {
+    align-items: flex-start;
+    background-color: var(--alto);
+    border-radius: 4px;
+    display: flex;
+    height: 50px;
+    margin-top: 6px;
+    min-width: 300px;
+    padding: 6px 12px;
+}
+
+.icon {
+    align-self: center;
+    height: 16px;
+    margin-left: 12px;
+    width: 16px;
+}
+
+.placeholder-1 {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 248px;
+}
+
+.new-password-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1px;
+    margin-top: 22px;
+    min-height: 74px;
+    width: 300px;
+}
+
+.header-3 {
+    align-self: center;
+    height: 24px;
+    letter-spacing: 0;
+    margin-left: 1px;
+    min-width: 276px;
+}
+
+.confirm-new-password-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 22px;
+    min-height: 74px;
+    width: 300px;
+}
+
+.header-1 {
+    height: 61px;
+    margin-top: -4px;
+    width: 360px;
+}
+
+.btn-return {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    margin-left: 11px;
+    margin-top: 18px;
+    min-width: 104px;
+}
+
+.overlap-group3 {
+    height: 36px;
+    position: relative;
+    width: 102px;
+}
+
+.background {
+    background-color: var(--emerald);
+    border-radius: 4px;
+    height: 36px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 98px;
+}
+
+.shape {
+    height: 16px;
+    left: 13px;
+    position: absolute;
+    top: 6px;
+    width: 20px;
+}
+
+.placeholder-2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xs3);
+    font-weight: 500;
+    left: 41px;
+    letter-spacing: 0;
+    position: absolute;
+    top: 8px;
+    width: 61px;
+}
+
+.modif-mail-div {
+    align-items: flex-start;
+    display: flex;
+    height: 349px;
+    margin-left: 2px;
+    margin-top: 19px;
+    min-width: 357px;
+}
+
+.overlap-group2 {
+    align-items: flex-start;
+    background-color: var(--aqua-squeeze);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 349px;
+    padding: 29px 23px;
+    width: 355px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    align-self: flex-end;
+    background-color: var(--emerald);
+    border-radius: 20px;
+    display: flex;
+    height: 42px;
+    margin-top: 43px;
+    min-width: 300px;
+    padding: 11px 104px;
+}
+
+.placeholder-3 {
+    letter-spacing: 0;
+    min-height: 19px;
+    text-align: center;
+    width: 92px;
+}
+
+.confirm-mail-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 36px;
+    min-height: 60px;
+    width: 119px;
+}
+
+.placeholder {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 276px;
+}
+
+.mail-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 9px;
+    margin-top: 26px;
+    min-height: 60px;
+    width: 119px;
+}
+
+.header-2 {
+    align-self: flex-end;
+    height: 24px;
+    letter-spacing: 0;
+    margin-right: 20px;
+    min-width: 269px;
+}
