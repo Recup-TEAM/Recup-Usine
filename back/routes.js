@@ -13,6 +13,7 @@ module.exports = function (express, app, http) {
     const conn = require("./db_config");
     const socket = require("./socket/socket")(http, session);
     const api = require("./routes_api")(app, session);
+    const mail = require("./routes_mail")(app, session);
     
 
     // Config des dossiers de fichiers front
@@ -20,19 +21,19 @@ module.exports = function (express, app, http) {
 
     // Redirection acceuil
     app.get("/", (req, res) => {
-        if (!req.session.email) {
-            // Utilisateur non connecté
-            res.sendFile(path.join(__dirname, "../front/html/login.html"));
+        //if (!req.session.email) { res.sendFile(path.join(__dirname, "../front/html/login.html"));}    
+        res.sendFile(path.join(__dirname, "../front/html/index.html"));
+    });
+  
+    //create automatic redirection from name to front/html/name.html
+    app.get("/:name", (req, res) => {
+        // if name is not a html file, redirect to index
+        if (req.params.name.indexOf(".html") === -1) {
+            res.redirect("/");
         } else {
-            // Utilisateur connecté
-            res.sendFile(path.join(__dirname, "../front/html/index.html"));
+        res.sendFile(path.join(__dirname, "../front/html/" + req.params.name + ".html"));
+        
         }
     });
-
-    // Login
-    app.get("/login", (req, res) => {
-        res.sendFile(path.join(__dirname, "../front/html/login.html"));
-    });
-
 
 };
