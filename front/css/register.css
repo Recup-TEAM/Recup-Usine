@@ -123,6 +123,7 @@
     margin-left: 5px;
     min-height: 71px;
     width: 353px;
+    
 }
 
 .x-input {
@@ -132,6 +133,7 @@
     display: flex;
     height: 50px;
     margin-top: 6px;
+    margin-left: -90px;
     min-width: 353px;
     padding: 6px 12px;
 }
@@ -154,7 +156,8 @@
 .header {
     height: 20px;
     letter-spacing: 0;
-    margin-top: -1px;
+    margin-top: -10px;
+    margin-left: -65px;
 }
 
 .overlap-group {
@@ -176,6 +179,7 @@
     letter-spacing: 0;
     text-align: center;
     width: 285px;
+    margin-left: 35px;
 }
 
 .flex-row {
@@ -183,6 +187,8 @@
     display: flex;
     height: 75px;
     min-width: 353px;
+    margin-bottom: 15px;
+    margin-top: 25px;
 }
 
 .name-div {
@@ -200,6 +206,7 @@
     display: flex;
     height: 50px;
     margin-top: 6px;
+    margin-left: -70px;
     min-width: 227px;
     padding: 6px 12px;
 }
@@ -231,6 +238,7 @@
     letter-spacing: 0;
     text-align: center;
     width: 50px;
+    margin-right: 50px;
 }
 
 .mail-div {
@@ -259,7 +267,7 @@
     height: 14px;
     letter-spacing: 0;
     margin-left: 5px;
-    margin-top: 103px;
+    margin-top: 20pxpx;
     text-decoration: underline;
     width: 154px;
 }
@@ -297,6 +305,7 @@
     display: flex;
     height: 129px;
     margin-top: 6px;
+    margin-left: -90px;
     min-width: 353px;
     padding: 8px 12px;
 }
