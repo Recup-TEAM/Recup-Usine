@@ -29,6 +29,7 @@
 body{
     margin:0px;
 }
+
 .index {
     align-items: center;
     background-color: var(--white);
@@ -324,55 +325,66 @@ body{
 .lines {
     align-items: flex-start;
     display: flex;
-    min-width: 1286px;
+    width: 1286px;
+}
+/* slider */
+
+@keyframes display {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
 }
 
-.line1765 {
-    align-self: flex-end;
-    background-color: var(--emerald);
-    border-radius: 5px;
-    height: 10px;
-    margin-left: 205px;
-    transform: rotate(-180deg);
-    width: 10px;
+.pic-ctn {
+    position: relative;
+    width: 550px;
 }
+
+.pic-ctn > img {
+    position: absolute;
+    display: block;
+    margin: auto;
+    top: 0;
+    opacity: 0;
+    width: 550px;
+    animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+img:nth-child(5) {
+    animation-delay: 8s;
+}
+/* fin slider */
 
 .overlap-group5 {
     height: 72px;
     position: relative;
     width: 934px;
-}
-
-.line-2 {
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 10px;
-}
-
-.line4 {
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 7px;
-}
-.bigLine{
-    position: absolute;
-    width: 934px;
-    height: 3px;
-    left: 134px;
-    top: 37px;
-    background-color: #1BAB8D;
-}
-
-.line20 {
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 5px;
 }
 
 .overlap-group-1 {
@@ -394,14 +406,6 @@ body{
     width: 10px;
 }
 
-.line {
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 2px;
-}
-
 .overlap-group3 {
     border-radius: 5px;
     height: 10px;
@@ -411,50 +415,11 @@ body{
     width: 10px;
 }
 
-.line-2015 {
-    align-items: flex-start;
-    display: flex;
-    height: 72px;
-    left: 745px;
-    min-width: 10px;
-    position: absolute;
-    top: 0;
-    transform: rotate(-180deg);
-}
-
 .overlap-group {
     border-radius: 5px;
     height: 10px;
     position: relative;
     width: 10px;
-}
-
-.line-1 {
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: rotate(180deg);
-    width: 2px;
-}
-
-.line-1-1 {
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 934px;
-}
-
-.line1870 {
-    align-items: flex-start;
-    display: flex;
-    height: 72px;
-    left: 317px;
-    min-width: 10px;
-    position: absolute;
-    top: 0;
-    transform: rotate(-180deg);
 }
 
 .overlap-group1-1 {
