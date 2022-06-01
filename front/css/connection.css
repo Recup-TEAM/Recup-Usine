@@ -1,0 +1,190 @@
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Mulish:400");
+
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+
+.connectionpage {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 720px;
+    width: 1440px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.header-1 {
+    height: 88px;
+    width: 1440px;
+}
+
+.flex-row {
+    align-items: center;
+    display: flex;
+    height: 464px;
+    margin-right: 32px;
+    margin-top: 42px;
+    min-width: 1076px;
+}
+
+.logo-partenaire-sans-fond {
+    height: 390px;
+    margin-top: 6px;
+    object-fit: cover;
+    width: 465px;
+}
+
+.overlap-group1 {
+    align-items: flex-end;
+    background-color: #e8f6f3;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    display: flex;
+    flex-direction: column;
+    margin-left: 143px;
+    min-height: 464px;
+    padding: 49px 51px;
+    width: 462px;
+}
+
+.password-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1px;
+    margin-top: 37px;
+    min-height: 75px;
+    width: 353px;
+}
+
+.x-input {
+    align-items: flex-start;
+    background-color: var(--alto);
+    border-radius: 4px;
+    display: flex;
+    height: 50px;
+    margin-top: 6px;
+    min-width: 353px;
+    padding: 6px 12px;
+}
+
+.icon {
+    align-self: center;
+    height: 16px;
+    margin-left: 12px;
+    width: 16px;
+}
+
+.placeholder-1 {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 301px;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    height: 20px;
+    letter-spacing: 0;
+    margin-top: -1px;
+}
+
+.link-container {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 10px;
+    min-width: 354px;
+}
+
+.forget-password-link {
+    height: 15px;
+    letter-spacing: 0;
+    min-width: 111px;
+    text-decoration: underline;
+}
+
+.switch-to-register-link {
+    cursor: pointer;
+    height: 15px;
+    letter-spacing: 0;
+    margin-left: 112px;
+    text-decoration: underline;
+}
+
+.mail-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1px;
+    margin-top: 25px;
+    min-height: 60px;
+    width: 353px;
+}
+
+.placeholder {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 329px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background-color: #1bab8d;
+    border-radius: 4px;
+    display: flex;
+    margin-right: 1px;
+    margin-top: 37px;
+    min-width: 353px;
+    padding: 0 33.3px;
+}
+
+.btn-text {
+    color: var(--white);
+    font-family: var(--font-family-calibri-regular);
+    font-size: var(--font-size-m2);
+    font-weight: 400;
+    height: 50px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 285px;
+}
+
+.header-2 {
+    align-self: flex-start;
+    color: var(--mine-shaft);
+    font-family: var(--font-family-calibri-bold);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    height: 32px;
+    letter-spacing: 0;
+    margin-left: 8px;
+}
