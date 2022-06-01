@@ -69,13 +69,14 @@
     min-height: 464px;
     padding: 49px 51px;
     width: 462px;
+    margin-top: 75px;
 }
 
 .password-div {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-right: 1px;
+    margin-right: 70px;
     margin-top: 37px;
     min-height: 75px;
     width: 353px;
@@ -123,6 +124,7 @@
     display: flex;
     margin-top: 10px;
     min-width: 354px;
+    margin-right: 65px;
 }
 
 .forget-password-link {
@@ -144,7 +146,7 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-right: 1px;
+    margin-right: 70px;
     margin-top: 25px;
     min-height: 60px;
     width: 353px;
@@ -162,7 +164,7 @@
     background-color: #1bab8d;
     border-radius: 4px;
     display: flex;
-    margin-right: 1px;
+    margin-right: 20px;
     margin-top: 37px;
     min-width: 353px;
     padding: 0 33.3px;
@@ -177,6 +179,7 @@
     letter-spacing: 0;
     text-align: center;
     width: 285px;
+    margin-left: 30px;
 }
 
 .header-2 {
@@ -187,5 +190,5 @@
     font-weight: 700;
     height: 32px;
     letter-spacing: 0;
-    margin-left: 8px;
+    margin-left: 40px;
 }
