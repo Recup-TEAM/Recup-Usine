@@ -21,13 +21,17 @@
     src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
 }
 
-.connectionpage {
+body{
+    margin:0px;
+}
+
+.connectionPage {
     align-items: center;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    height: 720px;
-    width: 1440px;
+    height: 100%;
+    width: 100%;
 }
 
 .hidden,
@@ -36,27 +40,58 @@
     visibility: hidden;
 }
 
-.header-1 {
-    height: 88px;
-    width: 1440px;
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.flex-row {
+/* header */
+.header {
+    align-items: flex-start;
+    display: flex;
+    position: fixed;
+    min-width: 100%;
+    z-index: 1;
+}
+
+.overlap-group0 {
+    align-items: center;
+    background-color: var(--emerald);
+    display: flex;
+    height: 78px;
+    min-width: 100%;
+}
+
+.logoHeader {
+    align-self: flex-start;
+    margin-left: 12px;
+    margin-top: 9px;
+    cursor: pointer;
+    height: 58px;
+    object-fit: cover;
+    width: 97px;
+}
+/* end header */
+
+/* connection */
+
+.connection {
     align-items: center;
     display: flex;
     height: 464px;
     margin-right: 32px;
+    padding-top: 78px;
     margin-top: 42px;
     min-width: 1076px;
 }
 
-.logo-partenaire-sans-fond {
+.logoRecupartenaires {
     height: 390px;
     margin-top: 6px;
     object-fit: cover;
     width: 465px;
 }
-
 
 .overlap-group1 {
     align-items: flex-end;
@@ -72,117 +107,7 @@
     margin-top: 75px;
 }
 
-.password-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-right: 70px;
-    margin-top: 37px;
-    min-height: 75px;
-    width: 353px;
-}
-
-.x-input {
-    align-items: flex-start;
-    background-color: var(--alto);
-    border-radius: 4px;
-    display: flex;
-    height: 50px;
-    margin-top: 6px;
-    min-width: 353px;
-    padding: 6px 12px;
-}
-
-.icon {
-    align-self: center;
-    height: 16px;
-    margin-left: 12px;
-    width: 16px;
-}
-
-.placeholder-1 {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 301px;
-}
-
-.valign-text-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.header {
-    height: 20px;
-    letter-spacing: 0;
-    margin-top: -1px;
-}
-
-.link-container {
-    align-items: flex-start;
-    display: flex;
-    margin-top: 10px;
-    min-width: 354px;
-    margin-right: 65px;
-}
-
-.forget-password-link {
-    height: 15px;
-    letter-spacing: 0;
-    min-width: 111px;
-    text-decoration: underline;
-}
-
-.switch-to-register-link {
-    cursor: pointer;
-    height: 15px;
-    letter-spacing: 0;
-    margin-left: 112px;
-    text-decoration: underline;
-}
-
-.mail-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-right: 70px;
-    margin-top: 25px;
-    min-height: 60px;
-    width: 353px;
-}
-
-.placeholder {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 329px;
-}
-
-.overlap-group {
-    align-items: flex-start;
-    background-color: #1bab8d;
-    border-radius: 4px;
-    display: flex;
-    margin-right: 20px;
-    margin-top: 37px;
-    min-width: 353px;
-    padding: 0 33.3px;
-}
-
-.btn-text {
-    color: var(--white);
-    font-family: var(--font-family-calibri-regular);
-    font-size: var(--font-size-m2);
-    font-weight: 400;
-    height: 50px;
-    letter-spacing: 0;
-    text-align: center;
-    width: 285px;
-    margin-left: 30px;
-}
-
-.header-2 {
+.connectionTitle {
     align-self: flex-start;
     color: var(--mine-shaft);
     font-family: var(--font-family-calibri-bold);
@@ -192,3 +117,122 @@
     letter-spacing: 0;
     margin-left: 40px;
 }
+
+.mailDiv {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+    margin-top: 25px;
+    min-height: 60px;
+    width: 353px;
+}
+
+.title {
+    height: 20px;
+    letter-spacing: 0;
+    margin-top: -1px;
+}
+
+.input {
+    align-items: flex-start;
+    background-color: var(--alto);
+    border-radius: 4px;
+    display: flex;
+    height: 50px;
+    margin-top: 6px;
+    width: 353px;
+    padding: 6px 12px;
+}
+
+.placeholderMail {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 329px;
+    margin-top: 5px;
+    border-style: hidden;
+    outline: none;
+    background-color: #1fe0;
+}
+
+.passwordDiv {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+    margin-top: 37px;
+    min-height: 75px;
+    width: 353px;
+}
+
+.placeholderPassword {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 301px;
+    margin-top: 5px;
+    border-style: hidden;
+    outline: none;
+    background-color: #1fe0;
+}
+
+.iconPassword {
+    align-self: center;
+    height: 16px;
+    margin-left: 12px;
+    width: 16px;
+}
+
+.linkContainer {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 10px;
+    min-width: 354px;
+    margin-right: 65px;
+}
+
+.forgetPassword {
+    cursor: pointer;
+    height: 15px;
+    letter-spacing: 0;
+    min-width: 111px;
+    text-decoration: underline;
+}
+
+.switchToRegister {
+    cursor: pointer;
+    height: 15px;
+    letter-spacing: 0;
+    min-width: 111px;
+    text-decoration: underline;
+    margin-left: 112px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background-color: #1bab8d;
+    border-radius: 4px;
+    display: flex;
+    margin-right: 46px;
+    margin-top: 37px;
+    min-width: 353px;
+    padding: 0 12px;
+}
+
+.connectionButton {
+    color: var(--white);
+    font-family: var(--font-family-calibri-regular);
+    font-size: var(--font-size-m2);
+    font-weight: 400;
+    height: 50px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 285px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+/* end connection */
+
+
