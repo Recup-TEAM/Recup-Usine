@@ -12,6 +12,9 @@ module.exports = function (app, session) {
      ***************/
     
     /* GET */
+    // Get if user is connected
+    app.get("/api/user/connected", urlencodedParser, api_user.getConnected);
+
     // Get le level du compte
     app.get("/api/user/get/compteLevel", urlencodedParser, api_user.getCompteLevel);
     
@@ -20,11 +23,15 @@ module.exports = function (app, session) {
 
     // Get current subscription of user
     app.get("/api/user/get/subscription", urlencodedParser, api_user.getSubscription);
+
     
     
     /* POST */
     // Connexion
     app.post("/user/login", urlencodedParser, api_user.login);
+
+    // Deconnexion
+    app.post("/user/logout", urlencodedParser, api_user.logout);
 
     // Inscription
     app.post("/user/signup", urlencodedParser, api_user.signup);

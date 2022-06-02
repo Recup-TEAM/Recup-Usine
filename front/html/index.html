@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!--Animate on Scroll-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <!-- import socketio 4.5.1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
 </head>
 <body class="body">
 <div class="index screen">
@@ -37,13 +38,10 @@
             <a href="" style="text-decoration:none">
                 <div class="contactHeader valign-text-middle calibri-regular-normal-white-22px">Contact</div>
             </a>
-            <div class="loginButton">
-                <div class="loginContainer">
-                    <div class="loginRectangle"></div>
-                    <img class="loginIcon" src="../img/login.png"/>
-                    <a href="../connexion" class="loginLink"><div class="login valign-text-middle">Connexion</div></a>
-                </div>
-            </div>
+        <div id="buttonSignInSignOut">
+
+        </div>
+
         </div>
     </div>
     <div class="pub" id="pub">
@@ -176,9 +174,46 @@
 </div>
 
 </body>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    let socket = io();
-    AOS.init();
-</script>
 </html>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    //when document is ready
+    $(document).ready(function () {
+      let socket = io();
+      AOS.init();
+
+      // ajax request to "/api/user/connected" to know if user if connected
+      $.ajax({
+        url: "/api/user/connected",
+        type: "GET",
+        success: (data) => {
+          let divConnexion;
+          if (!data.connected) {
+            divConnexion =
+              '<div class="loginButton">' +
+              '<div class="loginContainer">' +
+              '<div class="loginRectangle"></div>' +
+              '<img class="loginIcon" src="../img/login.png"/>' +
+              '<a href="../connexion" class="loginLink"><div class="login valign-text-middle">Connexion</div></a>' +
+              "</div>" +
+              "</div>";
+          } else {
+            //name = data.email split at @ first part
+            let name = data.email.split("@")[0];
+            divConnexion =
+              '<div class="loginButton">' +
+              '<div class="loginContainer">' +
+              '<div class="loginRectangle"></div>' +
+              //'<img class="loginIcon" src="../img/logout.png"/>' +
+              '<a href="../jsp" class="loginLink"><div class="login valign-text-middle">' + name +
+              "</div></a>" +
+              "</div>" +
+              "</div>";
+          }
+          $("#buttonSignInSignOut").html(divConnexion);
+        },
+      });
+    });
+  </script>
+  

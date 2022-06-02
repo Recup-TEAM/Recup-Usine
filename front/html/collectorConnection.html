@@ -5,6 +5,13 @@
     <title>collectorConnection</title>
   <link rel="stylesheet" type="text/css" media="screen" href="../css/collectorConnection.css">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/styleGuide.css">
+   <!-- import ajax -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!--- import md5 -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+   
+   <script src="../js/login/sign_in.js"></script>
+   <script src="../js/login/modules/logger.js"></script>
 </head>
 <body class="body">
 <div class="collectorConnection screen">
@@ -19,13 +26,13 @@
       <div class="mailDiv">
         <div class="title valign-text-middle inter-normal-mine-shaft-16px">Adresse mail</div>
         <div class="input">
-          <input class="placeholderMail valign-text-middle inter-light-sonic-silver-12px" type="text" placeholder="you@example.com">
+          <input class="placeholderMail valign-text-middle inter-light-sonic-silver-12px" id="email" type="text" placeholder="you@example.com">
         </div>
       </div>
       <div class="passwordDiv">
         <div class="title valign-text-middle inter-normal-mine-shaft-16px">Mot de passe</div>
         <div class="input">
-          <input class="placeholderPassword valign-text-middle inter-light-sonic-silver-12px" type="password" placeholder="•••••••••">
+          <input class="placeholderPassword valign-text-middle inter-light-sonic-silver-12px" id="password" type="password" placeholder="•••••••••">
           <img class="iconPassword" src="../img/iconPassword.png" />
         </div>
       </div>
