@@ -47,18 +47,18 @@ body {
     align-items: center;
     background-color: var(--emerald);
     display: flex;
-    height: 100px;
+    height: 120px;
     min-width: 100%;
 }
 
 .logoHeader {
     align-self: flex-start;
-    margin-left: 12px;
-    margin-top: 9px;
+    margin-left: 1%;
+    margin-top: 1.2%;
     cursor: pointer;
-    height: 78px;
+    height: 80%;
     object-fit: cover;
-    width: 130px;
+    clear: right;
 }
 /* end header */
 
@@ -71,7 +71,7 @@ body {
     height: 50px;
     letter-spacing: 0;
     width: 95%;
-    margin-top: 30%;
+    margin-top: 32%;
 }
 
 .collecteurInfoDiv {
