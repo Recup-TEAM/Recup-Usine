@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,600|Mulish:400");
 
+body {
+    margin: 0px;
+}
+
 .collectorinfo {
     align-items: center;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    height: 715px;
-    width: 360px;
+    height: 100%;
+    width: 100%;
 }
 
 .hidden,
@@ -15,87 +19,124 @@
     visibility: hidden;
 }
 
-.btn-return {
+/* header */
+
+.header {
+    align-items: flex-start;
+    display: flex;
+    position: fixed;
+    min-width: 100%;
+    z-index: 1;
+}
+
+.overlap-group0 {
+    align-items: center;
+    background-color: var(--emerald);
+    display: flex;
+    height: 100px;
+    min-width: 100%;
+}
+
+.logoHeader {
+    align-self: flex-start;
+    margin-left: 12px;
+    margin-top: 9px;
+    cursor: pointer;
+    height: 78px;
+    object-fit: cover;
+    width: 130px;
+    clear: right;
+}
+
+.profileImg {
+    align-self: flex-start;
+    margin-left: 75%;
+    margin-top: 12px;
+    cursor: pointer;
+    height: 80%;
+    object-fit: cover;
+    width: 78px;
+}
+/* end header */
+
+.returnButton {
     align-items: flex-start;
     align-self: flex-start;
     cursor: pointer;
     display: flex;
-    margin-left: 11px;
-    margin-top: 18px;
-    min-width: 104px;
+    margin-left: 5%;
+    margin-top: 15%;
+    margin-bottom: 2.5%;
+    width: 25%;
+    height: 10%;
 }
 
 .overlap-group4 {
-    height: 36px;
+    height: 78px;
     position: relative;
-    width: 102px;
+    width: 100%;
 }
 
-.background {
+.returnBackground {
     background-color: #1bab8d;
-    border-radius: 4px;
-    height: 36px;
+    border-radius: 15px;
+    height: 100%;
     left: 0;
     position: absolute;
     top: 0;
-    width: 98px;
+    width: 100%;
 }
 
-.placeholder-1 {
+.returnImg {
+    height: 30px;
+    left: 16px;
+    position: absolute;
+    top: 24px;
+    width: 40px;
+}
+
+.returnText {
     color: var(--white);
     font-family: var(--font-family-inter);
-    font-size: var(--font-size-xs3);
-    font-weight: 500;
-    left: 41px;
+    font-size: 45px;
+    font-weight: 400;
     letter-spacing: 0;
     position: absolute;
+    text-align: right;
     top: 8px;
-    width: 61px;
+    width: 90%;
 }
 
-.shape {
-    height: 15px;
-    left: 13px;
-    position: absolute;
-    top: 11px;
-    width: 20px;
-}
-
-.header-1 {
-    height: 61px;
-    margin-top: -4px;
-    width: 360px;
-}
-
-.more-info-div {
+.moreInfoDiv {
     align-items: flex-start;
     display: flex;
-    height: 122px;
-    margin-left: 4px;
-    margin-top: 18px;
-    min-width: 342px;
+    height: 30%;
+    margin: 2.5% 0;
+    width: 100%;
 }
 
 .overlap-group {
     align-items: flex-start;
     background-color: var(--aqua-squeeze);
     border-radius: 20px;
-    box-shadow: 0px 4px 10px #0000000d;
+    box-shadow: 0px 10px 10px #00000040;
     display: flex;
     flex-direction: column;
-    min-height: 122px;
-    padding: 20px 33px;
-    width: 338px;
+    height: 100%;
+    padding: 5% 5%;
+    margin: 0 5%;
+    width: 95%;
 }
 
-.placeholder {
-    letter-spacing: -0.17px;
-    margin-top: 7px;
-    min-height: 38px;
+.factoryName {
+    height: 30%;
+    width: 100%;
 }
 
-.header {
-    letter-spacing: -0.17px;
-    min-height: 19px;
-    width: 271px;
+.description {
+    margin-top: 1%;
+    height: 60%;
+    width: 100%;
 }
+
+
