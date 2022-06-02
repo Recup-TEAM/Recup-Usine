@@ -61,8 +61,8 @@ body {
 .connection {
     align-items: flex-start;
     display: flex;
-    height: 200%;
-    margin-top: 50%;
+    height: 100%;
+    margin-top: 35%;
     margin-bottom: 5%;
     width: 100%;
 }
