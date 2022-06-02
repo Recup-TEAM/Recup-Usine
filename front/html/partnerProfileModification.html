@@ -6,14 +6,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/partnerProfileModification.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/styleGuide.css"/>
 </head>
-<body>
-<div class="partnerprofilemodification screen">
-    <!--Header-->
-    <img class="header" src="header.png" />
+<body class="body">
+
+<!--Header-->
+<div class="header">
+    <div class="overlap-group0 align-self-flex-start">
+        <img alt="logoSansNom" class="logoHeader" src="../img/logoSansNom.png" />
+    </div>
+</div>
+
+<!--Modification profile-->
+<div class="partnerProfileModification">
 
     <!--Info Profile -->
-    <div class="infoProfileDiv flex-col">
-        <div class="overlap-group3">
+    <div class="profile">
+        <div class="infoProfile">
             <div class="flex-row">
                 <div class="profile-img"></div>
                 <div class="flex-col-1">
@@ -24,12 +31,12 @@
             </div>
             <div class="mail-info-header calibri-light-nevada-18px">Adresse mail :</div>
             <div class="mail-info-placeholder calibri-light-nevada-18px">you@example.com</div>
-            <div class="cription-date-header calibri-light-nevada-18px">Type d’abonnement :</div>
-            <div class="cription-date-header calibri-light-nevada-18px">Date de renouvellement :</div>
+            <div class="subscription-date-header calibri-light-nevada-18px">Type d’abonnement :</div>
+            <div class="subscription-date-header calibri-light-nevada-18px">Date de renouvellement :</div>
         </div>
-        <div class="return-btn">
+        <div class="returnButton">
             <div class="overlap-group4">
-                <img class="shape" src="shape-1.svg" />
+                <img alt="returnArrow" class="shape" src="shape-1.svg" />
                 <div class="placeholder calibri-regular-normal-white-20px">retour</div>
             </div>
         </div>
@@ -37,33 +44,63 @@
 
     <!--Change mail div-->
     <div class="mailChangeDiv">
-        <div class="overlap-group1">
-            <h1 class="header-1 valign-text-middle calibri-bold-mine-shaft-26px">Changer prix de l’abonnement</h1>
-            <div class="new-price">
-                <div class="header-2 valign-text-middle">Nouveau prix</div>
-                <div class="price-input">
-                    <div class="placeholder-1 valign-text-middle">10000€</div>
+        <div class="container">
+            <h1 class="headerChange calibri-bold-mine-shaft-26px">Changer votre mail</h1>
+
+            <div class="mailDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Nouvelle adresse mail</div>
+                <div class="input">
+                    <input class="placeholderMail valign-text-middle calibri-light-sonic-silver-16px" id="newEmail" type="text" placeholder="you@example.com">
                 </div>
             </div>
-            <div class="overlap-group">
-                <div class="placeholder-2 valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
+
+            <div class="mailDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Confirmer adresse mail</div>
+                <div class="input">
+                    <input class="placeholderMail valign-text-middle calibri-light-sonic-silver-16px" id="confirmNewMail" type="text" placeholder="you@example.com">
+                </div>
             </div>
+
+            <div class="buttonDiv">
+                <div id="confirmButtonMailChange" class="confirmButton valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
+            </div>
+
         </div>
     </div>
 
     <!--Change password div-->
     <div class="passwordChangeDiv">
-        <div class="overlap-group2">
-            <img class="vector" src="vector.svg" />
-            <div class="header-3 valign-text-middle calibri-bold-mine-shaft-26px">Changer la fréquence de paiement</div>
-            <div class="nav-item">
-                <div class="item-de-niveau-1 valign-text-middle">Types d’abonnement</div>
+        <div class="container">
+            <h1 class="headerChange calibri-bold-mine-shaft-26px">Changer votre mot de passe</h1>
+
+            <div class="passwordDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Ancien mot de passe</div>
+                <div class="input">
+                    <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="oldPassword" type="password" placeholder="••••••••">
+                </div>
             </div>
-            <div class="overlap-group-1">
-                <div class="placeholder-3 valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
+
+            <div class="passwordDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Nouveau mot de passe</div>
+                <div class="input">
+                    <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="newPassword" type="password" placeholder="••••••••">
+                </div>
             </div>
+
+            <div class="passwordDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Confirmer mot de passe</div>
+                <div class="input">
+                    <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="confirmNewPassword" type="password" placeholder="••••••••">
+                </div>
+            </div>
+
+            <div class="buttonDiv">
+                <div id="confirmButtonPasswordChange" class="confirmButton valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
+            </div>
+
         </div>
     </div>
+
 </div>
 </body>
 </html>
