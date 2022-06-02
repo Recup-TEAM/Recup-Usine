@@ -1,7 +1,22 @@
-.hidden,
-.hidden * {
-    pointer-events: none;
-    visibility: hidden;
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
 }
 
 .partnerprofilemodification {
@@ -12,51 +27,311 @@
     width: 1440px;
 }
 
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
 .header {
     height: 88px;
     left: 0;
     position: fixed;
     top: 0;
     width: 1440px;
+    z-index: 4;
+}
+
+.passwordChangeDiv {
+    align-items: flex-start;
+    display: flex;
+    height: 362px;
+    margin-left: 62px;
+    margin-top: 132px;
+    min-width: 464px;
     z-index: 2;
 }
 
-.overlap-group {
-    height: 521px;
-    position: relative;
-    width: 470px;
+.overlap-group2 {
+    align-items: center;
+    background-color: var(--aqua-squeeze);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    display: flex;
+    flex-direction: column;
+    min-height: 362px;
+    width: 462px;
+}
+
+.header-3 {
+    height: 31px;
+    letter-spacing: 0;
+    margin-right: 15px;
+    margin-top: 30px;
+    text-align: center;
+    width: 393px;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlap-group-1 {
+    align-items: flex-start;
+    background-color: var(--emerald);
+    border-radius: 4px;
+    display: flex;
+    margin-right: 15px;
+    margin-top: 159px;
+    min-width: 353px;
+    padding: 0 33.3px;
+}
+
+.placeholder-3 {
+    height: 48px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 285px;
+}
+
+.nav-item {
+    align-items: flex-start;
+    background-color: var(--aqua-squeeze);
+    cursor: pointer;
+    display: flex;
+    height: 44px;
+    margin-right: 46px;
+    margin-top: 17px;
+    min-width: 190px;
+    padding: 9px 10px;
+}
+
+.item-de-niveau-1 {
+    color: var(--black);
+    font-family: var(--font-family-calibri-regular);
+    font-size: var(--font-size-m2);
+    font-weight: 400;
+    height: 24px;
+    letter-spacing: 0;
+    min-width: 170px;
+    text-align: center;
+}
+
+.vector {
+    align-self: flex-start;
+    height: 13px;
+    width: 17px;
+}
+
+.mailChangeDiv{
+    align-items: flex-start;
+    display: flex;
+    height: 281px;
+    margin-left: 38px;
+    margin-top: 145px;
+    min-width: 464px;
     z-index: 1;
 }
 
-.mail-modif-div {
-    height: 432px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 470px;
+.overlap-group1 {
+    align-items: center;
+    background-color: var(--aqua-squeeze);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    display: flex;
+    flex-direction: column;
+    min-height: 281px;
+    padding: 30px 53px;
+    width: 462px;
 }
 
-.partner-info-div {
-    height: 348px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 363px;
+.overlap-group {
+    align-items: flex-start;
+    align-self: flex-start;
+    background-color: var(--emerald);
+    border-radius: 4px;
+    display: flex;
+    margin-top: 49px;
+    min-width: 353px;
+    padding: 0 33.3px;
+}
+
+.placeholder-2 {
+    height: 49px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 285px;
+}
+
+.new-price {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1px;
+    margin-top: 18px;
+    min-height: 59px;
+    width: 353px;
+}
+
+.header-2 {
+    color: var(--mine-shaft);
+    font-family: var(--font-family-calibri-regular);
+    font-size: var(--font-size-xs3);
+    font-weight: 400;
+    height: 20px;
+    letter-spacing: 0;
+    margin-top: -1px;
+}
+
+.price-input {
+    align-items: flex-start;
+    background-color: var(--alto);
+    border-radius: 4px;
+    display: flex;
+    height: 50px;
+    margin-top: 6px;
+    min-width: 353px;
+    padding: 6px 12px;
+}
+
+.placeholder-1 {
+    color: #757575;
+    font-family: var(--font-family-calibri-light);
+    font-size: var(--font-size-xs3);
+    font-weight: 300;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 329px;
+}
+
+.header-1 {
+    height: 32px;
+    letter-spacing: 0;
+    margin-right: 1px;
+    width: 351px;
+}
+
+.flex-col {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 26px;
+    margin-top: 145px;
+    min-height: 352px;
+    width: 369px;
+    z-index: 3;
 }
 
 .return-btn {
+    align-items: flex-start;
     cursor: pointer;
-    height: 47px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 121px;
+    display: flex;
+    margin-top: 24px;
+    min-width: 123px;
 }
 
-.password-modif-div {
-    height: 521px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 470px;
+.overlap-group4 {
+    align-items: flex-start;
+    background-color: var(--emerald);
+    border-radius: 4px;
+    display: flex;
+    height: 47px;
+    min-width: 121px;
+}
+
+.shape {
+    height: 21px;
+    width: 25px;
+}
+
+.placeholder {
+    align-self: center;
+    letter-spacing: 0;
+    margin-bottom: 2px;
+    margin-left: 26px;
+    min-height: 25px;
+    width: 59px;
+}
+
+.overlap-group3 {
+    align-items: flex-start;
+    background-color: var(--aqua-squeeze);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    display: flex;
+    flex-direction: column;
+    min-height: 281px;
+    padding: 22px;
+    width: 355px;
+}
+
+.mail-info-placeholder {
+    letter-spacing: 0;
+    margin-top: 7px;
+    min-height: 22px;
+    width: 308px;
+}
+
+.cription-date-header {
+    letter-spacing: 0;
+    margin-top: 15px;
+    min-height: 22px;
+    width: 308px;
+}
+
+.mail-info-header {
+    letter-spacing: 0;
+    margin-top: 21px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.flex-row {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 1px;
+    min-width: 308px;
+}
+
+.profile-img {
+    background-color: var(--alto);
+    border-radius: 4px;
+    height: 90px;
+    width: 90px;
+}
+
+.flex-col-1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 21px;
+    min-height: 90px;
+    width: 197px;
+}
+
+.inscription-date-placeholder {
+    letter-spacing: 0;
+    margin-top: 7px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.inscription-date-header {
+    letter-spacing: 0;
+    margin-top: 15px;
+    min-height: 22px;
+    width: 164px;
+}
+
+.name-info-placeholder {
+    color: var(--black);
+    font-family: var(--font-family-calibri-bold);
+    font-size: var(--font-size-m2);
+    font-weight: 700;
+    letter-spacing: 0;
+    min-height: 24px;
+    width: 197px;
 }

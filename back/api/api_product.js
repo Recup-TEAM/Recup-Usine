@@ -65,5 +65,19 @@ module.exports = function (session, conn) {
             }
         },
 
+        // Delete un produit par son id
+        deleteProduct: (req, res) => {
+            console.log("API -> deleteProduct");
+            //check if user is connected
+            if(check.checkUserConnected(req, res)) {
+
+                let productId = req.query.productId;
+
+                db_product.deleteProduct(productId).then(() => {
+                    res.json({"err" : "", "code" : 1});
+                });
+            }
+        },
+
     };
 };

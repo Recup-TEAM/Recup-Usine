@@ -47,5 +47,13 @@ module.exports = function() {
             var rq = await db_query(sql);
             return rq;
         },
+
+        // Delete un produit par son id
+        deleteProduct: async (id) => {
+            let sql = "DELETE FROM `product` WHERE `product`.`id_product` = " + id + ";";
+            var rq = await db_query(sql);
+            return rq;
+        },
+        
     }
 }
