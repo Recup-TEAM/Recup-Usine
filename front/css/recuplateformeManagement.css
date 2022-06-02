@@ -38,9 +38,9 @@
 .article-2 {
     align-items: flex-start;
     display: flex;
-    height: 503px;
-    margin-left: 35px;
-    margin-top: 143px;
+    height: 500px;
+    margin-left: 990px;
+    margin-top: -500px;
     min-width: 289px;
     z-index: 1;
 }
@@ -98,7 +98,7 @@
     background-color: var(--emerald);
     border-radius: 10px;
     display: flex;
-    height: 48px;
+    height: 20px;
     justify-content: flex-end;
     min-width: 200px;
     padding: 9px 18px;
@@ -109,6 +109,8 @@
     letter-spacing: 0;
     text-align: center;
     width: 162px;
+    margin-top: -5px;
+    margin-right: 13px;
 }
 
 .valign-text-middle {
@@ -134,8 +136,8 @@
 .article {
     align-items: flex-start;
     display: flex;
-    height: 503px;
-    margin-left: 413px;
+    height: 500px;
+    margin-left: 350px;
     margin-top: 143px;
     min-width: 289px;
     z-index: 3;
@@ -178,7 +180,7 @@
     border: 2px solid var(--emerald);
     border-radius: 10px;
     display: flex;
-    height: 50px;
+    height: 30px;
     min-width: 220px;
     padding: 4px 0;
 }
@@ -188,11 +190,12 @@
     font-family: var(--font-family-k2d);
     font-size: var(--font-size-m2);
     font-weight: 500;
-    height: 33px;
+    height: 20px;
     letter-spacing: 0;
     margin-left: -1px;
     text-align: center;
     width: 120px;
+    padding-top: 5px;
 }
 
 .icon {
@@ -215,9 +218,9 @@
 .article-1 {
     align-items: flex-start;
     display: flex;
-    height: 503px;
-    margin-left: 35px;
-    margin-top: 143px;
+    height: 500px;
+    margin-left: 670px;
+    margin-top: -500px;
     min-width: 289px;
     z-index: 2;
 }
