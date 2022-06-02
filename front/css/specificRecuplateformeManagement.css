@@ -87,9 +87,10 @@
     border-radius: 10px;
     box-shadow: 0px 4px 4px #00000040;
     display: flex;
-    height: 348px;
+    height: 275px;
     min-width: 1156px;
     padding: 46px 47px;
+    margin-left: 60px;
 }
 
 .flex-col {
@@ -199,6 +200,7 @@
     border-radius: 15px;
     height: 255px;
     width: 255px;
+    margin-bottom: 10px;
 }
 
 .header {
