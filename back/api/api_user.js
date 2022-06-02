@@ -31,7 +31,7 @@ module.exports = function (session) {
     getCompteLevel: (req, res) => {
       console.log("API -> getCompteLevel");
       if (checkUserConnected(req, res)) {
-        res.json({ err: "", code: 1, data: { compteLevel: req.session.compteLevel } });
+        res.json({ err: "", success: true, data: { compteLevel: req.session.compteLevel } });
       }
     },
 
@@ -40,7 +40,7 @@ module.exports = function (session) {
       console.log("API -> getAllUsers");
       if (check.checkUserAdmin(req, res)) {
         db_user.getAllUsers().then((users) => {
-          res.json({ err: "", code: 1, data: users });
+          res.json({ err: "", success: true, data: users });
         });
       }
     },
@@ -50,7 +50,7 @@ module.exports = function (session) {
       console.log("API -> getSubscription");
       if (check.checkUserConnected(req, res)) {
         db_user.getSubscription(req.session.userId).then((data) => {
-          res.json({ err: "", code: 1, data: data });
+          res.json({ err: "", success: true, data: data });
         });
       }
     },
@@ -67,13 +67,13 @@ module.exports = function (session) {
         if (user == false) {
           // L'utilisateur n'existe pas
           console.log("L'utilisateur", { email, password }, "n'existe pas");
-          res.json({ err: "L'utilisateur n'existe pas", code: 0 });
+          res.json({ err: "L'utilisateur n'existe pas", success: false });
         } else {
           // L'utilisateur existe
           const errors = validationResult(req);
           if (!errors.isEmpty() || user == undefined) {
             console.log(errors);
-            res.json({ err: "Erreur de validation", code: 0 });
+            res.json({ err: "Erreur de validation", success: false });
           } else {
             req.session.email = user[0].email;
             req.session.password = user[0].password;
@@ -88,7 +88,7 @@ module.exports = function (session) {
               ")"
             );
           }
-          res.json({ err: "", code: 1 });
+          res.json({ err: "", success: true });
         }
       });
     },
@@ -97,7 +97,7 @@ module.exports = function (session) {
     logout: (req, res) => {
         console.log("API -> logout");
         req.session.destroy();
-        res.json({ err: "", code: 1 });
+        res.json({ err: "", success: true });
     },
 
 
@@ -126,12 +126,12 @@ module.exports = function (session) {
                 compteLevel +
                 ")"
             );
-            res.json({ err: "", code: 1 });
+            res.json({ err: "", success: true });
           });
         } else {
           // L'utilisateur existe déjà
           console.log("L'utilisateur \"" + email + '" existe déjà');
-          res.json({ err: "L'utilisateur \"" + email + '" existe déjà', code: 0 });
+          res.json({ err: "L'utilisateur \"" + email + '" existe déjà', success: false });
         }
       });
     },
@@ -148,13 +148,13 @@ module.exports = function (session) {
         if (user == false) {
           // L'utilisateur n'existe pas encore
           console.log("L'utilisateur \"" + email + "\" n'existe pas");
-          res.json({ err: "L'utilisateur n'existe pas", code: 0 });
+          res.json({ err: "L'utilisateur n'existe pas", success: false });
         } else {
           // L'utilisateur existe déjà
           dataUser = { email, password, newPassword };
           db_user.updateUserPassword(dataUser).then(() => {
             console.log("L'utilisateur \"" + email + '" a changé son mot de passe');
-            res.json({ err: "", code: 1 });
+            res.json({ err: "", success: true });
           });
         }
       });
@@ -171,11 +171,11 @@ module.exports = function (session) {
         db_user.getUser(email).then((user) => {
           if (user == false) {
             console.log("L'utilisateur \"" + email + "\" n'existe pas");
-            res.json({ err: "L'utilisateur \"" + email + "\" n'existe pas", code: 0 });
+            res.json({ err: "L'utilisateur \"" + email + "\" n'existe pas", success: false });
           } else {
             db_user.updateUSerLevel({ email, compteLevel }).then(() => {
               console.log("L'utilisateur \"" + email + '" a changé son compte level');
-              res.json({ err: "", code: 1 });
+              res.json({ err: "", success: true });
             });
           }
         });
@@ -199,7 +199,7 @@ module.exports = function (session) {
               "\" s'est abonné au niveau " +
               subscriptionLevel
           );
-          res.json({ err: "", code: 1 });
+          res.json({ err: "", success: true });
         });
       }
     },

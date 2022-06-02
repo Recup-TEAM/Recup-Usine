@@ -3,7 +3,7 @@ let logger = (function () {
     console.log(email + " essaye de se connecter");
     $.ajax({
       type: "POST",
-      url: "/user/login/",
+      url: "/api/user/login/",
       data: {
         email: email,
         password: password,

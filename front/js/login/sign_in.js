@@ -14,6 +14,19 @@ function sign_in() {
 
 
 $(document).ready(function() {
+    //if already logged in, redirect to home page
+    $.ajax({
+        url: "/api/user/get/connected",
+        type: "GET",
+        success: function(data) {
+            if (data.connected) {
+                window.location.href = "/";
+            }
+        }
+    });
+
+    // focus on the email input
+    $("#email").focus();
 
     $(document).on('click', '#connectionButton', function() {
         sign_in();
