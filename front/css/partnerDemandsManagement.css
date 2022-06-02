@@ -96,7 +96,7 @@
     border: 2px solid var(--emerald);
     border-radius: 10px;
     display: flex;
-    height: 47px;
+    height: 30px;
     min-width: 348px;
     padding: 3.5px 12px;
 }
@@ -118,14 +118,15 @@
     letter-spacing: 0;
     line-height: 21px;
     width: 286px;
+    margin-top: -3px;
 }
 
 .overlap-group-container {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-left: 51px;
-    margin-top: 224px;
+    margin-left: 525px;
+    margin-top: -683px;
     min-height: 613px;
     width: 352px;
     z-index: 3;
@@ -152,12 +153,12 @@
     width: 350px;
 }
 
-.flex-col-1 {
+.flex-col-1 /*truc du bas droite */{
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-left: 51px;
-    margin-top: 116px;
+    margin-left: 905px;
+    margin-top: -783px;
     min-height: 399px;
     width: 459px;
     z-index: 2;
@@ -176,7 +177,7 @@
     background-color: var(--emerald);
     border-radius: 4px;
     display: flex;
-    height: 47px;
+    height: 20px;
     justify-content: flex-end;
     min-width: 121px;
     padding: 10px 11.9px;
@@ -198,6 +199,8 @@
     margin-left: 10px;
     min-height: 25px;
     width: 59px;
+    margin-right: 10px;
+    margin-top: -2px;
 }
 
 .overlap-group1 {
