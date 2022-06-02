@@ -3,6 +3,7 @@
     --black: rgba(0, 0, 0, 1);
     --blue-ribbon: rgba(0, 102, 255, 1);
     --emerald: rgba(27, 171, 141, 1);
+    --sepia-black : rgba(38, 1, 1, 1);
     --mine-shaft: rgba(51, 51, 51, 1);
     --sonic-silver: rgba(117, 117, 117, 1);
     --alto: rgba(217, 217, 217, 1);
@@ -31,6 +32,8 @@
     --font-family-calibri-bold : "Calibri-Bold";
     --font-family-calibri-light : "Calibri-Light";
     --font-family-calibri-regular : "Calibri-Regular";
+    --font-family-inter : "Inter";
+    --font-family-inter-medium : "Inter-Medium";
     --font-family-k2d : "K2D";
     --font-family-mulish : "Mulish";
     --font-family-mulish-regular : "Mulish-Regular";
@@ -248,5 +251,69 @@
     font-family: var(--font-family-calibri-bold );
     font-size: var(--font-size-m2 );
     font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-nevada-16px {
+    color: var(--nevada);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-sepia-black-16px {
+    color: var(--sepia-black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-16px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-mine-shaft-16px {
+    color: var(--mine-shaft);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-mine-shaft-20px {
+    color: var(--mine-shaft);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-light-sonic-silver-12px {
+    color: var(--sonic-silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter-medium);
+    font-size: var(--font-size-xl);
+    font-weight: 500;
     font-style: normal;
 }

@@ -110,7 +110,7 @@ body{
 .connectionTitle {
     align-self: flex-start;
     color: var(--mine-shaft);
-    font-family: var(--font-family-calibri-bold);
+    font-family: var(--font-family-calibri-regular);
     font-size: var(--font-size-l);
     font-weight: 700;
     height: 32px;
