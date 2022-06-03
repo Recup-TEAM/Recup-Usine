@@ -145,7 +145,7 @@ body{
     padding: 6px 12px;
 }
 
-.placeholderMail {
+.placeholder {
     height: 36px;
     letter-spacing: 0;
     line-height: 21px;
@@ -164,17 +164,6 @@ body{
     margin-top: 37px;
     min-height: 75px;
     width: 353px;
-}
-
-.placeholderPassword {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 301px;
-    margin-top: 5px;
-    border-style: hidden;
-    outline: none;
-    background-color: #1fe0;
 }
 
 .iconPassword {

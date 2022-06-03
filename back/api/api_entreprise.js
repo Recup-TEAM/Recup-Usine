@@ -11,6 +11,15 @@ module.exports = function (session, conn) {
      ***************/
 
     /* GET */
+    // getEntreprisetDataOfCurrentUser
+    getEntreprisetDataOfCurrentUser: function (req, res) {
+      console.log("API -> getEntreprisetDataOfCurrentUser");
+      db_entreprise.getAllEntreprisesByUser(req.session.user.id_user, function () {
+        res.send(JSON.stringify(req.session.user));
+      });
+    
+    },
+
     // Get all entreprises
     getAllEntreprises: (req, res) => {
       console.log("API -> getAllEntreprises");
@@ -28,14 +37,16 @@ module.exports = function (session, conn) {
       });
     },
 
+
     // Get all entreprises by user
     getAllEntreprisesByUser: (req, res) => {
       console.log("API -> allEntreprisesByUser");
       if (check.checkUserConnected(req, res)) {
         let userId = req.params.userId;
-        db_entreprise.getEntrepriseById(userId).then((entreprises) => {
+        db_entreprise.getAllEntreprisesByUser(userId).then((entreprises) => {
           res.json({ err: "", success: true, data: entreprises });
-        });
+        }
+        );
       }
     },
 

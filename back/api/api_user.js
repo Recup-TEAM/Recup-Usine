@@ -27,6 +27,17 @@ module.exports = function (session) {
       }
     },
 
+    // Get data of current user
+    getUserData: function (req, res) {
+      console.log("API -> getUserData");
+      if (check.checkUserConnected(req, res)) {
+        let userId = req.session.userId;
+        db_user.getUserById(userId).then((user) => {
+          res.json({ err: "", success: true, data: user });
+        });
+      }
+    },
+
     // GetcomteLevel
     getCompteLevel: (req, res) => {
       console.log("API -> getCompteLevel");

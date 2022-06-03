@@ -19,6 +19,14 @@ module.exports = function() {
             }
         },
 
+        // Get user by id
+        getUserById: async (id) => {
+            let sql = "SELECT * FROM user WHERE id_user='" + id + "'";
+            rq = await db_query(sql);
+            // if user return true else return false
+            return {email: rq[0].email, level: rq[0].level, id: rq[0].id_user};
+        },
+
         // Get all user
         getAllUsers: async () => {
         let sql = "SELECT * FROM user";

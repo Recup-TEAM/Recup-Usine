@@ -15,6 +15,9 @@ module.exports = function (app, session) {
     // Get if user is connected
     app.get("/api/user/get/connected", urlencodedParser, api_user.getConnected);
 
+    // Get data of current user
+    app.get("/api/user/get/data", urlencodedParser, api_user.getUserData);
+
     // Get le level du compte
     app.get("/api/user/get/compteLevel", urlencodedParser, api_user.getCompteLevel);
     
@@ -53,6 +56,9 @@ module.exports = function (app, session) {
      ***************/
 
     /* GET */
+    // Get data entreprise of the current user
+    app.get("/api/entreprise/get/data", urlencodedParser, api_entreprise.getEntreprisetDataOfCurrentUser);
+
     // Get all entreprises 
     app.get("/api/entreprises/get/allEntreprises", urlencodedParser, api_entreprise.getAllEntreprises);
 
