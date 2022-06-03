@@ -25,7 +25,7 @@ module.exports = function() {
         },
 
         // Get all entreprise by id-user 
-        getAllEntreprisesByIdUser: async (id) => {
+        getAllEntreprisesByUser: async (id) => {
             let sql = "SELECT * FROM entreprise WHERE id_user='" + id + "'";
             var rq = await db_query(sql);
             resultArray = Object.values(JSON.parse(JSON.stringify(rq)))

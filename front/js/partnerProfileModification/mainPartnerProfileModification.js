@@ -25,7 +25,7 @@ $(document).ready(function () {
 
   // get entreprise name
   $.ajax({
-    url: "/api/entreprise/get/data",
+    url: "/api/entreprises/get/entrepriseById",
     type: "GET",
     success: function (data) {
       console.log(data);

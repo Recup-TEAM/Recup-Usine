@@ -15,6 +15,7 @@ module.exports = function (express, app, http) {
     const api = require("./routes_api")(app, session);
     const mail = require("./routes_mail")(app, session);
     
+    //const routeFolders = {}
 
     // Config des dossiers de fichiers front
     app.use(express.static(path.join(__dirname, "../front")));
@@ -26,13 +27,14 @@ module.exports = function (express, app, http) {
     });
   
     //create automatic redirection from name to front/html/name.html
-    app.get("/:name", (req, res) => {
+    app.get("/:folder/:name", (req, res) => {
         // if name is not a html file, redirect to index
 
         if (req.params.name.indexOf(".html") === -1 && req.params.name.split(".").length > 1) {
             res.redirect("/");
         } else {
-        res.sendFile(path.join(__dirname, "../front/html/" + req.params.name + ".html"));
+        
+        res.sendFile(path.join(__dirname, "../front/html/" + req.params.folder + "/" + req.params.name + ".html"));
         
         }
     });
