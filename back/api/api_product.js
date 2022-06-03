@@ -1,7 +1,7 @@
-module.exports = function (session, conn) {
+module.exports = function (session) {
   const { body, validationResult } = require("express-validator");
   const check = require("./check")();
-  const db_product = require("../database/db_product");
+  const db_product = require("../database/db_product")();
   //const db_user = require("../database/db_user")(conn);
   //const db_entreprise = require("../database/db_entreprise")(conn);
 

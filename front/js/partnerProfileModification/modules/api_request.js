@@ -1,29 +1,31 @@
-let logger = (function () {
+let api_request = (function () {
   function request_change_mail_user(email) {
-    console.log(email + " essaye de se connecter");
+    console.log("Changement de mail");
     $.ajax({
       type: "POST",
-      url: "/api/user/changeMail/",
+      url: "/api/user/update/changeMail",
       data: {
-        email: email,
+        "newMail": email,
       },
       success: (data) => {
         console.log(data);
-        //window.location.href = "/";
-      },
+        return data;
+        },
     });
   }
 
-  function request_change_password_user(password) {
+  function request_change_password_user(oldPassword, newPassword) {
+    console.log("Changement de mot de passe");
     $.ajax({
       type: "POST",
-      url: "/api/user/changePassword/",
+      url: "/api/user/update/changePassword",
       data: {
-        password: $("#password").val(),
+        oldPassword: $("#oldPassword").val(),
+        newPassword: $("#newPassword").val(),
       },
       success: (data) => {
         console.log(data);
-        //window.location.href = "/";
+        return data;
       },
     });
   }

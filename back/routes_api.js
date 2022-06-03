@@ -42,6 +42,9 @@ module.exports = function (app, session) {
     // Changer le mot de passe
     app.post("/api/user/update/changePassword", urlencodedParser, api_user.changePassword);
 
+    // Changer le mail
+    app.post("/api/user/update/changeMail", urlencodedParser, api_user.changeEmail);
+
     // Update le level d'un compte (admin only)
     app.post("/api/user/update/updateCompteLevel", urlencodedParser, api_user.updateCompteLevel);
 

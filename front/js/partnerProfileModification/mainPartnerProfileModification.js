@@ -1,12 +1,26 @@
 function changeMail() {
   if ($("#newEmail").val() == $("#confirmNewMail").val()) {
-    api_request.change_mail_user($("#newEmail").val());
+    data = api_request.change_mail_user($("#newEmail").val());
+    console.log("truc", data);
+      if (data.status) {
+        $("#userMail").html(email);
+        $("#newEmail").val("");
+        $("#confirmNewMail").val("");
+        alert("Votre adresse mail a bien été modifiée");
+      }
+
   }
 }
 
 function changePassword() {
   if ($("#newPassword").val() == $("#confirmNewPassword").val()) {
-    api_request.change_password_user($("#newPassword").val());
+    data =api_request.change_password_user($("#newPassword").val());
+    if (data.status) {
+        $("#oldPassword").val("");
+        $("#newPassword").val("");
+        $("#confirmNewPassword").val("");
+        alert("Votre mot de passe a bien été modifié");
+      }
   }
 }
 
@@ -25,11 +39,11 @@ $(document).ready(function () {
 
   // get entreprise name
   $.ajax({
-    url: "/api/entreprises/get/entrepriseById",
+    url: "/api/entreprise/get/data",
     type: "GET",
-    success: function (data) {
-      console.log(data);
-      $("#entreprise").val(data.entreprise);
+    success: function (result) {
+        console.log(result)
+      $("#entrepriseName").html(result.data[0].name);
     },
   });
 
@@ -37,9 +51,9 @@ $(document).ready(function () {
     $.ajax({
         url: "/api/user/get/data",
         type: "GET",
-        success: function (data) {
-            console.log(data);
-            //$("#name").val(data.name);
+        success: function (result) {
+            console.log(result.data);
+            $("#userMail").html(result.data.email);
         }
     });
 
@@ -60,7 +74,7 @@ $(document).ready(function () {
   });
 
   // when confirmNewMail is clicked call changeMail function
-  $("#confirmNewMail").click(function () {
+  $("#confirmButtonMailChange").click(function () {
     changeMail();
   });
 

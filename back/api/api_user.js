@@ -150,10 +150,21 @@ module.exports = function (session) {
     // Changer le mot de passe
     changePassword: (req, res) => {
       console.log("API -> changePassword");
-      let email = req.body.email;
-      let password = req.body.password;
+      //if user is connected
+      
+      let userId = req.session.userId;
+      let email = req.session.email;
+      let oldPassword = req.body.oldPassword;
       let newPassword = req.body.newPassword;
 
+      if (check.checkUserConnected(req, res)) {
+        userId = req.session.userId
+        email = req.session.email
+      }
+      else {
+        email = req.body.email;
+      }
+      console.log(oldPassword, newPassword);
       // On regarde dans la DB si l'email existe déjà
       db_user.getUser(email).then((user) => {
         if (user == false) {
@@ -162,13 +173,32 @@ module.exports = function (session) {
           res.json({ err: "L'utilisateur n'existe pas", success: false });
         } else {
           // L'utilisateur existe déjà
-          dataUser = { email, password, newPassword };
+          dataUser = { email, oldPassword, newPassword };
           db_user.updateUserPassword(dataUser).then(() => {
             console.log("L'utilisateur \"" + email + '" a changé son mot de passe');
             res.json({ err: "", success: true });
           });
         }
       });
+    },
+
+    // Changer l'email
+    changeEmail: (req, res) => {
+      console.log("API -> changeEmail");
+      //on regarde si l'user est connecté
+      if (check.checkUserConnected(req, res)) {
+      let newEmail = req.body.newMail;
+        // on remplace l'email
+        userId = req.session.userId;
+        db_user.updateUserEmail({userId, newEmail}).then(() => {
+          console.log("L'utilisateur \"" + newEmail + '" a changé son email');
+          req.session.email = newEmail;
+          res.json({ err: "", success: true });
+        });
+      }
+      else {
+        res.json({ err: "L'utilisateur n'est pas co", success: false });
+      }
     },
 
     // Changer le level d'un compte (admin only)

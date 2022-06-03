@@ -1,7 +1,7 @@
-module.exports = function (session, conn) {
+module.exports = function (session) {
   const { body, validationResult } = require("express-validator");
   const check = require("./check")();
-  const db_entreprise = require("../database/db_entreprise");
+  const db_entreprise = require("../database/db_entreprise")();
   //const db_user = require("../database/db_user")(conn);
   //const db_product = require("../database/db_product")(conn);
 
@@ -15,11 +15,13 @@ module.exports = function (session, conn) {
     getEntreprisetDataOfCurrentUser: function (req, res) {
       console.log("API -> getEntreprisetDataOfCurrentUser");
       if (check.checkUserConnected(req, res)) {
-         let userId =1// req.params.userId;
-         //db_entreprise.getEntrepriseById(userId).then((entreprise) => {
-           //res.json({ err: "", success: true, data: entreprise});
-         //})
-      }    
+        let userId = req.params.userId;
+        db_entreprise.getAllEntreprisesByIdUser(userId).then((entreprise) => {
+          res.json({ err: "", success: true, data: entreprise });
+        });
+      } else {
+        res.json({ err: "Vous n'êtes pas connecté", success: false, data: null });
+      }
     },
 
     // Get all entreprises
@@ -39,7 +41,6 @@ module.exports = function (session, conn) {
       });
     },
 
-
     // Get all entreprises by user
     getAllEntreprisesByUser: (req, res) => {
       console.log("API -> allEntreprisesByUser");
@@ -47,8 +48,7 @@ module.exports = function (session, conn) {
         let userId = req.params.userId;
         db_entreprise.getAllEntreprisesByUser(userId).then((entreprises) => {
           res.json({ err: "", success: true, data: entreprises });
-        }
-        );
+        });
       }
     },
 
