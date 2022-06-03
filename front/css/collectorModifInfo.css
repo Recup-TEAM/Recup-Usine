@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,600|Mulish:400");
 
+body {
+    margin: 0px;
+}
+
 .collectormodifinfo {
     align-items: flex-start;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    height: 999px;
-    width: 360px;
+    height: 100%;
+    width: 100%;
 }
 
 .hidden,

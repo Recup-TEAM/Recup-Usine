@@ -60,6 +60,16 @@ body {
     object-fit: cover;
     clear: right;
 }
+
+.profileImg {
+    align-self: flex-start;
+    margin-left: 67%;
+    margin-top: 1.2%;
+    cursor: pointer;
+    height: 80%;
+    object-fit: cover;
+}
+
 /* end header */
 
 .collectorHi {
