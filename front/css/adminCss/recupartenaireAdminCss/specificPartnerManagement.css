@@ -112,6 +112,8 @@
     min-height: 22px;
     text-align: center;
     width: 109px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 .btn-edit {
@@ -162,7 +164,6 @@
 
 .inscription-date-placeholder {
     letter-spacing: 0;
-    margin-top: 7px;
     min-height: 22px;
     width: 164px;
 }
@@ -232,8 +233,8 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-left: 101px;
-    margin-top: 145px;
+    margin-left: 600px;
+    margin-top: -778px;
     min-height: 875px;
     width: 743px;
     z-index: 2;
@@ -425,7 +426,7 @@
     box-shadow: 0px 4px 39px 9px #51459f17;
     display: flex;
     flex-direction: column;
-    margin-top: 61px;
+    margin-top: 30px;
     min-height: 407px;
     width: 741px;
 }
