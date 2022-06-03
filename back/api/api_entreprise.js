@@ -14,10 +14,12 @@ module.exports = function (session, conn) {
     // getEntreprisetDataOfCurrentUser
     getEntreprisetDataOfCurrentUser: function (req, res) {
       console.log("API -> getEntreprisetDataOfCurrentUser");
-      db_entreprise.getAllEntreprisesByUser(req.session.user.id_user, function () {
-        res.send(JSON.stringify(req.session.user));
-      });
-    
+      if (check.checkUserConnected(req, res)) {
+         let userId =1// req.params.userId;
+         //db_entreprise.getEntrepriseById(userId).then((entreprise) => {
+           //res.json({ err: "", success: true, data: entreprise});
+         //})
+      }    
     },
 
     // Get all entreprises
