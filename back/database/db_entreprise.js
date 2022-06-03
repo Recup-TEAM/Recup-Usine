@@ -18,15 +18,17 @@ module.exports = function() {
 
         // Get entreprise by id (TODO : test)
         getEntrepriseById: async (id) => {
-            let sql = "SELECT * FROM entreprise WHERE id='" + id + "'";
+            let sql = "SELECT * FROM entreprise WHERE id_entreprise='" + id + "'";
             var rq = await db_query(sql);
+            console.log(rq);
             return rq;
         },
 
-        // Get all entreprise by user (TODO : test)
-        getAllEntreprisesByUser: async (userId) => {
-            let sql = "SELECT * FROM entreprise WHERE id_user='" + userId + "'";
+        // Get all entreprise by id-user 
+        getAllEntreprisesByIdUser: async (id) => {
+            let sql = "SELECT * FROM entreprise WHERE id_user='" + id + "'";
             var rq = await db_query(sql);
+            resultArray = Object.values(JSON.parse(JSON.stringify(rq)))
             return rq;
         },
 

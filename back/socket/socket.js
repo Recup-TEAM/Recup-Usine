@@ -11,7 +11,6 @@ module.exports = function (http, session) {
 
     io.on("connection", (socket) => {
 
-
         socket.on("disconnect", () => {
             // L'utilisateur ferme la page
             delete socket.handshake.session.email;

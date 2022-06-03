@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html>
+</html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +54,7 @@
             <div class="recupartenairesButton">
                 <div class="recupartenairesRectangle"></div>
                 <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png" />
-                <div class="becomeRecupartenaires valign-text-middle">Devenir récupartenaire</div>
+                <div class="becomeRecupartenaires valign-text-middle" id="becomeRecupartner">Devenir récupartenaire</div>
             </div>
             <div class="textPub valign-text-middle calibri-light-black-22px">
                 Une solution simple et pratique, basée sur l’industrie 4.0. Rejoignez-nous et faites un geste pour la planète !
@@ -177,66 +179,6 @@
 </html>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
-    //when document is ready
-    $(document).ready(function () {
-      let socket = io();
-      AOS.init();
-
-      // ajax request to "/api/user/connected" to know if user if connected
-      $.ajax({
-        url: "/api/user/get/connected",
-        type: "GET",
-        success: (data) => {
-          let divConnexion;
-          if (!data.connected) {
-            divConnexion =
-              '<div class="loginButton">' +
-              '<div class="loginContainer">' +
-              '<div class="loginRectangle"></div>' +
-              '<img class="loginIcon" src="../img/login.png"/>' +
-              '<a href="../connexion" class="loginLink"><div class="login valign-text-middle">Connexion</div></a>' +
-              "</div>" +
-              "</div>";
-              $("#buttonSignInSignOut").html(divConnexion);
-
-          } else {
-            //name = data.email split at @ first part
-            let name = data.email.split("@")[0];
-            divConnexion =
-              '<div class="loginButton">' +
-              '<div class="loginContainer">' +
-              '<div class="loginRectangle"></div>' +
-              //'<img class="loginIcon" src="../img/logout.png"/>' +
-              '<div class="loginLink"><div class="login valign-text-middle">' + name + '</div>' +
-              "</div>" +
-              "</div>" +
-              "</div>";
-              $("#buttonSignInSignOut").html(divConnexion);
-            
-
-            //event listener on click on buttonSignInSignOut
-            $("#buttonSignInSignOut").click(function () {
-                //ajax request to "/api/user/logout" to logout user
-                console.log("logout");
-                $.ajax({
-                    url: "/api/user/logout",
-                    type: "POST",
-                    success: (data) => {
-                        //if logout success
-                        if (data.success) {
-                        //redirect to index
-                        window.location.href = "/";
-                    }
-                    },
-                    error: (err) => {
-                        console.log(err);
-                    }
-                });
-            });
-        }
-        },
-      });
-    });
-  </script>
+<!-- import index.js -->>
+<script src="../js/index.js"></script>
   
