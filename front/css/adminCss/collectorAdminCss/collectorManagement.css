@@ -84,7 +84,7 @@
     border: 2px solid var(--emerald);
     border-radius: 10px;
     display: flex;
-    height: 47px;
+    height: 25px;
     min-width: 348px;
     padding: 3.5px 12px;
 }
@@ -98,6 +98,7 @@
     letter-spacing: 0;
     line-height: 21px;
     width: 286px;
+    margin-top: -5px;
 }
 
 .research-icon {
@@ -138,8 +139,8 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-left: 51px;
-    margin-top: 224px;
+    margin-left: 535px;
+    margin-top: -1039px;
     min-height: 935px;
     width: 352px;
     z-index: 3;
@@ -191,8 +192,8 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin-left: 51px;
-    margin-top: 116px;
+    margin-left: 925px;
+    margin-top: -1150px;
     min-height: 1043px;
     width: 459px;
     z-index: 2;
@@ -203,7 +204,7 @@
     align-self: flex-end;
     cursor: pointer;
     display: flex;
-    min-width: 123px;
+    min-width: 123px; 
 }
 
 .overlap-group9 {
@@ -211,11 +212,10 @@
     background-color: var(--emerald);
     border-radius: 4px;
     display: flex;
-    height: 47px;
+    height: 30px;
     justify-content: flex-end;
     min-width: 121px;
     padding: 11px 22.7px;
-}
 
 .add-collector-btn-placeholder {
     color: var(--white);
