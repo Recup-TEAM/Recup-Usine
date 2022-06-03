@@ -311,7 +311,7 @@ body{
         grid-template-areas:
         'a a'
         'b c';
-        grid-template-rows: 100vh;
+        grid-template-rows: 55vh;
         grid-template-columns: 50vw 50vw;
     }
     .body{
@@ -328,7 +328,7 @@ body{
         'a'
         'b'
         'c';
-        grid-template-rows: 100vh;
+        grid-template-rows: 55vh;
         grid-template-columns: 100vw;
     }
     .body{
