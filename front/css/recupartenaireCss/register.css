@@ -91,11 +91,10 @@ body{
 }
 
 .logoPartenaireImg {
-    height: 100%;
     left: 0;
     object-fit: cover;
     position: absolute;
-    top: 48px;
+    margin-top: 78px;
     width: 100%;
 }
 
@@ -105,19 +104,19 @@ body{
     font-size: var(--font-size-xl);
     font-weight: 700;
     height: 78px;
-    left: 64px;
     letter-spacing: 0;
     position: absolute;
     text-align: center;
     top: 0;
-    width: 337px;
+    width: 100%;
 }
 
 .overlap-group2 {
-    height: 689px;
+    height: 690px;
     margin-left: 140px;
+    margin-top: 7%;
     position: relative;
-    width: 464px;
+    width: 465px;
 }
 
 .overlap-group3 {
@@ -128,27 +127,29 @@ body{
     display: flex;
     flex-direction: column;
     left: 0;
-    min-height: 689px;
-    padding: 21.2px 52px;
+    height: 689px;
+    padding: 4% 10%;
     position: absolute;
-    top: 0;
-    width: 462px;
+    width: 90%;
 }
 
 .flex-row {
     align-items: flex-start;
     display: flex;
-    height: 75px;
-    min-width: 353px;
-    margin-bottom: 15px;
+    width: 100%;
     margin-top: 25px;
+    min-height: 71px;
 }
 
 .inputTitle {
     height: 20px;
     letter-spacing: 0;
-    margin-top: -10px;
-    margin-left: -65px;
+    margin-top: -1px;
+    margin-bottom: 6px;
+}
+
+.inputNameDiv {
+    width: 130%;
 }
 
 .inputName {
@@ -156,155 +157,147 @@ body{
     background-color: var(--alto);
     border-radius: 4px;
     display: flex;
-    height: 50px;
-    margin-top: 6px;
-    margin-left: -70px;
-    min-width: 227px;
-    padding: 6px 12px;
+    height: 41px;
+    width: 100%;
+    padding: 4% 7%;
 }
 
-.placeholder-1 {
-    height: 36px;
+.placeholder {
     letter-spacing: 0;
+    height: 41px;
     line-height: 21px;
-    width: 203px;
+    width: 100%;
+    border-style: hidden;
+    outline: none;
+    background-color: #1fe0;
+    vertical-align: middle;
 }
 
-.overlap-group4 {
+.logo {
     align-items: flex-start;
     align-self: flex-end;
     background-color: var(--sonic-silver);
     border-radius: 4px;
-    display: flex;
-    margin-left: 22px;
-    min-width: 104px;
+    width: 40%;
+    margin-left: 20%;
     padding: 0 10px;
+    height: 45px;
+    margin-bottom: -5px;
 }
 
-.btn-text {
+.logoUpload {
     color: var(--white);
     font-family: var(--font-family-calibri-light);
     font-size: var(--font-size-xs);
     font-weight: 300;
-    height: 50px;
+    height: 100%;
     letter-spacing: 0;
-    text-align: center;
+    text-align: left;
     width: 50px;
-    margin-right: 50px;
 }
 
-.mail-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-top: 13px;
-    min-height: 57px;
-    width: 353px;
+.uploadImg {
+    height: 30px;
+    left: 420px;
+    position: absolute;
+    top: 56px;
+    margin-top: 26px;
+    width: 35px;
 }
 
-.x-input {
-    align-items: flex-start;
-    background-color: var(--alto);
-    border-radius: 4px;
-    display: flex;
-    height: 50px;
-    margin-top: 6px;
-    margin-left: -90px;
-    min-width: 353px;
-    padding: 6px 12px;
-}
-
-.placeholder-2 {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 329px;
-}
-
-.password-div {
+.inputDiv {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     margin-top: 36px;
-    margin-left: 5px;
     min-height: 71px;
-    width: 353px;
-
+    width: 100%;
 }
 
-.placeholder {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 301px;
-}
-
-.icon {
-    align-self: center;
-    height: 16px;
-    margin-bottom: 1px;
-    margin-left: 12px;
-    width: 16px;
-}
-
-.confirm-password-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-right: 1px;
-    margin-top: 23px;
-    min-height: 71px;
-    width: 353px;
-}
-
-.icon-1 {
-    align-self: center;
-    height: 16px;
-    margin-left: 12px;
-    width: 16px;
-}
-
-.motivation-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-    min-height: 71px;
-    width: 353px;
-}
-
-.motivation-input {
+.input {
     align-items: flex-start;
     background-color: var(--alto);
     border-radius: 4px;
     display: flex;
-    height: 129px;
-    margin-top: 6px;
-    margin-left: -90px;
-    min-width: 353px;
-    padding: 8px 12px;
+    height: 41px;
+    width: 92%;
+    padding: 3.2% 4%;
 }
 
-.placeholder-3 {
+.placeholder2 {
+    letter-spacing: 0;
+    height: 21px;
+    line-height: 21px;
+    width: 100%;
+    margin-top: 5px;
+    border-style: hidden;
+    outline: none;
+    background-color: #1fe0;
+}
+
+.iconPassword {
+    align-self: center;
+    height: 16px;
+    margin-left: 12px;
+    width: 16px;
+}
+
+.motivationDiv {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    height: 165px;
+    width: 100%;
+}
+
+.inputMotivation {
+    align-items: flex-start;
+    background-color: var(--alto);
+    border-radius: 4px;
+    display: flex;
+    height: 110px;
+    margin-top: 6px;
+    width: 92%;
+    padding: 2.6% 4%;
+}
+
+.placeholderMotivation {
     letter-spacing: 0;
     line-height: 21px;
     min-height: 111px;
-    width: 329px;
+    width: 381px;
+    border-style: hidden;
+    outline: none;
+    background-color: #1fe0;
 }
 
-.switch-to-connection-link {
-    align-self: flex-start;
-    color: #0066ff;
+.linkContainer {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
     cursor: pointer;
+    height: 15px;
+    letter-spacing: 0;
+    text-decoration: underline;
+    color: #0066ff;
     font-family: var(--font-family-mulish);
     font-size: var(--font-size-xs2);
     font-weight: 400;
-    height: 14px;
-    letter-spacing: 0;
     margin-left: 5px;
-    margin-top: 20px;
+}
+
+.forgetPassword {
+    cursor: pointer;
+    height: 15px;
+    letter-spacing: 0;
+    min-width: 111px;
     text-decoration: underline;
-    width: 154px;
+    float: left;
+    margin-left: 9%;
+    width: 40%;
+    text-align: left;
 }
 
 .overlap-group {
@@ -329,10 +322,3 @@ body{
     margin-left: 35px;
 }
 
-.upload-icon {
-    height: 30px;
-    left: 366px;
-    position: absolute;
-    top: 56px;
-    width: 35px;
-}

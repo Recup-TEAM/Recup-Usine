@@ -177,8 +177,11 @@ body{
     align-items: flex-start;
     display: flex;
     margin-top: 10px;
-    min-width: 354px;
-    margin-right: 65px;
+    width: 100%;
+    cursor: pointer;
+    height: 15px;
+    letter-spacing: 0;
+    text-decoration: underline;
 }
 
 .forgetPassword {
@@ -187,6 +190,10 @@ body{
     letter-spacing: 0;
     min-width: 111px;
     text-decoration: underline;
+    float: left;
+    margin-left: 9%;
+    width: 40%;
+    text-align: left;
 }
 
 .switchToRegister {
@@ -195,7 +202,9 @@ body{
     letter-spacing: 0;
     min-width: 111px;
     text-decoration: underline;
-    margin-left: 112px;
+    float: left;
+    width: 40%;
+    text-align: right;
 }
 
 .overlap-group {
