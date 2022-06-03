@@ -69,7 +69,8 @@ body{
     grid-template-columns: 30vw 35vw 35vw;
 }
 .overlap-group4 {
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     background-color: var(--emerald);
     border-radius: 4px;
     display: flex;
