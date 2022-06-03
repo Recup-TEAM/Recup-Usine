@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-</html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,24 +20,25 @@
     <!-- import socketio 4.5.1 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
 </head>
-<body class="body">
-<div class="index screen">
+<body>
+
+<div class="index">
     <div class="header">
         <div class="overlap-group1">
             <a href="#pub" class="align-self-flex-start">
                 <img class="logoHeader" src="../img/logoSansNom.png" />
             </a>
             <a href="#context" style="text-decoration:none">
-                <div class="contextHeader valign-text-middle calibri-regular-normal-white-22px">Contexte</div>
+                <div class="contextHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Contexte</div>
             </a>
             <a href="#mission" style="text-decoration:none">
-                <div class="missionsHeader valign-text-middle calibri-regular-normal-white-22px">Nos missions</div>
+                <div class="missionsHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Nos missions</div>
             </a>
             <a href="#recupartenaires" style="text-decoration:none">
-                <div class="recupartenairesHeader valign-text-middle calibri-regular-normal-white-22px">Nos récupartenaires</div>
+                <div class="recupartenairesHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Nos récupartenaires</div>
             </a>
             <a href="" style="text-decoration:none">
-                <div class="contactHeader valign-text-middle calibri-regular-normal-white-22px">Contact</div>
+                <div class="contactHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Contact</div>
             </a>
         <div id="buttonSignInSignOut">
 
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="pub" id="pub">
-        <div class="overlap-group2">
+        <div class="pubPitch">
             <h1 class="slogan valign-text-middle">
                 <span><span class="spanEmerald">Récup’Usine, </span><span class="spanBlack">récup’utile ! </span> </span>
             </h1>
@@ -59,9 +59,10 @@
             <div class="textPub valign-text-middle calibri-light-black-22px">
                 Une solution simple et pratique, basée sur l’industrie 4.0. Rejoignez-nous et faites un geste pour la planète !
             </div>
-
         </div>
-        <div class="overlap-group2-2">
+
+        <div class="pubImg">
+
         </div>
     </div>
     <div class="context" id="context">
@@ -112,8 +113,11 @@
         </div>
     </div>
     <div class="mission" id="mission">
-        <img class="earth" src="../img/earth.png" />
+        <div class="earthContainer">
+            <img class="earth" src="../img/earth.png" />
+        </div>
         <div class="missionsContainer">
+            <div class="missionsTitle valign-text-middle articulatcf-bold-black-50px">Nos missions</div>
             <div class="missionsText valign-text-middle calibri-light-black-22px">
         <span>
             <span class="calibri-light-black-22px">Chaque année, des </span>
@@ -131,7 +135,6 @@
             des chutes de production.</span>
         </span>
             </div>
-            <div class="missionsTitle valign-text-middle articulatcf-bold-black-50px">Nos missions</div>
         </div>
     </div>
     <div class="recupartenaires" id="recupartenaires">
@@ -179,6 +182,6 @@
 </html>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- import index.js -->>
+<!-- import index.js -->
 <script src="../js/index.js"></script>
   
