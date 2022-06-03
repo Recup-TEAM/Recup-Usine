@@ -30,7 +30,7 @@ body{
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 110%;
     width: 100%;
 }
 
@@ -112,11 +112,12 @@ body{
 }
 
 .overlap-group2 {
-    height: 690px;
+    height: 700px;
     margin-left: 140px;
     margin-top: 7%;
     position: relative;
     width: 465px;
+    margin-bottom: 10%;
 }
 
 .overlap-group3 {
@@ -127,8 +128,8 @@ body{
     display: flex;
     flex-direction: column;
     left: 0;
-    height: 689px;
-    padding: 4% 10%;
+    height: 699px;
+    padding: 4% 10% 10% 10%;
     position: absolute;
     width: 90%;
 }
