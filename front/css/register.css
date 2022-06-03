@@ -21,13 +21,17 @@
 
 @import url("https://fonts.googleapis.com/css?family=Mulish:400");
 
+body{
+    margin:0px;
+}
+
 .registerpage {
     align-items: center;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    height: 878px;
-    width: 1440px;
+    height: 100%;
+    width: 100%;
 }
 
 .hidden,
@@ -36,10 +40,40 @@
     visibility: hidden;
 }
 
-.header-1 {
-    height: 88px;
-    width: 1440px;
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+/* header */
+.header {
+    align-items: flex-start;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.overlap-group0 {
+    align-items: center;
+    background-color: var(--emerald);
+    display: flex;
+    height: 78px;
+    width: 100%;
+}
+
+.logoHeader {
+    align-self: flex-start;
+    margin-left: 12px;
+    margin-top: 9px;
+    cursor: pointer;
+    height: 58px;
+    object-fit: cover;
+    width: 97px;
+}
+/* end header */
+
 
 .overlap-group-container {
     align-items: center;
@@ -49,11 +83,20 @@
     min-width: 1069px;
 }
 
-.overlap-group3 {
+.overlap-group1 {
     height: 438px;
     margin-bottom: 69px;
     position: relative;
     width: 465px;
+}
+
+.logoPartenaireImg {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 48px;
+    width: 100%;
 }
 
 .title {
@@ -70,37 +113,14 @@
     width: 337px;
 }
 
-.valign-text-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.logo-partenaire-sans-fond {
-    height: 390px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 48px;
-    width: 465px;
-}
-
-.overlap-group4 {
+.overlap-group2 {
     height: 689px;
     margin-left: 140px;
     position: relative;
     width: 464px;
 }
 
-.upload-icon {
-    height: 30px;
-    left: 366px;
-    position: absolute;
-    top: 56px;
-    width: 35px;
-}
-
-.overlap-group2 {
+.overlap-group3 {
     align-items: flex-end;
     background-color: #e8f6f3;
     border-radius: 10px;
@@ -115,73 +135,6 @@
     width: 462px;
 }
 
-.password-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-top: 36px;
-    margin-left: 5px;
-    min-height: 71px;
-    width: 353px;
-    
-}
-
-.x-input {
-    align-items: flex-start;
-    background-color: var(--alto);
-    border-radius: 4px;
-    display: flex;
-    height: 50px;
-    margin-top: 6px;
-    margin-left: -90px;
-    min-width: 353px;
-    padding: 6px 12px;
-}
-
-.placeholder {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 301px;
-}
-
-.icon {
-    align-self: center;
-    height: 16px;
-    margin-bottom: 1px;
-    margin-left: 12px;
-    width: 16px;
-}
-
-.header {
-    height: 20px;
-    letter-spacing: 0;
-    margin-top: -10px;
-    margin-left: -65px;
-}
-
-.overlap-group {
-    align-items: flex-start;
-    background-color: var(--emerald);
-    border-radius: 4px;
-    display: flex;
-    margin-top: 18px;
-    min-width: 353px;
-    padding: 0 33.3px;
-}
-
-.btn-text-1 {
-    color: var(--white);
-    font-family: var(--font-family-calibri-regular);
-    font-size: var(--font-size-m2);
-    font-weight: 400;
-    height: 51px;
-    letter-spacing: 0;
-    text-align: center;
-    width: 285px;
-    margin-left: 35px;
-}
-
 .flex-row {
     align-items: flex-start;
     display: flex;
@@ -191,15 +144,14 @@
     margin-top: 25px;
 }
 
-.name-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    min-height: 57px;
-    width: 227px;
+.inputTitle {
+    height: 20px;
+    letter-spacing: 0;
+    margin-top: -10px;
+    margin-left: -65px;
 }
 
-.name-input {
+.inputName {
     align-items: flex-start;
     background-color: var(--alto);
     border-radius: 4px;
@@ -218,7 +170,7 @@
     width: 203px;
 }
 
-.overlap-group1 {
+.overlap-group4 {
     align-items: flex-start;
     align-self: flex-end;
     background-color: var(--sonic-silver);
@@ -250,6 +202,18 @@
     width: 353px;
 }
 
+.x-input {
+    align-items: flex-start;
+    background-color: var(--alto);
+    border-radius: 4px;
+    display: flex;
+    height: 50px;
+    margin-top: 6px;
+    margin-left: -90px;
+    min-width: 353px;
+    padding: 6px 12px;
+}
+
 .placeholder-2 {
     height: 36px;
     letter-spacing: 0;
@@ -257,19 +221,30 @@
     width: 329px;
 }
 
-.switch-to-connection-link {
-    align-self: flex-start;
-    color: #0066ff;
-    cursor: pointer;
-    font-family: var(--font-family-mulish);
-    font-size: var(--font-size-xs2);
-    font-weight: 400;
-    height: 14px;
-    letter-spacing: 0;
+.password-div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
     margin-left: 5px;
-    margin-top: 20pxpx;
-    text-decoration: underline;
-    width: 154px;
+    min-height: 71px;
+    width: 353px;
+
+}
+
+.placeholder {
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 21px;
+    width: 301px;
+}
+
+.icon {
+    align-self: center;
+    height: 16px;
+    margin-bottom: 1px;
+    margin-left: 12px;
+    width: 16px;
 }
 
 .confirm-password-div {
@@ -315,4 +290,49 @@
     line-height: 21px;
     min-height: 111px;
     width: 329px;
+}
+
+.switch-to-connection-link {
+    align-self: flex-start;
+    color: #0066ff;
+    cursor: pointer;
+    font-family: var(--font-family-mulish);
+    font-size: var(--font-size-xs2);
+    font-weight: 400;
+    height: 14px;
+    letter-spacing: 0;
+    margin-left: 5px;
+    margin-top: 20px;
+    text-decoration: underline;
+    width: 154px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background-color: var(--emerald);
+    border-radius: 4px;
+    display: flex;
+    margin-top: 18px;
+    min-width: 353px;
+    padding: 0 33.3px;
+}
+
+.btn-text-1 {
+    color: var(--white);
+    font-family: var(--font-family-calibri-regular);
+    font-size: var(--font-size-m2);
+    font-weight: 400;
+    height: 51px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 285px;
+    margin-left: 35px;
+}
+
+.upload-icon {
+    height: 30px;
+    left: 366px;
+    position: absolute;
+    top: 56px;
+    width: 35px;
 }
