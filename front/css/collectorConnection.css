@@ -75,7 +75,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 15% 0;
+    padding: 10% 0 0 0;
     margin: 0 2.5%;
     width: 95%;
 }
@@ -91,14 +91,14 @@ body {
     text-align: center;
 }
 
-.mailDiv {
+.div {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     margin-top: 7%;
     height: 15%;
     width: 90%;
-    padding: 5% 5%;
+    padding: 5% 5% 0 5%;
 }
 
 .title {
@@ -117,28 +117,7 @@ body {
     width: 100%;
 }
 
-.placeholderMail {
-    height: 100%;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 92%;
-    margin-left: 4%;
-    border-style: hidden;
-    outline: none;
-    background-color: #1fe0;
-    padding: 4% 0;
-}
-
-.passwordDiv {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    height: 15%;
-    width: 90%;
-    padding: 5% 5%;
-}
-
-.placeholderPassword {
+.placeholder {
     height: 100%;
     letter-spacing: 0;
     line-height: 21px;
@@ -165,7 +144,7 @@ body {
     font-weight: 400;
     height: 15px;
     letter-spacing: 0;
-    margin-left: 5%;
+    margin: 5% 0 0 5%;
     text-decoration: underline;
 }
 
