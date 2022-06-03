@@ -73,6 +73,13 @@
     font-weight: 400;
     font-style: normal;
 }
+.calibri-regular-normal-mine-shaft-22px {
+    color: var(--mine-shaft );
+    font-family: var(--font-family-calibri-regular );
+    font-size: var(--font-size-m );
+    font-weight: 400;
+    font-style: normal;
+}
 .calibri-bold-black-26px {
     color: var(--black );
     font-family: var(--font-family-calibri-bold );
@@ -313,6 +320,13 @@
 .inter-medium-white-16px {
     color: var(--white);
     font-family: var(--font-family-inter-medium);
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    font-style: normal;
+}
+.calibri-light-blue-ribbon-16px{
+    color: var(--blue-ribbon);
+    font-family: var(--font-family-calibri-light);
     font-size: var(--font-size-xl);
     font-weight: 500;
     font-style: normal;

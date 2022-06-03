@@ -2,58 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Specific Partner modification Management</title>
+    <title>Specific Partner Modification Management</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/specificPartnerModificationManagement.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/styleGuide.css">
 </head>
-<body>
-<div class="specificpartnermodificationmanagement screen">
-    <img class="header" src="header.png" />
-    <div class="flex-col">
-        <div class="overlap-group3">
+<body class="body">
+
+<!--Header-->
+<div class="header">
+    <div class="overlap-group0">
+        <img alt="logoSansNom" class="logoHeader" src="../img/logoSansNom.png" />
+    </div>
+</div>
+
+<!--Profile Modification-->
+<div class="profileModification">
+
+    <!--Profile-->
+    <div class="profile">
+        <div class="infoProfile">
             <div class="flex-row">
                 <div class="profile-img"></div>
                 <div class="flex-col-1">
                     <div class="name-info-placeholder">Nom de l’entreprise</div>
-                    <div class="inscription-date-headercalibri-light-nevada-18px">Date d’inscription :</div>
-                    <div class="inscription-date-placeholdercalibri-light-nevada-18px">00.00.2022</div>
+                    <div class="inscription-date-header calibri-light-nevada-18px">Date d’inscription :</div>
+                    <div class="inscription-date-placeholder calibri-light-nevada-18px">00.00.2022</div>
                 </div>
             </div>
-            <div class="mail-info-headercalibri-light-nevada-18px">Adresse mail :</div>
-            <div class="mail-info-placeholdercalibri-light-nevada-18px">you@example.com</div>
-            <div class="cription-date-headercalibri-light-nevada-18px">Type d’abonnement :</div>
-            <div class="cription-date-headercalibri-light-nevada-18px">Date de renouvellement :</div>
+            <div class="mail-info-header calibri-light-nevada-18px">Adresse mail :</div>
+            <div class="mail-info-placeholder calibri-light-nevada-18px">you@example.com</div>
+            <div class="subscription-date-header calibri-light-nevada-18px">Type d’abonnement :</div>
+            <div class="subscription-date-header calibri-light-nevada-18px">Date de renouvellement :</div>
         </div>
-        <div class="return-btn">
+        <div class="returnButton">
             <div class="overlap-group4">
-                <img class="shape" src="shape-1.svg" />
-                <div class="placeholdercalibri-regular-normal-white-20px">retour</div>
+                <img alt="returnArrow" class="shape" src="../img/arrow.png" />
+                <div class="placeholder calibri-regular-normal-white-20px">retour</div>
             </div>
         </div>
     </div>
-    <div class="subscription-price-modif-div">
-        <div class="overlap-group1">
-            <h1 class="header-1valign-text-middlecalibri-bold-mine-shaft-26px">Changer prix de l’abonnement</h1>
-            <div class="new-price">
-                <div class="header-2valign-text-middle">Nouveau prix</div>
-                <div class="price-input">
-                    <div class="placeholder-1valign-text-middle">10000€</div>
+
+    <!--Change Subscription Price-->
+    <div class="subscriptionPrice">
+        <div class="container">
+            <h1 class="headerChange calibri-bold-mine-shaft-26px">Changer le montant de l'abonnement</h1>
+
+            <div class="priceDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Nouveau montant</div>
+                <div class="input">
+                    <input class="placeholderPrice valign-text-middle calibri-light-sonic-silver-16px" id="newPrice" type="text" placeholder="1000€">
                 </div>
             </div>
-            <div class="overlap-group">
-                <div class="placeholder-2valign-text-middlecalibri-regular-normal-white-20px">Confirmer</div>
+
+            <div class="priceDiv">
+                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Confirmer nouveau montant</div>
+                <div class="input">
+                    <input class="placeholderPrice valign-text-middle calibri-light-sonic-silver-16px" id="confirmNewPrice" type="text" placeholder="1000€">
+                </div>
             </div>
+
+            <div class="buttonDiv">
+                <div id="confirmButtonSubscriptionPriceChange" class="confirmButton valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
+            </div>
+
         </div>
     </div>
-    <div class="date-modif-div">
-        <div class="overlap-group2">
-            <img class="vector" src="vector.svg" />
-            <div class="header-3valign-text-middlecalibri-bold-mine-shaft-26px">Changer la fréquence de paiement</div>
-            <div class="nav-item">
-                <div class="item-de-niveau-1valign-text-middle">Types d’abonnement</div>
-            </div>
-            <div class="overlap-group-1">
-                <div class="placeholder-3valign-text-middlecalibri-regular-normal-white-20px">Confirmer</div>
+
+    <!--Change Susbcription Type-->
+    <div class="subscriptionType">
+        <div class="container">
+            <h1 class="headerChange calibri-bold-mine-shaft-26px">Changer la fréquence de l'abonnement</h1>
+            <fieldset class="form">
+                <div>
+                    <input class="subcriptionTypeChoice" type="radio" id="daily" name="drone" value="daily" checked>
+                    <label for="daily" class="valign-text-start calibri-regular-normal-mine-shaft-22px">Quotidien</label>
+                </div>
+
+                <div>
+                    <input class="subcriptionTypeChoice" type="radio" id="hebdo" name="drone" value="hebdo">
+                    <label for="hebdo" class="valign-text-start calibri-regular-normal-mine-shaft-22px">Hebdomadaire</label>
+                </div>
+
+                <div>
+                    <input class="subcriptionTypeChoice" type="radio" id="bimensuel" name="drone" value="bimensuel">
+                    <label for="bimensuel" class="valign-text-start calibri-regular-normal-mine-shaft-22px">Bimensuel</label>
+                </div>
+
+                <div>
+                    <input class="subcriptionTypeChoice" type="radio" id="mensuel" name="drone" value="mensuel">
+                    <label for="mensuel" class="valign-text-start calibri-regular-normal-mine-shaft-22px">Mensuel</label>
+                </div>
+
+                <div>
+                    <input class="subcriptionTypeChoice" type="radio" id="annuel" name="drone" value="annuel">
+                    <label for="annuel" class="valign-text-start calibri-regular-normal-mine-shaft-22px">Annuel</label>
+                </div>
+            </fieldset>
+            <div class="buttonDiv">
+                <div id="confirmButtonSubscriptionTypeChange" class="confirmButton valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
             </div>
         </div>
     </div>
