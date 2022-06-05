@@ -174,9 +174,9 @@ module.exports = function (session) {
         } else {
           // L'utilisateur existe déjà
           dataUser = { email, oldPassword, newPassword };
-          db_user.updateUserPassword(dataUser).then(() => {
+          db_user.updateUserPassword(dataUser).then((result) => {
             console.log("L'utilisateur \"" + email + '" a changé son mot de passe');
-            res.json({ err: "", success: true });
+            res.json({ err: "", success: result });
           });
         }
       });

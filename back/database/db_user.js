@@ -22,8 +22,12 @@ module.exports = function () {
     getUserById: async (id) => {
       let sql = "SELECT * FROM user WHERE id_user='" + id + "'";
       rq = await db_query(sql);
-      // if user return true else return false
-      return { email: rq[0].email, level: rq[0].level, id: rq[0].id_user };
+      return {
+        email: rq[0].email,
+        compte_level: rq[0].compte_level,
+        id: rq[0].id_user,
+        registerDate: rq[0].register_date,
+      };
     },
 
     // Get all user
@@ -43,7 +47,12 @@ module.exports = function () {
     /* POST */
     // Connexion
     login: async ({ email, password }) => {
-      let sql = "SELECT * FROM user WHERE email='" + email + "' and password = '" + password + "'";
+      let sql =
+        "SELECT * FROM user WHERE email='" +
+        email +
+        "' and password = '" +
+        password +
+        "'";
       var rq = await db_query(sql);
 
       resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
@@ -59,14 +68,14 @@ module.exports = function () {
     // Créer un compte
     createUser: async (dataUser) => {
       let sql =
-        "INSERT INTO `user` (`id`, `email`, `password`, `compteLevel`)" +
+        "INSERT INTO `user` (`id`, `email`, `password`, `compteLevel`, `register_date`)" +
         "VALUES (NULL, '" +
         dataUser.email +
         "', '" +
         dataUser.password +
         "', '" +
         dataUser.compteLevel +
-        "');";
+        "', CURRENT_TIMESTAMP)";
 
       var rq = await db_query(sql);
       return rq;
@@ -82,15 +91,22 @@ module.exports = function () {
         "' and `user`.`password` = '" +
         oldPassword +
         "';";
-        console.log(sql);
       var rq = await db_query(sql);
-      return rq;
+      if (rq.affectedRows == 0) {
+        return false;
+      } else {
+        return true;
+      }
     },
 
     // Changer l'email
     updateUserEmail: async ({ userId, newEmail }) => {
       let sql =
-        "UPDATE `user` SET `email` = '" + newEmail + "' WHERE `user`.`id_user` = '" + userId + "';";
+        "UPDATE `user` SET `email` = '" +
+        newEmail +
+        "' WHERE `user`.`id_user` = '" +
+        userId +
+        "';";
       var rq = await db_query(sql);
       return rq;
     },
@@ -108,13 +124,13 @@ module.exports = function () {
     },
 
     // Subscribe to a plan
-    subscribe: async ({ userId, subscriptionLevel }) => {
+    subscribe: async ({ userId, subscriptionType }) => {
       let sql =
-        "INSERT INTO `subscription` (`id_subscription`, `id_user`, `subscription_level`, `start_date`)" +
+        "INSERT INTO `subscription` (`id_subscription`, `id_user`, `subscription_type`, `start_date`)" +
         "VALUES (NULL, '" +
         userId +
         "', '" +
-        subscriptionLevel +
+        subscriptionType +
         "', NULL);";
       console.log(sql);
       rq = await db_query(sql);

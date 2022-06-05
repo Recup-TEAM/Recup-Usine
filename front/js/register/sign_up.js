@@ -34,8 +34,8 @@ $(document).ready(function () {
     ) {
       logger.sign_up(login, password);
     } else {
-        $("#error").html("Veuillez remplir correctement les champs");
-        console.log("Veuillez remplir correctement les champs");
+      $("#error").html("Veuillez remplir correctement les champs");
+      console.log("Veuillez remplir correctement les champs");
     }
   });
 });
