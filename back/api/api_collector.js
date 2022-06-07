@@ -19,6 +19,15 @@ module.exports = function (session) {
       });
     },
 
+    // getCollectorById
+    getCollectorByIdUser: function (req, res) {
+      console.log("API -> getCollectorById");
+      db_collector.getCollectorByIdUser(req.params.id).then((collector) => {
+        res.json({ err: "", success: true, data: collector });
+      });
+    },
+
+
     /* POST */
     //createDemande
     createDemande: function (req, res) {

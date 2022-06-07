@@ -16,7 +16,7 @@ let api_request = (function () {
     return dataSucces;
   }
 
-function request_get_collector() {
+function request_get_all_collector() {
   $.ajax({
     type: "GET",
     url: "/api/collector/get/all",
@@ -28,12 +28,44 @@ function request_get_collector() {
   return dataSucces;
 }
 
+// get one collector
+function request_get_one_collector(id) {
+  $.ajax({
+    type: "GET",
+    url: "/api/collector/get/collectorById/" + id,
+    async: false,
+    success: (data) => {
+      dataSucces = data;
+    },
+  }); 
+  return dataSucces;
+}
+
+function request_user_id(id) {
+  $.ajax({
+    type: "GET",
+    url: "/api/user/get/userById/" + id,
+    async: false,
+    success: (data) => {
+      dataSucces = data;
+    },
+  });
+  return dataSucces;
+}
+
+
   return {
     addCollector() {
       return request_add_collector();
     },
     getAllCollector() {
-      return request_get_collector();
+      return request_get_all_collector();
     },
+    getOneCollector(id) {
+      return request_get_one_collector(id);
+    },
+    getUserById(id) {
+      return request_user_id(id);
+    }
   };
 })();

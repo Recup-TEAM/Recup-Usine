@@ -38,6 +38,15 @@ module.exports = function (session) {
       }
     },
 
+    // Get one user by id
+    getUserById: function (req, res) {
+      console.log("API -> getUserById");
+      db_user.getUserById(req.params.id).then((user) => {
+        res.json({ err: "", success: true, data: user });
+      });
+    },
+
+
     // GetcomteLevel
     getCompteLevel: (req, res) => {
       console.log("API -> getCompteLevel");

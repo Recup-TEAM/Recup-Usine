@@ -19,6 +19,9 @@ module.exports = function (app, session) {
     // Get data of current user
     app.get("/api/user/get/data", urlencodedParser, api_user.getUserData);
 
+    // Get user by id
+    app.get("/api/user/get/userById/:id", urlencodedParser, api_user.getUserById);
+
     // Get le level du compte
     app.get("/api/user/get/compteLevel", urlencodedParser, api_user.getCompteLevel);
     
@@ -115,6 +118,9 @@ module.exports = function (app, session) {
     /* GET */
     // Get all collector
     app.get("/api/collector/get/all", urlencodedParser, api_collector.getAllCollector);
+
+    // Get collector by id
+    app.get("/api/collector/get/collectorById/:id", urlencodedParser, api_collector.getCollectorByIdUser);
     /* POST */
     // Create a collector demande
     app.post("/api/collector/add", urlencodedParser, api_collector.createDemande);
