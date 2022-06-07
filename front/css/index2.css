@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    padding-top: 74px;
+}
+
+.navbar {
+    background-color: #1bab8d;
+}
+
+.logo-header {
+    cursor: pointer;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+
+.nav-link {
+    color: white !important;
+    margin: 0 5px;
+}
+
+.nav-link:hover {
+    color: #0D5546 !important;
+}
+
+.btn-connection {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    margin-right: 12px;
+}
+
+.btn-connection:hover {
+    color: #1bab8d;
+    background-color: white;
+}
+
+/* end header */
+
+.spanEmerald {
+    color: var(--emerald) !important;
+}
+.featurette {
+    margin-top: 100px;
+}
+
+.featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+}
+.pub {
+    height: 32rem;
+}
+.featurette-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+}
+.btn-recupartenaire {
+    color: white;
+    background-color: #1bab8d;
+    margin: auto;
+}
+
+.btn-recupartenaire:hover {
+    color: #0D5546;
+}
+
+.recupartenairesLogo {
+    height: 84px;
+    object-fit: cover;
+    width: 95px;
+    margin: -15px -15px -25px -10px;
+}
+
+.context-img {
+    width: 100%;
+
+    margin: 50px 0;
+}
+
+.container {
+    margin-bottom: 100px;
+}
+
+.page-footer {
+    color: white;
+    background-color: #1bab8d;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
