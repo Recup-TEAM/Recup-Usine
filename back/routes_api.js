@@ -2,6 +2,7 @@ module.exports = function (app, session) {
     const api_user = require("./api/api_user")(session);
     const api_entreprise = require("./api/api_entreprise")(session);
     const api_product = require("./api/api_product")(session);
+    const api_collector = require("./api/api_collector")(session);
 
     const bodyParser = require("body-parser");
     const { body, validationResult } = require("express-validator");
@@ -72,6 +73,7 @@ module.exports = function (app, session) {
     app.get("/api/entreprises/get/allEntreprisesByUser:id", urlencodedParser, api_entreprise.getAllEntreprisesByUser);
 
 
+
     /* POST */
     // Ajouter une entreprise
     app.post("/api/entreprises/add", urlencodedParser, api_entreprise.addEntreprise);
@@ -102,4 +104,16 @@ module.exports = function (app, session) {
 
     // delete a product by id
     app.post("/api/products/delete/:id", urlencodedParser, api_product.deleteProduct);
+
+
+
+
+    /***************
+     *  Collector  *
+     ***************/
+
+    /* GET */
+    /* POST */
+    // Create a collector demande
+    app.post("/api/collector/add", urlencodedParser, api_collector.createDemande);
 };

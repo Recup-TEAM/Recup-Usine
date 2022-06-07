@@ -59,7 +59,7 @@ $(document).ready(function () {
     type: "GET",
     success: function (data) {
       if (!data.connected) {
-        //window.location.href = "/";
+        window.location.href = "/";
       }
     },
   });

@@ -5,6 +5,15 @@
     <title>Collector Creation Management</title>
   <link rel="stylesheet" type="text/css" media="screen" href="../../../css/adminCss/collectorAdminCss/collectorCreationManagement.css">
   <link rel="stylesheet" type="text/css" media="screen" href="../../../css/styleGuide.css">
+
+  <!-- import ajax from cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--- import socket.io 4. from cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+
+  <script src="../../js/Collector/collectorCreationManagement.js"></script>
+  <script src="../../js/Collector/modules/api_request.js"></script>
+
 </head>
 <body>
 <div class="collectorcreationmanagementscreen">
@@ -21,24 +30,18 @@
     <div class="register-div">
         <div class="name-div">
             <div class="header valign-text-middle calibri-regular-normal-mine-shaft-16px">Nom</div>
-            <div class="name-input">
-                <div class="placeholder valign-text-middle calibri-light-sonic-silver-16px">Dupont</div>
-            </div>
+                <input placeholder="Dupont" class="placeholder valign-text-middle calibri-light-sonic-silver-16px" id="name"></input>
         </div>
         <div class="surname-div">
             <div class="header valign-text-middle calibri-regular-normal-mine-shaft-16px">Prénom</div>
-            <div class="name-input">
-                <div class="placeholder valign-text-middle calibri-light-sonic-silver-16px">Pierre</div>
-            </div>
+                <input placeholder="Pierre" class="placeholder valign-text-middle calibri-light-sonic-silver-16px" id="prenom"></input>
         </div>
         <div class="mail-div">
             <div class="header valign-text-middle calibri-regular-normal-mine-shaft-16px">Adresse mail</div>
-            <div class="mail-input">
-                <div class="placeholder-2 valign-text-middle calibri-light-sonic-silver-16px">you@example.com</div>
-            </div>
+                <input placeholder="you@example.com" class="placeholder-2 valign-text-middle calibri-light-sonic-silver-16px" id="email"></input>
         </div>
         <div class="overlap-group">
-            <div class="btn-text valign-text-middle calibri-regular-normal-white-20px">+ Ajouter</div>
+            <div class="btn-text valign-text-middle calibri-regular-normal-white-20px" id="buttonSubmit">+ Ajouter</div>
         </div>
     </div>
 </div>

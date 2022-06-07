@@ -39,4 +39,16 @@ module.exports = function (express, app, http) {
         }
     });
 
+    app.get("/:sub/:folder/:name", (req, res) => {
+        // if name is not a html file, redirect to index
+        if (req.params.name.indexOf(".html") === -1 && req.params.name.split(".").length > 1) {
+            res.redirect("/");
+        }
+        else {
+            res.sendFile(path.join(__dirname, "../front/html/" + req.params.sub + "/" + req.params.folder + "/" + req.params.name + ".html"));
+        }
+    });
+
+
+
 };
