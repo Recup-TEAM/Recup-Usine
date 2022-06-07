@@ -42,8 +42,8 @@
 
 /* Underline From Center */
 .hvr-underline-from-center {
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
+    -webkit-transform: perspective(1px);
+    transform: perspective(1px);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
     overflow: hidden;
@@ -56,7 +56,7 @@
     right: 51%;
     bottom: 0;
     background: var(--white);
-    height: 4px;
+    height: 3px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
     -webkit-transition-duration: 0.3s;
