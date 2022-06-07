@@ -50,6 +50,7 @@ body{
 }
 
 /* header */
+
 .header {
     grid-area: a;
     align-items: flex-start;
