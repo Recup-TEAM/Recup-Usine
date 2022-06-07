@@ -11,17 +11,12 @@ module.exports = function (session) {
      ***************/
 
     /* GET */
-    // getEntreprisetDataOfCurrentUser
-    getEntreprisetDataOfCurrentUser: function (req, res) {
-      console.log("API -> getEntreprisetDataOfCurrentUser");
-      if (check.checkUserConnected(req, res)) {
-        let userId = req.params.userId;
-        db_entreprise.getAllEntreprisesByIdUser(userId).then((entreprise) => {
-          res.json({ err: "", success: true, data: entreprise });
-        });
-      } else {
-        res.json({ err: "Vous n'êtes pas connecté", success: false, data: null });
-      }
+    // getAllCollector
+    getAllCollector: function (req, res) {
+      console.log("API -> getAllCollector");
+      db_collector.getAllCollector().then((collector) => {
+        res.json({ err: "", success: true, data: collector });
+      });
     },
 
     /* POST */

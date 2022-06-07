@@ -113,6 +113,8 @@ module.exports = function (app, session) {
      ***************/
 
     /* GET */
+    // Get all collector
+    app.get("/api/collector/get/all", urlencodedParser, api_collector.getAllCollector);
     /* POST */
     // Create a collector demande
     app.post("/api/collector/add", urlencodedParser, api_collector.createDemande);
