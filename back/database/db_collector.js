@@ -33,7 +33,7 @@ module.exports = function () {
         prenom +
         "', '" +
         email +
-        "', '0', '0', '" +
+        "', '1', '0', '" +
         id_user +
         "' );";
       var rq = await db_query(sql);

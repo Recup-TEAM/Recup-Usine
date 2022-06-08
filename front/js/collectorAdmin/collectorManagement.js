@@ -13,26 +13,21 @@ function writeToHtml(list_collectors) {
   //if list_collectors is empty use all_collectors
   for (let i = 0; i < list_collectors.length; i++) {
     let collector = list_collectors[i];
-    html =
-      '<div class="overlap-group cardCollector" id="'+collector.id_user+'">' +
-      '<div class="logo"></div>' +
-      '<h1 class="name-1 valign-text-middle calibri-bold-black-26px">' +
-      collector.prenom +
-      " " +
-      collector.nom +
-
-      " </h1>" +
-      //add mail
-        '<h5>' +
-        collector.email +
-        " </h5>" +
-      "</div>";
+    html = '<div class="card mb-4 shadow-sm text-center">'+
+            '<div class="card-header">'+
+            '<h4 class="my-0 font-weight-normal">'+ collector.prenom + ' ' + collector.nom +  '</h4>'+
+                '</div>'+
+            '<div class="card-body">'+
+            '<p>'+collector.email+ '</p>'+
+                '<button type="button" class="btn btn-sm btn-edit cardCollector" value="' + collector.id_user + '">Editer</button>'+
+                '</div>'+
+            '</div>';
     $("#collector-list").append(html);
   }
 
   // listeenr click on cardCollector
   $(".cardCollector").click(function () {
-    id = $(this).attr("id");
+    id = $(this).val();
     console.log("click on cardCollector id=" + id);
     //stock in localstorage
     localStorage.setItem("id_collector", id);
@@ -87,4 +82,10 @@ $(document).ready(function () {
     searchCollector();
   });
 
+  // when  addCollector button is clicked
+  $("#addCollector").click(function () {
+    //redirect to addCollector.html
+    console.log("addCollector");
+    window.location.href = "collectorCreationManagement";
+  });
 });
