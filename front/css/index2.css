@@ -49,20 +49,11 @@ body > .container {
     margin: 0 5px;
 }
 
-.nav-link:hover {
-    color: #0D5546 !important;
-}
-
 .btn-connection {
     color: white;
     background-color: transparent;
     border-color: white;
     margin-right: 12px;
-}
-
-.btn-connection:hover {
-    color: #1bab8d;
-    background-color: white;
 }
 
 /* end header */
@@ -107,6 +98,11 @@ body > .container {
     min-width: 100%;
     height: 32rem;
 }
+@media screen and (max-width: 992px) {
+    .category-image {
+        opacity: 0.4;
+    }
+}
 
 .btn-margin {
     margin-top: 50px;
@@ -116,10 +112,6 @@ body > .container {
     color: white;
     background-color: #1bab8d;
     margin: auto;
-}
-
-.btn-recupartenaire:hover {
-    color: #0D5546;
 }
 
 .recupartenairesLogo {
@@ -160,6 +152,10 @@ body > .container {
 
 .aHref {
     color: white;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 .aHref:hover {
     text-decoration: none;

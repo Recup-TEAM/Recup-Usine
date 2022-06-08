@@ -19,8 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 4px;
-    background: #2098D1;
+    background: var(--white);
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -33,11 +32,54 @@
     transition-timing-function: ease-out;
 }
 .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
-    color: white;
+    color: var(--emerald);
 }
 .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+}
+
+/* Ripple Out */
+@-webkit-keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+@keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+.hvr-ripple-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+}
+.hvr-ripple-out:before {
+    content: '';
+    position: absolute;
+    border: var(--emerald) solid 6px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+    -webkit-animation-name: hvr-ripple-out;
+    animation-name: hvr-ripple-out;
 }
 
 /* Underline From Center */
@@ -67,4 +109,36 @@
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
     left: 0;
     right: 0;
+}
+
+@media screen and (max-width: 800px) {
+    /* Underline From Center responsive */
+    .hvr-underline-from-center {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+    }
+    .hvr-underline-from-center:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background: var(--white);
+        height: 4px;
+        -webkit-transition-property: right;
+        transition-property: right;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+        right: 0;
+    }
 }

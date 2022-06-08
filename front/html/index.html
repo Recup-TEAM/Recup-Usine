@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../img/favicon.ico">
 
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <title>Récup'Usine</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Core CSS for the project -->
+    <link rel="stylesheet" href="../css/styleGuide.css">
 
     <!-- import ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,37 +23,43 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/index2.css" rel="stylesheet">
+
+    <!-- Btn Animation Css File -->
+    <link href="../css/btnHrvAnimation.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <!-- import index.js -->
     <script src="../js/index.js"></script>
      
 </head>
 
-<body>
+<body class="animate__animated animate__fadeIn">
 
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <img class="logo-header" src="../img/logoSansNom.png" href="#pub">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <a href="#top" ><img class="logo-header" src="../img/logoSansNom.png" alt="logoRecup'Usine"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#context">Contexte</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="#context">Contexte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#missions">Nos missions</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="#missions">Nos missions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#recupartenaires">Nos récupartenaires</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="#recupartenaires">Nos récupartenaires</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="">Contact</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Contact</a>
                 </li>
             </ul>
-            <button class="btn btn-connection calibri-regular-normal-white-22px my-2 my-sm-0" id="loginButton" type="button">Connexion</button>
+            <button class="btn btn-connection calibri-regular-normal-white-22px my-2 my-sm-0 hvr-sweep-to-right" id="loginButton" type="button">Connexion</button>
         </div>
     </nav>
 </header>
@@ -58,30 +67,30 @@
 <!-- Begin page content -->
 <main role="main" class="container">
     <div class="pub row category" id="pub">
-        <div class="col-md-5 my-auto">
+        <div class="col-lg-5 my-auto">
             <h1 class="jumbotron-heading slogan">Récup'Usine, </h1>
             <h1 class="jumbotron-heading slogan recuputile">Récup'utile !</h1>
             <p class="lead">Une solution simple et pratique, basée sur l’industrie 4.0. <br>Rejoignez-nous et faites un geste pour la planète !</p>
             <div class="text-center btn-margin">
-                <button id="becomeRecupartner" class="btn btn-recupartenaire calibri-regular-normal-white-22px my-2 my-sm-0" type="button">Devenir récupartenaire <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png"></button>
+                <button id="becomeRecupartner" class="btn btn-recupartenaire hvr-ripple-out calibri-regular-normal-white-22px my-2 my-sm-0" type="button">Devenir récupartenaire <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png"></button>
             </div>
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-6">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
             <img class="category-image img-fluid mx-auto" src="../img/pub.png" alt="Generic placeholder image">
         </div>
     </div>
     <div class="row category" id="context">
-        <div class="col-md-12">
+        <div class="col-lg-12">
             <h1 class="jumbotron-heading text-center">Contexte</h1>
             <img class="context-img" src="../img/lines.png">
         </div>
     </div>
     <div class="missions row category" id="missions">
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <img class="category-image mx-auto img-earth" src="../img/earth.png" alt="Generic placeholder image">
         </div>
-        <div class="col-md-6 my-auto">
+        <div class="col-lg-6 my-auto">
             <h1 class="jumbotron-heading">Nos missions</span></h1>
             <p class="lead calibri-light-black-22px">Chaque année, des
                 <strong>centaines de millions de tonnes</strong>
@@ -177,7 +186,6 @@
             </div>
         </div>
     </div>
-
 </main>
 
 <!-- Footer -->
@@ -186,7 +194,7 @@
         <div class="row">
             <div class="col-md-3 mt-md-0 mt-3">
                 <div class="text-center">
-                <img class="logoFooter" src="../img/logoSansNom.png"/>
+                <img class="logoFooter" src="../img/logoSansNomCentre.png"/>
                 </div>
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
@@ -201,7 +209,7 @@
                         <a class="aHref" href="https://www.linkedin.com/in/corentin-denoulet-964821226">Corentin DENOULET</a>
                     </li>
                     <li>
-                        <a>Pierre PINATEAU</a>
+                        <a class="aHref" href="https://osu.ppy.sh/users/10996443">Pierre PINATEAU</a>
                     </li>
                     <li>
                         <a class="aHref" href="https://www.linkedin.com/in/marie-pivette-7828a5198">Marie PIVETTE</a>
