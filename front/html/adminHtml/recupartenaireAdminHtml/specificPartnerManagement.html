@@ -5,6 +5,12 @@
     <title>Specific partner Management</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../../../css/adminCss/recupartenaireAdminCss/specificPartnerManagement.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../../../css/styleGuide.css">
+
+    
+    <!-- ajjax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../../js/recupartenaireAdmin/specificPartnerManagement.js"></script>
+    <script src="../../..//js/recupartenaireAdmin/modules/api_request.js"></script>
 </head>
 <body>
 <div class="specificpartnermanagementscreen">
@@ -14,17 +20,19 @@
             <div class="flex-row-1">
                 <div class="profile-img"></div>
                 <div class="flex-col">
-                    <div class="name-1 calibri-bold-black-20px">Nom de l’entreprise</div>
+                    <div class="name-1 calibri-bold-black-20px" id="name">Nosm de l’entreprise</div>
                     <div class="inscription-date-header calibri-light-nevada-18px">Date d’inscription :</div>
-                    <div class="inscription-date-placeholder calibri-light-nevada-18px">00.00.2022</div>
+                    <div class="inscription-date-placeholder calibri-light-nevada-18px" id="inscriDate">00.00.2022</div>
                 </div>
             </div>
             <div class="mail-info-header calibri-light-nevada-18px">Adresse mail :</div>
-            <div class="mail-info-placeholder calibri-light-nevada-18px">you@example.com</div>
+            <div class="mail-info-placeholder calibri-light-nevada-18px" id="email">you@example.com</div>
             <div class="subscription calibri-light-nevada-18px">Prix de l’abonnement :</div>
+            <div class="subscription-placeholder calibri-light-nevada-18px" id="subscription">0€</div>
             <div class="subscription calibri-light-nevada-18px">Date de renouvellement :</div>
+            <div class="subscription-placeholder calibri-light-nevada-18px" id="renewal">00.00.2022</div>
             <div class="flex-row-2">
-                <div class="btn-edit">
+                <div class="btn-edit" id="editProfilButton">
                     <div class="overlap-group-1">
                         <div class="placeholder calibri-regular-normal-white-18px">Editer le profil</div>
                     </div>

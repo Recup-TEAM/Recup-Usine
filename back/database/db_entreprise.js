@@ -19,7 +19,6 @@ module.exports = function () {
     getEntrepriseById: async (id) => {
       let sql = "SELECT * FROM entreprise WHERE id_entreprise='" + id + "'";
       var rq = await db_query(sql);
-      console.log(rq);
       return rq;
     },
 

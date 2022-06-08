@@ -35,9 +35,9 @@ module.exports = function (session) {
     // Get entreprise by id
     getEntrepriseById: (req, res) => {
       console.log("API -> getEntrepriseById");
-      let idEntreprise = req.params.idEntreprise;
+      let idEntreprise = req.params.id;
       db_entreprise.getEntrepriseById(idEntreprise).then((entreprise) => {
-        res.json({ err: "", success: true, data: enterprise });
+        res.json({ err: "", success: true, data: entreprise });
       });
     },
 

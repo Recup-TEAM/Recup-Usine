@@ -106,21 +106,13 @@ $(document).ready(function () {
       if (result.data.length == 0) {
         $("#subscription").html("Aucune souscription");
       } else {
-        // convert sql timestamp to date
-        var date = new Date(result.data[0].start_date);
-
-        var date_end = new Date(
-          date.getFullYear(),
-          date.getMonth() + result.data[0].subscription_type,
-          date.getDate()
-        );
-        // format date to dd/mm/yyyy
-        var date_end_format =
-          date_end.getDate() +
-          "/" +
-          (date_end.getMonth() + 1) +
-          "/" +
-          date_end.getFullYear();
+        let dateEnd = new Date(result.data[0].start_date);
+        dateEnd.setMonth(dateEnd.getMonth() + result.data[0].subscription_type);
+        if (dateEnd.getMonth() > 12) {
+          dateEnd.setMonth(dateEnd.getMonth() - 12);
+          dateEnd.setFullYear(dateEnd.getFullYear() + 1);
+        }
+        date_end_format = dateEnd.getDay() + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
 
         $("#dateRenouvellement").html(date_end_format);
       }

@@ -40,6 +40,15 @@ module.exports = function () {
     // Get current subscription of user
     getSubscription: async (userId) => {
       let sql = "SELECT * FROM subscription WHERE id_user='" + userId + "'";
+      console.log(sql);
+      var rq = await db_query(sql);
+      return rq;
+    },
+
+    // changeSubscriptionPrice : 
+    changeSubscriptionPrice: async (subscriptionId, price) => {
+      let sql = "UPDATE subscription SET price='" + price + "' WHERE id_subscription='" + subscriptionId + "'";
+      console.log(sql);
       var rq = await db_query(sql);
       return rq;
     },

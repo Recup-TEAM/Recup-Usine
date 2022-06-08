@@ -2,64 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>partnerManagement</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../../css/adminCss/recupartenaireAdminCss/partnerManagement.css">
+    <title>PartnerDemandsManagement</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../../css/adminCss/recupartenaireAdminCss/partnerDemandsManagement.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../../../css/styleGuide.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../../js/recupartenaireAdmin/partnerDemandsManagement.js"></script>
+    <script src="../../../js/recupartenaireAdmin/modules/api_request.js"></script>
+
 </head>
 <body>
-<div class="partnermanagementscreen">
+<div class="partnerdemandsmanagementscreen">
     <img class="header" src="header.png" />
     <div class="flex-col">
         <div class="search-input">
-            <div class="placeholder valign-text-middle">Recherche</div>
+            <input id="search" placeholder="Recherche" class="placeholder valign-text-middle"></input>
             <img class="research-icon" src="icon.png" />
         </div>
-        <div class="overlap-group-2">
-            <div class="logo"></div>
-            <div class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-        <div class="overlap-group">
-            <div class="logo"></div>
-            <div class="name-1 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-        <div class="overlap-group">
-            <div class="logo"></div>
-            <div class="name-2 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-    </div>
-    <div class="overlap-group-container">
-        <div class="overlap-group2">
-            <div class="logo"></div>
-            <div class="name-3 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-        <div class="overlap-group-1">
-            <div class="logo"></div>
-            <div class="name-4 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-        <div class="overlap-group-1">
-            <div class="logo"></div>
-            <div class="nom-de-lentreprise valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
+    <div id="entreprise-list"></div>
+
     </div>
     <div class="flex-col-1">
-        <div class="add-partner-btn">
-            <div class="overlap-group9">
-                <div class="placeholder-1">Ajouter</div>
+        <div class="return-btn">
+            <div class="overlap-group5">
+                <img class="shape" src="shape.svg" />
+                <div class="placeholder-1">Retour</div>
             </div>
         </div>
-        <div class="overlap-group1">
-            <div class="logo"></div>
-            <div class="name-5 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-        <div class="overlap-group-1">
-            <div class="logo"></div>
-            <div class="name-6 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-        <div class="overlap-group-1">
-            <div class="logo"></div>
-            <div class="name-7 valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</div>
-        </div>
-    </div>
 </div>
 
 </body>

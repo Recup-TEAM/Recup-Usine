@@ -41,11 +41,11 @@ module.exports = function (session) {
     // Get one user by id
     getUserById: function (req, res) {
       console.log("API -> getUserById");
-      db_user.getUserById(req.params.id).then((user) => {
+      iduser = req.params.id;
+      db_user.getUserById(iduser).then((user) => {
         res.json({ err: "", success: true, data: user });
       });
     },
-
 
     // GetcomteLevel
     getCompteLevel: (req, res) => {
@@ -68,12 +68,33 @@ module.exports = function (session) {
     // Get current subscription of user
     getSubscription: (req, res) => {
       console.log("API -> getSubscription");
-      if (check.checkUserConnected(req, res)) {
-        db_user.getSubscription(req.session.userId).then((data) => {
-          res.json({ err: "", success: true, data: data });
-        });
-      }
+      check.checkUserConnected(req, res);
+      db_user.getSubscription(req.session.userId).then((data) => {
+        res.json({ err: "", success: true, data: data });
+      });
     },
+
+    // Get subscriptions of user by id
+    getSubscriptionById: (req, res) => {
+      console.log("API -> getSubscriptionById");
+      db_user.getSubscription(req.params.id).then((data) => {
+        res.json({ err: "", success: true, data: data });
+      });
+    },
+
+    // changeSubscriptionPrice : change the price of the subscription of the user
+    changeSubscriptionPrice: (req, res) => {
+      console.log("API -> changeSubscriptionPrice");
+      //check.checkUserAdmin(req, res)
+        subscriptionId = req.body.id;
+        db_user.changeSubscriptionPrice(subscriptionId, req.body.price).then(
+          (data) => {
+            res.json({ err: "", success: true, data: data });
+          }
+        );
+      
+    },
+
 
     /* POST */
     // Connexion
@@ -115,11 +136,10 @@ module.exports = function (session) {
 
     // Deconnexion
     logout: (req, res) => {
-        console.log("API -> logout");
-        req.session.destroy();
-        res.json({ err: "", success: true });
+      console.log("API -> logout");
+      req.session.destroy();
+      res.json({ err: "", success: true });
     },
-
 
     // Inscription
     signup: (req, res) => {
@@ -160,17 +180,16 @@ module.exports = function (session) {
     changePassword: (req, res) => {
       console.log("API -> changePassword");
       //if user is connected
-      
+
       let userId = req.session.userId;
       let email = req.session.email;
       let oldPassword = req.body.oldPassword;
       let newPassword = req.body.newPassword;
 
       if (check.checkUserConnected(req, res)) {
-        userId = req.session.userId
-        email = req.session.email
-      }
-      else {
+        userId = req.session.userId;
+        email = req.session.email;
+      } else {
         email = req.body.email;
       }
       console.log(oldPassword, newPassword);
@@ -196,16 +215,15 @@ module.exports = function (session) {
       console.log("API -> changeEmail");
       //on regarde si l'user est connecté
       if (check.checkUserConnected(req, res)) {
-      let newEmail = req.body.newMail;
+        let newEmail = req.body.newMail;
         // on remplace l'email
         userId = req.session.userId;
-        db_user.updateUserEmail({userId, newEmail}).then(() => {
+        db_user.updateUserEmail({ userId, newEmail }).then(() => {
           console.log("L'utilisateur \"" + newEmail + '" a changé son email');
           req.session.email = newEmail;
           res.json({ err: "", success: true });
         });
-      }
-      else {
+      } else {
         res.json({ err: "L'utilisateur n'est pas co", success: false });
       }
     },

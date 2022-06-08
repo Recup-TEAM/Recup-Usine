@@ -31,6 +31,12 @@ module.exports = function (app, session) {
     // Get current subscription of user
     app.get("/api/user/get/subscription", urlencodedParser, api_user.getSubscription);
 
+    // Get subscription of user by id
+    app.get("/api/user/get/subscriptionById/:id", urlencodedParser, api_user.getSubscriptionById);
+
+    // update subscription price of user
+    app.post("/api/user/change/subscriptionPrice/", urlencodedParser, api_user.changeSubscriptionPrice);
+
     
     
     /* POST */
@@ -70,7 +76,7 @@ module.exports = function (app, session) {
     app.get("/api/entreprises/get/allEntreprises", urlencodedParser, api_entreprise.getAllEntreprises);
 
     // Get entreprise by id
-    app.get("/api/entreprises/get/entrepriseById", urlencodedParser, api_entreprise.getEntrepriseById);
+    app.get("/api/entreprises/get/entrepriseById/:id", urlencodedParser, api_entreprise.getEntrepriseById);
     
     // Get all entreprises by user
     app.get("/api/entreprises/get/allEntreprisesByUser:id", urlencodedParser, api_entreprise.getAllEntreprisesByUser);

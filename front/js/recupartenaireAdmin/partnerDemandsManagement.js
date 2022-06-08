@@ -2,9 +2,9 @@ var all_entreprise = [];
 //function get all enterprise
 function getAllEnterprise() {
     data = api_request.getAllEnterprise()
-    console.log(data)
-    for (let i = 0; i < data.length; i++) {
-        all_entreprise.push(data[i]);
+    console.log(data);
+    for (let i = 0; i < data.data.length; i++) {
+        all_entreprise.push(data.data[i]);
     }
     pushToHtml(all_entreprise);
 }
@@ -15,18 +15,16 @@ function pushToHtml(data) {
             <div class="logo"></div>
             <h1 class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</h1>
         </div>//*/
+    //empty
+    $("#entreprise-list").empty();
     for (let i = 0; i < data.length; i++) {
         let entreprise = data[i];
         html = '<div class="overlap-group cardEntreprise" id="' + entreprise.id_entreprise + '">' +
             '<div class="logo"></div>' +
             '<h1 class="name-1 valign-text-middle calibri-bold-black-26px">' +
-            entreprise.nom +
-            " " +
-            entreprise.prenom +
-            " </h1>" +
-            //add mail
-            '<h5>' +    
-            entreprise.email +
+            entreprise.name +
+            "<br></h1><hr5>" +
+            entreprise.adresse +
             " </h5>" +
             "</div>";
         $("#entreprise-list").append(html);
@@ -39,7 +37,7 @@ function pushToHtml(data) {
         //stock in localstorage
         localStorage.setItem("id_entreprise", id);
         //redirect to specificEntrepriseManagement.html
-        //window.location.href = "specificEntrepriseManagement";
+        window.location.href = "specificPartnerManagement";
     });
 }
 
@@ -62,4 +60,18 @@ $(document).ready(function() {
     if (isConnected()) {
         getAllEnterprise();
     }
+
+    // shearch and send to "push to html" when all_entreprise.name contains the value of the input or adresse tolowercase
+    $("#search").keyup(function () {
+        let value = $(this).val().toLowerCase();
+        temp = [];
+        for (let i = 0; i < all_entreprise.length; i++) {
+            let entreprise = all_entreprise[i];
+            if (entreprise.name.toLowerCase().includes(value) || entreprise.adresse.toLowerCase().includes(value)) {
+                temp.push(entreprise);
+            }
+        }
+        pushToHtml(temp);
+    });
+    
 });
