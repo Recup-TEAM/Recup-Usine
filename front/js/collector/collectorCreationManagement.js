@@ -2,8 +2,12 @@
 function addCollector(collector) {
   let data = api_request.addCollector();
   console.log(data);
-
+if (data.success == true) {
+    alert("collector ajouté avec succès");
 }
+else {
+    alert(data.err);
+}}
 
 
 // when document is ready

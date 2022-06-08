@@ -1,6 +1,6 @@
 function checkUserConnected(req, res) {
     if (!req.session.email) {
-        res.json({"err": "Vous n'êtes pas connecté !", "code": 0});
+        res.json({"err": "Vous n'êtes pas connecté !", "success": false});
         return false
     }
     else {
@@ -23,7 +23,7 @@ module.exports =  () => {
                 return false
             }
             if (req.session.compteLevel!=0) {
-                res.json({"err": "Vous n'êtes pas administrateur !", "code": 0});
+                res.json({"err": "Vous n'êtes pas administrateur !", "success": false});
                 return false
             }
             else {

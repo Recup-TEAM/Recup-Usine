@@ -53,6 +53,18 @@ function request_user_id(id) {
   return dataSucces;
 }
 
+// request_delete_collector
+function request_delete_collector(id) {
+  $.ajax({
+    type: "POST",
+    url: "/api/collector/delete/" + id,
+    async: false,
+    success: (data) => {
+      dataSucces = data;
+    },
+  });
+  return dataSucces;
+}
 
   return {
     addCollector() {
@@ -66,6 +78,9 @@ function request_user_id(id) {
     },
     getUserById(id) {
       return request_user_id(id);
+    },
+    deleteCollector(id) {
+      return request_delete_collector(id);
     }
   };
 })();

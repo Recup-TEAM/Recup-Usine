@@ -17,9 +17,10 @@ function getConnection() {
       database: 'recupusine'*/
   });
 
+  // if conn is already connected
   conn.connect(function (err) {
     if (err) throw err;
-    console.log("Database is connected successfully !");
+    //console.log("Database is connected successfully !");
   });
   db_query =  util.promisify(conn.query).bind(conn)
 }

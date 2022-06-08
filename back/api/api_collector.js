@@ -33,10 +33,22 @@ module.exports = function (session) {
     createDemande: function (req, res) {
       console.log("API -> createDemande");
       // get name, email and prenom from body
+      //check if user connected
+      check.checkUserConnected(req, res)
       let name = req.body.nom;
       let email = req.body.email;
       let prenom = req.body.prenom;
-      db_collector.createDemande(name, email, prenom).then((result) => {
+      let id_user = req.session.userId;
+      db_collector.createDemande(name, email, prenom, id_user).then((result) => {
+        res.json({ err: "", success: true, data: result });
+      });
+    
+    },
+
+    // Delete collector by id
+    deleteCollector: function (req, res) {
+      console.log("API -> deleteCollector");
+      db_collector.deleteCollector(req.params.id).then((result) => {
         res.json({ err: "", success: true, data: result });
       });
     },

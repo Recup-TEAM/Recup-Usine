@@ -14,7 +14,7 @@ function writeToHtml(list_collectors) {
   for (let i = 0; i < list_collectors.length; i++) {
     let collector = list_collectors[i];
     html =
-      '<div class="overlap-group">' +
+      '<div class="overlap-group cardCollector" id="'+collector.id_user+'">' +
       '<div class="logo"></div>' +
       '<h1 class="name-1 valign-text-middle calibri-bold-black-26px">' +
       collector.prenom +
@@ -29,6 +29,16 @@ function writeToHtml(list_collectors) {
       "</div>";
     $("#collector-list").append(html);
   }
+
+  // listeenr click on cardCollector
+  $(".cardCollector").click(function () {
+    id = $(this).attr("id");
+    console.log("click on cardCollector id=" + id);
+    //stock in localstorage
+    localStorage.setItem("id_collector", id);
+    //redirect to specificCollectorManagement.html
+    window.location.href = "specificCollectorManagement";
+  });
 }
 
 // function researh collector and rewrite html
@@ -62,6 +72,7 @@ $(document).ready(function () {
       prenom: allCollector.data[i].prenom,
       email: allCollector.data[i].email,
       accepted: allCollector.data[i].accepted,
+      id_user: allCollector.data[i].id_user,
     };
 
     if (collector.accepted == 1) {
@@ -75,4 +86,5 @@ $(document).ready(function () {
   $("#search").on("keyup", function () {
     searchCollector();
   });
+
 });
