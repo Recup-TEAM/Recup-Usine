@@ -1,0 +1,8 @@
+Fournisseur: La Reyne Merline
+Produits et chutes: Table_V4|Wood|3x3x4|10|Good, Chaise_8B2C|Wood|6x5x2|3|Average, Table_V4|Glass|12x9x2|1|Very Good
+\\
+Fournisseur: La Reine du Matelas
+Produits et chutes: Lit_V81b|Wool|4x4x4|2|Good, Chaise_86234|Wood|6x5x2|3|Average, Tabouret_A2|Screw|12x9x2|10|Stripped
+\\
+Fournisseur: Bricorama
+Produits et chutes: Perceuse_V8Turbo|Metal|3x6x19|4|Good

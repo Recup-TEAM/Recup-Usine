@@ -1,0 +1,69 @@
+[
+  {
+    "name": "La Reyne Merline",
+    "id": 0,
+    "falls": [
+      {
+        "originalProduct": "Table_V4",
+        "material": "Wood",
+        "dimensions": "3x3x4",
+        "quantity": 23490,
+        "state": "Good"
+      },
+      {
+        "originalProduct": "Chaise_8B2C",
+        "material": "Wood",
+        "dimensions": "6x5x2",
+        "quantity": 0,
+        "state": "Average"
+      },
+      {
+        "originalProduct": "Table_V4",
+        "material": "Glass",
+        "dimensions": "12x9x2",
+        "quantity": 2349,
+        "state": "Very Good"
+      }
+    ]
+  },
+  {
+    "name": "La Reine du Matelas",
+    "id": 1,
+    "falls": [
+      {
+        "originalProduct": "Lit_V81b",
+        "material": "Wool",
+        "dimensions": "4x4x4",
+        "quantity": 460,
+        "state": "Good"
+      },
+      {
+        "originalProduct": "Chaise_86234",
+        "material": "Wood",
+        "dimensions": "6x5x2",
+        "quantity": 37200,
+        "state": "Average"
+      },
+      {
+        "originalProduct": "Tabouret_A2",
+        "material": "Screw",
+        "dimensions": "12x9x2",
+        "quantity": 18760,
+        "state": "Stripped"
+      }
+    ]
+  },
+  {
+    "name": "Bricorama",
+    "id": 2,
+    "falls": [
+      {
+        "originalProduct": "Perceuse_V8Turbo",
+        "material": "Metal",
+        "dimensions": "3x6x19",
+        "quantity": 5168,
+        "state": "Good"
+      }
+    ]
+  }
+]
