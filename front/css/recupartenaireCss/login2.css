@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    padding-top: 74px;
+}
+
+.navbar {
+    background-color: #1bab8d;
+}
+
+.logo-header {
+    cursor: pointer;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+/* end header */
+
+main {
+    margin: 100px 0;
+}
+
+.logo-recupartenaires {
+    height: 390px;
+    margin-top: 6px;
+    object-fit: cover;
+    width: 465px;
+}
+
+.forms {
+    background-color: #e8f6f3 !important;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 380px;
+    padding: 40px 51px;
+}
+
+input {
+    outline-color: #0D5546 !important;
+}
+
+.btn-connection {
+    color: white;
+    background-color: #1bab8d;
+    margin: auto;
+    width: 50%;
+}
+
+.btn-connection:hover {
+    color: #0D5546;
+}
+
+footer {
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
+
+
+
