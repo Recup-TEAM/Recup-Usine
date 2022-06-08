@@ -36,12 +36,6 @@ body > .container {
     background-color: #1bab8d;
 }
 
-@media only screen and (min-width: 768px) {
-    .collapse {
-        margin-left: -97px !important;
-    }
-}
-
 .logo-header {
     cursor: pointer;
     object-fit: cover;
@@ -49,15 +43,6 @@ body > .container {
     width: 97px;
     margin-left: 12px;
 }
-.nav-link {
-    color: white !important;
-    margin: 0 5px;
-}
-
-.nav-link:hover {
-    color: #0D5546 !important;
-}
-
 /* end header */
 
 .row {
