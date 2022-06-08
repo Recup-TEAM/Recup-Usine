@@ -1,0 +1,139 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    padding-top: 74px;
+}
+
+.navbar {
+    background-color: #1bab8d;
+}
+
+.logo-header {
+    cursor: pointer;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+/* end header */
+
+main {
+    margin: 20px 0;
+}
+
+main, .row {
+    height: 100%;
+}
+
+.become {
+    font-size: 3em;
+    color: #1bab8d;
+}
+
+.logo-recupartenaires {
+    height: 390px;
+    margin-top: 6px;
+    object-fit: cover;
+    width: 465px;
+}
+
+.forms {
+    background-color: #e8f6f3 !important;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 100%;
+    padding: 40px 51px;
+}
+
+input {
+    outline-color: #0D5546 !important;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+.btn-upload {
+    background-color: #1bab8d !important;
+    color: white;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+.file-input-label {
+    padding: 0px 10px;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+input[readonly] {
+    background-color: white !important;
+    cursor: text !important;
+}
+
+.btn-connection {
+    color: white;
+    background-color: #1bab8d;
+    margin: auto;
+    width: 50%;
+}
+
+.btn-connection:hover {
+    color: #0D5546;
+}
+
+footer {
+    margin-top: 50px;
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
+
+
