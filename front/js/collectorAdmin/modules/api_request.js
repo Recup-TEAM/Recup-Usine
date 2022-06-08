@@ -52,6 +52,18 @@ function request_user_id(id) {
   });
   return dataSucces;
 }
+// updateCollectorDemande
+function request_update_collector_demande(id) {
+  $.ajax({
+    type: "POST",
+    url: "/api/collector/update/" + id,
+    async: false,
+    success: (data) => {
+      dataSucces = data;
+    },
+  });
+  return dataSucces;
+}
 
 // request_delete_collector
 function request_delete_collector(id) {
@@ -78,6 +90,9 @@ function request_delete_collector(id) {
     },
     getUserById(id) {
       return request_user_id(id);
+    },
+    updateCollectorDemande(id) {
+      return request_update_collector_demande(id);
     },
     deleteCollector(id) {
       return request_delete_collector(id);

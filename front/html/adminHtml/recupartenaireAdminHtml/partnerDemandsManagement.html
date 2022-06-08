@@ -5,6 +5,11 @@
     <title>PartnerDemandsManagement</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../../../css/adminCss/recupartenaireAdminCss/partnerDemandsManagement.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../../../css/styleGuide.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../../js/recupartenaireAdmin/partnerDemandsManagement.js"></script>
+    <script src="../../../js/recupartenaireAdmin/modules/api_request.js"></script>
+
 </head>
 <body>
 <div class="partnerdemandsmanagementscreen">
@@ -14,24 +19,8 @@
             <div class="placeholder valign-text-middle">Recherche</div>
             <img class="research-icon" src="icon.png" />
         </div>
-        <div class="overlap-group">
-            <div class="logo"></div>
-            <h1 class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</h1>
-        </div>
-        <div class="overlap-group3">
-            <div class="logo"></div>
-            <h1 class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</h1>
-        </div>
-    </div>
-    <div class="overlap-group-container">
-        <div class="overlap-group2">
-            <div class="logo"></div>
-            <h1 class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</h1>
-        </div>
-        <div class="overlap-group4">
-            <div class="logo"></div>
-            <h1 class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</h1>
-        </div>
+    <div id="entreprise-list"></div>
+
     </div>
     <div class="flex-col-1">
         <div class="return-btn">
@@ -40,11 +29,6 @@
                 <div class="placeholder-1">Retour</div>
             </div>
         </div>
-        <div class="overlap-group1">
-            <div class="logo"></div>
-            <h1 class="name valign-text-middle calibri-bold-black-26px">Nom de l’entreprise</h1>
-        </div>
-    </div>
 </div>
 
 </body>

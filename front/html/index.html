@@ -1,198 +1,242 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Récup'Usine</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/styleGuide.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/btnHrvAnimation.css">
-    <script src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- import ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--Animate.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!--Animate on Scroll-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- import socketio 4.5.1 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/index2.css" rel="stylesheet">
+    
+    <!-- import index.js -->
+    <script src="../js/index.js"></script>
+     
 </head>
+
 <body>
 
-<div class="index">
-    <div class="header">
-        <div class="overlap-group1">
-            <a href="#pub" style="text-decoration:none" class="align-self-flex-start" >
-                <img class="logoHeader" src="../img/logoSansNom.png" />
-            </a>
-            <nav class="navMenu">
-                <a href="#context" class="contextHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Contexte</a>
-                <a href="#mission" class="missionsHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Nos missions</a>
-                <a href="#recupartenaires" class="recupartenairesHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Nos récupartenaires</a>
-                <a href="" class="contactHeader valign-text-middle calibri-regular-normal-white-22px hvr-underline-from-center">Contact</a>
-            </nav>
-            <div id="buttonSignInSignOut" style="width: 100%; height: 100%; margin-left: auto; margin-right: 0;">
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <img class="logo-header" src="../img/logoSansNom.png" href="#pub">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px" href="#context">Contexte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px" href="#missions">Nos missions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px" href="#recupartenaires">Nos récupartenaires</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px" href="">Contact</a>
+                </li>
+            </ul>
+            <button class="btn btn-connection calibri-regular-normal-white-22px my-2 my-sm-0" id="loginButton" type="button">Connexion</button>
+        </div>
+    </nav>
+</header>
 
+<!-- Begin page content -->
+<main role="main" class="container">
+    <div class="pub row category" id="pub">
+        <div class="col-md-5 my-auto">
+            <h1 class="jumbotron-heading slogan">Récup'Usine, </h1>
+            <h1 class="jumbotron-heading slogan recuputile">Récup'utile !</h1>
+            <p class="lead">Une solution simple et pratique, basée sur l’industrie 4.0. <br>Rejoignez-nous et faites un geste pour la planète !</p>
+            <div class="text-center btn-margin">
+                <button id="becomeRecupartner" class="btn btn-recupartenaire calibri-regular-normal-white-22px my-2 my-sm-0" type="button">Devenir récupartenaire <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png"></button>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <img class="category-image img-fluid mx-auto" src="../img/pub.png" alt="Generic placeholder image">
+        </div>
+    </div>
+    <div class="row category" id="context">
+        <div class="col-md-12">
+            <h1 class="jumbotron-heading text-center">Contexte</h1>
+            <img class="context-img" src="../img/lines.png">
+        </div>
+    </div>
+    <div class="missions row category" id="missions">
+        <div class="col-md-6">
+            <img class="category-image mx-auto img-earth" src="../img/earth.png" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-6 my-auto">
+            <h1 class="jumbotron-heading">Nos missions</span></h1>
+            <p class="lead calibri-light-black-22px">Chaque année, des
+                <strong>centaines de millions de tonnes</strong>
+                de déchets sont générées par les industries à travers le monde.
+                <br /><br />Récup’Usine propose, à chaque entreprise, une
+                <strong>analyse poussée</strong>
+                des données visant une <strong>gestion autonome</strong>
+                des déchets à récolter, couplée à une
+                <strong>optimisation des trajets</strong>
+                des collecteurs de déchets. <br /><br />
+                Tout cela, dans le but de
+                <strong>diminuer les impacts sur l’environnement</strong>
+                , avec les coûts de transport et de mise en décharge des différents déchets. Ainsi que la revalorisation et la réutilisation
+            des chutes de production.
+            </p>
+        </div>
+    </div>
+    <div class="category container" id="recupartenaires">
+        <h1 class="jumbotron-heading text-center">Nos récupartenaires</h1>
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <!--Controls-->
+            <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+            </div>
+            <!--/.Controls-->
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#multi-item-example" data-slide-to="0" class="active" style="cursor:pointer"></li>
+                <li data-target="#multi-item-example" data-slide-to="1" style="cursor:pointer"></li>
+            </ol>
+            <!--/.Indicators-->
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                <!--First slide-->
+                <div class="carousel-item active">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/.First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Second slide-->
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-3 mt-md-0 mt-3">
+                <div class="text-center">
+                <img class="logoFooter" src="../img/logoSansNom.png"/>
+                </div>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Créateurs</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="aHref" href="https://www.linkedin.com/in/armand-deffrennes-b69137228">Armand DEFFRENNES</a>
+                    </li>
+                    <li>
+                        <a class="aHref" href="https://www.linkedin.com/in/corentin-denoulet-964821226">Corentin DENOULET</a>
+                    </li>
+                    <li>
+                        <a>Pierre PINATEAU</a>
+                    </li>
+                    <li>
+                        <a class="aHref" href="https://www.linkedin.com/in/marie-pivette-7828a5198">Marie PIVETTE</a>
+                    </li>
+                </ul>
             </div>
 
-        </div>
-    </div>
-    <div class="pub" id="pub">
-        <div class="pubPitch">
-            <h1 class="slogan valign-text-middle">
-                <span><span class="spanEmerald">Récup’Usine, </span><span class="spanBlack">récup’utile ! </span> </span>
-            </h1>
-            <div class="recupartenairesButton">
-                <div class="recupartenairesRectangle"></div>
-                <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png" />
-                <div class="becomeRecupartenaires valign-text-middle" id="becomeRecupartner">Devenir récupartenaire</div>
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Réseaux sociaux</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="aHref" href="https://www.facebook.com/">Facebook</a>
+                    </li>
+                    <li>
+                        <a class="aHref" href="https://www.instagram.com/?hl=fr">Instagram</a>
+                    </li>
+                </ul>
             </div>
-            <div class="textPub valign-text-middle calibri-light-black-22px">
-                Une solution simple et pratique, basée sur l’industrie 4.0. Rejoignez-nous et faites un geste pour la planète !
-            </div>
-        </div>
 
-        <div class="pubImg">
-
-        </div>
-    </div>
-    <div class="context" id="context">
-        <div class="flex-col">
-            <div class="contextTitle valign-text-middle articulatcf-bold-black-50px">Contexte</div>
-            <div class="flex-row">
-                <div class="number valign-text-middle calibri-bold-black-26px">1765</div>
-                <div class="text1870 valign-text-middle calibri-light-black-22px">
-          <span>
-              <span class="calibri-light-black-22px">2</span><span class="calibri-light-black-12px">nde</span>
-              <span class="calibri-light-black-22px"> révolution industrielle<br />Production de masse</span>
-          </span>
-                </div>
-                <div class="number-1 valign-text-middle calibri-bold-black-26px">1969</div>
-                <div class="text2015 valign-text-middle calibri-light-black-22px">
-          <span>
-              <span class="calibri-light-black-22px">4</span><span class="calibri-light-black-12px">ème</span>
-              <span class="calibri-light-black-22px"> révolution industrielle<br />Introdution de nouvelles technologies</span>
-          </span>
-                </div>
-                <div class="number-2 valign-text-middle calibri-bold-black-26px">2022</div>
-                <div class="text2050 valign-text-middle calibri-light-black-22px">Usines zéro carbone</div>
-            </div>
-            <div class="lines">
-                <div class="overlap-group5">
-                    <img class="lines" src="../img/lines.png" />
-                </div>
-
-            </div>
-        </div>
-        <div class="flex-row-1">
-            <div class="text1765 valign-text-middle calibri-light-black-22px">
-        <span>
-            <span class="calibri-light-black-22px">1</span><span class="calibri-light-black-12px">ère </span>
-            <span class="calibri-light-black-22px">révolution industrielle<br />Production mécanique</span>
-        </span>
-            </div>
-            <div class="number-3 valign-text-middle calibri-bold-black-26px">1870</div>
-            <div class="text1969 valign-text-middle calibri-light-black-22px">
-        <span>
-            <span class="calibri-light-black-22px">3</span><span class="calibri-light-black-12px">ème</span>
-            <span class="calibri-light-black-22px"> révolution industrielle<br />Production automatisée</span>
-        </span>
-            </div>
-            <div class="number-4 valign-text-middle calibri-bold-black-26px">2015</div>
-            <div class="text2022 valign-text-middle calibri-light-black-22px">Création de l’entreprise</div>
-            <div class="number-5 valign-text-middle calibri-bold-black-26px">2050</div>
-        </div>
-    </div>
-    <div class="mission" id="mission">
-        <div class="earthContainer">
-            <img class="earth" src="../img/earth.png" />
-        </div>
-        <div class="missionsContainer">
-            <div class="missionsTitle valign-text-middle articulatcf-bold-black-50px">Nos missions</div>
-            <div class="missionsText valign-text-middle calibri-light-black-22px">
-        <span>
-            <span class="calibri-light-black-22px">Chaque année, des </span>
-            <span class="calibri-bold-black-22px">centaines de millions de tonnes</span>
-            <span class="calibri-light-black-22px">de déchets sont générées par les industries à travers le monde.
-            <br /><br />Récup’Usine propose, à chaque entreprise, une </span>
-            <span class="calibri-bold-black-22px">analyse poussée</span>
-            <span class="calibri-light-black-22px"> des données visant une </span>
-            <span class="calibri-bold-black-22px">gestion autonome</span>
-            <span class="calibri-light-black-22px"> des déchets à récolter, couplée à une </span>
-            <span class="calibri-bold-black-22px">optimisation des trajets</span>
-            <span class="calibri-light-black-22px"> des collecteurs de déchets. <br /><br />Tout cela, dans le but de </span>
-            <span class="calibri-bold-black-22px">diminuer les impacts sur l’environnement</span>
-            <span class="calibri-light-black-22px">, avec les coûts de transport et de mise en décharge des différents déchets. Ainsi que la revalorisation et la réutilisation
-            des chutes de production.</span>
-        </span>
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Support</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a>CGU</a>
+                    </li>
+                    <li>
+                        <a>Politique de confidentialité des données</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="recupartenaires" id="recupartenaires">
-        <div class="recupartenairesTitle valign-text-middle articulatcf-bold-black-50px">Nos récupartenaires</div>
-        <div class="picRecurpartenaires">
-            <img src="../img/lareyneMerline.png" alt="" class="pic">
-            <img src="../img/lareyneMerline.png" alt="" class="pic">
-            <img src="../img/lareyneMerline.png" alt="" class="pic">
-            <img src="../img/lareyneMerline.png" alt="" class="pic">
-            <img src="../img/lareyneMerline.png" alt="" class="pic">
-        </div>
-    </div>
-    <div class="footer">
-        <div class="overlap-group7">
-            <div class="flex-col-1">
-                <img class="logoFooter" src="../img/logoSansNom.png" />
-                <p class="copyright">Copyright@2022<br />all right reserved | Récup’Usine</p>
-            </div>
-            <div class="creatorsContainer">
-                <div class="creatorsTitle valign-text-middle calibri-bold-white-26px">Créateurs</div>
-                <div class="creatorsNames calibri-light-white-20px">
-                    <span class="calibri-light-white-20px"><br /></span>
-                    <span class="calibri-light-white-22px">Armand Deffrennes<br />Corentin Denoulet<br />Marie Pivette<br />Pierre Pinateau</span>
-                </div>
-            </div>
-            <div class="socialMediaContainer">
-                <div class="socialMediaTitle valign-text-middle calibri-bold-white-26px">Réseaux sociaux</div>
-                <div class="socialMediaNames">
-                    <span class="calibri-light-white-20px"><br /></span>
-                    <a href="https://www.facebook.com/" target="_blank" style="text-decoration:none">
-                        <span class="calibri-light-white-22px">Facebook</span>
-                    </a>
-                    <br>
-                    <a href="https://www.instagram.com/?hl=fr" target="_blank" style="text-decoration:none">
-                        <span class="calibri-light-white-22px">Instagram</span>
-                    </a>
-                    <br>
-                    <span class="calibri-light-white-22px"></span><br>
-                    <span class="calibri-light-white-22px"></span><br>
-                </div>
-            </div>
-            <div class="supportContainer">
-                <div class="supportTitle valign-text-middle calibri-bold-white-26px">Support</div>
-                <div class="supportNames">
-                    <span class="calibri-light-white-22px"><br></span>
-                    <a href="" target="_blank" style="text-decoration:none">
-                        <span class="calibri-light-white-22px">CGU</span>
-                    </a><br>
-                    <a href="" target="_blank" style="text-decoration:none">
-                        <span class="calibri-light-white-22px">Politique de confidentialité des données</span>
-                    </a>
-                    <br>
-                    <span class="calibri-light-white-22px"></span><br>
-                    <span class="calibri-light-white-22px"></span><br>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Copyright©2022 : all right reserved | Récup’Usine</div>
+</footer>
 
 </body>
 </html>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<!-- import index.js -->
-<script src="../js/index.js"></script>
-  

@@ -45,6 +45,18 @@ module.exports = function (session) {
     
     },
 
+    // Update collector demande
+    updateCollectorDemande: function (req, res) {
+      console.log("API -> updateCollectorDemande");
+      // get collector id from body
+      //check if user is admin
+      check.checkUserAdmin(req, res)
+      let id = req.body.id;
+      db_collector.updateCollectorDemande(id).then((result) => {
+        res.json({ err: "", success: true, data: result });
+      });
+    },
+
     // Delete collector by id
     deleteCollector: function (req, res) {
       console.log("API -> deleteCollector");

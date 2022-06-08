@@ -126,6 +126,9 @@ module.exports = function (app, session) {
     // Create a collector demande
     app.post("/api/collector/add", urlencodedParser, api_collector.createDemande);
 
+    // Update a collector demande
+    app.post("/api/collector/update/:id", urlencodedParser, api_collector.updateCollectorDemande);
+
     // Delete a collector by id
     app.post("/api/collector/delete/:id", urlencodedParser, api_collector.deleteCollector);
 };

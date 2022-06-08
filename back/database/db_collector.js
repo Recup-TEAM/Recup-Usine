@@ -40,6 +40,13 @@ module.exports = function () {
       return rq;
     },
 
+    // updateCollectorDemande
+    updateCollectorDemande: async (id) => {
+      let sql = "UPDATE `collector` SET `accepted` = '1' WHERE `collector`.`id` = " + id + ";";
+      var rq = await db_query(sql);
+      return rq;
+    },
+
     // Delete collector by id
     deleteCollector: async (id) => {
       let sql = "DELETE FROM `collector` WHERE `collector`.`id_user` = ?";
