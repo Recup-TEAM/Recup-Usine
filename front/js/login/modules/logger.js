@@ -1,23 +1,25 @@
 let logger = (function () {
   function request_login(email, password) {
-    console.log(email + " essaye de se connecter");
+    let dataSucces;
+    console.log(email + " essaye de se connecter avec le mot de passe " + password);
     $.ajax({
       type: "POST",
       url: "/api/user/login/",
+      async: false,
       data: {
         email: email,
         password: password,
       },
       success: (data) => {
-        console.log(data);
-        window.location.href = "/";
-      },
+        dataSucces = data;
+      }
     });
+    return dataSucces;
   }
 
   return {
     sign_in(email, password) {
-      request_login(email, password);
+      return request_login(email, password);
     },
   };
 })();

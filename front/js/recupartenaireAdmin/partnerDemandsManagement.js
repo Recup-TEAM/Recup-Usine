@@ -25,7 +25,7 @@ function pushToHtml(data) {
             entreprise.prenom +
             " </h1>" +
             //add mail
-            '<h5>' +
+            '<h5>' +    
             entreprise.email +
             " </h5>" +
             "</div>";
