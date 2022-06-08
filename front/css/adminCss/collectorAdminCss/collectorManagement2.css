@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    padding-top: 74px;
+}
+
+.navbar {
+    background-color: #1bab8d;
+}
+
+.logo-header {
+    cursor: pointer;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+/* end header */
+
+.row {
+    margin: 20px 0;
+}
+
+main, .row {
+    height: 100%;
+}
+
+.btn-search, .btn-add {
+    background-color: #1bab8d;
+    color: white;
+}
+
+.btn-edit {
+    background-color: white;
+    border: solid 1px #1bab8d;
+    color: #1bab8d;
+    width: 100px;
+}
+
+.card-deck .card {
+    min-width: 220px;
+    max-width: 253px;
+}
+
+.card {
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.card-header {
+    background-color: #e8f6f3;
+}
+
+
+footer {
+    margin-top: 50px;
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
+
+
+
+
