@@ -25,23 +25,23 @@
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <img class="logo-header" src="../img/logoSansNom.png" href="#">
+        <img class="logo-header" src="../img/logoSansNom.png" href="#pub">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#">Contexte</a>
+                    <a class="nav-link calibri-regular-normal-white-22px" href="#context">Contexte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#">Nos missions</a>
+                    <a class="nav-link calibri-regular-normal-white-22px" href="#missions">Nos missions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#">Nos récupartenaires</a>
+                    <a class="nav-link calibri-regular-normal-white-22px" href="#recupartenaires">Nos récupartenaires</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="#">Contact</a>
+                    <a class="nav-link calibri-regular-normal-white-22px" href="">Contact</a>
                 </li>
             </ul>
             <button class="btn btn-connection calibri-regular-normal-white-22px my-2 my-sm-0" type="button">Connexion</button>
@@ -51,30 +51,31 @@
 
 <!-- Begin page content -->
 <main role="main" class="container">
-    <div class="pub row featurette">
-        <div class="col-md-5">
-            <h1 class="jumbotron-heading">Récup'Usine, </h1>
-            <h1 class="spanEmerald">Récup'utile !</h1>
-            <p class="lead">  Une solution simple et pratique, basée sur l’industrie 4.0. Rejoignez-nous et faites un geste pour la planète !</p>
-            <button class="btn btn-recupartenaire calibri-regular-normal-white-22px my-2 my-sm-0" type="button">Devenir récupartenaire <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png"></button>
+    <div class="pub row category" id="pub">
+        <div class="col-md-5 my-auto">
+            <h1 class="jumbotron-heading slogan">Récup'Usine, </h1>
+            <h1 class="jumbotron-heading slogan recuputile">Récup'utile !</h1>
+            <p class="lead">Une solution simple et pratique, basée sur l’industrie 4.0. <br>Rejoignez-nous et faites un geste pour la planète !</p>
+            <div class="text-center btn-margin">
+                <button class="btn btn-recupartenaire calibri-regular-normal-white-22px my-2 my-sm-0" type="button">Devenir récupartenaire <img class="recupartenairesLogo" src="../img/recupartenaireLogoSansNom.png"></button>
+            </div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-6">
-            <img class="featurette-image img-fluid mx-auto" src="../img/pub.png" alt="Generic placeholder image">
+            <img class="category-image img-fluid mx-auto" src="../img/pub.png" alt="Generic placeholder image">
         </div>
     </div>
-    <div class="row featurette">
+    <div class="row category" id="context">
         <div class="col-md-12">
             <h1 class="jumbotron-heading text-center">Contexte</h1>
             <img class="context-img" src="../img/lines.png">
         </div>
     </div>
-    <div class="row featurette">
+    <div class="missions row category" id="missions">
         <div class="col-md-6">
-            <img class="featurette-image img-fluid mx-auto" src="../img/pub.png" alt="Generic placeholder image">
+            <img class="category-image mx-auto img-earth" src="../img/earth.png" alt="Generic placeholder image">
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
+        <div class="col-md-6 my-auto">
             <h1 class="jumbotron-heading">Nos missions</span></h1>
             <p class="lead calibri-light-black-22px">Chaque année, des
                 <strong>centaines de millions de tonnes</strong>
@@ -91,125 +92,83 @@
             des chutes de production.
             </p>
         </div>
-        <div class="featurette container">
-
-            <h1 class="jumbotron-heading text-center">Nos récupartenaires</h1>
-
-            <!--Carousel Wrapper-->
-            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-                <!--Controls-->
-                <div class="controls-top">
-                    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-                </div>
-                <!--/.Controls-->
-
-                <!--Indicators-->
-                <ol class="carousel-indicators">
-                    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-                    <li data-target="#multi-item-example" data-slide-to="1"></li>
-                    <li data-target="#multi-item-example" data-slide-to="2"></li>
-                </ol>
-                <!--/.Indicators-->
-
-                <!--Slides-->
-                <div class="carousel-inner" role="listbox">
-
-                    <!--First slide-->
-                    <div class="carousel-item active">
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 clearfix d-none d-md-block">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 clearfix d-none d-md-block">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.First slide-->
-
-                    <!--Second slide-->
-                    <div class="carousel-item">
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 clearfix d-none d-md-block">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 clearfix d-none d-md-block">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Second slide-->
-
-                    <!--Third slide-->
-                    <div class="carousel-item">
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 clearfix d-none d-md-block">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 clearfix d-none d-md-block">
-                                <div class="card mb-2">
-                                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
-                                         alt="Card image cap">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Third slide-->
-
-                </div>
-                <!--/.Slides-->
-
+    </div>
+    <div class="category container" id="recupartenaires">
+        <h1 class="jumbotron-heading text-center">Nos récupartenaires</h1>
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <!--Controls-->
+            <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
             </div>
-            <!--/.Carousel Wrapper-->
+            <!--/.Controls-->
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#multi-item-example" data-slide-to="0" class="active" style="cursor:pointer"></li>
+                <li data-target="#multi-item-example" data-slide-to="1" style="cursor:pointer"></li>
+            </ol>
+            <!--/.Indicators-->
 
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                <!--First slide-->
+                <div class="carousel-item active">
 
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/.First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Second slide-->
+            </div>
         </div>
     </div>
 
@@ -217,85 +176,61 @@
 
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4">
-
-    <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
-
-        <!-- Grid row -->
         <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-
-                <!-- Content -->
-                <h5 class="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content.</p>
-
+            <div class="col-md-3 mt-md-0 mt-3">
+                <div class="text-center">
+                <img class="logoFooter" src="../img/logoSansNom.png"/>
+                </div>
             </div>
-            <!-- Grid column -->
-
             <hr class="clearfix w-100 d-md-none pb-3">
 
-            <!-- Grid column -->
             <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
+                <h5 class="text-uppercase">Créateurs</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Link 1</a>
+                        <a class="aHref" href="https://www.linkedin.com/in/armand-deffrennes-b69137228">Armand DEFFRENNES</a>
                     </li>
                     <li>
-                        <a href="#!">Link 2</a>
+                        <a class="aHref" href="https://www.linkedin.com/in/corentin-denoulet-964821226">Corentin DENOULET</a>
                     </li>
                     <li>
-                        <a href="#!">Link 3</a>
+                        <a>Pierre PINATEAU</a>
                     </li>
                     <li>
-                        <a href="#!">Link 4</a>
+                        <a class="aHref" href="https://www.linkedin.com/in/marie-pivette-7828a5198">Marie PIVETTE</a>
                     </li>
                 </ul>
-
             </div>
-            <!-- Grid column -->
 
-            <!-- Grid column -->
             <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
+                <h5 class="text-uppercase">Réseaux sociaux</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Link 1</a>
+                        <a class="aHref" href="https://www.facebook.com/">Facebook</a>
                     </li>
                     <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
+                        <a class="aHref" href="https://www.instagram.com/?hl=fr">Instagram</a>
                     </li>
                 </ul>
-
             </div>
-            <!-- Grid column -->
 
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Support</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a>CGU</a>
+                    </li>
+                    <li>
+                        <a>Politique de confidentialité des données</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- Grid row -->
-
     </div>
-    <!-- Footer Links -->
-
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2022 Copyright: Récup'Team</div>
-    <!-- Copyright -->
-
+    <div class="footer-copyright text-center py-3">Copyright©2022 : all right reserved | Récup’Usine</div>
 </footer>
-<!-- Footer -->
 
 </body>
 </html>

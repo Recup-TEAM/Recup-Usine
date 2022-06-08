@@ -70,16 +70,17 @@ body > .container {
 .spanEmerald {
     color: var(--emerald) !important;
 }
-.featurette {
-    margin-top: 100px;
+.category {
+    padding-top: 100px;
+    margin-bottom: 100px;
 }
 
-.featurette-divider {
+.category-divider {
     margin: 5rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
-.featurette-heading {
+.category-heading {
     font-weight: 300;
     line-height: 1;
     letter-spacing: -.05rem;
@@ -87,13 +88,30 @@ body > .container {
 .pub {
     height: 32rem;
 }
-.featurette-image {
+
+.missions {
+    height: 28rem;
+}
+
+.img-earth {
+    height: 28rem !important;
+    min-width: auto !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+.category-image {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
     height: 32rem;
 }
+
+.btn-margin {
+    margin-top: 50px;
+}
+
 .btn-recupartenaire {
     color: white;
     background-color: #1bab8d;
@@ -113,19 +131,43 @@ body > .container {
 
 .context-img {
     width: 100%;
-
     margin: 50px 0;
 }
 
-.container {
-    margin-bottom: 100px;
+.slogan {
+    font-size: 4em;
 }
+
+.lead {
+    font-size: 1.1em;
+}
+
+.recuputile {
+    color: #1bab8d;
+}
+
 
 .page-footer {
     color: white;
     background-color: #1bab8d;
 }
+
+.logoFooter {
+    height: 100px;
+    object-fit: cover;
+    width: auto;
+}
+
+.aHref {
+    color: white;
+}
+.aHref:hover {
+    text-decoration: none;
+    color: #0D5546;
+}
+
 .footer-copyright {
     color: white;
     background-color: #0D5546;
 }
+
