@@ -1,35 +1,34 @@
-﻿//javascript.js
-
+﻿
 //set map options
-var myLatLng = { lat: 38.3460, lng: -0.4907 };
+var Myposition = { lat: 50.6341809, lng: 3.0487116 };
 var mapOptions = {
-    center: myLatLng,
-    zoom: 7,
+    center: Myposition,
+    zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
 };
 
-//create map
+//carte google
 var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
-//create a DirectionsService object to use the route method and get a result for our request
+//création de directionService pour faire la requete
 var directionsService = new google.maps.DirectionsService();
 
-//create a DirectionsRenderer object which we will use to display the route
+//création de directionDisplay pour afficher la route
 var directionsDisplay = new google.maps.DirectionsRenderer();
 
-//bind the DirectionsRenderer to the map
+//liage avec la map
 directionsDisplay.setMap(map);
 
 
-//define calcRoute function
+//Calcul de l'itinéraire
 function calcRoute() {
-    //create request
+    //création de la requete
     var request = {
         origin: document.getElementById("from").value,
         destination: document.getElementById("to").value,
-        travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
-        unitSystem: google.maps.UnitSystem.IMPERIAL
+        travelMode: google.maps.TravelMode.DRIVING, //Choix du mode de transport (ici voiture)
+        unitSystem: google.maps.UnitSystem.METRIC
     }
 
     //pass the request to the route method
@@ -38,7 +37,7 @@ function calcRoute() {
 
             //Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = "<div class='alert-info'>De : " + document.getElementById("from").value + ".<br />A : " + document.getElementById("to").value + ".<br /> Distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Durée <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
 
             //display route
             directionsDisplay.setDirections(result);
@@ -46,7 +45,7 @@ function calcRoute() {
             //delete route from map
             directionsDisplay.setDirections({ routes: [] });
             //center map in London
-            map.setCenter(myLatLng);
+            map.setCenter(Myposition);
 
             //show error message
             output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";

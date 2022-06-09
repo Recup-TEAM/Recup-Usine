@@ -1,17 +1,14 @@
-﻿/*styling.css*/
-/*add font family, background image*/
-
+﻿
 body {
-  color: #5bc0de;
-  font-family: "Poppins", sans-serif;
+  color: #1BAB8D;
+  font-family: "Calibri", sans-serif;
 }
 
 .fa-map-marker-alt,
 .fa-dot-circle {
-  color: #5bc0de;
+  color: #1BAB8D;
 }
 
-/*Jumbotron*/
 .jumbotron {
   background-color: transparent;
   margin: 0;
@@ -28,14 +25,12 @@ body {
   text-align: center;
 }
 
-/*map*/
 #googleMap {
   width: 80%;
   height: 400px;
   margin: 10px auto;
 }
 
-/*output box*/
 #output {
   text-align: center;
   font-size: 2em;
