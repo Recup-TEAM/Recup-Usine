@@ -4,9 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Récup'Team">
-    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <link rel="icon" href="../../../img/favicon.ico">
     <title>Récup'Usine</title>
+
+    <!-- Core CSS for the project -->
+    <link rel="stylesheet" href="../../../css/styleGuide.css">
+
+    <!-- Btn Animation Css File -->
+    <link href="../../../css/btnHrvAnimation.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <<!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,25 +28,27 @@
     <link href="../../../css/adminCss/collectorAdminCss/collectorManagement2.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="animate__animated animate__fadeIn">
 
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <img class="logo-header" src="../../../img/logoSansNom.png" href="">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <a href="/" >
+            <img class="logo-header" src="../../../img/logoSansNom.png" alt="logoRecup'Usine">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="">Récupartenaires</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/">Récupartenaires</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="">Récupersonnel</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/">Récupersonnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="">Récuplateforme</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/">Récuplateforme</a>
                 </li>
             </ul>
         </div>
@@ -52,55 +62,55 @@
                 <div class="input-group mb-4">
                     <input type="search" placeholder="Recherche..." aria-describedby="button-addon6" class="form-control">
                     <div class="input-group-append">
-                        <button id="button-addon6" type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                        <button id="button-addon6" type="submit" class="btn btn-search hvr-ripple-out"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-md-7"></div>
         <div class="col-md-2 text-right">
-            <button type="submit" class="btn btn-add"><i class="fa-solid fa-plus"></i> ajouter</button>
+            <button type="submit" class="btn btn-add hvr-ripple-out"><i class="fa-solid fa-plus"></i> ajouter</button>
         </div>
     </div>
     <div class="row card-deck mb-3 mx-auto text-center" style="margin: auto">
-        <div class="card mb-4 shadow-sm">
+        <div class="card mb-4 shadow-sm hvr-grow-shadow">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="my-0 font-weight-normal">Nom de l'entreprise</h5>
                 <p class="adress">41 boulevard Vauban <br> Lille 59000</p>
-                <button type="button" class="btn btn-sm btn-edit">Editer</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Editer</button>
             </div>
         </div>
-        <div class="card mb-4 shadow-sm">
+        <div class="card mb-4 shadow-sm hvr-grow-shadow">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="my-0 font-weight-normal">Nom de l'entreprise</h5>
                 <p class="adress">41 boulevard Vauban <br> Lille 59000</p>
-                <button type="button" class="btn btn-sm btn-edit">Editer</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Editer</button>
             </div>
         </div>
-        <div class="card mb-4 shadow-sm">
+        <div class="card mb-4 shadow-sm hvr-grow-shadow">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="my-0 font-weight-normal">Nom de l'entreprise</h5>
                 <p class="adress">41 boulevard Vauban <br> Lille 59000</p>
-                <button type="button" class="btn btn-sm btn-edit">Editer</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Editer</button>
             </div>
         </div>
-        <div class="card mb-4 shadow-sm">
+        <div class="card mb-4 shadow-sm hvr-grow-shadow">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="my-0 font-weight-normal">Nom de l'entreprise</h5>
                 <p class="adress">41 boulevard Vauban <br> Lille 59000</p>
-                <button type="button" class="btn btn-sm btn-edit">Editer</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Editer</button>
             </div>
         </div>
-        <div class="card mb-4 shadow-sm">
+        <div class="card mb-4 shadow-sm hvr-grow-shadow">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="my-0 font-weight-normal">Nom de l'entreprise</h5>
                 <p class="adress">41 boulevard Vauban <br> Lille 59000</p>
-                <button type="button" class="btn btn-sm btn-edit">Editer</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Editer</button>
             </div>
         </div>
     </div>

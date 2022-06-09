@@ -65,7 +65,9 @@ main {
 }
 
 input {
+    background-color: var(--alto)!important;
     outline-color: #0D5546 !important;
+    color: var(--black)!important;
 }
 
 .btn-connection {
