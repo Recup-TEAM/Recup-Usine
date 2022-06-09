@@ -80,11 +80,6 @@ main, .row {
     width: 190px !important;
 }
 
-.card-deck .card {
-    min-width: 220px;
-    max-width: 253px;
-}
-
 @media only screen and (min-width: 768px) {
     .card-deck {
         padding-left: 10%;
@@ -107,11 +102,18 @@ main, .row {
     width: 150px !important;
 }
 
-.card{
+.card-profile{
     background-color: #e8f6f3;
     box-shadow: 0px 4px 4px #00000040;
-    width: 300px;
+    margin-bottom: 20px;
 }
+
+.card-graph {
+    box-shadow: 0px 4px 4px #00000040;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
 
 .top-container{
     display: flex;
