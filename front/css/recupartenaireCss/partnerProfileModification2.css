@@ -68,52 +68,14 @@ main, .row {
     height: 100%;
 }
 
-.btn-edit {
-    background-color: #1bab8d !important;
-    color: white !important;
-    width: 190px !important;
+.card-deck .card {
+    margin-bottom: 30px;
 }
-
-.btn-ask {
-    background-color: #AB1B39 !important;
-    color: white !important;
-    width: 190px !important;
-}
-
-@media only screen and (min-width: 768px) {
-    .card-deck {
-        padding-left: 10%;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .card-deck {
-        padding-left: 5%;
-    }
-}
-
-@media only screen and (max-width: 575px) and (min-width: 530px) {
-    .card-deck {
-        padding-left: 25%;
-    }
-}
-
-.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-    width: 150px !important;
-}
-
-.card-profile{
+.card-profile {
     background-color: #e8f6f3;
     box-shadow: 0px 4px 4px #00000040;
     margin-bottom: 20px;
 }
-
-.card-graph {
-    box-shadow: 0px 4px 4px #00000040;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
 
 .top-container{
     display: flex;
@@ -126,47 +88,26 @@ main, .row {
     width: auto;
 }
 
-.canvas-div {
-    background-color: white;
-    padding: 20px 20px 0 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(0,0,0,.125);
-    box-shadow: 0px 4px 4px #00000040;
-    margin-bottom: 20px;
+.btn-edit {
+    background-color: #1bab8d !important;
+    color: white !important;
+    width: 190px !important;
 }
 
-@media only screen and (max-width: 768px) {
-    .btn-add-div {
-        margin-top: -15px !important;
-    }
-    .search {
-        height: 240px;
-        padding: 31px 0 5px 0;
-        background-color: white;
-    }
-    .card-deck {
-        margin-top: 240px;
-    }
+input {
+    outline-color: #0D5546 !important;
 }
 
-@media only screen and (width: 768px) {
-    .btn-add-div {
-        margin-top: 0px !important;
-    }
-    .card-deck, .search {
-        margin-top: 74px;
-    }
-
-    .search {
-        height: 74px;
-        padding: 31px 0 5px 0;
-        background-color: white;
-    }
+.btn-connection {
+    color: white;
+    background-color: #1bab8d;
+    margin: auto;
+    width: 50%;
 }
 
-.btn-light {
-    background-color: #e8f6f3;
-    border-color: #1bab8d;
+.btn-add {
+    background-color: #1bab8d;
+    color: white;
 }
 
 footer {
@@ -177,3 +118,8 @@ footer {
     color: white;
     background-color: #0D5546;
 }
+
+
+
+
+

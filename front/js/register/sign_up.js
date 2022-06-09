@@ -20,12 +20,19 @@ function isValidPassword(password) {
 function isSamePassword(password, password2) {
   return password === password2;
 }
+// verify form file
 
 $(document).ready(function () {
-  $(document).on("click", "#connectionButton", function () {
+  $(document).on("click", "#confirmButton", function () {
     var login = $("#email").val();
     var password = $("#password").val();
-    var password2 = $("#password2").val();
+    var password2 = $("#confirm-password").val();
+    var companyName = $("#company-name").val()
+    var textarea = $("#textarea").val();
+    var companyName = $("#company-name").val();
+    var formFile = $("#formFile").val();
+
+    
 
     if (
       isValidEmail(login) &&
@@ -38,4 +45,5 @@ $(document).ready(function () {
       console.log("Veuillez remplir correctement les champs");
     }
   });
+  //focus 
 });
