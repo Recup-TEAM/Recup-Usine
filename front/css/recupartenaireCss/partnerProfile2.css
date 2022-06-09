@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    padding-top: 74px;
+}
+
+.navbar {
+    background-color: #1bab8d;
+}
+
+@media only screen and (min-width: 768px) {
+    .collapse {
+        margin-left: -97px !important;
+    }
+}
+
+.logo-header {
+    cursor: pointer;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+.nav-link {
+    color: white !important;
+    margin: 0 5px;
+}
+
+.nav-link:hover {
+    color: #0D5546 !important;
+}
+
+/* end header */
+
+.row {
+    margin: 20px 0;
+}
+
+main, .row {
+    height: 100%;
+}
+
+.btn-edit {
+    background-color: #1bab8d !important;
+    color: white !important;
+    width: 190px !important;
+}
+
+.btn-ask {
+    background-color: #AB1B39 !important;
+    color: white !important;
+    width: 190px !important;
+}
+
+.card-deck .card {
+    min-width: 220px;
+    max-width: 253px;
+}
+
+@media only screen and (min-width: 768px) {
+    .card-deck {
+        padding-left: 10%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .card-deck {
+        padding-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 575px) and (min-width: 530px) {
+    .card-deck {
+        padding-left: 25%;
+    }
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 150px !important;
+}
+
+.card{
+    background-color: #e8f6f3;
+    box-shadow: 0px 4px 4px #00000040;
+    width: 300px;
+}
+
+.top-container{
+    display: flex;
+    align-items: center;
+}
+
+.profile-image{
+    border-radius: 10px;
+    height: 60px;
+    width: auto;
+}
+
+.canvas-div {
+    background-color: white;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.125);
+    box-shadow: 0px 4px 4px #00000040;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-add-div {
+        margin-top: -15px !important;
+    }
+    .search {
+        height: 240px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+    .card-deck {
+        margin-top: 240px;
+    }
+}
+
+@media only screen and (width: 768px) {
+    .btn-add-div {
+        margin-top: 0px !important;
+    }
+    .card-deck, .search {
+        margin-top: 74px;
+    }
+
+    .search {
+        height: 74px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+}
+
+.btn-light {
+    background-color: #e8f6f3;
+    border-color: #1bab8d;
+}
+
+footer {
+    margin-top: 50px;
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
