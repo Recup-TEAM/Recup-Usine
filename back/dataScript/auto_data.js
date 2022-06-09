@@ -1,7 +1,7 @@
-fs = require('fs');
-
-module.exports = function (){
-    function refreshDatabase() {
+const fs = require('fs');
+const db = require("./data_to_db")()
+module.exports = function () {
+    async function refreshDatabase() {
         let suppliers = [];
         let suppliersFileString = "", dailyProdFileString = "";
         fs.readFile('./back/dataScript/suppliers.txt', 'utf8', function (err,dataSuppliers) {
@@ -113,10 +113,12 @@ module.exports = function (){
         fs.writeFile('./back/dataScript/data_falls.json', jsonData, (err) => {
             if (err) throw err;
             console.log("Suppliers Data Written to file");
+            db.add_into_db();
         });
+
     }
 
-    return{
-        loveData:setInterval(function () {refreshDatabase()}, 5*60*1000)
+    return {
+        refreshDatabase:  async () => setInterval(async function () {await refreshDatabase()}, 5*60*1000),
     }
-}
+};
