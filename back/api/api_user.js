@@ -2,8 +2,6 @@ module.exports = function (session) {
   const { body, validationResult } = require("express-validator");
   const check = require("./check")();
   const db_user = require("../database/db_user")();
-  //const db_entreprise = require("../database/db_entreprise")(conn);
-  //const db_product = require("../database/db_product")(conn);
 
   // Fonctions utilisables dans "./api_user.js"
   return {
@@ -153,11 +151,12 @@ module.exports = function (session) {
       db_user.getUser(email).then((user) => {
         if (user == false) {
           // L'utilisateur n'existe pas encore
-          dataUser = { email, password, compteLevel };
-          db_user.createUser(dataUser).then(() => {
+          dataUser = { email, password, compteLevel};
+          db_user.createUser(dataUser).then((userId) => {
             req.session.email = email;
             req.session.password = password;
             req.session.compteLevel = compteLevel;
+            req.session.userId = userId;
             req.session.save();
             console.log(
               "L'utilisateur \"" +
@@ -166,7 +165,7 @@ module.exports = function (session) {
                 compteLevel +
                 ")"
             );
-            res.json({ err: "", success: true });
+            res.json({ err: "", success: true , data : {"user_id" : userId}});
           });
         } else {
           // L'utilisateur existe déjà

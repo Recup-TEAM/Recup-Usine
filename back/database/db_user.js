@@ -77,7 +77,7 @@ module.exports = function () {
     // Créer un compte
     createUser: async (dataUser) => {
       let sql =
-        "INSERT INTO `user` (`id`, `email`, `password`, `compteLevel`, `register_date`)" +
+        "INSERT INTO `user` (`id_user`, `email`, `password`, `compte_level`, `register_date`)" +
         "VALUES (NULL, '" +
         dataUser.email +
         "', '" +
@@ -87,7 +87,7 @@ module.exports = function () {
         "', CURRENT_TIMESTAMP)";
 
       var rq = await db_query(sql);
-      return rq;
+      return rq.insertId;
     },
 
     // Changer le mot de passe

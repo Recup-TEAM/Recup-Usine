@@ -34,7 +34,7 @@ module.exports = function (session) {
       console.log("API -> createDemande");
       // get name, email and prenom from body
       //check if user connected
-      check.checkUserConnected(req, res)
+      if(check.checkUserConnected(req, res)){
       let name = req.body.nom;
       let email = req.body.email;
       let prenom = req.body.prenom;
@@ -42,7 +42,7 @@ module.exports = function (session) {
       db_collector.createDemande(name, email, prenom, id_user).then((result) => {
         res.json({ err: "", success: true, data: result });
       });
-    
+    }
     },
 
     // Update collector demande

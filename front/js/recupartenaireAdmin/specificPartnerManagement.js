@@ -74,7 +74,6 @@ function getUserSubscription(user_id) {
 $(document).ready(function () {
   // get the id from localstorage
   let id = localStorage.getItem("id_entreprise");
-  id = 1;
   if (id == null) {
     window.location.href = "entrepriseManagement";
   }

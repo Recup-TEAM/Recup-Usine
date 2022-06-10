@@ -58,15 +58,16 @@ module.exports = function (session) {
       console.log("API -> addEntreprise");
       //check if user is connected
       if (check.checkUserConnected(req, res)) {
-        let name = req.query.name;
-        let adresse = req.query.adresse;
-
+        let name = req.body.name;
+        let adresse = req.body.adresse;
         let id_dirigeant = req.session.userId;
-        dataEntreprise = { name, id_dirigeant, adresse };
-        console.log(req.session);
+        let imgPath = req.body.imgPath;
+        let descRegister = req.body.descRegister;
+
+        dataEntreprise = { name, id_dirigeant, adresse, descRegister, imgPath};
 
         db_entreprise.addEntreprise(dataEntreprise).then(() => {
-          res.json({ err: "", success: true });
+          res.json({ err: "", success: true, data: dataEntreprise });
         });
       }
     },
