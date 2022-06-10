@@ -1,19 +1,23 @@
 ﻿
-//set map options
+//Affichage de la carte et prise en compte des différents arrêts
+
 var Myposition = new google.maps.LatLng(50.6341809, 3.0487116);
-var Stop1 = new google.maps.LatLng(50.63409, 3.04116);
+
+var Stop1 = new google.maps.LatLng(50.63409, 3.04116); // Arrêts de test
 var Stop2 = new google.maps.LatLng(50.6341809, 3.0387116);
 var Stop3 = new google.maps.LatLng(50.63809, 3.067116);
 var Stop4 = "20 rue claude Debussy baisieux";
-var listWaypoint = [Stop1, Stop2, Stop3, Stop4];
-var objectWaypoint = [];
+
+var listWaypoint = [Stop1, Stop2, Stop3, Stop4]; // Liste contenant tous les arrêts à réaliser sur le trajet
+
+var objectWaypoint = []; // Création de la liste contenant les arrêts avec la mise sous la bonne forme pour le waypoint (calcRoute)
 for (let index = 0; index < listWaypoint.length; index++) {
     const element = listWaypoint[index];
-    console.log(element);
+    console.log(element); // vérification de la prise en compte de chaque adresse
     objectWaypoint.push({"location":element, "stopover":true})
     
 }
-var mapOptions = {
+var mapOptions = { // Affichage de la carte avec les options d'affichage
     center: Myposition,
     zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -46,16 +50,16 @@ function calcRoute() {
         provideRouteAlternatives: false,      
     }
 
-    //pass the request to the route method
+    //Passage de la requete à l'affichage de la carte
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            //display route
+            //Affichage de la route
             directionsDisplay.setDirections(result);
         } else {
-            //delete route from map
+            //Supprimer la route
             directionsDisplay.setDirections({ routes: [] });
-            //center map in London
+            //Centrer la map sur Myposition
             map.setCenter(Myposition);
 
         }
@@ -63,6 +67,7 @@ function calcRoute() {
 
 }
 
+//Vérification de l'affichage du HTML puis lancement du calcul de l'itinéraire
 document.addEventListener("DOMContentLoaded", function() {
     calcRoute();
   });
