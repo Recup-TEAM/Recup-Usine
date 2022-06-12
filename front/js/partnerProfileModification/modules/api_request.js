@@ -36,12 +36,46 @@ let api_request = (function () {
     return dataSucces;
   }
 
+  function request_getOneEntreprise(id) {
+    let dataSucces;
+    console.log("getOneCollector");
+    $.ajax({
+      type: "GET",
+      url: "/api/entreprises/get/entrepriseById/" + id,
+      async: false,
+      success: (data) => {
+        console.log("succes:", data);
+        dataSucces = data;
+      }
+    });
+    return dataSucces;
+  }
+
+   function request_isconnected() {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/connected",
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
   return {
+    isConnected() {
+      return request_isconnected();
+    },
     change_mail_user(email) {
       return request_change_mail_user(email);
     },
     change_password_user() {
       return request_change_password_user();
+    },
+    getOneEntreprise(id) {
+      return request_getOneEntreprise(id);
     },
   };
 })();
