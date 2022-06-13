@@ -17,14 +17,7 @@
     <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../../css/recupartenaireCss/partnerProfile2.css" rel="stylesheet">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-
+    <link href="../../css/recupartenaireCss/partnerProfileModification2.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,13 +40,17 @@
             </ul>
         </div>
     </nav>
-
 </header>
 
 <main role="main" class="container text-center">
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <div class="card">
+    <div class="row mx-auto">
+        <div class="col-md-2 text-left">
+            <button type="submit" class="btn btn-add"><i class="fa-solid fa-arrow-left"></i>  retour</button>
+        </div>
+    </div>
+    <div class="row card-deck mb-3 mx-auto text-center" style="margin: auto">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card card-profile">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
                         <div class="top-container">
@@ -73,95 +70,74 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-3">
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card card-profile">
                 <div class="card-body">
-                    <div class="d-flex flex-column align-items-center text-center">
-                        <div class="mt-3 text-left">
-                            <p class="text-secondary mb-1">Type de déchets : bois, verre, métal</p>
-                            <p class="text-secondary mb-1">Déchets collectés :</p>
-                            <p class="text-muted font-size-sm">Déchets à collecter :</p>
-                            <div class="text-center">
-                                <button class="btn btn-ask">Demander collecte</button>
-                            </div>
+                <h4 class="mb-3 text-center">Changer d'adresse mail</h4>
+                <form class="needs-validation padding-form" novalidate>
+                    <div class="mb-3 text-left">
+                        <label for="new-email">Nouvelle adresse mail</label>
+                        <input type="email" class="form-control" id="new-email" placeholder="you@example.com">
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse mail valide.
                         </div>
                     </div>
-                </div>
+
+                    <div class="mb-3 text-left">
+                        <label for="confirm-email">Confirmer adresse mail</label>
+                        <input type="email" class="form-control" id="confirm-email" placeholder="you@example.com">
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse mail valide.
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-connection hvr-sweep-to-right" type="submit">Confirmer</button>
+                    </div>
+                </form>
+            </div>
             </div>
         </div>
-        <div class="col-md-8 text-center my-auto">
-            <div class="canvas-div">
-                <h2>Dashboard</h2>
-                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                <h4 class="mb-3 text-center">Changer de mot de passe</h4>
+                <form class="needs-validation padding-form" novalidate>
+                    <div class="mb-3 text-left">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre mot de passe.
+                        </div>
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="new-password">Nouveau mot de passe</label>
+                        <input type="password" class="form-control" id="new-password" placeholder="••••••••" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre mot de passe.
+                        </div>
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="confirm-password">Confirmer mot de passe</label>
+                        <input type="password" class="form-control" id="confirm-password" placeholder="••••••••" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre mot de passe.
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-connection hvr-sweep-to-right" type="submit">Confirmer</button>
+                    </div>
+                </form>
             </div>
-            <div class="canvas-div">
-                <h2>Dashboard</h2>
-                <canvas class="my-4 w-100" id="myChart2" width="900" height="380"></canvas>
             </div>
         </div>
+
+
     </div>
 </main>
 <footer>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">Copyright©2022 : all right reserved | Récup’Usine</div>
 </footer>
-
-<!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-<script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            datasets: [{
-                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#1bab8d',
-                borderWidth: 4,
-                pointBackgroundColor: '#1bab8d'
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
-    var ctx2 = document.getElementById("myChart2");
-    var myChart2 = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            datasets: [{
-                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#1bab8d',
-                borderWidth: 4,
-                pointBackgroundColor: '#1bab8d'
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
-</script>
 </body>
 </html>

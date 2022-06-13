@@ -1,0 +1,13 @@
+﻿
+.titre {
+  color: #1BAB8D;
+  font-family: "Calibri", sans-serif;
+  font-size: 40px;
+  padding-left: 100px;
+}
+
+#googleMap {
+  width: 100%;
+  height: 400px;
+  margin: 10px auto;
+}

@@ -5,6 +5,10 @@ function submit_new_price() {
     if ($("#newPrice").val() == $("#confirmNewPrice").val() && $("#newPrice").val() != "") {
         data = api_request.changeSubscriptionPrice(current_subscription.id_subscription, $("#newPrice").val());
         if (data.success) {
+        // place new price in placeholder
+        $("#newPrice").attr("placeholder", $("#newPrice").val() + "€");
+        $("#confirmNewPrice").attr("placeholder", $("#newPrice").val() + "€");
+        //reset value
         $("#newPrice").val("");
         $("#confirmNewPrice").val("");
         alert("Le prix a bien été modifié");    
@@ -86,7 +90,6 @@ function getUserSubscription(user_id) {
 $(document).ready(function () {
   // get the id from localstorage
   let id = localStorage.getItem("id_entreprise");
-  id = 1;
   if (id == null) {
     window.location.href = "entrepriseManagement";
   }

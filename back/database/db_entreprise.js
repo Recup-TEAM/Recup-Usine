@@ -29,18 +29,23 @@ module.exports = function () {
       resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
       return rq;
     },
+    
 
     /* POST */
     // Ajouter une entreprise
     addEntreprise: async (dataEntreprise) => {
       let sql =
-        "INSERT INTO `entreprise` (`id_entreprise`, `name`, `id_dirigeant`, `adresse`)" +
+        "INSERT INTO `entreprise` (`id_entreprise`, `name`, `id_user`, `adresse`, `descRegister`, `img`)" +
         "VALUES (NULL, '" +
         dataEntreprise.name +
         "', '" +
         dataEntreprise.id_dirigeant +
         "', '" +
         dataEntreprise.adresse +
+        "', '" +
+        dataEntreprise.descRegister +
+        "', '" +
+        dataEntreprise.imgPath +
         "');";
       var rq = await db_query(sql);
       return rq;
