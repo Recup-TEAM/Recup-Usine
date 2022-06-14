@@ -8,6 +8,15 @@
     <link rel="icon" href="../../img/favicon.ico">
     <title>Récup'Usine</title>
 
+    <!-- Core CSS for the project -->
+    <link rel="stylesheet" href="../../../css/styleGuide.css">
+
+    <!-- Btn Animation Css File -->
+    <link href="../../../css/btnHrvAnimation.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <<!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -20,22 +29,24 @@
     <link href="../../css/recupartenaireCss/partnerProfileModification2.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="animate__animated animate__fadeIn">
 
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <img class="logo-header" src="../../img/logoSansNom.png" href="">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <a href="/" >
+            <img class="logo-header" src="../../img/logoSansNom.png" alt="logoRecup'Usine">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="">Votre entreprise</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Votre entreprise</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px" href="">Récuplateforme</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Récuplateforme</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +56,7 @@
 <main role="main" class="container text-center">
     <div class="row mx-auto">
         <div class="col-md-2 text-left">
-            <button type="submit" class="btn btn-add"><i class="fa-solid fa-arrow-left"></i>  retour</button>
+            <button type="submit" class="btn btn-add hvr-ripple-out"><i class="fa-solid fa-arrow-left"></i>  retour</button>
         </div>
     </div>
     <div class="row card-deck mb-3 mx-auto text-center" style="margin: auto">
@@ -64,7 +75,7 @@
                             <p class="text-secondary mb-1">Mensualité :</p>
                             <p class="text-muted font-size-sm">Date de renouvellement : 09/06/22</p>
                             <div class="text-center">
-                                <button class="btn btn-edit">Editer mon profil <i class="fa-solid fa-pen"></i></button>
+                                <button class="btn btn-edit hvr-ripple-out">Editer mon profil <i class="fa-solid fa-pen"></i></button>
                             </div>
                         </div>
                     </div>
