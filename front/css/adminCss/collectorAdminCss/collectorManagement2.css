@@ -36,6 +36,12 @@ body > .container {
     background-color: #1bab8d;
 }
 
+@media only screen and (min-width: 768px) {
+    .collapse {
+        margin-left: -97px !important;
+    }
+}
+
 .logo-header {
     cursor: pointer;
     object-fit: cover;
@@ -46,6 +52,10 @@ body > .container {
 .nav-link {
     color: white !important;
     margin: 0 5px;
+}
+
+.nav-link:hover {
+    color: #0D5546 !important;
 }
 
 /* end header */
@@ -71,8 +81,11 @@ main, .row {
 }
 
 .card-deck .card {
-    min-width: 220px;
-    max-width: 253px;
+    margin-bottom: 30px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 150px !important;
 }
 
 .card {
@@ -83,6 +96,49 @@ main, .row {
     background-color: #e8f6f3;
 }
 
+.card-deck, .search {
+    margin-top: 74px;
+}
+
+.search {
+    height: 74px;
+    padding: 31px 0 5px 0;
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-add-div {
+        margin-top: -15px !important;
+    }
+    .search {
+        height: 140px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+    .card-deck {
+        margin-top: 140px;
+    }
+}
+
+@media only screen and (width: 768px) {
+    .btn-add-div {
+        margin-top: 0px !important;
+    }
+    .card-deck, .search {
+        margin-top: 74px;
+    }
+
+    .search {
+        height: 74px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+}
+
+.btn-light {
+    background-color: #e8f6f3;
+    border-color: #1bab8d;
+}
 
 footer {
     margin-top: 50px;

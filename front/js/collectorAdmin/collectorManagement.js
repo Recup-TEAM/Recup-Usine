@@ -13,14 +13,16 @@ function writeToHtml(list_collectors) {
   //if list_collectors is empty use all_collectors
   for (let i = 0; i < list_collectors.length; i++) {
     let collector = list_collectors[i];
-    html = '<div class="card mb-4 shadow-sm text-center hvr-grow-shadow">'+
+    html =  '<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">\n' +
+            '<div class="card mb-4 shadow-sm text-center hvr-grow-shadow">'+
             '<div class="card-header">'+
-            '<h4 class="my-0 font-weight-normal">'+ collector.prenom + ' ' + collector.nom +  '</h4>'+
+            '<h5 class="card-title font-weight-normal">'+ collector.prenom + ' ' + collector.nom +  '</h5>'+
                 '</div>'+
             '<div class="card-body">'+
             '<p>'+collector.email+ '</p>'+
                 '<button type="button" class="btn btn-sm btn-edit cardCollector hvr-shutter-out-vertical" value="' + collector.id_user + '">Editer</button>'+
                 '</div>'+
+            '</div>'+
             '</div>';
     $("#collector-list").append(html);
   }
