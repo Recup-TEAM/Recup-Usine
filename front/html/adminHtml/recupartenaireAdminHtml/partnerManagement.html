@@ -30,7 +30,7 @@
     <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../../../css/adminCss/collectorAdminCss/collectorManagement2.css" rel="stylesheet">
+    <link href="../../../css/adminCss/recupartenaireAdminCss/partnerManagement.css" rel="stylesheet">
 </head>
 
 <body class="animate__animated animate__fadeIn">
@@ -38,9 +38,7 @@
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a href="/" >
-            <img class="logo-header" src="../../../img/logoSansNom.png" alt="logoRecup'Usine">
-        </a>
+        <img class="logo-header" src="../../../img/logoSansNom.png" href="">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,24 +59,23 @@
 </header>
 
 <main role="main" class="container text-center">
-    <div class="row mx-auto">
-        <div class="col-md-3 text-left">
+    <div class="search row mx-auto fixed-top">
+        <div class="col-lg-2 col-md-6 text-left">
             <form action="">
                 <div class="input-group mb-4">
-                    <input id="search" type="search" placeholder="Recherche..." aria-describedby="button-addon6"
-                        class="form-control">
+                    <input type="search" placeholder="Recherche..." aria-describedby="button-addon6" class="form-control">
                     <div class="input-group-append">
-                        <button id="button-addon6" type="submit" class="btn btn-search hvr-ripple-out"><i class="fa fa-search"></i></button>
+                        <button id="button-addon6" type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="col-md-7"></div>
-        <div class="col-md-2 text-right">
+        <div class="col-lg-8 col-md-1"></div>
+        <div class="col-lg-2 col-md-5 text-right">
             <button type="submit" class="btn btn-add hvr-ripple-out"><i class="fa-solid fa-plus"></i> ajouter</button>
         </div>
     </div>
-    <div id="entreprise-list" class=" row card-deck mb-3 mx-auto text-center" style="margin: auto">
+    <div id="entreprise-list" class="row card-deck mb-3 mx-auto text-center">
         
     </div>
 </main>
