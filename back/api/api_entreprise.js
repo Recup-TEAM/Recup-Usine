@@ -2,8 +2,6 @@ module.exports = function (session) {
   const { body, validationResult } = require("express-validator");
   const check = require("./check")();
   const db_entreprise = require("../database/db_entreprise")();
-  //const db_user = require("../database/db_user")(conn);
-  //const db_product = require("../database/db_product")(conn);
 
   return {
     /***************
@@ -15,7 +13,7 @@ module.exports = function (session) {
     getEntreprisetDataOfCurrentUser: function (req, res) {
       console.log("API -> getEntreprisetDataOfCurrentUser");
       if (check.checkUserConnected(req, res)) {
-        let userId = req.params.userId;
+        let userId = req.session.userId;
         db_entreprise.getAllEntreprisesByIdUser(userId).then((entreprise) => {
           res.json({ err: "", success: true, data: entreprise });
         });

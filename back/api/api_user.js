@@ -66,10 +66,11 @@ module.exports = function (session) {
     // Get current subscription of user
     getSubscription: (req, res) => {
       console.log("API -> getSubscription");
-      check.checkUserConnected(req, res);
+      if(check.checkUserConnected(req, res)){
       db_user.getSubscription(req.session.userId).then((data) => {
         res.json({ err: "", success: true, data: data });
       });
+    }
     },
 
     // Get subscriptions of user by id

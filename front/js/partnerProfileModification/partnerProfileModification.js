@@ -1,47 +1,49 @@
 function changeMail() {
   if (
-    $("#newEmail").val() == $("#confirmNewMail").val() &&
-    isValidEmail($("#newEmail").val())
+    $("#new-email").val() == $("#confirm-email").val() &&
+    isValidEmail($("#new-email").val())
   ) {
-    data = api_request.change_mail_user($("#newEmail").val());
+    data = api_request.change_mail_user($("#new-email").val());
+
     if (data.success) {
-      $("#newEmail").val("");
-      $("#confirmNewMail").val("");
+      $("#new-email").val("");
+      $("#confirm-email").val("");
       alert("Votre email a bien été modifié");
     }
-  } else {
-    alert("Les deux emails ne correspondent pas ou l'email n'est pas valide");
+    else {
+    alert("Les deux emails ne correspondent pas ou l'email n'est pas valide." + data.err);
+  }
   }
 }
 
 function changePassword() {
   if (
-    $("#newPassword").val() == $("#confirmNewPassword").val()
+    $("#newPassword").val() == $("#confirm-password").val()
     // &&
     // isValidPassword($("#newPassword").val())
   ) {
     data = api_request.change_password_user();
     if (data.success) {
-      $("#oldPassword").val("");
+      $("#oldpassword").val("");
       $("#newPassword").val("");
-      $("#confirmNewPassword").val("");
+      $("#confirm-password").val("");
       alert("Votre mot de passe a bien été modifié");
     } else {
       alert("L'ancien mot de passe est incorrect");
     }
-  } else {
+  }
+  else {
     alert(
-      "Votre mot de passe n'est pas valide ou les deux mots de passe ne correspondent pas"
+      "Votre mot de passe n'est pas valide ou les deux mots de passe ne correspondent pas. (" + data.err + ")"
     );
   }
 }
 
 // verify if the email is valid
-function isValidEmail(email) {
-  var re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
+  function isValidEmail(email) {
+    var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return re.test(String(email).toLowerCase());
+  }
 
 // verify if the password is valid (at least 6 characters, 1 uppercase, 1 lowercase, 1 number)
 function isValidPassword(password) {
@@ -79,32 +81,35 @@ $(document).ready(function () {
     type: "GET",
     success: function (result) {
       console.log("user: ", result.data);
-      $("#userMail").html(result.data.email);
+      $("#email").html(result.data.email);
       // convert sql dateRegister to date
-      var date = new Date(result.data.registerDate);
-      var dateRegister =
-        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-      $("#dateRegister").html(dateRegister);
+      // var date = new Date(result.data.registerDate);
+      // var dateRegister =
+      //   date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      // $("#dateRegister").html(dateRegister);
 
-      if (result.data.compte_level == 0) {
-        $("#userLevel").html("Utilisateur");
-      } else if (result.data.compte_level == 1) {
-        $("#userLevel").html("Récupartner");
-      } else {
-        $("#userLevel").html("Compte de type : " + result.data.compte_level);
-      }
+      // if (result.data.compte_level == 0) {
+      //   $("#userLevel").html("Utilisateur");
+      // } else if (result.data.compte_level == 1) {
+      //   $("#userLevel").html("Récupartner");
+      // } else {
+      //   $("#userLevel").html("Compte de type : " + result.data.compte_level);
+      // }
     },
   });
 
   $.ajax({
     url: "/api/user/get/subscription",
     type: "GET",
-    success: function (result) {
-      console.log("subscription: ", result.data);
+    success: function (data) {
+      console.log("subscription: ", data.data);
       // if array is empty
-      if (result.data.length == 0) {
-        $("#subscription").html("Aucune souscription");
+      if (data.data.length == 0) {
+        $("#subInfo").html("Aucune souscription");
       } else {
+        $("#subInfo").html(
+          data.data[0].price + "€ (" + data.data[0].subscription_duration + " mois)"
+        );
         let dateEnd = new Date(data.data[0].start_date);
         dateEnd.setUTCDate(
           dateEnd.getDay() + data.data[0].subscription_duration
@@ -128,21 +133,21 @@ $(document).ready(function () {
           (dateEnd.getMonth() + 1) +
           "/" +
           dateEnd.getFullYear();
-        $("#dateRenouvellement").html(dateEnd);
+        $("#subRenouvellement").html(dateEnd);
       }
     },
   });
 
   /* LISTENERS */
   // when enter is pressed in newEmail focus confirmNewMail
-  $("#newEmail").keypress(function (e) {
+  $("#new-email").keypress(function (e) {
     if (e.which == 13) {
-      $("#confirmNewMail").focus();
+      $("#confirm-email").focus();
     }
   });
 
   // when enter is pressed in confirmNewMail and newEmail and confirmNewMail have the same value call changeMail function
-  $("#confirmNewMail").keypress(function (e) {
+  $("#confirm-email").keypress(function (e) {
     if (e.which == 13) {
       changeMail();
     }
@@ -163,19 +168,23 @@ $(document).ready(function () {
   // when enter is pressed in newPassword focus confirmNewPassword
   $("#newPassword").keypress(function (e) {
     if (e.which == 13) {
-      $("#confirmNewPassword").focus();
+      $("#onfirm-password").focus();
     }
   });
 
   // when enter is pressed in confirmNewPassword and newPassword and confirmNewPassword have the same value call changePassword function
-  $("#confirmNewPassword").keypress(function (e) {
+  $("#confirm-password").keypress(function (e) {
+    e.preventDefault();
     if (e.which == 13) {
       changePassword();
     }
   });
 
   // when confirmButtonPasswordChange is clicked call changePassword function
-  $("#confirmButtonPasswordChange").click(function () {
+  $("#confirmButtonPasswordChange").click(function (event) {
+    //prevent the page from refreshing
+    event.preventDefault();
     changePassword();
   });
+  
 });

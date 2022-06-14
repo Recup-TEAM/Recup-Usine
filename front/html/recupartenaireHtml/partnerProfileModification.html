@@ -1,122 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Partner Profile Modification</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/recupartenaireCss/partnerProfileModification.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/styleGuide.css"/>
-    <!-- import ajax from cdn -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--- import socket.io 4. from cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Récup'Team">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="icon" href="../../img/favicon.ico">
+    <title>Récup'Usine</title>
 
-    <script src="../js/partnerProfileModification/mainPartnerProfileModification.js"></script>
-    <script src="../js/partnerProfileModification/modules/api_request.js"></script>
+    <!-- Core CSS for the project -->
+    <link rel="stylesheet" href="../../../css/styleGuide.css">
+
+    <!-- Btn Animation Css File -->
+    <link href="../../../css/btnHrvAnimation.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <<!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/recupartenaireCss/partnerProfileModification2.css" rel="stylesheet">
+    <script type="text/javascript" src="./../../js/partnerProfileModification/partnerProfileModification.js"></script>
+    <script type="text/javascript" src="./../../js/partnerProfileModification/modules/api_request.js"></script>
 
 </head>
-<body class="body">
 
-<!--Header-->
-<div class="header">
-    <div class="overlap-group0 align-self-flex-start">
-        <img alt="logoSansNom" class="logoHeader" src="../../img/logoSansNom.png" />
-    </div>
-</div>
+<body class="animate__animated animate__fadeIn">
 
-<!--Modification profile-->
-<div class="partnerProfileModification">
-
-    <!--Info Profile -->
-    <div class="profile">
-        <div class="infoProfile">
-            <div class="flex-row">
-                <div class="profile-img"></div>
-                <div class="flex-col-1">
-                    <div class="name-info-placeholder" id="entrepriseName">Nom de l’entreprise</div>
-                    <div class="inscription-date-header calibri-light-nevada-18px">Date d’inscription :</div>
-                    <div class="inscription-date-placeholder calibri-light-nevada-18px" id="dateRegister">00.00.2022</div>
-                </div>
-            </div>
-            <div class="mail-info-header calibri-light-nevada-18px" >Adresse mail :</div>
-            <div class="mail-info-placeholder calibri-light-nevada-18px" id="userMail">you@example.com</div>
-            <div class="subscription-date-header calibri-light-nevada-18px">Type d’abonnement :</div>
-            <div class="mail-info-placeholder calibri-light-nevada-18px" id="userLevel"></div>
-            <div class="subscription-date-header calibri-light-nevada-18px">Date de renouvellement :</div>
-            <div class="mail-info-placeholder calibri-light-nevada-18px" id="dateRenouvellement"></div>
-
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <a href="/" >
+            <img class="logo-header" src="../../img/logoSansNom.png" alt="logoRecup'Usine">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Votre entreprise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Récuplateforme</a>
+                </li>
+            </ul>
         </div>
-        <div class="returnButton">
-            <div class="overlap-group4">
-                <img alt="returnArrow" class="shape" src="../../img/arrow.png" />
-                <div class="placeholder calibri-regular-normal-white-20px">retour</div>
-            </div>
+    </nav>
+</header>
+
+<main role="main" class="container text-center">
+    <div class="row mx-auto">
+        <div class="col-md-2 text-left">
+            <button type="submit" class="btn btn-add hvr-ripple-out"><i class="fa-solid fa-arrow-left"></i>  retour</button>
         </div>
     </div>
-
-    <!--Change mail div-->
-    <div class="mailChangeDiv">
-        <div class="container">
-            <h1 class="headerChange calibri-bold-mine-shaft-26px">Changer votre mail</h1>
-
-            <div class="mailDiv">
-                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Nouvelle adresse mail</div>
-                <div class="input">
-                    <input class="placeholderMail valign-text-middle calibri-light-sonic-silver-16px" id="newEmail" type="text" placeholder="you@example.com">
+    <div class="row card-deck mb-3 mx-auto text-center" style="margin: auto">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <div class="top-container">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" class="img-fluid profile-image" width="70">
+                            <div class="ml-3">
+                                <h4 class="name" id="entrepriseName">Nom de l'entreprise</h4>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-left">
+                            <p class="text-secondary mb-1">Adresse mail :<div id="email"></div></p>
+                            <p class="text-secondary mb-1">Abonnement : <div id="subInfo"></div></p>
+                            <p class="text-muted font-size-sm">Date de renouvellement : <div id="subRenouvellement"></div></p>
+                            <div class="text-center">
+                                <button class="btn btn-edit hvr-ripple-out">Nous contacter <i class="fa-solid fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="mailDiv">
-                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Confirmer adresse mail</div>
-                <div class="input">
-                    <input class="placeholderMail valign-text-middle calibri-light-sonic-silver-16px" id="confirmNewMail" type="text" placeholder="you@example.com">
-                </div>
-            </div>
-
-            <div class="buttonDiv">
-                <div id="confirmButtonMailChange" class="confirmButton valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
-            </div>
-
         </div>
-    </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                <h4 class="mb-3 text-center">Changer d'adresse mail</h4>
+                <form class="needs-validation padding-form" novalidate>
+                    <div class="mb-3 text-left">
+                        <label for="new-email">Nouvelle adresse mail</label>
+                        <input type="email" class="form-control" id="new-email" placeholder="you@example.com">
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse mail valide.
+                        </div>
+                    </div>
 
-    <!--Change password div-->
-    <div class="passwordChangeDiv">
-        <div class="container">
-            <h1 class="headerChange calibri-bold-mine-shaft-26px">Changer votre mot de passe</h1>
-
-            <div class="passwordDiv">
-                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Ancien mot de passe</div>
-                <div class="input">
-                    <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="oldPassword" type="password" placeholder="••••••••">
-                </div>
+                    <div class="mb-3 text-left">
+                        <label for="confirm-email">Confirmer adresse mail</label>
+                        <input type="email" class="form-control" id="confirm-email" placeholder="you@example.com">
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse mail valide.
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-connection hvr-sweep-to-right" type="submit" id="confirmButtonMailChange">Confirmer</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="passwordDiv">
-                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Nouveau mot de passe</div>
-                <div class="input">
-                    <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="newPassword" type="password" placeholder="••••••••">
-                </div>
             </div>
-
-            <div class="passwordDiv">
-                <div class="title valign-text-middle calibri-regular-normal-mine-shaft-16px">Confirmer mot de passe</div>
-                <div class="input">
-                    <input class="placeholderPassword valign-text-middle calibri-light-sonic-silver-16px" id="confirmNewPassword" type="password" placeholder="••••••••">
-                </div>
-            </div>
-
-            <div class="buttonDiv">
-                <div id="confirmButtonPasswordChange" class="confirmButton valign-text-middle calibri-regular-normal-white-20px">Confirmer</div>
-            </div>
-
         </div>
-    </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                <h4 class="mb-3 text-center">Changer de mot de passe</h4>
+                <form class="needs-validation padding-form" novalidate>
+                    <div class="mb-3 text-left">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" id="oldpassword" placeholder="••••••••" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre mot de passe.
+                        </div>
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="new-password">Nouveau mot de passe</label>
+                        <input type="password" class="form-control" id="newPassword" placeholder="••••••••" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre mot de passe.
+                        </div>
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="confirm-password">Confirmer mot de passe</label>
+                        <input type="password" class="form-control" id="confirm-password" placeholder="••••••••" required>
+                        <div class="invalid-feedback">
+                            Veuillez entrer votre mot de passe.
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-connection hvr-sweep-to-right" type="submit" id="confirmButtonPasswordChange">Confirmer</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
 
-</div>
+
+    </div>
+</main>
+<footer>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Copyright©2022 : all right reserved | Récup’Usine</div>
+</footer>
 </body>
 </html>
-
-<script>
-    // soket.io
-    //var socket = io();
-</script>

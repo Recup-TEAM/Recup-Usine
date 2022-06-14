@@ -25,7 +25,7 @@ let api_request = (function () {
       url: "/api/user/update/changePassword",
       async: false,
       data: {
-        oldPassword: $("#oldPassword").val(),
+        oldPassword: $("#oldpassword").val(),
         newPassword: $("#newPassword").val(),
       },
       success: (data) => {
