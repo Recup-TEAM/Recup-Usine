@@ -49,14 +49,20 @@ body > .container {
     width: 97px;
     margin-left: 12px;
 }
+
+nav a {
+    z-index: 10;
+}
+
 .nav-link {
     color: white !important;
     margin: 0 5px;
 }
 
-.nav-link:hover {
-    color: #0D5546 !important;
+nav{
+    z-index: 5;
 }
+
 
 /* end header */
 
@@ -104,6 +110,7 @@ main, .row {
     height: 74px;
     padding: 31px 0 5px 0;
     background-color: white;
+    z-index: 2;
 }
 
 @media only screen and (max-width: 768px) {
