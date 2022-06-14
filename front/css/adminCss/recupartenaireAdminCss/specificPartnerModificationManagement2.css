@@ -26,6 +26,7 @@
 html {
     position: relative;
     min-height: 100%;
+    max-height: 2000px;
 }
 
 body > .container {
@@ -76,6 +77,10 @@ main, .row {
     margin-bottom: 20px;
 }
 
+main {
+    margin-bottom: 15%;
+}
+
 .top-container{
     display: flex;
     align-items: center;
@@ -115,6 +120,7 @@ input {
 }
 
 footer {
+    width: 100%;
     margin-top: 50px;
     bottom: 0;
 }
