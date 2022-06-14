@@ -29,7 +29,7 @@
 
     <script src="../../js/register/sign_up.js"></script>
     <script src="../../js/register/modules/logger.js"></script>
-    
+
 </head>
 
 <body class="animate__animated animate__fadeIn">
@@ -43,20 +43,20 @@
 </header>
 <main role="main" class="container">
     <div class="row">
-        <div class="col-md-5 text-center my-auto">
+        <div class="col-lg-5 text-center my-auto">
             <h1 class="become"><strong>Devenez</strong></h1>
             <img class="logo-recupartenaires" src="../../img/recupartenaireLogo.png" />
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-6 my-auto forms">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6 my-auto forms">
             <h3 class="mb-3 text-center">Création de votre compte</h3>
             <form id="form" class="needs-validation" novalidate>
-                <div class="row">
+                <div class="row" style="padding-left: 15px;">
                     <div class="col-md-8 mb-3">
                         <label for="company-name">Entreprise représentée</label>
                         <input type="text" class="form-control" id="company-name" placeholder="Récup'Usine" required>
                     </div>
-                    <div class="col-md-3 mb-3" style="margin-left: 35px">
+                    <div class="col-md-3 mb-3">
                         <p for="formFile" class="form-label">Logo</p>
                         <span class="file-input btn btn-file btn-upload hvr-sweep-to-right">Parcourir&hellip;
                              <input type="file" id="formFile" accept=".png, .jpg, .jpeg, .svg">
@@ -64,7 +64,17 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="col-md-12 mb-3">
+                    <label for="siret">Numéro SIRET</label>
+                    <input type="text" class="form-control" id="siret" placeholder="xxx xxx xxx xxxxx" required>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label for="adress">Adresse de l'usine</label>
+                    <input type="text" class="form-control" id="adress" placeholder="20 Rue De Saint Omer 59800 Lille" required>
+                </div>
+
+                <div class="col-md-12 mb-3">
                     <label for="email">Adresse mail</label>
                     <input type="email" class="form-control" id="email" placeholder="you@example.com">
                     <div class="invalid-feedback">
@@ -72,24 +82,24 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="col-md-12 mb-3">
                     <label for="password">Mot de passe</label>
                     <input type="password" class="form-control" id="password" placeholder="••••••••" required>
                 </div>
 
-                <div class="mb-3">
+                <div class="col-md-12 mb-3">
                     <label for="confirm-password">Confirmer mot de passe</label>
                     <input type="password" class="form-control" id="confirm-password" placeholder="••••••••" required>
                 </div>
 
-                <div class="mb-3">
+                <div class="col-md-12 mb-3">
                     <label for="textarea" class="form-label">Qu’est-ce qui vous motive à devenir récupartenaires ?</label>
                     <textarea class="form-control" id="textarea" rows="3"></textarea>
                 </div>
 
-                    <div class="mb-3">
-                        <a href="/recupartenaireHtml/login">Vous possédez déjà un compte ?</a>
-                    </div>
+                <div class="col-md-12 mb-3">
+                    <a href="/recupartenaireHtml/login">Vous possédez déjà un compte ?</a>
+                </div>
                 <div class="text-center">
                     <button class="btn btn-connection hvr-sweep-to-right" id="confirmButton">Confirmer</button>
                 </div>
