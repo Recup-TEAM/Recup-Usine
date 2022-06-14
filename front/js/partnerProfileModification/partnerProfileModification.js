@@ -11,9 +11,11 @@ function changeMail() {
       alert("Votre email a bien été modifié");
     }
     else {
-    alert("Les deux emails ne correspondent pas ou l'email n'est pas valide." + data.err);
+    alert(data.err);
   }
   }
+  else {    alert("Les deux emails ne correspondent pas ou l'email n'est pas valide.");
+}
 }
 
 function changePassword() {
@@ -148,18 +150,20 @@ $(document).ready(function () {
 
   // when enter is pressed in confirmNewMail and newEmail and confirmNewMail have the same value call changeMail function
   $("#confirm-email").keypress(function (e) {
+    e.preventDefault();
     if (e.which == 13) {
       changeMail();
     }
   });
 
   // when confirmNewMail is clicked call changeMail function
-  $("#confirmButtonMailChange").click(function () {
+  $("#confirmButtonMailChange").click(function (e) {
+    e.preventDefault();
     changeMail();
   });
 
   // when enter is pressed in oldPassword focus newPassword
-  $("#oldPassword").keypress(function (e) {
+  $("#oldpassword").keypress(function (e) {
     if (e.which == 13) {
       $("#newPassword").focus();
     }
@@ -167,8 +171,9 @@ $(document).ready(function () {
 
   // when enter is pressed in newPassword focus confirmNewPassword
   $("#newPassword").keypress(function (e) {
+    e.preventDefault();
     if (e.which == 13) {
-      $("#onfirm-password").focus();
+      $("#confirm-password").focus();
     }
   });
 
@@ -187,4 +192,9 @@ $(document).ready(function () {
     changePassword();
   });
   
+  // prevent default #noenterallowed
+  $(".noenterallowed").keypress(function (e) {
+    e.preventDefault();
+  }
+  );
 });

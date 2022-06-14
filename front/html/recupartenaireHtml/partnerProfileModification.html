@@ -89,7 +89,7 @@
             <div class="card card-profile">
                 <div class="card-body">
                 <h4 class="mb-3 text-center">Changer d'adresse mail</h4>
-                <form class="needs-validation padding-form" novalidate>
+                <form class="needs-validation padding-form noenterallowed" novalidate id="noenterallowed">
                     <div class="mb-3 text-left">
                         <label for="new-email">Nouvelle adresse mail</label>
                         <input type="email" class="form-control" id="new-email" placeholder="you@example.com">
@@ -100,7 +100,7 @@
 
                     <div class="mb-3 text-left">
                         <label for="confirm-email">Confirmer adresse mail</label>
-                        <input type="email" class="form-control" id="confirm-email" placeholder="you@example.com">
+                        <input type="email" class="form-control" id="noenterallowed" placeholder="you@example.com">
                         <div class="invalid-feedback">
                             Veuillez entrer une adresse mail valide.
                         </div>
@@ -116,7 +116,7 @@
             <div class="card card-profile">
                 <div class="card-body">
                 <h4 class="mb-3 text-center">Changer de mot de passe</h4>
-                <form class="needs-validation padding-form" novalidate>
+                <form class="needs-validation padding-form noenterallowed" novalidate id="noenterallowed">
                     <div class="mb-3 text-left">
                         <label for="password">Mot de passe</label>
                         <input type="password" class="form-control" id="oldpassword" placeholder="••••••••" required>
