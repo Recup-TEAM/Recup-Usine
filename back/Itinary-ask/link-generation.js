@@ -5,7 +5,7 @@
 // waypoints=Adresse-1%2CPays-1%7CAdresse-2%2CCPays-2
 
 var Stop1 = "Lille Grand Palais Lille";
-var Stop2 = "20 Rue Claude Debussy Baiseux";
+var Stop2 = "20 Rue Claude Debussy 50780 Baiseux";
 var Stop3 = "Gare Lille Flandres Lille";
 var listWaypoints = [Stop1, Stop2, Stop3];
 
