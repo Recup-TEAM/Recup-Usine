@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Récup'Team">
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-    <link rel="icon" href="../../img/favicon.ico">
+    <link rel="icon" href="../../../img/favicon.ico">
     <title>Récup'Usine</title>
 
     <!-- Core CSS for the project -->
@@ -26,27 +26,38 @@
     <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../../css/recupartenaireCss/partnerProfileModification2.css" rel="stylesheet">
+    <link href="../../css/recuplateforme.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+    <!-- Custom styles for this template -->
+    <link href="../../../css/adminCss/recupartenaireAdminCss/specificPartnerModificationManagement2.css" rel="stylesheet">
 </head>
 
 <body class="animate__animated animate__fadeIn">
 
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-light fixed-top">
-        <a href="/" >
-            <img class="logo-header" src="../../img/logoSansNom.png" alt="logoRecup'Usine">
-        </a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <img class="logo-header" src="../../../img/logoSansNom.png" href="">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Votre entreprise</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/adminHtml/recupartenaireAdminHtml/partnerManagement">Récupartenaires</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Récuplateforme</a>
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/adminHtml/collectorAdminHtml/collectorManagement">Récupersonnel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/adminHtml/recuplateformeAdminHtml/recuplateformeManagement">Récuplateforme</a>
                 </li>
             </ul>
         </div>
@@ -74,9 +85,6 @@
                             <p class="text-secondary mb-1">Adresse mail :</p>
                             <p class="text-secondary mb-1">Mensualité :</p>
                             <p class="text-muted font-size-sm">Date de renouvellement : 09/06/22</p>
-                            <div class="text-center">
-                                <button class="btn btn-edit hvr-ripple-out">Nous contacter <i class="fa-solid fa-envelope"></i></button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,61 +93,37 @@
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
             <div class="card card-profile">
                 <div class="card-body">
-                <h4 class="mb-3 text-center">Changer d'adresse mail</h4>
-                <form class="needs-validation padding-form" novalidate>
-                    <div class="mb-3 text-left">
-                        <label for="new-email">Nouvelle adresse mail</label>
-                        <input type="email" class="form-control" id="new-email" placeholder="you@example.com">
-                        <div class="invalid-feedback">
-                            Veuillez entrer une adresse mail valide.
+                    <h4 class="mb-3 text-center">Changer le prix de l'abonnement</h4>
+                    <form class="needs-validation padding-form" novalidate>
+                        <div class="mb-3 text-left">
+                            <label for="new-email">Nouveaux prix</label>
+                            <input type="email" class="form-control" id="new-email" placeholder="_ _ _ _ €">
                         </div>
-                    </div>
-
-                    <div class="mb-3 text-left">
-                        <label for="confirm-email">Confirmer adresse mail</label>
-                        <input type="email" class="form-control" id="confirm-email" placeholder="you@example.com">
-                        <div class="invalid-feedback">
-                            Veuillez entrer une adresse mail valide.
+                        <div class="text-center">
+                            <button class="btn btn-connection hvr-sweep-to-right" type="submit">Confirmer</button>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-connection hvr-sweep-to-right" type="submit">Confirmer</button>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
             <div class="card card-profile">
                 <div class="card-body">
-                <h4 class="mb-3 text-center">Changer de mot de passe</h4>
-                <form class="needs-validation padding-form" novalidate>
-                    <div class="mb-3 text-left">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
-                        <div class="invalid-feedback">
-                            Veuillez entrer votre mot de passe.
+                    <h4 class="mb-3 text-center">Changer la fréquence de paiement</h4>
+                    <form class="needs-validation padding-form" novalidate>
+                        <div class="mb-3 text-center">
+                            <select class="selectpicker" title="Périodicité" multiple>
+                                <option>Bimensuel</option>
+                                <option>Mensuel</option>
+                                <option>Bimestriel</option>
+                                <option>Trimestriel</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="mb-3 text-left">
-                        <label for="new-password">Nouveau mot de passe</label>
-                        <input type="password" class="form-control" id="new-password" placeholder="••••••••" required>
-                        <div class="invalid-feedback">
-                            Veuillez entrer votre mot de passe.
+                        <div class="text-center">
+                            <button class="btn btn-connection hvr-sweep-to-right" type="submit">Confirmer</button>
                         </div>
-                    </div>
-                    <div class="mb-3 text-left">
-                        <label for="confirm-password">Confirmer mot de passe</label>
-                        <input type="password" class="form-control" id="confirm-password" placeholder="••••••••" required>
-                        <div class="invalid-feedback">
-                            Veuillez entrer votre mot de passe.
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-connection hvr-sweep-to-right" type="submit">Confirmer</button>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
         </div>
 
