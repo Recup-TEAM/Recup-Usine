@@ -33,7 +33,7 @@ function pushToHtml(data) {
             "            <div class=\"card-body\">\n" +
             "                <h5 class=\"my-0 font-weight-normal\">" + entreprise.name + "</h5>\n" +
             "                <p class=\"adress\">" + entreprise.adresse + "</p>\n" +
-            "                <button type=\"button\" class=\"btn btn-sm btn-edit hvr-shutter-out-vertical\">Editer</button>\n" +
+            "                <button type=\"button\" class=\"btn btn-sm btn-edit hvr-shutter-out-vertical\">Voir profil</button>\n" +
             "            </div>\n" +
             "          </div>\n" +
             "        </div>";
