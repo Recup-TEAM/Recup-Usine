@@ -49,13 +49,12 @@ body > .container {
     width: 97px;
     margin-left: 12px;
 }
+nav a{
+    z-index: 10;
+}
 .nav-link {
     color: white !important;
     margin: 0 5px;
-}
-
-.nav-link:hover {
-    color: #0D5546 !important;
 }
 
 /* end header */
@@ -78,6 +77,9 @@ main, .row {
     background-color: #AB1B39 !important;
     color: white !important;
     width: 190px !important;
+}
+.btn-ask:before{
+    border: #AB1B39 solid 6px !important;
 }
 
 @media only screen and (min-width: 768px) {
