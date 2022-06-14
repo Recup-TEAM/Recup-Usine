@@ -54,10 +54,6 @@ body > .container {
     margin: 0 5px;
 }
 
-.nav-link:hover {
-    color: #0D5546 !important;
-}
-
 /* end header */
 
 .row {
