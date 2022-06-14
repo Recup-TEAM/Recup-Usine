@@ -12,8 +12,8 @@ var listWaypoints = [Stop1, Stop2, Stop3];
 function createUrl(listWaypoints) {
     url = "https://www.google.com/maps/dir/?api=1&origin=ISEN+Lille%2CFrance&destination=ISEN+Lille%2CFrance&travelmode=driving&waypoints="
     console.log(listWaypoints.length); 
-    for(i=0; listWaypoints.length; i++) {
-        url += listWaypoints[i];
+    for(i=0; i<listWaypoints.length; i++) {
+        url += listWaypoints[i].replaceAll(" ","+");
         url += "%2CFrance%7C";
         console.log(url);
     } 
