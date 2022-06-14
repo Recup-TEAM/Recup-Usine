@@ -87,6 +87,8 @@ module.exports = function (app, session) {
     // Ajouter une entreprise
     app.post("/api/entreprises/add", urlencodedParser, api_entreprise.addEntreprise);
 
+    // Request a collect
+    app.post("/api/collector/request/collect/:id", urlencodedParser, api_entreprise.requestCollect);
 
 
     /***************

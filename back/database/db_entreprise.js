@@ -50,5 +50,14 @@ module.exports = function () {
       var rq = await db_query(sql);
       return rq;
     },
+
+    // Request a collect
+    requestCollect: async (id_entreprise) => {
+      //update need_collect to 1
+      let sql = "UPDATE entreprise SET need_collect=1 WHERE id_entreprise='" + id_entreprise + "'";
+      var rq = await db_query(sql);
+      return rq;
+    },
+
   };
 };

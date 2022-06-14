@@ -1,5 +1,5 @@
 module.exports = function () {
-
+  const db_query = require("../db_config")().db_query;
   return {
     /***************
      *   Product   *

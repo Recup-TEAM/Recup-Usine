@@ -75,5 +75,7 @@ module.exports = function (session) {
         });
       }
     },
+
+    // Request a collect
   };
 };

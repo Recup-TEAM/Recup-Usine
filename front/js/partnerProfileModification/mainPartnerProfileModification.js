@@ -18,7 +18,7 @@ function changePassword() {
   if (
     $("#newPassword").val() == $("#confirmNewPassword").val()
     // &&
-   // isValidPassword($("#newPassword").val())
+    // isValidPassword($("#newPassword").val())
   ) {
     data = api_request.change_password_user();
     if (data.success) {
@@ -26,8 +26,7 @@ function changePassword() {
       $("#newPassword").val("");
       $("#confirmNewPassword").val("");
       alert("Votre mot de passe a bien été modifié");
-    }
-    else {
+    } else {
       alert("L'ancien mot de passe est incorrect");
     }
   } else {
@@ -106,15 +105,30 @@ $(document).ready(function () {
       if (result.data.length == 0) {
         $("#subscription").html("Aucune souscription");
       } else {
-        let dateEnd = new Date(result.data[0].start_date);
-        dateEnd.setMonth(dateEnd.getMonth() + result.data[0].subscription_type);
+        let dateEnd = new Date(data.data[0].start_date);
+        dateEnd.setUTCDate(
+          dateEnd.getDay() + data.data[0].subscription_duration
+        );
+        if (dateEnd.getDate() > 30) {
+          dateEnd =
+            dateEnd.getDate() -
+            30 +
+            "/" +
+            (dateEnd.getMonth() + 1) +
+            "/" +
+            dateEnd.getFullYear();
+        }
         if (dateEnd.getMonth() > 12) {
           dateEnd.setMonth(dateEnd.getMonth() - 12);
           dateEnd.setFullYear(dateEnd.getFullYear() + 1);
         }
-        date_end_format = dateEnd.getDay() + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
-
-        $("#dateRenouvellement").html(date_end_format);
+        dateEnd =
+          dateEnd.getDay() +
+          "/" +
+          (dateEnd.getMonth() + 1) +
+          "/" +
+          dateEnd.getFullYear();
+        $("#dateRenouvellement").html(dateEnd);
       }
     },
   });

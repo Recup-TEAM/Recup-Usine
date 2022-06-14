@@ -64,6 +64,60 @@ let api_request = (function () {
     return dataSucces;
   }
 
+  function request_getUserById(id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/userById/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+  function request_getSubscription(id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/subscriptionById/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+  // get products by entreprise id
+  function request_getProductsByEntrepriseId(id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/products/get/allProductsFrom/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+// requestCollect
+  function request_requestCollect(id) {
+    let dataSucces;
+    $.ajax({
+      type: "POST",
+      url: "/api/collector/request/collect/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+
   return {
     isConnected() {
       return request_isconnected();
@@ -77,5 +131,18 @@ let api_request = (function () {
     getOneEntreprise(id) {
       return request_getOneEntreprise(id);
     },
+    getUserById(id) {
+      return request_getUserById(id);
+    },
+    getSubscription(id) {
+      return request_getSubscription(id);
+    },
+    getProductsByEntrepriseId(id) {
+      return request_getProductsByEntrepriseId(id);
+    },
+    requestCollect(id) {
+      return request_requestCollect(id);
+    }
+
   };
 })();

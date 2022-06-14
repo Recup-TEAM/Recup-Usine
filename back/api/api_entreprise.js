@@ -71,5 +71,16 @@ module.exports = function (session) {
         });
       }
     },
+
+  // Request a collect
+  requestCollect: (req, res) => {
+    console.log("API -> requestCollect");
+    let idEntreprise = req.params.id;
+    console.log(idEntreprise);
+    db_entreprise.requestCollect(idEntreprise).then(() => {
+      res.json({ err: "", success: true, data: null });
+    }
+    );
+  },
   };
 };

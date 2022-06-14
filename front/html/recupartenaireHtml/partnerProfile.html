@@ -74,15 +74,16 @@
                         <div class="top-container">
                             <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" class="img-fluid profile-image" width="70">
                             <div class="ml-3">
-                                <h4 class="name">Nom de l'entreprise</h4>
+                                <h4 class="name" id="nameEntreprise">Nom de l'entreprise</h4>
                             </div>
                         </div>
                         <div class="mt-3 text-left">
-                            <p class="text-secondary mb-1">Adresse mail :</p>
-                            <p class="text-secondary mb-1">Mensualité :</p>
-                            <p class="text-muted font-size-sm">Date de renouvellement : 09/06/22</p>
+                            <p class="text-secondary mb-1">Adresse mail : <div id="email"></div></p>
+                            <p class="text-secondary mb-1">Abonnement : <div id="subInfo"></div>
+                            </p>
+                            <p class="text-muted font-size-sm">Date de renouvellement : <div id="subRenouvellement"></div></p>
                             <div class="text-center">
-                                <button class="btn btn-edit hvr-ripple-out">Editer mon profil <i class="fa-solid fa-pen"></i></button>
+                                <button class="btn btn-edit hvr-ripple-out" id="buttonEditProfil">Editer mon profil <i class="fa-solid fa-pen"></i></button>
                             </div>
                         </div>
                     </div>
@@ -92,11 +93,11 @@
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
                         <div class="mt-3 text-left">
-                            <p class="text-secondary mb-1">Type de déchets : bois, verre, métal</p>
-                            <p class="text-secondary mb-1">Déchets collectés :</p>
-                            <p class="text-muted font-size-sm">Déchets à collecter :</p>
+                            <p class="text-secondary mb-1">Type de déchets : <p id="products"></p></p>
+                            <p class="text-secondary mb-1">Déchets collectés :<p id="productscollected"></p></p>
+                            <p class="text-muted font-size-sm">Déchets à collecter :<p id="productsTocollect"></p></p>
                             <div class="text-center">
-                                <button class="btn btn-ask hvr-ripple-out">Demander collecte</button>
+                                <button class="btn btn-ask hvr-ripple-out" id="requestCollect">Demander collecte</button>
                             </div>
                         </div>
                     </div>
