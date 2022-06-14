@@ -3,8 +3,8 @@
 
 var Myposition = new google.maps.LatLng(50.6341809, 3.0487116);
 
-var Stop1 = new google.maps.LatLng(50.63409, 3.04116); // Arrêts de test
-var Stop2 = new google.maps.LatLng(50.6341809, 3.0387116);
+var Stop1 = "229 Rue de l'échopette locon"; // Arrêts de test
+var Stop2 = "Zoo de lille";
 var Stop3 = new google.maps.LatLng(50.63809, 3.067116);
 var Stop4 = "20 rue claude Debussy baisieux";
 
