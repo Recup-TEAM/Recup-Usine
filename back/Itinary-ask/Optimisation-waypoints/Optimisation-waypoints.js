@@ -3,7 +3,7 @@
 // on se place à au point le plus proche puis on recalcul la distance avec les points restants
 // on se place au plus proche et ainsi de suite.
 
-var Myposition = "ISEN Lille, Lille";
+var myPosition = "ISEN Lille, Lille";
 
 var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
 var waypoint2 = "Lille Grand palais, Lille";
@@ -15,10 +15,9 @@ var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint4, waypoint5];
 
 //javascript.js
 //set map options
-var myLatLng = { lat: 38.3460, lng: -0.4907 };
 var mapOptions = {
-    center: myLatLng,
-    zoom: 7,
+    center: { lat: 50.634742, lng: 3.048682 },
+    zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
 };
@@ -40,9 +39,9 @@ directionsDisplay.setMap(map);
 function calcRoute() {
     //create request
     var request = {
-        origin: document.getElementById("from").value,
-        destination: document.getElementById("to").value,
-        travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
+        origin: myPosition,
+        destination: waypoint3,
+        travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.METRIC
     }
 
@@ -52,7 +51,7 @@ function calcRoute() {
 
             //Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.value + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = "<div class='alert-info'>Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.value + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
 
             //display route
             directionsDisplay.setDirections(result);
@@ -60,7 +59,7 @@ function calcRoute() {
             //delete route from map
             directionsDisplay.setDirections({ routes: [] });
             //center map in London
-            map.setCenter(myLatLng);
+            map.setCenter(myPosition);
 
             //show error message
             output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
@@ -68,16 +67,3 @@ function calcRoute() {
     });
 
 }
-
-
-
-//create autocomplete objects for all inputs
-var options = {
-    types: ['(cities)']
-}
-
-var input1 = document.getElementById("from");
-var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
-
-var input2 = document.getElementById("to");
-var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
