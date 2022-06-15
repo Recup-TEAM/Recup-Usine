@@ -35,6 +35,10 @@ body > .container {
 .navbar {
     background-color: #1bab8d;
 }
+.nav-link{
+    color: var(--white)!important;
+    margin: 0 5px;
+}
 
 .logo-header {
     cursor: pointer;
