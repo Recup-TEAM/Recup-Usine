@@ -45,13 +45,26 @@ body > .container {
 }
 /* end header */
 @media only screen and (min-width: 992px) {
-    .col-lg-6 {
-        margin: 100px 0 !important;
+    .return {
+        margin-top: 60px !important;
     }
+    .col-lg-6 {
+        margin-bottom: 100px !important;
+    }
+
 }
 @media only screen and (max-width: 992px) {
+    .return {
+        margin-top: 30px !important;
+    }
     .forms {
         margin-bottom: 70px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .forms {
+        height: 440px !important;
     }
 }
 
@@ -77,15 +90,16 @@ input {
     color: var(--black)!important;
 }
 
-.padding-correct {
-    padding-right: 0px !important;
-}
-
 .btn-connection {
     color: white;
     background-color: #1bab8d;
     margin: auto;
     width: 50%;
+}
+
+.btn-add {
+    background-color: #1bab8d;
+    color: white;
 }
 
 footer {
