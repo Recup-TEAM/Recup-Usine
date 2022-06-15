@@ -42,7 +42,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-shopping-basket"></span> Panier</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-history"></span> Historique</a>
                     <div class="dropdown-divider"></div>
@@ -69,7 +69,7 @@ $(document).ready(function () {
   // event lister click on becomeRecupartner
   $("#becomeRecupartner").click(function () {
     //redirect to becomeRecupartner
-    window.location.href = "/becomeRecupartner";
+    window.location.href = "/recupartenaireHtml/register";
   });
 
   
