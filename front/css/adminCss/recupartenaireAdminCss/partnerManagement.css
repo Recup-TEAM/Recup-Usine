@@ -35,7 +35,12 @@ body > .container {
 .navbar {
     background-color: #1bab8d;
 }
-
+.nav {
+    z-index: 10;
+}
+.search{
+    z-index: 5;
+}
 @media only screen and (min-width: 768px) {
     .collapse {
         margin-left: -97px !important;
@@ -52,10 +57,6 @@ body > .container {
 .nav-link {
     color: white !important;
     margin: 0 5px;
-}
-
-.nav-link:hover {
-    color: #0D5546 !important;
 }
 
 /* end header */
