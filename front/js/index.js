@@ -37,16 +37,31 @@ $(document).ready(function () {
         connected = false;
       } else {
         let name = data.email.split("@")[0];
-        $("#loginButton").html("Logout : " +name);
+        $("#profileInteraction").html(`<div class="btn-group" id="dropdownProfile">
+                <button class="btn btn-connection calibri-regular-normal-white-22px hvr-sweep-to-right dropdown-toggle" type="button" data-toggle="dropdown">
+                    ${name}
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-shopping-basket"></span> Panier</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-history"></span> Historique</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
+                </div>
+            </div>`);
+        //event listener on click on buttonSignOut
+        $("#logoutButton").click(function (){
+          if (connected){
+            logout();
+          }
+        });
       }
     },
   });
 
-  //event listener on click on buttonSignInSignOut
+  //event listener on click on buttonSignIn
   $("#loginButton").click(function () {
-    if (connected) {
-      logout();
-    } else {
+    if (!connected) {
       login();
     }
   });

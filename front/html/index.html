@@ -7,7 +7,6 @@
     <meta name="author" content="">
     <link rel="icon" href="../img/favicon.ico">
 
-
     <title>Récup'Usine</title>
 
     <!-- Bootstrap core CSS -->
@@ -29,7 +28,10 @@
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
+
     <!-- import index.js -->
     <script src="../js/index.js"></script>
      
@@ -40,7 +42,9 @@
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
-        <a href="#top" ><img class="logo-header" src="../img/logoSansNom.png" alt="logoRecup'Usine"></a>
+        <a href="#top" >
+            <img class="logo-header" src="../img/logoSansNom.png" alt="logoRecup'Usine">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +63,9 @@
                     <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="">Contact</a>
                 </li>
             </ul>
-            <button class="btn btn-connection calibri-regular-normal-white-22px my-2 my-sm-0 hvr-sweep-to-right" id="loginButton" type="button">Connexion</button>
+            <div id="profileInteraction">
+                <button class="btn btn-connection calibri-regular-normal-white-22px my-2 my-sm-0 hvr-sweep-to-right" id="loginButton" type="button">Connexion <span class="fa fa-sign-in"></span></button>
+            </div>
         </div>
     </nav>
 </header>

@@ -33,7 +33,7 @@ body > .container {
 }
 
 .navbar {
-    background-color: #1bab8d;
+    background-color: var(--emerald);
 }
 
 .logo-header {
@@ -46,14 +46,23 @@ body > .container {
 
 .nav-link {
     color: white !important;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 .btn-connection {
     color: white;
     background-color: transparent;
     border-color: white;
-    margin-right: 12px;
+    /*margin-right: 12px;*/
+}
+
+.dropdown-menu{
+    left: -100%;
+}
+
+
+.dropdown-item{
+    /*background-color: var(--white)!important;*/
 }
 
 /* end header */
@@ -101,6 +110,9 @@ body > .container {
 @media screen and (max-width: 992px) {
     .category-image {
         opacity: 0.4;
+    }
+    .dropdown-menu{
+        left: 0;
     }
 }
 
