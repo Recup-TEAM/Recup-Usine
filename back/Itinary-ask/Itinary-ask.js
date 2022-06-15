@@ -1,13 +1,12 @@
 ﻿
 //Affichage de la carte et prise en compte des différents arrêts
 
-var Myposition = new google.maps.LatLng(50.6341809, 3.0487116);
+var Myposition = "Paris gare du nord Paris";
 
-var Stop1 = "229 Rue de l'échopette locon"; // Arrêts de test
-var Stop2 = "Zoo de lille";
-var Stop3 = new google.maps.LatLng(50.63809, 3.067116);
-var Stop4 = "20 rue claude Debussy baisieux";
-
+var Stop1 = "89 Cours de Vincennes 75020 Paris";
+var Stop2 = "11 Rue Pierre et Marie Curie 75005 Paris";
+var Stop3 = "11 Rue d'Ateuil 75016 Paris";
+var Stop4 = "IUT Paris-14, avenue de Versailles 75016 Paris"
 var listWaypoint = [Stop1, Stop2, Stop3, Stop4]; // Liste contenant tous les arrêts à réaliser sur le trajet
 
 var objectWaypoint = []; // Création de la liste contenant les arrêts avec la mise sous la bonne forme pour le waypoint (calcRoute)

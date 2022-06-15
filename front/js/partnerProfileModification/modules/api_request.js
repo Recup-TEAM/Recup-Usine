@@ -25,7 +25,7 @@ let api_request = (function () {
       url: "/api/user/update/changePassword",
       async: false,
       data: {
-        oldPassword: $("#oldPassword").val(),
+        oldPassword: $("#oldpassword").val(),
         newPassword: $("#newPassword").val(),
       },
       success: (data) => {
@@ -117,6 +117,32 @@ let api_request = (function () {
     return dataSucces;
   }
 
+// request_allProduct
+function request_allProduct() {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/products/get/allProducts",
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+// request all entreprise
+function request_allEntreprise() {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/entreprises/get/allEntreprises/",
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   return {
     isConnected() {
@@ -142,6 +168,12 @@ let api_request = (function () {
     },
     requestCollect(id) {
       return request_requestCollect(id);
+    },
+    getAllProduct() {
+      return request_allProduct();
+    },
+    getAllEntreprise() {
+      return request_allEntreprise();
     }
 
   };

@@ -55,4 +55,20 @@ $(document).ready(function () {
       return false;
     }
   });
+
+  // prevendefault on #noenterallowed
+  $(document).on("keypress", "#noenterallowed", function (e) {
+    if (e.which == 13) {
+      // do not submit the form
+      return false;
+    }
+  }
+  );
+
+  // #letsgojemeco button lauch the sign_in function
+  $(document).on("click", "#letsgojemeco", function () {
+    sign_in();
+  }
+  );
+
 });
