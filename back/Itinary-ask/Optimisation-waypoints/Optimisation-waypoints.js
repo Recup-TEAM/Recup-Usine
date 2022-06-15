@@ -36,7 +36,7 @@ directionsDisplay.setMap(map);
 //define calcRoute function
 function calcRoute() {
     //create request
-    var request = {
+    let request = {
         origin: myPosition,
         destination: waypoint4,
         travelMode: google.maps.TravelMode.DRIVING,
@@ -55,13 +55,12 @@ function calcRoute() {
             directionsDisplay.setDirections(result);
         }
     });
-    return result.routes[0].legs[0].distance.value
 }
 // -------------------------------------------------------------------------------------------------------------------------------------
 
 // définiton de la fontion de calcule de distance
-function calcDist(orgin, destination){
-
+function calcDist(origin, destination){
+    //call calcRoute()
 
 }
 
@@ -70,19 +69,22 @@ function calcDist(orgin, destination){
 // TRI DE LA LISTE DE WAYPOINT POUR UN TRAJET OPTIMAL
 
 // ListWaypoint = [A, B, C, D, E];   (10 waypoints max)
-var orderedList = [];                       // liste ordonée
-var temp = listWaypoints[0];                // variable de stockage temporaire
+let orderedList = [];                       // liste ordonée
+let position = origin;
+
 
 for (let i = 0; i < listWaypoints.length; i++) {
+
+    let temp = listWaypoints[i];                // variable de stockage temporaire
     for (let j = 0; j < (listWaypoints.length - 1); j++) {
         if (calcDist(position, temp) > calcDist(position, listWaypoints[j+1])){
             temp = listWaypoints[j+1];
         }
-        orderedList[i] = temp;
     }
+    orderedList.push(temp);
+    listWaypoints.splice(listWaypoints.indexOf(temp), 1); //console.log au cas où | remove le point sur lequel on est passé
+    position = orderedList[i];
 }
-
-
 
 
 //-------------------------------------------------------------------------------------------------------------------------------------
