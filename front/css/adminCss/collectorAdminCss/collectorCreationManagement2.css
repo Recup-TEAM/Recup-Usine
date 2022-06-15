@@ -27,11 +27,9 @@ html {
     position: relative;
     min-height: 100%;
 }
-
 body > .container {
     padding-top: 74px;
 }
-
 .navbar {
     background-color: #1bab8d;
 }
@@ -39,7 +37,6 @@ body > .container {
     color: var(--white)!important;
     margin: 0 5px;
 }
-
 .logo-header {
     cursor: pointer;
     object-fit: cover;
@@ -47,6 +44,12 @@ body > .container {
     width: 97px;
     margin-left: 12px;
 }
+@media only screen and (min-width: 768px) {
+    .collapse {
+        margin-left: -97px !important;
+    }
+}
+
 /* end header */
 @media only screen and (min-width: 992px) {
     .return {
