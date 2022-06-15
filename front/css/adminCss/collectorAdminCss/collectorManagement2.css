@@ -25,15 +25,26 @@
 
 html {
     position: relative;
-    min-height: 100%;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 body > .container {
     padding-top: 74px;
 }
 
 .navbar {
     background-color: #1bab8d;
+    z-index: 10;
+}
+nav a{
+    z-index: 8;
+}
+.search{
+    z-index: 5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -54,12 +65,11 @@ body > .container {
     margin: 0 5px;
 }
 
-.nav-link:hover {
-    color: #0D5546 !important;
-}
-
 /* end header */
 
+main{
+    flex: 1;
+}
 .row {
     margin: 20px 0;
 }

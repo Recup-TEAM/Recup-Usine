@@ -27,11 +27,19 @@ html {
     position: relative;
     min-height: 100%;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 body > .container {
     padding-top: 74px;
 }
 .navbar {
     background-color: #1bab8d;
+}
+nav a{
+    z-index: 10;
 }
 .nav-link{
     color: var(--white)!important;
@@ -51,6 +59,9 @@ body > .container {
 }
 
 /* end header */
+main{
+    flex: 1;
+}
 @media only screen and (min-width: 992px) {
     .return {
         margin-top: 60px !important;
