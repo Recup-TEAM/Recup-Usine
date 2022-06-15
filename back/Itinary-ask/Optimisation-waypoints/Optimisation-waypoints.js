@@ -13,8 +13,6 @@ var waypoint5 = "Gare Lille Flandres, Lille";
 
 var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint4, waypoint5];
 
-//javascript.js
-//set map options
 var mapOptions = {
     center: { lat: 50.634742, lng: 3.048682 },
     zoom: 14,
@@ -40,7 +38,7 @@ function calcRoute() {
     //create request
     var request = {
         origin: myPosition,
-        destination: waypoint3,
+        destination: waypoint4,
         travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.METRIC
     }
@@ -51,19 +49,45 @@ function calcRoute() {
 
             //Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.value + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = "<div class='alert-info'>Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.value + ".</div>";
 
             //display route
             directionsDisplay.setDirections(result);
-        } else {
-            //delete route from map
-            directionsDisplay.setDirections({ routes: [] });
-            //center map in London
-            map.setCenter(myPosition);
-
-            //show error message
-            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
         }
     });
+    return result.routes[0].legs[0].distance.value
+}
+// -------------------------------------------------------------------------------------------------------------------------------------
+
+// définiton de la fontion de calcule de distance
+function calcDist(orgin, destination){
+
 
 }
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+// TRI DE LA LISTE DE WAYPOINT POUR UN TRAJET OPTIMAL
+
+// ListWaypoint = [A, B, C, D, E];   (10 waypoints max)
+var orderedList = [];                       // liste ordonée
+var temp = listWaypoints[0];                // variable de stockage temporaire
+
+for (let i = 0; i < listWaypoints.length; i++) {
+    for (let j = 0; j < (listWaypoints.length - 1); j++) {
+        if (calcDist(position, temp) > calcDist(position, listWaypoints[j+1])){
+            temp = listWaypoints[j+1];
+        }
+        orderedList[i] = temp;
+    }
+}
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+//Vérification de l'affichage du HTML puis lancement du calcul de l'itinéraire
+document.addEventListener("DOMContentLoaded", function() {
+    calcRoute();
+  });
