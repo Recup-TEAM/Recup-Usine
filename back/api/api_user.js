@@ -48,7 +48,7 @@ module.exports = function (session) {
     // GetcomteLevel
     getCompteLevel: (req, res) => {
       console.log("API -> getCompteLevel");
-      if (checkUserConnected(req, res)) {
+      if (check.checkUserConnected(req, res)) {
         res.json({ err: "", success: true, data: { compteLevel: req.session.compteLevel } });
       }
     },
