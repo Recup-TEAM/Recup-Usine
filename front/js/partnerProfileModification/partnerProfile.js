@@ -127,7 +127,7 @@ $(document).ready(function () {
   //onclick buttonEditProfil stock id_entreprise in localstorage
   $("#buttonEditProfil").click(function () {
     localStorage.setItem("id_entreprise", id_entreprise);
-    window.location.href = "/recupartenaireHtml/partnerProfileModification2";
+    window.location.href = "/recupartenaireHtml/partnerProfileModification";
   });
   //#requestCollect
     $("#requestCollect").click(function () {
