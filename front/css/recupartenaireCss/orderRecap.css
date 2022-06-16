@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    padding-top: 74px;
+}
+
+.navbar {
+    background-color: #1bab8d;
+}
+
+@media only screen and (min-width: 768px) {
+    .collapse {
+        margin-left: -97px !important;
+    }
+}
+
+.logo-header {
+    cursor: pointer;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+nav a{
+    z-index: 10;
+}
+.nav-link {
+    color: white !important;
+    margin: 0 5px;
+}
+
+/* end header */
+
+.big-row {
+    margin: 20px 0;
+}
+
+main, .big-row {
+    height: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.btn-edit {
+    background-color: #1bab8d !important;
+    color: white !important;
+    width: 190px !important;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 150px !important;
+}
+
+.card-profile{
+    background-color: #e8f6f3;
+    box-shadow: 0px 4px 4px #00000040;
+    margin-bottom: 20px;
+}
+
+.card-graph {
+    box-shadow: 0px 4px 4px #00000040;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.btn-light {
+    background-color: #e8f6f3;
+    border-color: #1bab8d;
+}
+
+footer {
+    margin-top: 50px;
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
+
+.card{
+    margin: auto;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+@media(max-width:767px){
+    .card{
+        margin: 3vh auto;
+    }
+}
+.summary{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+}
+@media(max-width:767px){
+    .summary{
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem;
+    }
+}
+.summary .col-2{
+    padding: 0;
+}
+.summary .col-10
+{
+    padding: 0;
+}
+.col-2, .col{
+    padding: 0 1vh;
+}
+a{
+    padding: 0 1vh;
+}
+
+img{
+    width: 3.5rem;
+}
+
+h5{
+    margin-top: 4vh;
+}
+hr{
+    margin-top: 1.25rem;
+}
+form{
+    padding: 2vh 0;
+}
+select{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+input{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+input:focus::-webkit-input-placeholder
+{
+    color:transparent;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+
