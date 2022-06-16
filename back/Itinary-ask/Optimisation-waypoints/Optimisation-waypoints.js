@@ -13,8 +13,12 @@ var waypoint5 = "Gare Lille Flandres, Lille";
 
 var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint4, waypoint5];
 
+//javascript.js -------------------------------------------------------------------------------------------------------------------------
+
+//set map options
+var myLatLng = myPosition;
 var mapOptions = {
-    center: { lat: 50.634742, lng: 3.048682 },
+    center: {lat: 50.6341809, lng: 3.0487116},
     zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
@@ -25,31 +29,66 @@ var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 //create a DirectionsService object to use the route method and get a result for our request
 var directionsService = new google.maps.DirectionsService();
 
-// -----------------------------------------------------------------------------------------------------------------------------------------
-//FONCTION DE CALCUL DE LA DISTANCE ENTRE DEUX POINTS
+//create a DirectionsRenderer object which we will use to display the route
+var directionsDisplay = new google.maps.DirectionsRenderer();
 
-function calcDist(origin, destination) {
+//bind the DirectionsRenderer to the map
+directionsDisplay.setMap(map);
 
-    // Création de la requete
-    let request = {
-        origin: origin,
-        destination: destination,
+
+//define calcRoute function
+async function calcRoute(point1, point2) {
+    //create request
+    var request = {
+        origin: point1,
+        destination: point2,
         travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.METRIC
     }
-
-    // Calcul du trajet le plus court possible
-    directionsService.route(request, function (result, status) {
+    let data;
+    //pass the request to the route method
+    await directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            //Récupération de la distance
+            //Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.value + ".</div>";
+            output.innerHTML = "<div class='alert-info'>From: " + 
+            document.getElementById("from").value + ".<br />To: " + 
+            document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + 
+            result.routes[0].legs[0].distance.value + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + 
+            result.routes[0].legs[0].duration.text + ".</div>";
 
+            //display route
+            directionsDisplay.setDirections(result);
+        } else {
+            //delete route from map
+            directionsDisplay.setDirections({ routes: [] });
+            //center map in London
+            map.setCenter(myLatLng);
+
+            //show error message
+            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
         }
+        console.log(result);
+        data = result.routes[0].legs[0].distance.value;
+        console.log("1",data);
+        return data
     });
-    return result.routes[0].legs[0].distance.value
+    //console.log(data);
+    return data
 }
+
+
+//create autocomplete objects for all inputs
+var options = {
+    types: ['(cities)']
+}
+
+var input1 = document.getElementById("from");
+var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+
+var input2 = document.getElementById("to");
+var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 
 // --------------------------------------------------------------------------------------------------------------------------------------
 // TRI DE LA LISTE DE WAYPOINT POUR UN TRAJET OPTIMAL
@@ -63,7 +102,14 @@ for (let i = 0; i < listWaypoints.length; i++) {
 
     let temp = listWaypoints[i];                // variable de stockage temporaire
     for (let j = 0; j < (listWaypoints.length - 1); j++) {
-        if (calcDist(position, temp) > calcDist(position, listWaypoints[j+1])){
+        let dist1;
+        let dist2;
+        console.log("pos : ", position, "\ntemp : ", temp);
+        calcRoute(position, temp).then(distopieleretour => {dist1 = distopieleretour;console.log(dist1);});
+        calcRoute(position, listWaypoints[j+1]).then(distopieleretour => {dist2 = distopieleretour});
+        console.log("dist1 : ", dist1, "\ndist2 : ", dist2);
+
+        if (dist1 > dist2){
             temp = listWaypoints[j+1];
         }
     }
@@ -72,10 +118,12 @@ for (let i = 0; i < listWaypoints.length; i++) {
     position = orderedList[i];
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------------------------
 
 //Vérification de l'affichage du HTML puis lancement du calcul de l'itinéraire
 document.addEventListener("DOMContentLoaded", function() {
-    calcDist();
+    let dist;
+    calcRoute(myPosition,waypoint1).then(distopie => {dist = distopie});
+    console.log(a);
+    console.log(orderedList);
   });
