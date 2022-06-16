@@ -111,8 +111,31 @@ body > .container {
     .category-image {
         opacity: 0.4;
     }
+    .category {
+        padding-top: 100px;
+        margin-bottom: 0px;
+    }
+    .calibri-regular-normal-white-22px{
+        font-size: 19px;
+    }
+    .pub{
+        text-align: center;
+    }
+    .pub .category-image{
+        display: none;
+    }
+    .missions{
+        text-align: justify;
+    }
+    .missions
     .dropdown-menu{
         left: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .calibri-regular-normal-white-22px{
+        font-size: 22px;
     }
 }
 
