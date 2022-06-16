@@ -28,6 +28,12 @@ html {
     min-height: 100%;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 body > .container {
     padding-top: 74px;
 }
@@ -67,11 +73,20 @@ main, .big-row {
     height: 100%;
 }
 
+main {
+    flex: 1;
+}
+
 .row {
     width: 100%;
 }
 
-.btn-edit {
+.card {
+    background-color: #e8f6f3;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.btn-finish {
     background-color: #1bab8d !important;
     color: white !important;
     width: 190px !important;
@@ -87,15 +102,31 @@ main, .big-row {
     margin-bottom: 20px;
 }
 
-.card-graph {
-    box-shadow: 0px 4px 4px #00000040;
-    margin-bottom: 20px;
-    padding: 10px;
+.tooltip {
+    width: 340px !important;
+}
+.tooltip-inner {
+    max-width: 340px !important;
 }
 
 .btn-light {
     background-color: #e8f6f3;
     border-color: #1bab8d;
+}
+
+.col-2, .col{
+    padding: 0 1vh;
+}
+
+img{
+    width: 80px;
+}
+
+hr {
+    border-color: #0D5546;
+}
+.row-final {
+    margin-bottom: 50px;
 }
 
 footer {
@@ -107,80 +138,8 @@ footer {
     background-color: #0D5546;
 }
 
-.card{
-    margin: auto;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
-    border: transparent;
-}
-@media(max-width:767px){
-    .card{
-        margin: 3vh auto;
-    }
-}
-.summary{
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 4vh;
-}
-@media(max-width:767px){
-    .summary{
-        border-top-right-radius: unset;
-        border-bottom-left-radius: 1rem;
-    }
-}
-.summary .col-2{
-    padding: 0;
-}
-.summary .col-10
-{
-    padding: 0;
-}
-.col-2, .col{
-    padding: 0 1vh;
-}
-a{
-    padding: 0 1vh;
-}
 
-img{
-    width: 3.5rem;
-}
 
-h5{
-    margin-top: 4vh;
-}
-hr{
-    margin-top: 1.25rem;
-}
-form{
-    padding: 2vh 0;
-}
-select{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1.5vh 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-input{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-input:focus::-webkit-input-placeholder
-{
-    color:transparent;
-}
-a{
-    color: black;
-}
-a:hover{
-    color: black;
-    text-decoration: none;
-}
+
+
 
