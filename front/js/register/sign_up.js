@@ -67,6 +67,16 @@ function register_function() {
 }
 
 $(document).ready(function () {
+  //if already logged in, redirect to home page
+  $.ajax({
+    url: "/api/user/get/connected",
+    type: "GET",
+    success: function (data) {
+      if (data.connected) {
+        window.location.href = "/";
+      }
+    },
+  });
   //focus  company-name
   $("#company-name").focus();
 
