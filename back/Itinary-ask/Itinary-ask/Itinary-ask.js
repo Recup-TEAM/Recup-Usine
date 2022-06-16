@@ -1,13 +1,14 @@
 ﻿
 //Affichage de la carte et prise en compte des différents arrêts
 
-var Myposition = "Paris gare du nord Paris";
+var Myposition = "ISEN Lille";
 
-var Stop1 = "89 Cours de Vincennes 75020 Paris";
-var Stop2 = "11 Rue Pierre et Marie Curie 75005 Paris";
-var Stop3 = "11 Rue d'Ateuil 75016 Paris";
-var Stop4 = "IUT Paris-14, avenue de Versailles 75016 Paris"
-var listWaypoint = [Stop1, Stop2, Stop3, Stop4]; // Liste contenant tous les arrêts à réaliser sur le trajet
+var Stop1 = "20 rue Claude Debussy, 59780, Baisieux";
+var Stop2 = "Lille Grand palais, Lille";
+var Stop3 = "Zoo de Lille, Lilles";
+var Stop4 = "267 Rue de l'echoppette, 62400, Locon";
+var Stop5 = "Gare Lille Flandres, Lille"
+var listWaypoint = [Stop1, Stop2, Stop3, Stop4, Stop5]; // Liste contenant tous les arrêts à réaliser sur le trajet
 
 var objectWaypoint = []; // Création de la liste contenant les arrêts avec la mise sous la bonne forme pour le waypoint (calcRoute)
 for (let index = 0; index < listWaypoint.length; index++) {
