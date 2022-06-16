@@ -1,207 +1,131 @@
 @font-face {
-    font-family: "Calibri-Regular";
+    font-family: "Calibri-Bold";
     font-style: normal;
-    font-weight: 400;
-    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
 }
-
 @font-face {
     font-family: "Calibri-Light";
     font-style: normal;
     font-weight: 300;
     src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
 }
-
-.collectorcreationmanagement {
-    align-items: flex-start;
-    background-color: var(--white);
-    display: flex;
-    height: 677px;
-    width: 1440px;
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
 }
 
-.hidden,
-.hidden * {
-    pointer-events: none;
-    visibility: hidden;
-}
-
-.overlap-group2 {
-    height: 416px;
-    margin-left: 64px;
-    margin-top: 129px;
+html {
     position: relative;
-    width: 567px;
-    z-index: 2;
+    min-height: 100%;
 }
-
-.return-btn {
-    align-items: flex-start;
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body > .container {
+    padding-top: 74px;
+}
+.navbar {
+    background-color: #1bab8d;
+}
+nav a{
+    z-index: 10;
+}
+.nav-link{
+    color: var(--white)!important;
+    margin: 0 5px;
+}
+.logo-header {
     cursor: pointer;
-    display: flex;
-    height: 47px;
-    left: 0;
-    min-width: 123px;
-    position: absolute;
-    top: 0;
+    object-fit: cover;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
+}
+@media only screen and (min-width: 768px) {
+    .collapse {
+        margin-left: -97px !important;
+    }
 }
 
-.overlap-group1 {
-    align-items: flex-start;
-    background-color: var(--emerald);
-    border-radius: 4px;
-    display: flex;
-    height: 30px;
-    justify-content: flex-end;
-    min-width: 121px;
-    padding: 10px 11.9px;
+/* end header */
+main{
+    flex: 1;
+}
+@media only screen and (min-width: 992px) {
+    .return {
+        margin-top: 60px !important;
+    }
+    .col-lg-6 {
+        margin-bottom: 100px !important;
+    }
+
+}
+@media only screen and (max-width: 992px) {
+    .return {
+        margin-top: 30px !important;
+    }
+    .forms {
+        margin-bottom: 70px !important;
+    }
 }
 
-.shape {
-    align-self: center;
-    height: 21px;
-    margin-bottom: 0.03px;
-    width: 25px;
+@media only screen and (max-width: 768px) {
+    .forms {
+        height: 440px !important;
+    }
 }
 
-.placeholder-1 {
-    letter-spacing: 0;
-    margin-left: 10px;
-    min-height: 25px;
-    width: 59px;
-    padding-right: 5px;
-}
-
-.left {
-    background-image: url(https://anima-uploads.s3.amazonaws.com/projects/628df60bf60c1bf90ab4bae6/releases/6297258de5770b94cd24c8f4/img/logopartenairesansfond@2x.png);
-    background-position: 50% 50%;
-    background-size: cover;
+.logo-recupartenaires {
     height: 390px;
-    left: 102px;
-    position: absolute;
-    top: 26px;
+    margin-top: 6px;
+    object-fit: cover;
     width: 465px;
 }
 
-.register-div {
-    align-items: flex-end;
-    background-color: #e8f6f3;
+.forms {
+    background-color: #e8f6f3 !important;
     border-radius: 10px;
     box-shadow: 0px 4px 4px #00000040;
-    display: flex;
-    flex-direction: column;
-    margin-left: 800px;
-    margin-top: -425px;
-    min-height: 440px;
-    padding: 21px 52px;
-    width: 462px;
-    z-index: 1;
+    height: 380px;
+    padding: 40px 51px;
 }
 
-.mail-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-top: 23px;
-    margin-right: 110px;
-    min-height: 57px;
-    width: 353px;
+input {
+    background-color: var(--alto)!important;
+    outline-color: #0D5546 !important;
+    color: var(--black)!important;
 }
 
-.mail-input {
-    align-items: flex-start;
-    background-color: var(--alto);
-    border-radius: 4px;
-    display: flex;
-    height: 50px;
-    margin-top: 6px;
-    min-width: 353px;
-    padding: 6px 12px;
-    padding-left: -100px ;
+.btn-connection {
+    color: white;
+    background-color: #1bab8d;
+    margin: auto;
+    width: 50%;
 }
 
-.placeholder-2 {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 329px;
-    padding-top: 10px;
+.btn-add {
+    background-color: #1bab8d;
+    color: white;
 }
 
-.valign-text-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+footer {
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
 }
 
-.header {
-    height: 20px;
-    letter-spacing: 0;
-    margin-top: -1px;
-}
 
-.name-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-right: 110px;
-    min-height: 75px;
-    width: 352px;
-}
 
-.name-input {
-    align-items: flex-start;
-    background-color: var(--alto);
-    border-radius: 4px;
-    display: flex;
-    height: 50px;
-    margin-top: 6px;
-    min-width: 352px;
-    padding: 6px 12px;
-}
-
-.placeholder {
-    height: 36px;
-    letter-spacing: 0;
-    line-height: 21px;
-    width: 328px;
-    padding-top: 10px;
-}
-
-.surname-div {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-right: 110px;
-    margin-top: 26px;
-    min-height: 75px;
-    width: 352px;
-}
-
-.overlap-group {
-    align-items: flex-start;
-    background-color: var(--emerald);
-    border-radius: 4px;
-    display: flex;
-    margin-right: -5px;
-    margin-top: 43px;
-    width: 400px;
-    padding: 0 33.3px;
-}
-
-.btn-text {
-    height: 51px;
-    letter-spacing: 0;
-    text-align: center;
-    width: 285px;
-    padding-left: 50px;
-}
-
-.header-1 {
-    height: 88px;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 1440px;
-    z-index: 3;
-}

@@ -122,6 +122,9 @@ img {
     color: white !important;
     width: 190px !important;
 }
+.btn-delete:before{
+    border: #AB1B39 solid 6px !important;
+}
 
 .btn-delete-div {
     position: absolute;
