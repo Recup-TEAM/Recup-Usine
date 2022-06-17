@@ -43,12 +43,6 @@ body > .container {
     background-color: #1bab8d;
 }
 
-@media only screen and (min-width: 768px) {
-    .collapse {
-        margin-left: -97px !important;
-    }
-}
-
 .logo-header {
     cursor: pointer;
     object-fit: cover;
@@ -75,7 +69,6 @@ main, .row {
 }
 
 .card-deck .card {
-    margin-bottom: 30px;
 }
 .card-profile {
     background-color: #e8f6f3;
@@ -104,7 +97,7 @@ input {
     outline-color: #0D5546 !important;
 }
 
-.btn-connection {
+.btn-confirm {
     color: white;
     background-color: #1bab8d;
     margin: auto;

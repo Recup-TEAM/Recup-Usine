@@ -1,3 +1,6 @@
+.profileInteraction{
+    align-items: flex-end;
+}
 .btn-connection {
     color: white;
     background-color: transparent;
@@ -8,6 +11,7 @@
 }
 .dropdown-menu{
     left: -100%;
+    z-index: 110;
 }
 
 .dropdown-item:active {

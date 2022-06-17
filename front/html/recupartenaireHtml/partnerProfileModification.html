@@ -28,9 +28,18 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+    <!-- Dropdown.css -->
+    <link href="../../css/dropdown.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
+
     <!-- Js -->
     <script type="text/javascript" src="./../../js/partnerProfileModification/partnerProfileModification.js"></script>
     <script type="text/javascript" src="./../../js/partnerProfileModification/modules/api_request.js"></script>
+
+    <!-- import dropdown.js -->
+    <script src="../../js/dropdown.js"></script>
 
 </head>
 
@@ -47,13 +56,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/recupartenaireHtml/partnerProfile">Votre entreprise</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link calibri-regular-normal-white-22px hvr-underline-from-center" href="/recupartenaireHtml/recuplateforme">Récuplateforme</a>
-                </li>
             </ul>
+            <div id="profileInteraction">
+            </div>
         </div>
     </nav>
 </header>
@@ -101,14 +106,14 @@
                     </div>
 
                     <div class="mb-3 text-left">
-                        <label for="confirm-email">Confirmer adresse mail</label>
+                        <label for="noenterallowed">Confirmer adresse mail</label>
                         <input type="email" class="form-control" id="noenterallowed" placeholder="you@example.com">
                         <div class="invalid-feedback">
                             Veuillez entrer une adresse mail valide.
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-connection hvr-sweep-to-right" type="submit" id="confirmButtonMailChange">Confirmer</button>
+                        <button class="btn btn-confirm hvr-sweep-to-right" type="submit" id="confirmButtonMailChange">Confirmer</button>
                     </div>
                 </form>
             </div>
@@ -120,14 +125,14 @@
                 <h4 class="mb-3 text-center">Changer de mot de passe</h4>
                 <form class="needs-validation padding-form noenterallowed" novalidate id="noenterallowed">
                     <div class="mb-3 text-left">
-                        <label for="password">Mot de passe</label>
+                        <label for="oldpassword">Mot de passe</label>
                         <input type="password" class="form-control" id="oldpassword" placeholder="••••••••" required>
                         <div class="invalid-feedback">
                             Veuillez entrer votre mot de passe.
                         </div>
                     </div>
                     <div class="mb-3 text-left">
-                        <label for="new-password">Nouveau mot de passe</label>
+                        <label for="newPassword">Nouveau mot de passe</label>
                         <input type="password" class="form-control" id="newPassword" placeholder="••••••••" required>
                         <div class="invalid-feedback">
                             Veuillez entrer votre mot de passe.
@@ -141,7 +146,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-connection hvr-sweep-to-right" type="submit" id="confirmButtonPasswordChange">Confirmer</button>
+                        <button class="btn btn-confirm hvr-sweep-to-right" type="submit" id="confirmButtonPasswordChange">Confirmer</button>
                     </div>
                 </form>
             </div>

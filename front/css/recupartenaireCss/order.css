@@ -44,12 +44,6 @@ body > .container {
     background-color: #1bab8d;
 }
 
-@media only screen and (min-width: 768px) {
-    .collapse {
-        margin-left: -97px !important;
-    }
-}
-
 .logo-header {
     cursor: pointer;
     object-fit: cover;
@@ -57,8 +51,14 @@ body > .container {
     width: 97px;
     margin-left: 12px;
 }
+nav{
+    z-index: 10;
+}
 nav a{
     z-index: 10;
+}
+.search{
+    z-index: 5;
 }
 .nav-link {
     color: white !important;
@@ -179,7 +179,6 @@ hr {
         background-color: white;
     }
 }
-
 footer {
     margin-top: 50px;
     bottom: 0;

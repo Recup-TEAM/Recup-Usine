@@ -54,7 +54,7 @@ $(document).ready(function () {
                         }
                         else if (dataAccLvl.data.compteLevel === 1){
                             let currentPage = window.location.href.split('/').splice(window.location.href.split('/').length - 1, window.location.href.split('/').length);
-                            if (currentPage[0] === "partnerProfile"){
+                            if (currentPage[0] === "partnerProfile" || currentPage[0] === "partnerProfileModification"){
                                 $("#profileInteraction").html(`<div class="btn-group" id="dropdownProfile">
                 <button class="btn btn-connection calibri-regular-normal-white-22px hvr-sweep-to-right dropdown-toggle" type="button" data-toggle="dropdown">
                     ${name}
@@ -62,7 +62,7 @@ $(document).ready(function () {
                 <div class="dropdown-menu">
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
-                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-history"></span> Historique</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
                 </div>
@@ -76,7 +76,35 @@ $(document).ready(function () {
                 <div class="dropdown-menu">
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
-                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-history"></span> Historique</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
+                </div>
+            </div>`);
+                            }
+                            else if (currentPage[0] === "orderRecap"){
+                                $("#profileInteraction").html(`<div class="btn-group" id="dropdownProfile">
+                <button class="btn btn-connection calibri-regular-normal-white-22px hvr-sweep-to-right dropdown-toggle" type="button" data-toggle="dropdown">
+                    ${name}
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
+                </div>
+            </div>`);
+                            }
+                            else if (currentPage[0] === "orderHistory"){
+                                $("#profileInteraction").html(`<div class="btn-group" id="dropdownProfile">
+                <button class="btn btn-connection calibri-regular-normal-white-22px hvr-sweep-to-right dropdown-toggle" type="button" data-toggle="dropdown">
+                    ${name}
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
                 </div>
@@ -91,7 +119,7 @@ $(document).ready(function () {
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
-                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-history"></span> Historique</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
                 </div>
