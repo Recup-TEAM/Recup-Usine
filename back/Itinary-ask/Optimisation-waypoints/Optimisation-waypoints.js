@@ -8,7 +8,7 @@ var myPosition = "ISEN Lille, Lille";
 var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
 var waypoint2 = "Lille Grand palais, Lille";
 var waypoint3 = "Zoo de Lille, Lille";
-var waypoint4 = "227 Rue de l'echoppette, 62400, Locon";
+var waypoint4 = "229 Rue de l'echoppette, 62400, Locon";
 var waypoint5 = "Gare Lille Flandres, Lille";
 var waypoint6 = "297 Chemin des Petits Mas, 13420, Gemenos";
 var waypoint7 = "40 Rue Victor Hugo, Paris"
@@ -85,7 +85,7 @@ async function triListeWaypoint(listWaypoints) {
     let orderedList = [];                       // liste ordonée
     let position = myPosition;
     let alreadyUsed = []
-    var listSize = listWaypoints.length;
+    var listSize = listWaypoints.length - 1;
 
     while(listWaypoints.length > 2){
         for (let i = 0; i < listSize; i++) {
@@ -96,12 +96,11 @@ async function triListeWaypoint(listWaypoints) {
                     let dist1;
                     let dist2;
 
-                    if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 0}
-                    if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j+1])} else {dist2 = 0}
+                    if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 100000000}
+                    if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j+1])} else {dist2 = 100000000}
 
                     console.log("pos : ", position, "\ntemp : ", temp, "\ndist1 : ", dist1, 
                     "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j+1],"\ndist2 : ", dist2);
-
                     console.log("alreadyUsed", alreadyUsed, !alreadyUsed.includes(temp));
 
                     if (dist1 > dist2 && dist1 != 0 && dist2 != 0) {
@@ -120,7 +119,7 @@ async function triListeWaypoint(listWaypoints) {
             listWaypoints.splice(indexOf, 1);
         }
     }
-    orderedList.push(listWaypoints);
+    orderedList.push(listWaypoints[0]);
     console.log("orderedList : ", orderedList, "\nWaypointlist : ", listWaypoints);
     return orderedList;
 }
