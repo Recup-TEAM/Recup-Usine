@@ -63,7 +63,7 @@ $(document).ready(function () {
                 <div class="dropdown-menu">
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
-                    <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-shopping-basket"></span> Panier</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="#"><span class="fa fa-history"></span> Historique</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
