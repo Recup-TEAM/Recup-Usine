@@ -8,7 +8,7 @@ var myPosition = "ISEN Lille, Lille";
 var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
 var waypoint2 = "Lille Grand palais, Lille";
 var waypoint3 = "Zoo de Lille, Lille";
-var waypoint4 = "267 Rue de l'echoppette, 62400, Locon";
+var waypoint4 = "227 Rue de l'echoppette, 62400, Locon";
 var waypoint5 = "Gare Lille Flandres, Lille";
 var waypoint6 = "297 Chemin des Petits Mas, 13420, Gemenos";
 var waypoint7 = "40 Rue Victor Hugo, Paris"
@@ -85,39 +85,42 @@ async function triListeWaypoint(listWaypoints) {
     let orderedList = [];                       // liste ordonée
     let position = myPosition;
     let alreadyUsed = []
-    var listtall = listWaypoints.length;
+    var listSize = listWaypoints.length;
 
-    for (let i = 0; i < listtall; i++) {
+    while(listWaypoints.length > 2){
+        for (let i = 0; i < listSize; i++) {
 
-        if (listWaypoints[i]){temp = listWaypoints[i]};
-        for (let j = 0; j < (listWaypoints.length - 1); j++) {
-                let dist1,dist2;
+            if (listWaypoints[i]){temp = listWaypoints[i]};
+            for (let j = 0; j < (listWaypoints.length - 1); j++) {
 
-                console.log("pos1 : ", position, "\ntemp1 : ", temp, "\ndist1 : ", dist1, 
-                "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j+1],"\ndist2 : ", dist2);
+                    let dist1;
+                    let dist2;
 
-                if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 0}
-                if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j+1])} else {dist2 = 0}
+                    if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 0}
+                    if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j+1])} else {dist2 = 0}
 
-                console.log("pos : ", position, "\ntemp : ", temp, "\ndist1 : ", dist1, 
-                "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j+1],"\ndist2 : ", dist2);
+                    console.log("pos : ", position, "\ntemp : ", temp, "\ndist1 : ", dist1, 
+                    "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j+1],"\ndist2 : ", dist2);
 
-                console.log(alreadyUsed, !alreadyUsed.includes(temp));
-                if (dist1 > dist2) {
+                    console.log("alreadyUsed", alreadyUsed, !alreadyUsed.includes(temp));
+
+                    if (dist1 > dist2 && dist1 != 0 && dist2 != 0) {
+                        
+                        if (listWaypoints[j+1]){temp = listWaypoints[j+1]};
+                        alreadyUsed.push(temp);
+                        console.log("temp : ", temp, "\nalreadyUsed : ", alreadyUsed);
+                    }
+                    await timeout(1500);
                     
-                    if (listWaypoints[j+1]){temp = listWaypoints[j+1]};
-                    alreadyUsed.push(temp);
-                    console.log("temp : ", temp, "\nalreadyUsed : ", alreadyUsed);
-                }
-                await timeout(1500);
-                
-                
+                    
+            }
+            orderedList.push(temp);
+            position = orderedList[i];
+            let indexOf = listWaypoints.indexOf(temp);
+            listWaypoints.splice(indexOf, 1);
         }
-        orderedList.push(temp);
-        position = orderedList[i];
-        let indexOf = listWaypoints.indexOf(temp);
-        listWaypoints.splice(indexOf, 1); //console.log au cas où | remove le point sur lequel on est passé
     }
+    orderedList.push(listWaypoints);
     console.log("orderedList : ", orderedList, "\nWaypointlist : ", listWaypoints);
     return orderedList;
 }
