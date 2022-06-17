@@ -27,7 +27,14 @@ html {
     position: relative;
     min-height: 100%;
 }
-
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+}
 body > .container {
     padding-top: 74px;
 }
@@ -110,7 +117,6 @@ input {
 }
 
 footer {
-    margin-top: 50px;
     bottom: 0;
 }
 .footer-copyright {
