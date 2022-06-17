@@ -8,16 +8,16 @@ var myPosition = "ISEN Lille, Lille";
 var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
 var waypoint2 = "62 Rue du Port, Lille";
 var waypoint3 = "31 Rue du Dr.Bouret, Marq-en-Baroeul";
-//var waypoint4 = "229 Rue de l'echoppette, 62400, Locon";
 var waypoint5 = "3 Boulevard montebello, Lille";
 var waypoint6 = "297 Chemin des Petits Mas, 13420, Gemenos";
 var waypoint7 = "40 Rue Victor Hugo, Paris"
 
 var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint5, waypoint6, waypoint7];
 
-//javascript.js -------------------------------------------------------------------------------------------------------------------------
+// DEBUT DE LA FONCTION ------------------------------------------------------------------------------------------------------------------
 
-//set map options
+// PARAMETRAGE DE LA CARTE
+
 var myLatLng = myPosition;
 var mapOptions = {
     center: {lat: 50.6341809, lng: 3.0487116},
@@ -25,19 +25,22 @@ var mapOptions = {
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 
-//create map
+// --------------------------------------------------------------------------------------------------------------------------------------
+// CREATION DE LA MAP
 var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
-//create a DirectionsService object to use the route method and get a result for our request
+
+// CREATION D'UN OBJET POUR FAIRE LA REQUETE
 var directionsService = new google.maps.DirectionsService();
-//create a DirectionsRenderer object which we will use to display the route
+// CREATION D'UN OBJET POUR AFFICHER LA ROUTE
 var directionsDisplay = new google.maps.DirectionsRenderer();
-//bind the DirectionsRenderer to the map
+// LIAISON AVEC LA CARTE
 directionsDisplay.setMap(map);
 
-
-//define calcRoute function
+// --------------------------------------------------------------------------------------------------------------------------------------
+// DEFINITION DE LA FICTION DE CALCUL DE LA DISTANCE ENTRE 2 POINTS
 async function calcRoute(point1, point2) {
-    //create request
+
+    // CREATION DE LA REQUETE
     var request = {
         origin: point1,
         destination: point2,
@@ -45,46 +48,46 @@ async function calcRoute(point1, point2) {
         unitSystem: google.maps.UnitSystem.METRIC
     }
     let data;
-    //pass the request to the route method
+
+    // CALCULE DE LA ROUTE LA PLUS COURTE
     await directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
-            //Get distance and time
+            // RECUPERATION DE LA DISTANCE
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + 
-            document.getElementById("from").value + ".<br />To: " + 
-            document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + 
-            result.routes[0].legs[0].distance.value + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + 
-            result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = "Driving distance <i class='fas fa-road'></i> : " + 
+            result.routes[0].legs[0].distance.value +  ".</div>";
 
-            //display route
+            // AFFICHAGE DE LA ROUTE
             directionsDisplay.setDirections(result);
+
         } else {
-            //delete route from map
+            // SUPPRESSION DE LA ROUTE
             directionsDisplay.setDirections({ routes: [] });
-            //center map in London
+            // CENTRAGE DE LA CRATE SUR L'ISEN
             map.setCenter(myLatLng);
 
-            //show error message
+            // MESSAGE EN CAS D'ERREUR
             output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
         }
+
         data = result.routes[0].legs[0].distance.value;
         return data
     });
-    //console.log(data);
     return data
 }
+
 async function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // --------------------------------------------------------------------------------------------------------------------------------------
 // TRI DE LA LISTE DE WAYPOINT POUR UN TRAJET OPTIMAL
+
 async function triListeWaypoint(listWaypoints) {
-    // ListWaypoint = [A, B, C, D, E];   (10 waypoints max)
-    let orderedList = [];                       // liste ordonée
-    let position = myPosition;
-    let alreadyUsed = []
+
+    let orderedList = [];                       // LISTE DANS L'ORDRE OPTIMAL
+    let position = myPosition;                  // POSITION DE DEPART             
     var listSize = listWaypoints.length - 1;
 
     while(listWaypoints.length > 2){
@@ -105,12 +108,8 @@ async function triListeWaypoint(listWaypoints) {
                     if (dist1 > dist2 && dist1 != 0 && dist2 != 0) {
                         
                         if (listWaypoints[j]){temp = listWaypoints[j]};
-                        alreadyUsed.push(temp);
-                        console.log("temp : ", temp, "\nalreadyUsed : ", alreadyUsed);
                     }
                     await timeout(1500);
-                    
-                    
             }
             orderedList.push(temp);
             position = orderedList[i];
@@ -123,7 +122,7 @@ async function triListeWaypoint(listWaypoints) {
     return orderedList;
 }
 //-------------------------------------------------------------------------------------------------------------------------------------
-
+// CREATION DU LIEN RENVOYANT A L'ITINERAIRE MAPS
 
 function createUrl(listWaypoints) {
     url = "https://www.google.com/maps/dir/?api=1&origin=ISEN+Lille%2CFrance&destination=ISEN+Lille%2CFrance&travelmode=driving&waypoints="
@@ -138,13 +137,13 @@ function createUrl(listWaypoints) {
 
 
 
+// --------------------------------------------------------------------------------------------------------------------------------------
+//AFFICHAGE DES RESULTATS DANS LA CONSOLE
 
-//Vérification de l'affichage du HTML puis lancement du calcul de l'itinéraire
 document.addEventListener("DOMContentLoaded", function() {
     //call triListeWaypoint function
     triListeWaypoint(listWaypoints).then(function(result) {
         let URL = createUrl(result);
         console.log(URL);
-    })
-               
+    })          
 });
