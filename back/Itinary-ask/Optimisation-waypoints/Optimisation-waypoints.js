@@ -6,10 +6,10 @@
 var myPosition = "ISEN Lille, Lille";
 
 var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
-var waypoint2 = "Lille Grand palais, Lille";
-var waypoint3 = "Zoo de Lille, Lille";
+var waypoint2 = "62 Rue du Port, Lille";
+var waypoint3 = "31 Rue du Dr.Bouret, Marq-en-Baroeul";
 var waypoint4 = "229 Rue de l'echoppette, 62400, Locon";
-var waypoint5 = "Gare Lille Flandres, Lille";
+var waypoint5 = "3 Boulevard montebello, Lille";
 var waypoint6 = "297 Chemin des Petits Mas, 13420, Gemenos";
 var waypoint7 = "40 Rue Victor Hugo, Paris"
 
@@ -91,21 +91,20 @@ async function triListeWaypoint(listWaypoints) {
         for (let i = 0; i < listSize; i++) {
 
             if (listWaypoints[i]){temp = listWaypoints[i]};
-            for (let j = 0; j < (listWaypoints.length - 1); j++) {
+            for (let j = 0; j < (listWaypoints.length); j++) {
 
                     let dist1;
                     let dist2;
 
                     if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 100000000}
-                    if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j+1])} else {dist2 = 100000000}
+                    if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j])} else {dist2 = 100000000}
 
                     console.log("pos : ", position, "\ntemp : ", temp, "\ndist1 : ", dist1, 
-                    "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j+1],"\ndist2 : ", dist2);
-                    console.log("alreadyUsed", alreadyUsed, !alreadyUsed.includes(temp));
+                    "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j],"\ndist2 : ", dist2, "\nlistwaypoint", listWaypoints);
 
                     if (dist1 > dist2 && dist1 != 0 && dist2 != 0) {
                         
-                        if (listWaypoints[j+1]){temp = listWaypoints[j+1]};
+                        if (listWaypoints[j]){temp = listWaypoints[j]};
                         alreadyUsed.push(temp);
                         console.log("temp : ", temp, "\nalreadyUsed : ", alreadyUsed);
                     }
@@ -124,6 +123,21 @@ async function triListeWaypoint(listWaypoints) {
     return orderedList;
 }
 //-------------------------------------------------------------------------------------------------------------------------------------
+
+
+function createUrl(listWaypoints) {
+    url = "https://www.google.com/maps/dir/?api=1&origin=Paris+gare+du+nord%2CFrance&destination=Paris+gare+du+nord%2CFrance&travelmode=driving&waypoints="
+    console.log(listWaypoints.length); 
+    for(i=0; i<listWaypoints.length; i++) {
+        url += listWaypoints[i].replaceAll(" ","+");
+        url += "%2CFrance%7C";
+        console.log(url);
+    } 
+    url = url.slice(0, -3);
+    return url
+    }
+
+console.log(createUrl(orderedList));
 
 //Vérification de l'affichage du HTML puis lancement du calcul de l'itinéraire
 document.addEventListener("DOMContentLoaded", function() {

@@ -8,6 +8,8 @@ var Stop2 = "Lille Grand palais, Lille";
 var Stop3 = "Zoo de Lille, Lilles";
 var Stop4 = "267 Rue de l'echoppette, 62400, Locon";
 var Stop5 = "Gare Lille Flandres, Lille"
+var Stop6 = "";
+var Stop7 = "";
 var listWaypoint = [Stop1, Stop2, Stop3, Stop4, Stop5]; // Liste contenant tous les arrêts à réaliser sur le trajet
 
 var objectWaypoint = []; // Création de la liste contenant les arrêts avec la mise sous la bonne forme pour le waypoint (calcRoute)
