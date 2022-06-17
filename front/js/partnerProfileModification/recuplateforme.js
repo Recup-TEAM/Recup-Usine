@@ -155,6 +155,22 @@ function get_data_entreprise(id) {
   }
 }
 
+// function add product to localStorage
+function addProductToLocalStorage(product) {
+  // .cardProduct on click log id_entreprise
+  $(".cardProduct").on("click", function () {
+    let id_product = $(this).attr("id_product");
+    let listOfProduct = JSON.parse(localStorage.getItem("listOfProduct"));
+    if (listOfProduct.includes(id_product)) {
+      listOfProduct.splice(listOfProduct.indexOf(id_product), 1);
+    } else {
+      listOfProduct.push(id_product);
+      // #product_id 
+    }
+    localStorage.setItem("listOfProduct", JSON.stringify(listOfProduct));
+  });
+}
+
 // function list to html
 function listToHtml(list) {
   /* <div class="col-lg-4 col-md-6 col-sm-12">
@@ -186,7 +202,7 @@ function listToHtml(list) {
                 <p class="">Dimension : ${list[i].dimensions}</p>
                 <p class="">Etat : ${list[i].state}</p>
                 <p class="adress">${adressEntreprise}</p>
-                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Sélectionner</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical cardProduct" id="product_${list[i].id_entreprise}" id_product="${list[i].id_entreprise}">Sélectionner</button>
             </div>  
         </div>
     </div>`;
@@ -194,13 +210,22 @@ function listToHtml(list) {
   //emtpty then append listAnnonce
   $("#listAnnonce").empty();
   $("#listAnnonce").append(html);
+  addProductToLocalStorage();
 }
 
+//get localStorage
+function getLocalStorage() {
+  if (localStorage.getItem("listOfProduct") != null) {
+    let listOfProduct = JSON.parse(localStorage.getItem("listOfProduct"));
+    console.log(listOfProduct);
+  }
+}
 // when page ready
 $(document).ready(function () {
   dataEntreprise = getAllEntreprise().data; // get all entreprise
   dataProduct = getAllProduct().data; // get all product
   listToHtml(dataProduct);
+  localStorage.setItem("listOfProduct", JSON.stringify([]));
 
   // #materialPicker option = allMaterial
   let htmlMaterial = "";
