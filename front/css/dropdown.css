@@ -1,0 +1,20 @@
+.btn-connection {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+}
+.calibri-regular-normal-white-22px{
+    font-size: 22px;
+}
+.dropdown-menu{
+    left: -100%;
+}
+
+.dropdown-item:active {
+    background-color: transparent;
+}
+@media screen and (max-width: 992px) {
+    .dropdown-menu{
+        left: 0;
+    }
+}

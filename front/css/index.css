@@ -65,19 +65,6 @@ body > .container {
     /*margin-right: 12px;*/
 }
 
-.dropdown-menu{
-    left: -100%;
-}
-
-
-.dropdown-item{
-    /*background-color: var(--white)!important;*/
-}
-
-.dropdown-item:active {
-    background-color: transparent;
-}
-
 /* end header */
 
 .spanEmerald {
@@ -140,7 +127,6 @@ body > .container {
     .missions{
         text-align: justify;
     }
-    .missions
     .dropdown-menu{
         left: 0;
     }

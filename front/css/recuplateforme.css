@@ -44,11 +44,6 @@ body > .container {
     background-color: #1bab8d;
 }
 
-@media only screen and (min-width: 768px) {
-    .collapse {
-        margin-left: -97px !important;
-    }
-}
 
 .logo-header {
     cursor: pointer;
