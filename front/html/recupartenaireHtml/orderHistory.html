@@ -20,17 +20,22 @@
     <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../../css/recupartenaireCss/orderHistory.css" rel="stylesheet">
+    <link href="../../css/recupartenaireCss/order.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+    <!-- Core CSS for the project -->
+    <link rel="stylesheet" href="../../../css/styleGuide.css">
 
     <!-- Btn Animation Css File -->
-    <link href="../../css/btnHrvAnimation.css" rel="stylesheet">
+    <link href="../../../css/btnHrvAnimation.css" rel="stylesheet">
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <!-- Js -->
-    <script type="text/javascript" src="./../../js/partnerProfileModification/partnerProfileModification.js"></script>
-    <script type="text/javascript" src="./../../js/partnerProfileModification/modules/api_request.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 </head>
 
@@ -59,181 +64,76 @@
 </header>
 
 <main role="main" class="container text-center">
-    <div class="row big-row">
+    <div class="search row mx-auto fixed-top">
+        <div class="col-lg-2 col-md-2 text-left">
+            <form action="">
+                <div class="input-group mb-4">
+                    <input type="search" placeholder="Recherche..." aria-describedby="button-addon6" class="form-control">
+                    <div class="input-group-append">
+                        <button id="button-addon6" type="submit" class="btn btn-search hvr-ripple-out"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-8 col-md-8">
+            <select class="selectpicker" title="Sélectionner" multiple>
+                <option>Dernier mois</option>
+                <option>Dernier trimestre</option>
+                <option>Dernier semestre</option>
+                <option>Dernière année</option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 text-right btn-add-div">
+            <button type="submit" class="btn btn-add hvr-ripple-out">En faire une facture <i class="fa-solid fa-file"></i></button>
+        </div>
+    </div>
+    <div class="row big-row recap">
         <div class="card col-lg-12 shadow-lg">
-                <div class="row mt-2 pt-2">
+                <div class="row mt-2 pt-2 mx-auto">
                     <div class="col-md-6" id="income">
                         <div class="d-flex justify-content-start align-items-center">
-                            <p class="text mx-3"><i class="fa-solid fa-recycle"></i> Collectes</p>
+                            <p class="text-muted mx-3"><i class="fa-solid fa-recycle"></i> Collectes</p>
                             <p class="money">7</p></div>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex justify-content-md-end align-items-center">
-                            <div class="text mx-3"><i class="fa-solid fa-coins"></i> Dépense</div>
+                            <div class="text-muted mx-3"><i class="fa-solid fa-coins"></i> Dépense</div>
                             <div class="money">6 €</div>
                         </div>
                     </div>
                 </div>
-        <div class="row">
+        <div class="row mx-auto">
             <div class="col-md-12">
-                <h3 class="h5 mb-4 text-center">Table Accordion</h3>
+                <div>
+                    <h4>Récup'Articles</h4>
+                </div>
+                <hr>
                 <div class="table-wrap">
                     <table class="table">
-                        <thead class="thead-primary">
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th>&nbsp;</th>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>total</th>
-                            <th>&nbsp;</th>
-                        </tr>
-                        </thead>
                         <tbody>
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox" checked>
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td>
-                                <div class="img" style="background-image:url(images/product-1.png)"></div>
-                            </td>
-                            <td>
-                                <div class="email">
-                                    <span>Sneakers Shoes 2020 For Men </span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td>$44.99</td>
-                            <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number" value="2" min="1" max="100">
-                                </div>
-                            </td>
-                            <td>$89.98</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="alert" role="alert">
+                        <tr class="alert my-auto">
                             <td>
                                 <label class="checkbox-wrap checkbox-primary">
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                             </td>
-                            <td>
-                                <div class="img" style="background-image:url(images/product-2.png)"></div>
+                            <td width="80px" class="my-auto">
+                                <img class="img-fluid my-auto " src="../../img/elements/bois.jpg">
                             </td>
-                            <td>
+                            <td class="my-auto">
                                 <div class="email">
-                                    <span>Sneakers Shoes 2020 For Men </span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+                                    <h5 class="mb-0 mt-0">Titre de l'annonce</h5>
+                                    <p class="pb-0 pt-0 mb-0 mt-0">41 boulevard Vauban 590000 LILLE</p>
                                 </div>
                             </td>
-                            <td>$30.99</td>
                             <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                </div>
+                                <p class="text-muted">17 juin 2022 10:00</p>
                             </td>
-                            <td>$30.99</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td>
-                                <div class="img" style="background-image:url(images/product-3.png)"></div>
-                            </td>
-                            <td>
-                                <div class="email">
-                                    <span>Sneakers Shoes 2020 For Men </span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td>$35.50</td>
                             <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                </div>
-                            </td>
-                            <td>$35.50</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
+                                <p>3€</p>
                             </td>
                             <td>
-                                <div class="img" style="background-image:url(images/product-4.png)"></div>
-                            </td>
-                            <td>
-                                <div class="email">
-                                    <span>Sneakers Shoes 2020 For Men </span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td>$76.99</td>
-                            <td class="quantity">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                </div>
-                            </td>
-                            <td>$76.99</td>
-                            <td>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td class="border-bottom-0">
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                            <td class="border-bottom-0">
-                                <div class="img" style="background-image:url(images/product-1.png)"></div>
-                            </td>
-                            <td class="border-bottom-0">
-                                <div class="email">
-                                    <span>Sneakers Shoes 2020 For Men </span>
-                                    <span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-                                </div>
-                            </td>
-                            <td class="border-bottom-0">$40.00</td>
-                            <td class="quantity border-bottom-0">
-                                <div class="input-group">
-                                    <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                </div>
-                            </td>
-                            <td class="border-bottom-0">$40.00</td>
-                            <td class="border-bottom-0">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                </button>
+                                <h5 class="mb-0 mt-0">17 m³</h5>
                             </td>
                         </tr>
                         </tbody>

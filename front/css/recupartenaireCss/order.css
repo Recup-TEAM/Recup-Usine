@@ -122,8 +122,62 @@ img{
 hr {
     border-color: #0D5546;
 }
+
+.alert {
+    border: 2px solid transparent;
+}
+
 .row-final {
     margin-bottom: 50px;
+}
+
+
+.btn-search, .btn-add {
+    background-color: #1bab8d;
+    color: white;
+}
+
+.btn-light {
+    background-color: #e8f6f3;
+    border: solid 1px #1bab8d;
+    color: #1bab8d;
+    width: 100px;
+}
+
+.recap, .search {
+    margin-top: 74px;
+}
+
+.search {
+    height: 74px;
+    padding: 31px 0 5px 0;
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-add-div {
+        margin-top: -15px !important;
+    }
+    .search {
+        height: 130px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+}
+
+@media only screen and (width: 768px) {
+    .btn-add-div {
+        margin-top: 0px !important;
+    }
+    .recap, .search {
+        margin-top: 74px;
+    }
+
+    .search {
+        height: 74px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
 }
 
 footer {
