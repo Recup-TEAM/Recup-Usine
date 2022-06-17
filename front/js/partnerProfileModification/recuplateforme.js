@@ -8,70 +8,156 @@ name: "Table_V4",
 quantity: 2349,
 quantity_to_collect: 0,
 state: "Very Good"} 
-Create a search function taht return a list of product object by string to find material or dimensions*/ 
+Create a search function taht return a list of product object by string to find material or dimensions*/
 // tolower exemple
 // var string = "Glass"
 // var string = string.toLowerCase()
-function search(string) {
-    var list = [];
-    for(let j = 0; j<string.length; j++){
-    for (var i = 0; i < dataProduct.length; i++) {
-        if (dataProduct[i].material.toLowerCase().includes(string[j].toLowerCase()) || dataProduct[i].dimensions.toLowerCase().includes(string[j].toLowerCase())) {
-            list.push(dataProduct[i]);
+function search() {
+  var listSearchProduct = [];
+  var listMaterial = [];
+  var listAdresse = [];
+  var listEntreprise = [];
+
+  listSearch = [];
+  listSearchMaterial = [];
+  listSearchAdresse = [];
+  listSearchEntreprise = [];
+
+  if ($("#search").val() != "") {
+    listSearch.push($("#search").val());
+  }
+
+  if ($("#materialPicker").val() != "") {
+    listSearchMaterial = $("#materialPicker").val();
+  }
+
+  for (let i = 0; i < $("#departPicker").val().length; i++) {
+    if ($("#departPicker").val()[i].length == 1) {
+      listSearchAdresse.push("0" + $("#departPicker").val()[i]);
+    } else {
+      listSearchAdresse.push($("#departPicker").val()[i]);
+    }
+  }
+
+  for (let i = 0; i < $("#entreprisePicker").val().length; i++) {
+    listSearchEntreprise.push($("#entreprisePicker").val()[i]);
+  }
+
+  /* verify search */
+  if (listSearch.length != 0) {
+    for (j = 0; j < listSearch.length; j++) {
+      for (i = 0; i < dataProduct.length; i++) {
+        if (
+          dataProduct[i].material
+            .toLowerCase()
+            .includes(listSearch[j].toLowerCase()) ||
+          dataProduct[i].dimensions
+            .toLowerCase()
+            .includes(listSearch[j].toLowerCase())
+        ) {
+          listSearchProduct.push(dataProduct[i]);
         }
+      }
     }
-    }
-    listToHtml(list);
-}
-// get 
+  } else {
+    listSearchProduct = dataProduct;
+  }
 
-// searchDepart
-function searchDepart(string) {
-    console.log(string)
-    var list = [];
-    for(let j = 0; j<string.length; j++){
-    for (var i = 0; i < dataProduct.length; i++) {
-        data_entreprise = get_data_entreprise(dataProduct[i].entreprise_id)
-        console.log(data_entreprise.adresse.toLowerCase())
-
-        if (data_entreprise.adresse.toLowerCase().includes(string[j].toLowerCase())) {
-            list.push(dataProduct[i]);
+  /* verify material */
+  if (listSearchMaterial.length != 0) {
+    for (j = 0; j < listSearchMaterial.length; j++) {
+      for (i = 0; i < listSearchProduct.length; i++) {
+        if (
+          listSearchProduct[i].material
+            .toLowerCase()
+            .includes(listSearchMaterial[j].toLowerCase())
+        ) {
+          listMaterial.push(listSearchProduct[i]);
         }
+      }
     }
-    }
-    listToHtml(list);
-}
+  } else {
+    listMaterial = listSearchProduct;
+  }
 
+  /* verify adress */
+  if (listSearchAdresse.length != 0) {
+    for (j = 0; j < listSearchAdresse.length; j++) {
+      for (i = 0; i < listMaterial.length; i++) {
+        data_entreprise = get_data_entreprise(listMaterial[i].id_entreprise);
+        nbDepartement = data_entreprise.adresse.toLowerCase().split(" ");
+
+        if (
+          nbDepartement[nbDepartement.length - 1].includes(
+            listSearchAdresse[j].toLowerCase()
+          )
+        ) {
+          listAdresse.push(listMaterial[i]);
+        }
+      }
+    }
+  } else {
+    listAdresse = listMaterial;
+  }
+
+  /* verify entreprise */
+  if (listSearchEntreprise.length != 0) {
+    for (j = 0; j < listSearchEntreprise.length; j++) {
+      for (i = 0; i < listAdresse.length; i++) {
+        data_entreprise = get_data_entreprise(listAdresse[i].id_entreprise);
+        if (
+          data_entreprise.id_entreprise == parseInt(listSearchEntreprise[j])
+        ) {
+          listEntreprise.push(listAdresse[i]);
+        }
+      }
+    }
+  } else {
+    listEntreprise = listAdresse;
+  }
+
+  if (
+    listEntreprise.length == 0 &&
+    listAdresse.length == 0 &&
+    listMaterial.length == 0 &&
+    listSearchProduct.length == 0
+  ) {
+    listEntreprise = dataProduct;
+  }
+
+  console.log(listEntreprise, listAdresse, listMaterial, listSearchProduct);
+  listToHtml(listEntreprise);
+}
 
 // get all entreprise
 function getAllEntreprise() {
-    data = api_request.getAllEntreprise();
-    console.log(data)
-    return data;
+  data = api_request.getAllEntreprise();
+  console.log(data);
+  return data;
 }
 
 //get all product
 function getAllProduct() {
-    data = api_request.getAllProduct()
-    console.log(data)
-    return data
+  data = api_request.getAllProduct();
+  console.log(data);
+  return data;
 }
 
 // get_img_entreprise
 function get_data_entreprise(id) {
-    // for all entreprise in dataEntreprise
-    for (let i = 0; i < dataEntreprise.length; i++) {
-        // if id is equal to id in dataEntreprise
-        if (id == dataEntreprise[i].id) {
-            // return img
-            return dataEntreprise[i];
-        }
+  // for all entreprise in dataEntreprise
+  for (let i = 0; i < dataEntreprise.length; i++) {
+    // if id is equal to id in dataEntreprise
+    if (id == dataEntreprise[i].id_entreprise) {
+      // return img
+      return dataEntreprise[i];
     }
+  }
 }
 
 // function list to html
 function listToHtml(list) {
-    /* <div class="col-lg-4 col-md-6 col-sm-12">
+  /* <div class="col-lg-4 col-md-6 col-sm-12">
       <div class="card mb-4 shadow-sm text-center hvr-grow-shadow">
         <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
         <div class="card-body">
@@ -81,18 +167,18 @@ function listToHtml(list) {
         </div>
       </div>
     </div>*/
-    let html = ""
-    allMaterial = []
-    for (let i = 0; i < list.length; i++) {
-        // if material is not in allMaterial
-        if (!allMaterial.includes(list[i].material)) {
-            // add material to allMaterial
-            allMaterial.push(list[i].material)
-        }
-        data_entreprise = get_data_entreprise(list[i].entreprise_id)
-        imgEntreprise = data_entreprise.img
-        adressEntreprise = data_entreprise.adresse
-        html += `<div class="col-lg-4 col-md-6 col-sm-12">
+  let html = "";
+  allMaterial = [];
+  for (let i = 0; i < list.length; i++) {
+    // if material is not in allMaterial
+    if (!allMaterial.includes(list[i].material)) {
+      // add material to allMaterial
+      allMaterial.push(list[i].material);
+    }
+    data_entreprise = get_data_entreprise(list[i].id_entreprise);
+    imgEntreprise = data_entreprise.img;
+    adressEntreprise = data_entreprise.adresse;
+    html += `<div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card mb-4 shadow-sm text-center hvr-grow-shadow">
             <img class="card-img-top" src="${imgEntreprise}" alt="Card image cap">
             <div class="card-body">
@@ -103,80 +189,169 @@ function listToHtml(list) {
                 <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Sélectionner</button>
             </div>  
         </div>
-    </div>`
-    }
-     //emtpty then append listAnnonce
-    $("#listAnnonce").empty();
-    $("#listAnnonce").append(html)
-
+    </div>`;
+  }
+  //emtpty then append listAnnonce
+  $("#listAnnonce").empty();
+  $("#listAnnonce").append(html);
 }
 
 // when page ready
-$(document).ready(function() {
-    // get all entreprise
-    dataEntreprise = getAllEntreprise().data
-    // get all product
-    dataProduct = getAllProduct().data
-    
-    listToHtml(dataProduct)
+$(document).ready(function () {
+  dataEntreprise = getAllEntreprise().data; // get all entreprise
+  dataProduct = getAllProduct().data; // get all product
+  listToHtml(dataProduct);
 
-    // #materialPicker option = allMaterial
-    let htmlMaterial = ""
-    for (let i = 0; i < allMaterial.length; i++) {
-        htmlMaterial += `<option value="${allMaterial[i]}">${allMaterial[i]}</option>`  
+  // #materialPicker option = allMaterial
+  let htmlMaterial = "";
+  for (let j = 0; j < allMaterial.length; j++) {
+    htmlMaterial += `<option value="${allMaterial[j]}">${allMaterial[j]}</option>`;
+  }
 
-    }
-    console.log('jai envie de me pendre', htmlMaterial);  
-    // empty then append htmlMaterial
-    //selectpicker materialPicker
-    $("#materialPicker").empty();
-    $("select").append(htmlMaterial)
-    $("#materialPicker").selectpicker('refresh');
+  // empty then append htmlMaterial
+  //selectpicker materialPicker
+  $("#materialPicker").empty();
+  $("select").append(htmlMaterial);
+  $("#materialPicker").selectpicker("refresh");
 
-    // search function
-    $("#search").on("keyup", function() {
-        search([$("#search").val()])
-    }
-    )
+  // generate departPicker
+  // departements = list all this comment to string -> Ain,Aisne,Allier,Alpes-de-Haute-Provence,Hautes-Alpes,Alpes-Maritimes,Ardèche,Ardennes,Ariège,Aube,Aude,Aveyron,Bouches-du-Rhône,Calvados,Cantal,Charente,Charente-Maritime,Cher,Corrèze,Corse-du-Sud,Haute-Corse,Côte-d'Or,Côtes d'Armor,Creuse,Dordogne,Doubs,Drôme,Eure,Eure-et-Loir,Finistère,Gard,Haute-Garonne,Gers,Gironde,Hérault,Ille-et-Vilaine,Indre,Indre-et-Loire,Isère,Jura,Landes,Loir-et-Cher,Loire,Haute-Loire,Loire-Atlantique,Loiret,Lot,Lot-et-Garonne,Lozère,Maine-et-Loire,Manche,Marne,Haute-Marne,Mayenne,Meurthe-et-Moselle,Meuse,Morbihan,Moselle,Nièvre,Nord,Oise,Orne,Pas-de-Calais,Puy-de-Dôme,Pyrénées-Atlantiques,Hautes-Pyrénées,Pyrénées-Orientales,Bas-Rhin,Haut-Rhin,Rhône,Haute-Saône,Saône-et-Loire,Sarthe,Savoie,Haute-Savoie,Paris,Seine-Maritime,Seine-et-Marne,Yvelines,Deux-Sèvres,Somme,Tarn,Tarn-et-Garonne,Var,Vaucluse,Vendée,Vienne,Haute-Vienne,Vosges,Yonne,Territoire de Belfort,Essonne,Hauts-de-Seine,Seine-St-Denis,Val-de-Marne,Val-D'Oise,Guadeloupe,Martinique,Guyane,La Réunion,Mayotte
+  let departements = [
+    "Ain",
+    "Aisne",
+    "Allier",
+    "Alpes-de-Haute-Provence",
+    "Hautes-Alpes",
+    "Alpes-Maritimes",
+    "Ardèche",
+    "Ardennes",
+    "Ariège",
+    "Aube",
+    "Aude",
+    "Aveyron",
+    "Bouches-du-Rhône",
+    "Calvados",
+    "Cantal",
+    "Charente",
+    "Charente-Maritime",
+    "Cher",
+    "Corrèze",
+    "Corse",
+    "Côte-d'Or",
+    "Côtes d'Armor",
+    "Creuse",
+    "Dordogne",
+    "Doubs",
+    "Drôme",
+    "Eure",
+    "Eure-et-Loir",
+    "Finistère",
+    "Gard",
+    "Haute-Garonne",
+    "Gers",
+    "Gironde",
+    "Hérault",
+    "Ille-et-Vilaine",
+    "Indre",
+    "Indre-et-Loire",
+    "Isère",
+    "Jura",
+    "Landes",
+    "Loir-et-Cher",
+    "Loire",
+    "Haute-Loire",
+    "Loire-Atlantique",
+    "Loiret",
+    "Lot",
+    "Lot-et-Garonne",
+    "Lozère",
+    "Maine-et-Loire",
+    "Manche",
+    "Marne",
+    "Haute-Marne",
+    "Mayenne",
+    "Meurthe-et-Moselle",
+    "Meuse",
+    "Morbihan",
+    "Moselle",
+    "Nièvre",
+    "Nord",
+    "Oise",
+    "Orne",
+    "Pas-de-Calais",
+    "Puy-de-Dôme",
+    "Pyrénées-Atlantiques",
+    "Hautes-Pyrénées",
+    "Pyrénées-Orientales",
+    "Bas-Rhin",
+    "Haut-Rhin",
+    "Rhône",
+    "Haute-Saône",
+    "Saône-et-Loire",
+    "Sarthe",
+    "Savoie",
+    "Haute-Savoie",
+    "Paris",
+    "Seine-Maritime",
+    "Seine-et-Marne",
+    "Yvelines",
+    "Deux-Sèvres",
+    "Somme",
+    "Tarn",
+    "Tarn-et-Garonne",
+    "Var",
+    "Vaucluse",
+    "Vendée",
+    "Vienne",
+    "Haute-Vienne",
+    "Vosges",
+    "Yonne",
+    "Territoire de Belfort",
+    "Essonne",
+    "Hauts-de-Seine",
+    "Seine-St-Denis",
+    "Val-de-Marne",
+    "Val-D'Oise",
+  ]; //, "Guadeloupe", "Martinique", "Guyane", "La Réunion", "Mayotte"]
 
-    // materialPicker on change search val
-    $("#materialPicker").on("change", function() {
-        // if not empty $("#materialPicker").val()
-        if ($("#materialPicker").val() != "") {
-        search($("#materialPicker").val())
-        }
-        else {
-            search([""])
-        }
-    }
-    )
+  let htmlDepart = "";
+  for (let i = 0; i < 94; i++) {
+    htmlDepart += `<option value="${i + 1}">${i + 1} - ${
+      departements[i]
+    }</option>`;
+  }
+  // empty then append htmlDepart
+  $("#departPicker").empty();
+  $("#departPicker").append(htmlDepart);
+  $("#departPicker").selectpicker("refresh");
 
-    // generate departPicker
-    departements = ["Ain", "Aisne","Allier","Alpes-de-Haute-Provence","Alpes-Maritimes","Ardèche","Ardennes","Ariège","Aube","Aude","Aveyron","Bouches-du-Rhône","Calvados","Cantal","Charente","Charente-Maritime","Cher","Corrèze","Corse-du-Sud","Côte-d'Or","Côtes-d'Armor","Creuse","Dordogne","Doubs","Drôme","Eure","Eure-et-Loir","Finistère","Gard","Haute-Garonne","Haute-Loire","Haute-Marne","Haute-Saône","Haute-Savoie","Haute-Vienne","Hautes-Alpes","Hautes-Pyrénées","Hérault","Ille-et-Vilaine","Indre","Indre-et-Loire","Isère","Jura","Landes","Loir-et-Cher","Loire","Loire-Atlantique","Loiret","Lot","Lot-et-Garonne","Lozère","Maine-et-Loire","Manche","Marne","Haute-Marne","Maroître","Marnes-Hérault","Mayenne","Meurthe-et-Moselle","Meuse","Morbihan","Moselle","Nièvre","Nord","Oise","Orne","Paris","Pas-de-Calais","Puy-de-Dôme","Pyrénées-Atlantiques","Pyrénées-Orientales","Bas-Rhin","Haut-Rhin","Rhône","Haute-Saône","Saône-et-Loire","Sarthe","Savoie","Haute-Savoie","Seine-Maritime","Seine-et-Marne","Yvelines","Deux-Sèvres","Somme","Tarn","Tarn-et-Garonne","Var","Vaucluse","Vendée","Vienne","Haute-Vienne","Vosges","Yonne","Territoire de Belfort","Essonne","Hauts-de-Seine","Seine-Saint-Denis","Val-de-Marne","Val-d'Oise"]
+  // #entreprisePicker option = allEntreprise
+  let htmlEntreprise = "";
+  for (let j = 0; j < dataEntreprise.length; j++) {
+    htmlEntreprise += `<option value="${dataEntreprise[j].id_entreprise}">${dataEntreprise[j].name}</option>`;
+  }
+  // empty then append htmlEntreprise
+  $("#entreprisePicker").empty();
+  $("#entreprisePicker").append(htmlEntreprise);
+  $("#entreprisePicker").selectpicker("refresh");
 
-    let htmlDepart = ""
-    for (let i = 0; i < 94; i++) {
-        // htmlDepart append option "01" "ain"
-        htmlDepart += `<option value="${i+1}">${departements[i]}</option>`
-    }
-    // empty then append htmlDepart
-    $("#departPicker").empty();
-    $("#departPicker").append(htmlDepart)
-    $("#departPicker").selectpicker('refresh');
+  // search function
+  $("#search").on("keyup", function () {
+    search();
+  });
 
+  // materialPicker on change search val
+  $("#materialPicker").on("change", function () {
+    search();
+  });
 
-    // departPicker on change search val
-    $("#departPicker").on("change", function() {
-        // if not empty $("#departPicker").val()
-        if ($("#departPicker").val() != "") {
-        searchDepart($("#departPicker").val())
-        }
-        else {
-            search([""])
-        }
-    }
-    )
+  // departPicker on change search val
+  $("#departPicker").on("change", function () {
+    search();
+  });
 
-
+  // entreprisePicker on change search val
+  $("#entreprisePicker").on("change", function () {
+    search();
+  });
 });
-
