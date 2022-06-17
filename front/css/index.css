@@ -65,6 +65,10 @@ body > .container {
     /*background-color: var(--white)!important;*/
 }
 
+.dropdown-item:active {
+    background-color: transparent;
+}
+
 /* end header */
 
 .spanEmerald {
