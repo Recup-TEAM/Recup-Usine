@@ -8,12 +8,12 @@ var myPosition = "ISEN Lille, Lille";
 var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
 var waypoint2 = "62 Rue du Port, Lille";
 var waypoint3 = "31 Rue du Dr.Bouret, Marq-en-Baroeul";
-var waypoint4 = "229 Rue de l'echoppette, 62400, Locon";
+//var waypoint4 = "229 Rue de l'echoppette, 62400, Locon";
 var waypoint5 = "3 Boulevard montebello, Lille";
 var waypoint6 = "297 Chemin des Petits Mas, 13420, Gemenos";
 var waypoint7 = "40 Rue Victor Hugo, Paris"
 
-var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint4, waypoint5, waypoint6, waypoint7];
+var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint5, waypoint6, waypoint7];
 
 //javascript.js -------------------------------------------------------------------------------------------------------------------------
 
@@ -126,24 +126,25 @@ async function triListeWaypoint(listWaypoints) {
 
 
 function createUrl(listWaypoints) {
-    url = "https://www.google.com/maps/dir/?api=1&origin=Paris+gare+du+nord%2CFrance&destination=Paris+gare+du+nord%2CFrance&travelmode=driving&waypoints="
+    url = "https://www.google.com/maps/dir/?api=1&origin=ISEN+Lille%2CFrance&destination=ISEN+Lille%2CFrance&travelmode=driving&waypoints="
     console.log(listWaypoints.length); 
     for(i=0; i<listWaypoints.length; i++) {
         url += listWaypoints[i].replaceAll(" ","+");
         url += "%2CFrance%7C";
-        console.log(url);
     } 
     url = url.slice(0, -3);
     return url
     }
 
-console.log(createUrl(orderedList));
+
+
 
 //Vérification de l'affichage du HTML puis lancement du calcul de l'itinéraire
 document.addEventListener("DOMContentLoaded", function() {
     //call triListeWaypoint function
     triListeWaypoint(listWaypoints).then(function(result) {
-        console.log("result : ", result);
+        let URL = createUrl(result);
+        console.log(URL);
     })
                
 });
