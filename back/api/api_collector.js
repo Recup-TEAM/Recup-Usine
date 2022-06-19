@@ -34,7 +34,7 @@ module.exports = function (session) {
       console.log("API -> createDemande");
       // get name, email and prenom from body
       //check if user connected
-      if(check.checkUserConnected(req, res)){
+      if(check.checkUserAdmin(req, res)){
       let name = req.body.nom;
       let email = req.body.email;
       let prenom = req.body.prenom;

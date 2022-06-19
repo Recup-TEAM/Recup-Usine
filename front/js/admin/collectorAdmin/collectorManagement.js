@@ -38,9 +38,9 @@ function writeToHtml(list_collectors) {
   });
 }
 
-// function researh collector and rewrite html
-function searchCollector() {
-  console.log("searchCollector");
+
+
+function searchCollector()  {
   let search = $("#search").val();
   let collector_search = [];
   for (let i = 0; i < all_collectors.length; i++) {
@@ -57,8 +57,30 @@ function searchCollector() {
   writeToHtml(collector_search);
 }
 
+
 // when document is ready
 $(document).ready(function () {
+  $.ajax({
+    url: "/api/user/get/compteLevel",
+    type: "GET",
+    success: (data) => {
+      console.log(data);
+      if (!data.success) {
+        connected = false;
+        window.location.href = "/";
+      }
+      else {
+      if(data.data.compteLevel !=2 ){
+          console.log("compteLevel is false");
+          admin = false;
+          window.location.href = "/";
+        }
+      }
+    }
+  });
+
+
+
   //get all collector from database
   allCollector = getAllCollector();
   console.log(allCollector);
@@ -90,4 +112,10 @@ $(document).ready(function () {
     console.log("addCollector");
     window.location.href = "collectorCreationManagement";
   });
+
+  // #search
+  $("#search").keyup(function () {
+    searchCollector();
+  }
+  );
 });

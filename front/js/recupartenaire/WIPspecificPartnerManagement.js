@@ -1,24 +1,29 @@
 var current_entreprise, current_user, current_subscription;
 // confirmButtonSubscriptionPriceChange
 function submit_new_price() {
-    // if #newPrice and #confirmNewPrice is the same and not empty
-    if ($("#newPrice").val() == $("#confirmNewPrice").val() && $("#newPrice").val() != "") {
-        data = api_request.changeSubscriptionPrice(current_subscription.id_subscription, $("#newPrice").val());
-        if (data.success) {
-        $("#newPrice").val("");
-        $("#confirmNewPrice").val("");
-        alert("Le prix a bien été modifié");    
-        }
-        else {
-            alert(data.err)
-        }
+  // if #newPrice and #confirmNewPrice is the same and not empty
+  if (
+    $("#newPrice").val() == $("#confirmNewPrice").val() &&
+    $("#newPrice").val() != ""
+  ) {
+    data = api_request.changeSubscriptionPrice(
+      current_subscription.id_subscription,
+      $("#newPrice").val()
+    );
+    if (data.success) {
+      $("#newPrice").val("");
+      $("#confirmNewPrice").val("");
+      alert("Le prix a bien été modifié");
+    } else {
+      alert(data.err);
     }
+  }
 }
 
 function getOneEntreprise(id) {
   let entreprise = api_request.getOneEntreprise(id);
   $("#name").html(entreprise.data[0].name);
-  //console.log(entreprise.data[0].name)
+    console.log(entreprise.data[0].name)
   current_entreprise = entreprise.data[0];
   return entreprise.data[0].id_user;
 }
@@ -33,7 +38,12 @@ function getUserData(user_id) {
   // set date inscription
   let dateEnd = new Date(data.data.registerDate);
   //format date to dd/mm/yyyy
-  dateEnd = dateEnd.getDate() + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
+  dateEnd =
+    dateEnd.getDate() +
+    "/" +
+    (dateEnd.getMonth() + 1) +
+    "/" +
+    dateEnd.getFullYear();
   $("#dateInscri").html(dateEnd);
 
   /*if (data.data.compte_level == 0) {
@@ -51,23 +61,32 @@ function getUserSubscription(user_id) {
   console.log(data);
   current_subscription = data.data[0];
 
-
   let dateEnd = new Date(data.data[0].start_date);
   dateEnd.setUTCDate(dateEnd.getDay() + data.data[0].subscription_duration);
   if (dateEnd.getDate() > 30) {
-    dateEnd = dateEnd.getDate() - 30 + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
+    dateEnd =
+      dateEnd.getDate() -
+      30 +
+      "/" +
+      (dateEnd.getMonth() + 1) +
+      "/" +
+      dateEnd.getFullYear();
   }
   if (dateEnd.getMonth() > 12) {
     dateEnd.setMonth(dateEnd.getMonth() - 12);
     dateEnd.setFullYear(dateEnd.getFullYear() + 1);
   }
-  dateEnd = dateEnd.getDay() + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
+  dateEnd =
+    dateEnd.getDay() +
+    "/" +
+    (dateEnd.getMonth() + 1) +
+    "/" +
+    dateEnd.getFullYear();
 
   $("#renewal").html(dateEnd);
 
-
   //set price #subscription
-    $("#subscription").html(data.data[0].price + "€");
+  $("#subscription").html(data.data[0].price + "€");
 }
 
 // when the page is loaded

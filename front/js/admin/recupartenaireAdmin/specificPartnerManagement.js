@@ -7,6 +7,7 @@ function isConnected() {
     //redirect /
     //window.location.href = "/";
     console.log("not connected");
+    // faire une verif compe admin ?
     return true;
   }
 }
@@ -104,6 +105,7 @@ function getProductsByEntrepriseId(id) {
 
 //when the page is loaded
 $(document).ready(function () {
+  console.log("ready");
   // get id localstorage
   let id = localStorage.getItem("id_entreprise");
   id = 1;
@@ -127,18 +129,25 @@ $(document).ready(function () {
   //onclick buttonEditProfil stock id_entreprise in localstorage
   $("#buttonEditProfil").click(function () {
     localStorage.setItem("id_entreprise", id_entreprise);
-    window.location.href = "/recupartenaireHtml/partnerProfileModification";
+    window.location.href = "/adminHtml/recupartenaireAdminHtml/specificPartnerModificationManagement";
   });
+
+  // #deleteProfil
+  $("#deleteProfil").click(function () {
+    //let data = api_request.deleteProfil(id_entreprise);
+    console.log("deleteProfil a coder");
+  })
+
   //#requestCollect
-    $("#requestCollect").click(function () {
-        let data = api_request.requestCollect(id_entreprise);
-        console.log(data);
-        if (data.success) {
-            alert("Demande de collecte envoyée");
-        }
-        else {
-            alert(data.err);
-        }
-    }
-    );
+    // $("#requestCollect").click(function () {
+    //     let data = api_request.requestCollect(id_entreprise);
+    //     console.log(data);
+    //     if (data.success) {
+    //         alert("Demande de collecte envoyée");
+    //     }
+    //     else {
+    //         alert(data.err);
+    //     }
+    // }
+    // );
 });
