@@ -60,5 +60,12 @@ module.exports = function () {
       return rq;
     },
 
+    // Delete an entreprise
+    deleteEntrepriseById: async (id) => {
+      let sql = "DELETE FROM entreprise WHERE id_entreprise='" + id + "'";
+      var rq = await db_query(sql);
+      return rq;
+    },
+
   };
 };

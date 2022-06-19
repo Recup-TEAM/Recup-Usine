@@ -1,7 +1,7 @@
 var all_entreprise = [];
 //function get all enterprise
-function getAllEnterprise() {
-    data = api_request.getAllEnterprise()
+function getAllCollector() {
+    data = api_request.getAllCollector()
     console.log(data);
     for (let i = 0; i < data.data.length; i++) {
         all_entreprise.push(data.data[i]);
@@ -19,6 +19,8 @@ function pushToHtml(data) {
     $("#entreprise-list").empty();
     for (let i = 0; i < data.length; i++) {
         let entreprise = data[i];
+        console.log(entreprise.accepted);
+       if(entreprise.accepted ==1) {
         /* html = <div class="card mb-4 shadow-sm">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">
@@ -39,8 +41,9 @@ function pushToHtml(data) {
             "        </div>";
         
         $("#entreprise-list").append(html);
+        
     }
-
+    }
     // listeenr click on cardEntreprise
     $(".cardEntreprise").click(function () {
         id = $(this).attr("id");
@@ -69,7 +72,7 @@ function isConnected() {
 $(document).ready(function() {
     // if user is connected
     if (isConnected()) {
-        getAllEnterprise();
+        getAllCollector();
     }
 
     // shearch and send to "push to html" when all_entreprise.name contains the value of the input or adresse tolowercase

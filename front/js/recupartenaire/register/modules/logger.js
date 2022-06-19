@@ -11,7 +11,6 @@ let logger = (function () {
       },
       success: (data) => {
         console.log("CreateUser :", data);
-        //window.location.href = "/";
       },
     });
 
@@ -23,12 +22,12 @@ let logger = (function () {
       data: {
         name: entreprise_name,
         adresse: entreprise_adresse, 
-        img: imgPath,
+        img: img,
         descRegister : descriptionRegistration,
       },
       success: (data) => {
         console.log("CreateEntreprise :", data);
-        //window.location.href = "/";
+        window.location.href = "/";
       },
     });
   }

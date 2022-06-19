@@ -9,18 +9,17 @@ function changeMail() {
       $("#new-email").val("");
       $("#confirm-email").val("");
       alert("Votre email a bien été modifié");
+    } else {
+      alert(data.err);
     }
-    else {
-    alert(data.err);
+  } else {
+    alert("Les deux emails ne correspondent pas ou l'email n'est pas valide.");
   }
-  }
-  else {    alert("Les deux emails ne correspondent pas ou l'email n'est pas valide.");
-}
 }
 
 function changePassword() {
   if (
-    $("#newPassword").val() == $("#confirm-password").val()
+    $("#newPassword").val() == $("#confirm-password").val() && isValidPassword($("#newPassword").val())
     // &&
     // isValidPassword($("#newPassword").val())
   ) {
@@ -31,25 +30,23 @@ function changePassword() {
       $("#confirm-password").val("");
       alert("Votre mot de passe a bien été modifié");
     } else {
-      alert("L'ancien mot de passe est incorrect");
+      alert("L'ancien mot de passe est incorrect. (" + data.err + ")");
     }
-  }
-  else {
+  } else {
     alert(
-      "Votre mot de passe n'est pas valide ou les deux mots de passe ne correspondent pas. (" + data.err + ")"
-    );
+      "Votre mot de passe n'est pas valide ou les deux mots de passe ne correspondent pas."    );
   }
 }
 
 // verify if the email is valid
-  function isValidEmail(email) {
-    var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    return re.test(String(email).toLowerCase());
-  }
+function isValidEmail(email) {
+  var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  return re.test(String(email).toLowerCase());
+}
 
 // verify if the password is valid (at least 6 characters, 1 uppercase, 1 lowercase, 1 number)
 function isValidPassword(password) {
-  var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+  var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$/;
   console.log(re.test(String(password)));
   return re.test(String(password));
 }
@@ -110,21 +107,20 @@ $(document).ready(function () {
         $("#subInfo").html("Aucune souscription");
       } else {
         $("#subInfo").html(
-          data.data[0].price + "€ (" + data.data[0].subscription_duration + " mois)"
+          data.data[0].price +
+            "€ (" +
+            data.data[0].subscription_duration +
+            " mois)"
         );
-        let dateEnd = new Date(data.data[0].start_date);
+        dateEnd = new Date(data.data[0].start_date);
         dateEnd.setUTCDate(
           dateEnd.getDay() + data.data[0].subscription_duration
         );
         if (dateEnd.getDate() > 30) {
-          dateEnd =
-            dateEnd.getDate() -
-            30 +
-            "/" +
-            (dateEnd.getMonth() + 1) +
-            "/" +
-            dateEnd.getFullYear();
+          dateEnd.setDate(dateEnd.getDate() - 30);
+          dateEnd.setMonth(dateEnd.getMonth() + 1);
         }
+
         if (dateEnd.getMonth() > 12) {
           dateEnd.setMonth(dateEnd.getMonth() - 12);
           dateEnd.setFullYear(dateEnd.getFullYear() + 1);
@@ -132,7 +128,7 @@ $(document).ready(function () {
         dateEnd =
           dateEnd.getDay() +
           "/" +
-          (dateEnd.getMonth() + 1) +
+          dateEnd.getMonth() +
           "/" +
           dateEnd.getFullYear();
         $("#subRenouvellement").html(dateEnd);
@@ -150,7 +146,6 @@ $(document).ready(function () {
 
   // when enter is pressed in confirmNewMail and newEmail and confirmNewMail have the same value call changeMail function
   $("#confirm-email").keypress(function (e) {
-    e.preventDefault();
     if (e.which == 13) {
       changeMail();
     }
@@ -171,7 +166,6 @@ $(document).ready(function () {
 
   // when enter is pressed in newPassword focus confirmNewPassword
   $("#newPassword").keypress(function (e) {
-    e.preventDefault();
     if (e.which == 13) {
       $("#confirm-password").focus();
     }
@@ -179,7 +173,6 @@ $(document).ready(function () {
 
   // when enter is pressed in confirmNewPassword and newPassword and confirmNewPassword have the same value call changePassword function
   $("#confirm-password").keypress(function (e) {
-    e.preventDefault();
     if (e.which == 13) {
       changePassword();
     }
@@ -191,10 +184,18 @@ $(document).ready(function () {
     event.preventDefault();
     changePassword();
   });
-  
+
   // prevent default #noenterallowed
   $(".noenterallowed").keypress(function (e) {
-    e.preventDefault();
-  }
-  );
+    //if 13
+    if (e.which == 13) {
+      e.preventDefault();
+    }
+  });
+
+  //#buttonContact mailto:recupusine@gmail.com
+  $("#buttonContact").click(function (e) {
+    console.log("buttonContact");
+    window.location.href = "mailto:recupusine@gmail.com";
+  });
 });

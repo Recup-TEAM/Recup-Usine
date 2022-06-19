@@ -7,6 +7,7 @@ function isConnected() {
     //redirect /
     //window.location.href = "/";
     console.log("not connected");
+    // faire une verif compe admin ?
     return true;
   }
 }
@@ -31,6 +32,7 @@ function getSubscription(id) {
 
   if (data.data.length == 0) {
     $("#subRenouvellement").html("Aucune souscription");
+        $("#subInfo").html("0€");
   } else {
     console.log(data.data[0]);
     $("#subInfo").html(
@@ -70,6 +72,10 @@ function getProductsByEntrepriseId(id) {
   // if
   if (data.data.length == 0) {
     $("#products").html("Aucun produit");
+   $("#productscollected").html("0");
+    $("#productsTocollect").html("0");
+
+
   } else {
     /*Object
             dimensions: "4x4x4"
@@ -104,9 +110,9 @@ function getProductsByEntrepriseId(id) {
 
 //when the page is loaded
 $(document).ready(function () {
+  console.log("ready");
   // get id localstorage
   let id = localStorage.getItem("id_entreprise");
-  id = 1;
   console.log(id);
 
   isConnected();
@@ -127,18 +133,28 @@ $(document).ready(function () {
   //onclick buttonEditProfil stock id_entreprise in localstorage
   $("#buttonEditProfil").click(function () {
     localStorage.setItem("id_entreprise", id_entreprise);
-    window.location.href = "/recupartenaireHtml/partnerProfileModification";
+    window.location.href = "/adminHtml/recupartenaireAdminHtml/specificPartnerModificationManagement";
   });
-  //#requestCollect
-    $("#requestCollect").click(function () {
-        let data = api_request.requestCollect(id_entreprise);
-        console.log(data);
-        if (data.success) {
-            alert("Demande de collecte envoyée");
-        }
-        else {
-            alert(data.err);
-        }
+
+  // #deleteProfil
+  $("#deleteProfil").click(function () {
+    let data = api_request.deleteEntreprise(id_entreprise);
+    console.log(data);
+    if (data.success) {
+      window.location.href = "/adminHtml/recupartenaireAdminHtml/partnerDemandsManagement";
     }
-    );
+  })
+
+  //#requestCollect
+    // $("#requestCollect").click(function () {
+    //     let data = api_request.requestCollect(id_entreprise);
+    //     console.log(data);
+    //     if (data.success) {
+    //         alert("Demande de collecte envoyée");
+    //     }
+    //     else {
+    //         alert(data.err);
+    //     }
+    // }
+    // );
 });

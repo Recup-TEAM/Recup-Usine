@@ -125,7 +125,6 @@ function search() {
     listEntreprise = dataProduct;
   }
 
-  console.log(listEntreprise, listAdresse, listMaterial, listSearchProduct);
   listToHtml(listEntreprise);
 }
 
@@ -193,6 +192,7 @@ function listToHtml(list) {
     }
     data_entreprise = get_data_entreprise(list[i].id_entreprise);
     imgEntreprise = data_entreprise.img;
+    nomEntreprise = data_entreprise.name;
     adressEntreprise = data_entreprise.adresse;
     html += `<div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card mb-4 shadow-sm text-center hvr-grow-shadow">
@@ -200,9 +200,11 @@ function listToHtml(list) {
             <div class="card-body">
                 <h3 class="my-0 font-weight-bold">${list[i].material}</h3>
                 <p class="">Dimension : ${list[i].dimensions}</p>
+                <p class="">Entreprise : ${nomEntreprise}</p>
+                <p class="">Quantité : ${list[i].quantity}</p>
                 <p class="">Etat : ${list[i].state}</p>
                 <p class="adress">${adressEntreprise}</p>
-                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical cardProduct" id="product_${list[i].id_entreprise}" id_product="${list[i].id_entreprise}">Sélectionner</button>
+                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical cardProduct" id="product_${list[i].id_product}" id_product="${list[i].id_product}">Sélectionner</button>
             </div>  
         </div>
     </div>`;

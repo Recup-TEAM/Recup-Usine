@@ -22,7 +22,7 @@ module.exports =  () => {
             if (!checkUserConnected(req, res)) {
                 return false
             }
-            if (req.session.compteLevel!=0) {
+            if (req.session.compteLevel!=2) {
                 res.json({"err": "Vous n'êtes pas administrateur !", "success": false});
                 return false
             }

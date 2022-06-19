@@ -84,15 +84,30 @@ module.exports = function (session) {
     // changeSubscriptionPrice : change the price of the subscription of the user
     changeSubscriptionPrice: (req, res) => {
       console.log("API -> changeSubscriptionPrice");
-      //check.checkUserAdmin(req, res)
+      if(check.checkUserAdmin(req, res)){
         subscriptionId = req.body.id;
         db_user.changeSubscriptionPrice(subscriptionId, req.body.price).then(
           (data) => {
             res.json({ err: "", success: true, data: data });
           }
         );
+      }
       
     },
+
+    // changeSubscriptionDuration : change the duration of the subscription of the user
+    changeSubscriptionDuration: (req, res) => {
+      console.log("API -> changeSubscriptionDuration");
+      if(check.checkUserAdmin(req, res)){
+        subscriptionId = req.body.id;
+        db_user.changeSubscriptionDuration(subscriptionId, req.body.duration).then(
+          (data) => {
+            res.json({ err: "", success: true, data: data });
+          }
+        );
+      }
+    },
+
 
 
     /* POST */

@@ -29,11 +29,25 @@ $(document).ready(function () {
     //tour
     $("#nbrCollect").html(collector.data[0].tour);
 
-    user = getUserById(id);
-    //#dateInscri = Date : user.registerDate
-   dateEnd = new Date(user.data.registerDate);
-    //format date to dd/mm/yyyy
-    dateEnd = dateEnd.getDate() + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
+    //user = getUserById(id);
+
+    dateEnd = new Date(collector.data[0].registerDate);
+    dateEnd.setUTCDate(dateEnd.getDay() + data.data[0].subscription_duration);
+    if (dateEnd.getDate() > 30) {
+      dateEnd.setDate(dateEnd.getDate() - 30);
+      dateEnd.setMonth(dateEnd.getMonth() + 1);
+    }
+
+    if (dateEnd.getMonth() > 12) {
+      dateEnd.setMonth(dateEnd.getMonth() - 12);
+      dateEnd.setFullYear(dateEnd.getFullYear() + 1);
+    }
+    dateEnd =
+      dateEnd.getDay() +
+      "/" +
+      (dateEnd.getMonth()) +
+      "/" +
+      dateEnd.getFullYear();
 
     $("#dateInscri").html(dateEnd);
 
@@ -51,13 +65,13 @@ $(document).ready(function () {
         let data = api_request.deleteCollector(id);
         console.log(data);
         console.log(data.data);
-        if (data.data.success == true) {
+        if (data.success == true) {
             //redirect to collectorManagement.html
             window.location.href = "collectorManagement";
         }
     });
     
-    // cursor pointer on button deleteDontGoBackOnThatDecision
+    // cursor pointer on button deleteDontGoBackOnThatDecision  
     $("#deleteDontGoBackOnThatDecision").css("cursor", "pointer");
 
 });

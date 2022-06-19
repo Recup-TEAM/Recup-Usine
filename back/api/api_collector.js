@@ -19,10 +19,18 @@ module.exports = function (session) {
       });
     },
 
-    // getCollectorById
+    // getCollectorByIdUser
     getCollectorByIdUser: function (req, res) {
       console.log("API -> getCollectorById");
       db_collector.getCollectorByIdUser(req.params.id).then((collector) => {
+        res.json({ err: "", success: true, data: collector });
+      });
+    },
+
+    // getCollectorById
+    getCollectorById: function (req, res) {
+      console.log("API -> getCollectorById");
+      db_collector.getCollectorById(req.params.id).then((collector) => {
         res.json({ err: "", success: true, data: collector });
       });
     },
@@ -34,7 +42,7 @@ module.exports = function (session) {
       console.log("API -> createDemande");
       // get name, email and prenom from body
       //check if user connected
-      if(check.checkUserConnected(req, res)){
+      if(check.checkUserAdmin(req, res)){
       let name = req.body.nom;
       let email = req.body.email;
       let prenom = req.body.prenom;

@@ -13,6 +13,26 @@ else {
 // when document is ready
 $(document).ready(function() {
 
+    $.ajax({
+    url: "/api/user/get/compteLevel",
+    type: "GET",
+    success: (data) => {
+      console.log(data);
+      if (!data.success) {
+        connected = false;
+        window.location.href = "/";
+      }
+      else {
+      if(data.data.compteLevel !=2 ){
+          console.log("compteLevel is false");
+          admin = false;
+          window.location.href = "/";
+        }
+      }
+    }
+  });
+  
+
     // listerner when enter is pressed on name to prenom
     $("#name").keypress(function(event) {
         if (event.which == 13) {

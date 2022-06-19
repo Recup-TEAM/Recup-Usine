@@ -36,8 +36,8 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
-    <script src="/../js/collectorAdmin/specificCollectorManagement.js"></script>
-    <script src="/../js/collectorAdmin/modules/api_request.js"></script>
+    <script src="/../js/admin/collectorAdmin/specificCollectorManagement.js"></script>
+    <script src="/../js/admin/collectorAdmin/modules/api_request.js"></script>
 
 </head>
 
@@ -72,7 +72,7 @@
 <main role="main" class="container text-center">
     <div class="row big-row">
         <div class="col-md-2 text-left" style="padding-left: 0px !important">
-            <button type="submit" class="btn btn-return hvr-ripple-out" href="/adminHtml/collectorAdminHtml/collectorManagement"><i class="fa-solid fa-arrow-left"></i>  retour</button>
+            <button id="back" type="submit" class="btn btn-return hvr-ripple-out" href="/adminHtml/collectorAdminHtml/collectorManagement"><i class="fa-solid fa-arrow-left"></i>  retour</button>
         </div>
     </div>
     <div class="card card-profile col-md-12 col-lg-12">
@@ -85,16 +85,16 @@
                     <div class="d-flex flex-column align-items-center text-center">
                         <div class="top-container">
                             <div class="ml-3">
-                                <h4 class="name" id="nameEntreprise">Nom du collecteur</h4>
+                                <h4 class="name" id="name">Nom du collecteur</h4>
                             </div>
                         </div>
                         <div class="mt-3 text-profile text-left">
-                            <p class="text-secondary mb-1">Date d'inscription : <div id="subInfo"></div>
+                            <p class="text-secondary mb-1">Date d'inscription : <div id="dateInscri"></div>
                             <p class="text-secondary mb-1">Adresse mail : <div id="email"></div>
-                            <p class="text-muted font-size-sm">Nombre de collectes déjà effectuées : <div id="subRenouvellement"></div><br></p>
+                            <p class="text-muted font-size-sm">Nombre de collectes déjà effectuées : <div id="nbrCollect"></div><br></p>
                         </div>
                         <div class="btn-delete-div">
-                            <button class="btn btn-delete hvr-ripple-out" id="buttonDeleteProfile">Supprimer mon profil</button>
+                            <button id="deleteDontGoBackOnThatDecision" class="btn btn-delete hvr-ripple-out" id="buttonDeleteProfile">Supprimer mon profil</button>
                         </div>
                     </div>
                 </div>
