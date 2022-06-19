@@ -37,6 +37,8 @@ module.exports = function (app, session) {
     // update subscription price of user
     app.post("/api/user/change/subscriptionPrice/", urlencodedParser, api_user.changeSubscriptionPrice);
 
+    // Update subscription duration
+    app.post("/api/user/change/subscriptionDuration/", urlencodedParser, api_user.changeSubscriptionDuration);
     
     
     /* POST */
@@ -79,7 +81,7 @@ module.exports = function (app, session) {
     app.get("/api/entreprises/get/entrepriseById/:id", urlencodedParser, api_entreprise.getEntrepriseById);
     
     // Get all entreprises by user
-    app.get("/api/entreprises/get/allEntreprisesByUser:id", urlencodedParser, api_entreprise.getAllEntreprisesByUser);
+    app.get("/api/entreprises/get/allEntreprisesByUser/:id", urlencodedParser, api_entreprise.getAllEntreprisesByUser);
 
 
 
@@ -89,6 +91,9 @@ module.exports = function (app, session) {
 
     // Request a collect
     app.post("/api/collector/request/collect/:id", urlencodedParser, api_entreprise.requestCollect);
+
+    // Delete an entreprise (/api/entreprises/delete/entrepriseById/:id)
+    app.post("/api/entreprises/delete/entrepriseById/:id", urlencodedParser, api_entreprise.deleteEntrepriseById);
 
 
     /***************
@@ -127,8 +132,11 @@ module.exports = function (app, session) {
     // Get all collector
     app.get("/api/collector/get/all", urlencodedParser, api_collector.getAllCollector);
 
+    // Get collector by id user
+    app.get("/api/collector/get/collectorByIdUser/:id", urlencodedParser, api_collector.getCollectorByIdUser);
+    
     // Get collector by id
-    app.get("/api/collector/get/collectorById/:id", urlencodedParser, api_collector.getCollectorByIdUser);
+    app.get("/api/collector/get/collectorById/:id", urlencodedParser, api_collector.getCollectorById);
 
     /* POST */
     // Create a collector demande

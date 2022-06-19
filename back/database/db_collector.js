@@ -15,9 +15,17 @@ module.exports = function () {
       return rq;
     },
 
-    // Get collector by id
+    // Get collector by id user
     getCollectorByIdUser: async (id) => {
       let sql = "SELECT * FROM collector WHERE id_user = ?";
+      var rq = await db_query(sql, [id]);
+      resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
+      return rq;
+    },
+
+    // Get collector by id
+    getCollectorById: async (id) => {
+      let sql = "SELECT * FROM collector WHERE id = ?";
       var rq = await db_query(sql, [id]);
       resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
       return rq;
@@ -33,7 +41,7 @@ module.exports = function () {
         prenom +
         "', '" +
         email +
-        "', '1', '0', '" +
+        "', '1', '0', '" + //here
         id_user +
         "' );";
       var rq = await db_query(sql);

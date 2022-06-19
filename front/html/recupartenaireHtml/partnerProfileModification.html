@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Js -->
-    <script type="text/javascript" src="./../../js/partnerProfileModification/partnerProfileModification.js"></script>
-    <script type="text/javascript" src="./../../js/partnerProfileModification/modules/api_request.js"></script>
+    <script type="text/javascript" src="./../../js/recupartenaire/partnerProfileModification.js"></script>
+    <script type="text/javascript" src="./../../js/recupartenaire/modules/api_request.js"></script>
 
 </head>
 
@@ -80,7 +80,7 @@
                             <p class="text-secondary mb-1">Abonnement : <div id="subInfo"></div></p>
                             <p class="text-muted font-size-sm">Date de renouvellement : <div id="subRenouvellement"></div></p>
                             <div class="text-center">
-                                <button class="btn btn-edit hvr-ripple-out" href="mailto:recupusine@gmail.com">Nous contacter <i class="fa-solid fa-envelope"></i></button>
+                                <button class="btn btn-edit hvr-ripple-out" id="buttonContact" href="mailto:recupusine@gmail.com">Nous contacter! <i class="fa-solid fa-envelope"></i></button>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,8 @@
 
                     <div class="mb-3 text-left">
                         <label for="confirm-email">Confirmer adresse mail</label>
-                        <input type="email" class="form-control" id="noenterallowed" placeholder="you@example.com">
+                        <input id="confirm-email" type=" email" class="form-control" id="noenterallowed"
+                            placeholder="you@example.com">
                         <div class="invalid-feedback">
                             Veuillez entrer une adresse mail valide.
                         </div>

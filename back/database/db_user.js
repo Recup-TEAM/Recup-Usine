@@ -53,6 +53,14 @@ module.exports = function () {
       return rq;
     },
 
+    // changeSubscriptionDuration :
+    changeSubscriptionDuration: async (subscriptionId, duration) => {
+      let sql = "UPDATE subscription SET subscription_duration='" + duration + "' WHERE id_subscription='" + subscriptionId + "'";
+      console.log(sql);
+      var rq = await db_query(sql);
+      return rq;
+    },
+
     /* POST */
     // Connexion
     login: async ({ email, password }) => {

@@ -43,8 +43,9 @@ module.exports = function (session) {
     getAllEntreprisesByUser: (req, res) => {
       console.log("API -> allEntreprisesByUser");
       if (check.checkUserConnected(req, res)) {
-        let userId = req.params.userId;
-        db_entreprise.getAllEntreprisesByUser(userId).then((entreprises) => {
+        let userId = req.params.id;
+
+        db_entreprise.getAllEntreprisesByIdUser(userId).then((entreprises) => {
           res.json({ err: "", success: true, data: entreprises });
         });
       }
@@ -76,6 +77,16 @@ module.exports = function (session) {
     let idEntreprise = req.params.id;
     console.log(idEntreprise);
     db_entreprise.requestCollect(idEntreprise).then(() => {
+      res.json({ err: "", success: true, data: null });
+    }
+    );
+  },
+
+  // deleteEntrepriseById
+  deleteEntrepriseById: (req, res) => {
+    console.log("API -> deleteEntrepriseById");
+    let idEntreprise = req.params.id;
+    db_entreprise.deleteEntrepriseById(idEntreprise).then(() => {
       res.json({ err: "", success: true, data: null });
     }
     );

@@ -188,11 +188,23 @@ function request_allEntreprise() {
 
   // get user
   function request_getUserData(user_id) {
-    console.log(user_id);
     let dataSucces;
     $.ajax({
       type: "GET",
       url: "/api/user/get/userById/" + user_id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+  function request_getUserData() {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/data/",
       async: false,
       success: (data) => {
         dataSucces = data;
@@ -267,7 +279,22 @@ function request_allEntreprise() {
     });
     return dataSucces;
   }
-    
+
+  // getAllEntrepriseOfUser
+  ///api/entreprises/get/allEntreprisesByUser
+  function request_getAllEntrepriseOfUser(user_id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/entreprises/get/allEntreprisesByUser/" + user_id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
 
   return {
     isConnected() {
@@ -282,6 +309,9 @@ function request_allEntreprise() {
     //get user data
     getUserData(user_id) {
       return request_getUserData(user_id);
+    },
+    getUserData() {
+      return request_getUserData();
     },
 
     // get user subscription
@@ -328,6 +358,9 @@ function request_allEntreprise() {
     },
     changeSubscriptionDuration(id, duration) {
       return request_changeSubscriptionDuration(id, duration);
+    },
+    getAllEntrepriseOfUser(id) {
+      return request_getAllEntrepriseOfUser(id);
     }
   };
 })();

@@ -1,6 +1,6 @@
 // funtion to hash the password
 function hashPassword(password) {
-  tmp = md5(password)
+  tmp = md5(password);
   console.log("hashPassword :", tmp);
   return tmp;
 }
@@ -9,22 +9,22 @@ function hashPassword(password) {
 function isValidEmail(email) {
   var re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    tmp = re.test(String(email).toLowerCase())
-    console.log("isValidEmail :",tmp);
-    return tmp;
+  tmp = re.test(String(email).toLowerCase());
+  console.log("isValidEmail :", tmp);
+  return tmp;
 }
 
 // verify if the password is valid (6 characters, 1 uppercase, 1 lowercase, 1 number)
 function isValidPassword(password) {
   var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$/;
-  tmp = re.test(String(password))
+  tmp = re.test(String(password));
   console.log("isValidPassword :", tmp);
   return tmp;
-}//amail@weyrd.space
+} //amail@weyrd.space
 
 // verify if the two passwords are the same
 function isSamePassword(password, password2) {
-  tmp = password === password2
+  tmp = password === password2;
   console.log("isSamePassword ;", tmp);
   return tmp;
 }
@@ -33,10 +33,10 @@ function upload_image() {
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, files) {
     var oldpath = files.filetoupload.path;
-    var newpath = './public/images/' + files.filetoupload.name;
+    var newpath = "./public/images/" + files.filetoupload.name;
     fs.rename(oldpath, newpath, function (err) {
       if (err) throw err;
-      res.write('File uploaded and moved!');
+      res.write("File uploaded and moved!");
       res.end();
     });
   });
@@ -51,18 +51,23 @@ function register_function() {
   var companyName = $("#company-name").val();
   var descriptionRegistration = $("#textarea").val();
   var img = $("#formFile").val();
-  var entreprise_adresse = $("#adresse").val();
-  entreprise_adresse = "45 rue de la gare";
+  var entreprise_adresse = $("#adress").val();
 
   if (
     isValidEmail(login) &&
     isValidPassword(password) &&
     isSamePassword(password, password2)
   ) {
-    logger.sign_up(entreprise_adresse, login, password, img, companyName, descriptionRegistration);
+    logger.sign_up(
+      entreprise_adresse,
+      login,
+      password,
+      img,
+      companyName,
+      descriptionRegistration
+    );
   } else {
-    $("#error").html("Veuillez remplir correctement les champs");
-    console.log("Veuillez remplir correctement les champs");
+    alert("Veuillez remplir correctement les champs");
   }
 }
 
@@ -82,6 +87,13 @@ $(document).ready(function () {
 
   // when enter is pressed on company-name field , focus on email
   $("#company-name").keypress(function (e) {
+    if (e.which == 13) {
+      $("#adress").focus();
+    }
+  });
+
+  // when enter is pressed on adress field , focus on email
+  $("#adress").keypress(function (e) {
     if (e.which == 13) {
       $("#email").focus();
     }

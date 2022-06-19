@@ -1,17 +1,3 @@
-function isConnected() {
-  data = api_request.isConnected();
-  console.log(data);
-  if (data.status == "success") {
-    return true;
-  } else {
-    //redirect /
-    //window.location.href = "/";
-    console.log("not connected");
-    // faire une verif compe admin ?
-    return true;
-  }
-}
-
 function getOneEntreprise(id) {
   let data = api_request.getOneEntreprise(id);
   //#nameEntreprise
@@ -32,7 +18,7 @@ function getSubscription(id) {
 
   if (data.data.length == 0) {
     $("#subRenouvellement").html("Aucune souscription");
-        $("#subInfo").html("0€");
+    $("#subInfo").html("0€");
   } else {
     console.log(data.data[0]);
     $("#subInfo").html(
@@ -72,10 +58,8 @@ function getProductsByEntrepriseId(id) {
   // if
   if (data.data.length == 0) {
     $("#products").html("Aucun produit");
-   $("#productscollected").html("0");
+    $("#productscollected").html("0");
     $("#productsTocollect").html("0");
-
-
   } else {
     /*Object
             dimensions: "4x4x4"
@@ -98,63 +82,61 @@ function getProductsByEntrepriseId(id) {
     let productscollected = 0;
     let productsTocollect = 0;
     for (let i = 0; i < data.data.length; i++) {
-        productscollected += data.data[i].quantity;
-        productsTocollect += data.data[i].quantity_to_collect;
-        }
+      productscollected += data.data[i].quantity;
+      productsTocollect += data.data[i].quantity_to_collect;
+    }
     $("#productscollected").html(productscollected);
-    $("#productsTocollect").html(productsTocollect);  }
-
+    $("#productsTocollect").html(productsTocollect);
+  }
 
   return data;
 }
 
 //when the page is loaded
 $(document).ready(function () {
-  console.log("ready");
-  // get id localstorage
-  let id = localStorage.getItem("id_entreprise");
+  if (api_request.isConnected().connected) {
+    dataUser = api_request.getUserData();
+    console.log(dataUser);
+    id = dataUser.data.id;
+  } else {
+    window.location.href = "/";
+  }
+
   console.log(id);
+  entreprise_data = api_request.getAllEntrepriseOfUser(id);
+  console.log("Entreprise data", entreprise_data);
 
-  isConnected();
-  entreprise_data = getOneEntreprise(id);
+    //#nameEntreprise
+    $("#nameEntreprise").html(entreprise_data.data[0].name);
+
   id_user = entreprise_data.data[0].id_user;
-  id_entreprise = entreprise_data.data[0].id_entreprise
-  console.log(id_user);
+  id_entreprise = entreprise_data.data[0].id_entreprise;
 
-  user_data = getUserById(id_user);
-  console.log(user_data);
 
   subscription_data = getSubscription(id_user);
-  console.log(subscription_data);
+  console.log("subscription_data", subscription_data);
 
   products_data = getProductsByEntrepriseId(id);
-  console.log(products_data);
+  console.log("products_data", products_data);
 
   //onclick buttonEditProfil stock id_entreprise in localstorage
   $("#buttonEditProfil").click(function () {
     localStorage.setItem("id_entreprise", id_entreprise);
-    window.location.href = "/adminHtml/recupartenaireAdminHtml/specificPartnerModificationManagement";
+    window.location.href =
+      "/recupartenaireHtml/partnerProfileModification";
   });
 
-  // #deleteProfil
-  $("#deleteProfil").click(function () {
-    let data = api_request.deleteEntreprise(id_entreprise);
-    console.log(data);
-    if (data.success) {
-      window.location.href = "/adminHtml/recupartenaireAdminHtml/partnerDemandsManagement";
-    }
-  })
 
   //#requestCollect
-    // $("#requestCollect").click(function () {
-    //     let data = api_request.requestCollect(id_entreprise);
-    //     console.log(data);
-    //     if (data.success) {
-    //         alert("Demande de collecte envoyée");
-    //     }
-    //     else {
-    //         alert(data.err);
-    //     }
-    // }
-    // );
+  $("#requestCollect").click(function () {
+      let data = api_request.requestCollect(id_entreprise);
+      console.log(data);
+      if (data.success) {
+          alert("Demande de collecte envoyée");
+      }
+      else {
+          alert(data.err);
+      }
+  }
+  );
 });

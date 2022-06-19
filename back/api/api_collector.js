@@ -19,10 +19,18 @@ module.exports = function (session) {
       });
     },
 
-    // getCollectorById
+    // getCollectorByIdUser
     getCollectorByIdUser: function (req, res) {
       console.log("API -> getCollectorById");
       db_collector.getCollectorByIdUser(req.params.id).then((collector) => {
+        res.json({ err: "", success: true, data: collector });
+      });
+    },
+
+    // getCollectorById
+    getCollectorById: function (req, res) {
+      console.log("API -> getCollectorById");
+      db_collector.getCollectorById(req.params.id).then((collector) => {
         res.json({ err: "", success: true, data: collector });
       });
     },

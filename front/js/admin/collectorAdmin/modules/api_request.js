@@ -36,6 +36,7 @@ function request_get_one_collector(id) {
     async: false,
     success: (data) => {
       dataSucces = data;
+      console.log(dataSucces);
     },
   }); 
   return dataSucces;

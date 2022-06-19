@@ -20,7 +20,7 @@ function writeToHtml(list_collectors) {
                 '</div>'+
             '<div class="card-body">'+
             '<p>'+collector.email+ '</p>'+
-                '<button type="button" class="btn btn-sm btn-edit cardCollector hvr-shutter-out-vertical" value="' + collector.id_user + '">Editer</button>'+
+                '<button type="button" class="btn btn-sm btn-edit cardCollector hvr-shutter-out-vertical" value="' + collector.id + '">Editer</button>'+
                 '</div>'+
             '</div>'+
             '</div>';
@@ -92,6 +92,7 @@ $(document).ready(function () {
       email: allCollector.data[i].email,
       accepted: allCollector.data[i].accepted,
       id_user: allCollector.data[i].id_user,
+      id: allCollector.data[i].id,
     };
 
     if (collector.accepted == 1) {

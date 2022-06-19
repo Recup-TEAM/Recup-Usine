@@ -30,10 +30,24 @@ $(document).ready(function () {
     $("#nbrCollect").html(collector.data[0].tour);
 
     //user = getUserById(id);
-    //#dateInscri = Date : user.registerDate
-   dateEnd = new Date(collector.data[0].registerDate);
-    //format date to dd/mm/yyyy
-    dateEnd = dateEnd.getDate() + "/" + (dateEnd.getMonth() + 1) + "/" + dateEnd.getFullYear();
+
+    dateEnd = new Date(collector.data[0].registerDate);
+    dateEnd.setUTCDate(dateEnd.getDay() + data.data[0].subscription_duration);
+    if (dateEnd.getDate() > 30) {
+      dateEnd.setDate(dateEnd.getDate() - 30);
+      dateEnd.setMonth(dateEnd.getMonth() + 1);
+    }
+
+    if (dateEnd.getMonth() > 12) {
+      dateEnd.setMonth(dateEnd.getMonth() - 12);
+      dateEnd.setFullYear(dateEnd.getFullYear() + 1);
+    }
+    dateEnd =
+      dateEnd.getDay() +
+      "/" +
+      (dateEnd.getMonth()) +
+      "/" +
+      dateEnd.getFullYear();
 
     $("#dateInscri").html(dateEnd);
 

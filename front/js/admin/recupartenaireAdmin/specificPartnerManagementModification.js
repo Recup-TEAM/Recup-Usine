@@ -42,53 +42,53 @@ function getUserSubscription(id) {
 
   if (data.data.length == 0) {
     $("#subRenouvellement").html("Aucune souscription");
+    $("#subInfo").html("0€");
   } else {
     console.log(data.data[0]);
     $("#subInfo").html(
-      data.data[0].price + "€ (" + data.data[0].subscription_duration + " mois)"
+      current_subscription.price +
+        "€ (" +
+        current_subscription.subscription_duration +
+        " jours)"
     );
 
-    let dateEnd = new Date(data.data[0].start_date);
+    dateEnd = new Date(data.data[0].start_date);
     dateEnd.setUTCDate(dateEnd.getDay() + data.data[0].subscription_duration);
     if (dateEnd.getDate() > 30) {
-      dateEnd =
-        dateEnd.getDate() -
-        30 +
-        "/" +
-        (dateEnd.getMonth() + 1) +
-        "/" +
-        dateEnd.getFullYear();
+      dateEnd.setDate(dateEnd.getDate() - 30);
+      dateEnd.setMonth(dateEnd.getMonth() + 1);
     }
+
     if (dateEnd.getMonth() > 12) {
       dateEnd.setMonth(dateEnd.getMonth() - 12);
       dateEnd.setFullYear(dateEnd.getFullYear() + 1);
     }
     dateEnd =
-      dateEnd.getDay() +
-      "/" +
-      (dateEnd.getMonth() + 1) +
-      "/" +
-      dateEnd.getFullYear();
+      dateEnd.getDay() + "/" + dateEnd.getMonth() + "/" + dateEnd.getFullYear();
 
     $("#subRenouvellement").html(dateEnd);
   }
-  $("#newPrice").attr("placeholder", data.data[0].price + "€");
+  if (data.data.length == 0) {
+    $("#newPrice").attr("placeholder", "0€");
+  } else {
+    $("#newPrice").attr("placeholder", data.data[0].price + "€");
 
+    if (data.data[0].subscription_duration == 30) {
+      $("#mensuel").prop("checked", true);
+    } else if (data.data[0].subscription_duration == 15) {
+      $("#bimensuel").prop("checked", true);
+    } else if (data.data[0].subscription_duration == 60) {
+      $("#bimestriel").prop("checked", true);
+    } else if (data.data[0].subscription_duration == 120) {
+      $("#trimestriel").prop("checked", true);
+    }
+    // refresh periodePicker
+    $("#periodePicker").selectpicker("refresh");
+  }
   /*<option id="bimensuel">Bimensuel</option>
   <option id="mensuel">Mensuel</option>
   <option id="bimestriel">Bimestriel</option>
   <option id="trimestriel">Trimestriel</option>*/
-  if (data.data[0].subscription_duration == 30) {
-    $("#mensuel").prop("checked", true);
-  } else if (data.data[0].subscription_duration == 15) {
-    $("#bimensuel").prop("checked", true);
-  } else if (data.data[0].subscription_duration == 60) {
-    $("#bimestriel").prop("checked", true);
-  } else if (data.data[0].subscription_duration == 120) {
-    $("#trimestriel").prop("checked", true);
-  }
-  // refresh periodePicker
-  $("#periodePicker").selectpicker("refresh");
 
   return data;
 }
@@ -104,7 +104,6 @@ $(document).ready(function () {
   user_id = getOneEntreprise(id);
   getUserData(user_id);
   getUserSubscription(user_id);
-
 
   //when "enter" is pressed in #confirmNewPrice
   $("#newPrice").on("keyup", function (event) {
@@ -124,16 +123,31 @@ $(document).ready(function () {
     //prevent refresh
     event.preventDefault();
     // get the value of the radio button id #periodePicker
-    let subscription_duration = $("#periodePicker").val()[0];
+    let subscription_duration = $("#periodePicker").val();
     // if the value is not empty
     console.log(subscription_duration);
-    if (subscription_duration != undefined) {
+    if (subscription_duration != "") {
       // change the subscription duration
-      api_request.changeSubscriptionDuration(
+      data = api_request.changeSubscriptionDuration(
         current_subscription.id_subscription,
         subscription_duration
       );
-    }})
+      console.log(data);
+      if (data.success) {
+        current_subscription.subscription_duration = subscription_duration;
+        $("#subInfo").html(
+          current_subscription.price +
+            "€ (" +
+            current_subscription.subscription_duration +
+            " jours)"
+        );
+        alert("La périodicité de souscription a bien été modifié");
+      }
+      else {
+        alert(data.err);
+      }
+    }
+  });
 
   // #backButton
   $("#backButton").on("click", function (event) {
