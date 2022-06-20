@@ -86,40 +86,41 @@ async function timeout(ms) {
 
 async function triListeWaypoint(listWaypoints) {
 
-    let orderedList = [];                       // LISTE DANS L'ORDRE OPTIMAL
-    let position = myPosition;                  // POSITION DE DEPART             
+    let orderedList = [];                       // Liste dans l'ordre optimal
+    let position = myPosition;                  // Postion de départ            
     var listSize = listWaypoints.length - 1;
 
-    while(listWaypoints.length > 2){
-        for (let i = 0; i < listSize; i++) {
+    while(listWaypoints.length > 2){            // Tant que la taille de la liste n'est pas 1
+        for (let i = 0; i < listSize; i++) {    
 
             if (listWaypoints[i]){temp = listWaypoints[i]};
-            for (let j = 0; j < (listWaypoints.length); j++) {
-
+            for (let j = 0; j < (listWaypoints.length); j++) {  // On cherche la plus petite distance entre 
+                                                                // notre position et les points de passage obligatoire
                     let dist1;
                     let dist2;
 
-                    if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 100000000}
+                    if(position != temp) {dist1 = await calcRoute(position, temp)} else {dist1 = 100000000} // On mesure les distances de 2 trjaets
                     if(position != listWaypoints[j+1]){dist2 = await calcRoute(position, listWaypoints[j])} else {dist2 = 100000000}
 
                     console.log("pos : ", position, "\ntemp : ", temp, "\ndist1 : ", dist1, 
                     "\npos : ", position, "\nlisteWJ+1 : ", listWaypoints[j],"\ndist2 : ", dist2, "\nlistwaypoint", listWaypoints);
 
-                    if (dist1 > dist2 && dist1 != 0 && dist2 != 0) {
+                    if (dist1 > dist2 && dist1 != 0 && dist2 != 0) { // On garde le plus petit
                         
                         if (listWaypoints[j]){temp = listWaypoints[j]};
                     }
                     await timeout(1500);
             }
-            orderedList.push(temp);
-            position = orderedList[i];
+            orderedList.push(temp); // Le point correspondant au trajet le plus court est le premiers point de passage
+            position = orderedList[i];  // On se place on point le plus proche
             let indexOf = listWaypoints.indexOf(temp);
-            listWaypoints.splice(indexOf, 1);
+            listWaypoints.splice(indexOf, 1); // On retire le point le plus proche pour ne pas boucler sur ce point
         }
     }
-    orderedList.push(listWaypoints[0]);
+    orderedList.push(listWaypoints[0]); // Lorsque la liste de waypoint ne comprend plus qu'un seul point, c'est forcement le dernier
+                                        // donc on l'ajoute à la liste ordonnée
     console.log("orderedList : ", orderedList, "\nWaypointlist : ", listWaypoints);
-    return orderedList;
+    return orderedList; // la fonction renvoie la liste ordonnée
 }
 //-------------------------------------------------------------------------------------------------------------------------------------
 // CREATION DU LIEN RENVOYANT A L'ITINERAIRE MAPS
