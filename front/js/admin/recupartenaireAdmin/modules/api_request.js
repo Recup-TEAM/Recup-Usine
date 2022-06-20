@@ -267,6 +267,20 @@ function request_allEntreprise() {
     });
     return dataSucces;
   }
+
+  // request_acceptRecupartenaire
+  function request_acceptRecupartenaire(id) {
+    let dataSucces;
+    $.ajax({
+      type: "POST",
+      url: "/api/entreprise/accept/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
     
 
   return {
@@ -328,6 +342,9 @@ function request_allEntreprise() {
     },
     changeSubscriptionDuration(id, duration) {
       return request_changeSubscriptionDuration(id, duration);
+    },
+    acceptRecupartenaire(id){
+      return request_acceptRecupartenaire(id);
     }
   };
 })();

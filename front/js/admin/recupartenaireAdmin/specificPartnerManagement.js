@@ -144,7 +144,15 @@ $(document).ready(function () {
       window.location.href = "/adminHtml/recupartenaireAdminHtml/partnerDemandsManagement";
     }
   })
-
+  // #returnBtn
+  $("#returnBtn").on("click", function (event) {
+    if (typeof localStorage.getItem("fromWhere") !== "undefined"){
+      window.location.href = localStorage.getItem("fromWhere");
+    }
+    else {
+      window.location.href = "specificPartnerManagement";
+    }
+  });
   //#requestCollect
     // $("#requestCollect").click(function () {
     //     let data = api_request.requestCollect(id_entreprise);

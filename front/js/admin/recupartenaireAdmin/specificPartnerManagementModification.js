@@ -150,7 +150,7 @@ $(document).ready(function () {
   });
 
   // #backButton
-  $("#backButton").on("click", function (event) {
-    window.location.href = "partnerManagement";
+  $("#returnBtn").on("click", function (event) {
+    window.location.href = "specificPartnerManagement";
   });
 });

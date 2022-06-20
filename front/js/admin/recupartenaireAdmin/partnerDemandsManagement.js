@@ -30,9 +30,7 @@ function pushToHtml(data) {
         </div>*/
       html =
         ' <div class="col-lg-4 col-md-6 col-sm-12">\n' +
-        '        <div class="card mb-4 shadow-sm hvr-grow-shadow cardEntreprise" id=\'' +
-        entreprise.id_entreprise +
-        "'>\n" +
+        '        <div class="card mb-4 shadow-sm hvr-grow-shadow cardEntreprise">\n' +
         '            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">\n' +
         '            <div class="card-body">\n' +
         '                <h5 class="my-0 font-weight-normal">' +
@@ -41,7 +39,7 @@ function pushToHtml(data) {
         '                <p class="adress">' +
         entreprise.adresse +
         "</p>\n" +
-        '                <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical">Voir profil</button>\n' +
+        '                <button id="" type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical btnAcceptRecupartenaire">Accepter <i class="fa fa-check" aria-hidden="true"></i></button> <button id="' + entreprise.id_entreprise + '"type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical btnShowProfile">Voir profil</button>\n' +
         "            </div>\n" +
         "          </div>\n" +
         "        </div>";
@@ -50,13 +48,27 @@ function pushToHtml(data) {
     }
   }
   // listeenr click on cardEntreprise
-  $(".cardEntreprise").click(function () {
+  $(".btnShowProfile").click(function () {
     id = $(this).attr("id");
+    let path = "partnerDemandsManagement";
     console.log("click on cardEntreprise id=" + id);
     //stock in localstorage
     localStorage.setItem("id_entreprise", id);
+    localStorage.setItem("fromWhere", path);
     //redirect to specificEntrepriseManagement.html
     window.location.href = "specificPartnerManagement";
+  });
+
+  $(".btnAcceptRecupartenaire").click(function () {
+    id = $(this).attr("id");
+
+    let data = api_request.acceptRecupartenaire(id);
+    if (data.success){
+      location.reload();
+    }
+    else {
+      alert(data.err);
+    }
   });
 }
 
@@ -105,4 +117,7 @@ $(document).ready(function () {
     }
     pushToHtml(temp);
   });
+  $("#returnBtn").click(function (){
+    window.location.href = "partnerManagement";
+  })
 });

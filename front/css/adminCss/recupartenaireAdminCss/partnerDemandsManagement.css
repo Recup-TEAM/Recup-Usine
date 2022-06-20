@@ -69,6 +69,10 @@ nav{
 
 /* end header */
 
+.btnShowProfile:before{
+    background: #AB1B39!important;
+}
+
 .row {
     margin: 20px 0;
 }
