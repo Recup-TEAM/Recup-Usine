@@ -1,17 +1,3 @@
-function getOneEntreprise(id) {
-  let data = api_request.getOneEntreprise(id);
-  //#nameEntreprise
-  $("#nameEntreprise").html(data.data[0].name);
-  return data;
-}
-
-function getUserById(id) {
-  let data = api_request.getUserById(id);
-  //#email
-  $("#email").html(data.data.email);
-  return data;
-}
-
 function getSubscription(id) {
   let data = api_request.getSubscription(id);
   //#subRenouvellement
@@ -98,6 +84,7 @@ $(document).ready(function () {
     dataUser = api_request.getUserData();
     console.log(dataUser);
     id = dataUser.data.id;
+    $("#email").html(dataUser.data.email);
   } else {
     window.location.href = "/";
   }
@@ -106,8 +93,8 @@ $(document).ready(function () {
   entreprise_data = api_request.getAllEntrepriseOfUser(id);
   console.log("Entreprise data", entreprise_data);
 
-    //#nameEntreprise
-    $("#nameEntreprise").html(entreprise_data.data[0].name);
+  //#nameEntreprise
+  $("#nameEntreprise").html(entreprise_data.data[0].name);
 
   id_user = entreprise_data.data[0].id_user;
   id_entreprise = entreprise_data.data[0].id_entreprise;

@@ -66,10 +66,10 @@ main, .row {
 }
 
 .logo-recupartenaires {
-    height: 390px;
+    height: auto;
     margin-top: 6px;
     object-fit: cover;
-    width: 465px;
+    width: 100%;
 }
 
 .forms {

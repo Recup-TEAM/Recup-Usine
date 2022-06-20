@@ -198,4 +198,8 @@ $(document).ready(function () {
     console.log("buttonContact");
     window.location.href = "mailto:recupusine@gmail.com";
   });
+
+  $("#returnBtn").click(function (e) {
+    window.location.href = "partnerProfile";
+  })
 });
