@@ -46,7 +46,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/collectorHtml/collector"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/collectorHtml/collector"><span class="fa fa-user"></span> Profil</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item hvr-sweep-to-right" href="#" id="logoutButton"><span class="fa fa-sign-out"></span> Déconnexion</a>
                 </div>
@@ -74,7 +74,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
                     <div class="dropdown-divider"></div>
@@ -88,7 +88,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
                     <div class="dropdown-divider"></div>
@@ -102,7 +102,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
                     <div class="dropdown-divider"></div>
@@ -116,7 +116,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/recuplateforme"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderRecap"><span class="fa fa-shopping-basket"></span> Panier</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/orderHistory"><span class="fa fa-history"></span> Historique</a>
@@ -134,7 +134,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/recuplateformeAdminHtml/recuplateformeManagement"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/recupartenaireAdminHtml/partnerManagement"><span class="fa fa-handshake-o"></span> Recupartenaire</a>
                     <div class="dropdown-divider"></div>
@@ -148,7 +148,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/recuplateformeAdminHtml/recuplateformeManagement"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/collectorAdminHtml/collectorManagement"><span class="fa fa-truck"></span> Collecteur</a>
                     <div class="dropdown-divider"></div>
@@ -162,7 +162,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/collectorAdminHtml/collectorManagement"><span class="fa fa-truck"></span> Collecteur</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/recupartenaireAdminHtml/partnerManagement"><span class="fa fa-handshake-o"></span> Recupartenaire</a>
                     <div class="dropdown-divider"></div>
@@ -176,7 +176,7 @@ $(document).ready(function () {
                     ${name}
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profile</a>
+                    <a class="dropdown-item hvr-sweep-to-right" href="/recupartenaireHtml/partnerProfile"><span class="fa fa-user"></span> Profil</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/recuplateformeAdminHtml/recuplateformeManagement"><span class="fa fa-globe"></span> Recuplateforme</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/collectorAdminHtml/collectorManagement"><span class="fa fa-truck"></span> Collecteur</a>
                     <a class="dropdown-item hvr-sweep-to-right" href="/adminHtml/recupartenaireAdminHtml/partnerManagement"><span class="fa fa-handshake-o"></span> Recupartenaire</a>
