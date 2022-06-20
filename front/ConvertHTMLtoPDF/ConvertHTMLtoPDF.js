@@ -2,10 +2,15 @@
 
 // --------------------------------------------------------------------------------------------------------------------------------------
 
-function generatePDF() {
-    var doc = new jsPDF();  //create jsPDF object
-     doc.fromHTML(document.getElementById("test"), // page element which you want to print as PDF
+document.getElementById("test-2").style.display = "none"; // Masquer une div
 
+function generatePDF() {
+
+    document.getElementById("test-2").style.display = "block"; // Afficher sue le PDF la div nécessaire
+
+    var doc = new jsPDF();  // Créer l'objet jsPDF
+
+     doc.fromHTML(document.getElementById("bigDiv"), // Page à afficher
      15, // Marge à gauche
      15, // Marge en haut 
 
@@ -17,4 +22,5 @@ function generatePDF() {
       {
        doc.save("Facture.pdf"); // Sauvegarde et télécharge le PDF avec le nom Facture-(numéro).pdf
      });
+     document.getElementById("test-2").style.display = "none"; // Remasquer la div
    }
