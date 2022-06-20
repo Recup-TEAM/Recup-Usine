@@ -87,10 +87,10 @@ main{
 }
 
 .logo-recupartenaires {
-    height: 390px;
+    height: auto;
     margin-top: 6px;
     object-fit: cover;
-    width: 465px;
+    width: 100%;
 }
 
 .forms {
@@ -107,14 +107,14 @@ input {
     color: var(--black)!important;
 }
 
-.btn-connection {
+.btn-add {
     color: white;
     background-color: #1bab8d;
     margin: auto;
     width: 50%;
 }
 
-.btn-add {
+.btn-return {
     background-color: #1bab8d;
     color: white;
 }
