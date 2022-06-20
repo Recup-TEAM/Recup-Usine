@@ -47,9 +47,9 @@ function searchCollector()  {
     let collector = all_collectors[i];
     // if collector.nom.includes(search) || collector.prenom.includes(search)  or collector.email.includes(search) tolowercase
     if (
-      collector.nom.toLowerCase().includes(search) ||
-      collector.prenom.toLowerCase().includes(search) ||
-      collector.email.toLowerCase().includes(search)
+      collector.nom.toLowerCase().includes(search.toLowerCase()) ||
+      collector.prenom.toLowerCase().includes(search.toLowerCase()) ||
+      collector.email.toLowerCase().includes(search.toLowerCase())
     ) {
       collector_search.push(collector);
     }

@@ -31,8 +31,8 @@ $(document).ready(function () {
 
     //user = getUserById(id);
 
-    dateEnd = new Date(collector.data[0].registerDate);
-    dateEnd.setUTCDate(dateEnd.getDay() + data.data[0].subscription_duration);
+    let dateEnd = new Date(collector.data[0].registerDate);
+    dateEnd.setUTCDate(dateEnd.getDay() + collector.data[0].subscription_duration);
     if (dateEnd.getDate() > 30) {
       dateEnd.setDate(dateEnd.getDate() - 30);
       dateEnd.setMonth(dateEnd.getMonth() + 1);
@@ -53,10 +53,9 @@ $(document).ready(function () {
 
 
 
-    //listenner click on button back
-    $("#back").click(function () {
+    $("#returnBtn").click(function (event) {
         window.location.href = "collectorManagement";
-    });
+    })
 
     //listenner click on button deleteDontGoBackOnThatDecision
     $("#deleteDontGoBackOnThatDecision").click(function () {
@@ -70,8 +69,5 @@ $(document).ready(function () {
             window.location.href = "collectorManagement";
         }
     });
-    
-    // cursor pointer on button deleteDontGoBackOnThatDecision  
-    $("#deleteDontGoBackOnThatDecision").css("cursor", "pointer");
 
 });

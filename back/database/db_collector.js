@@ -57,8 +57,9 @@ module.exports = function () {
 
     // Delete collector by id
     deleteCollector: async (id) => {
-      let sql = "DELETE FROM `collector` WHERE `collector`.`id_user` = ?";
-      var rq = await db_query(sql, [id]);
+      let sql = "DELETE FROM `collector` WHERE `collector`.`id` = " + id + ";";
+      var rq = await db_query(sql);
+      console.log(sql);
       return rq;
     },
   };

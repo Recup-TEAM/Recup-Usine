@@ -63,7 +63,7 @@ $(document).ready(function() {
         addCollector();
     });
 
-    // cursor pointer on buttonSubmit
-    $("#buttonSubmit").css("cursor", "pointer");
-
+    $("#returnBtn").click(function (event) {
+        window.location.href = "collectorManagement";
+    })
 });
