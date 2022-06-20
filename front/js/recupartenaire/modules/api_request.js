@@ -35,6 +35,25 @@ let api_request = (function () {
     });
     return dataSucces;
   }
+  function request_reset_change_password_user() {
+    console.log("Changement de mot de passe");
+    let dataSucces;
+    $.ajax({
+      type: "POST",
+      url: "/api/user/update/resetPassword/",
+      async: false,
+      data: {
+        password: $("#new-password").val(),
+        id_user: getUrlParameter("id_user"),
+        temp_pswd: getUrlParameter("temp_pswd"),
+      },
+      success: (data) => {
+        console.log(data);
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   function request_getOneEntreprise(id) {
     let dataSucces;
@@ -46,12 +65,12 @@ let api_request = (function () {
       success: (data) => {
         console.log("succes:", data);
         dataSucces = data;
-      }
+      },
     });
     return dataSucces;
   }
 
-   function request_isconnected() {
+  function request_isconnected() {
     let dataSucces;
     $.ajax({
       type: "GET",
@@ -103,7 +122,7 @@ let api_request = (function () {
     });
     return dataSucces;
   }
-// requestCollect
+  // requestCollect
   function request_requestCollect(id) {
     let dataSucces;
     $.ajax({
@@ -117,8 +136,8 @@ let api_request = (function () {
     return dataSucces;
   }
 
-// request_allProduct
-function request_allProduct() {
+  // request_allProduct
+  function request_allProduct() {
     let dataSucces;
     $.ajax({
       type: "GET",
@@ -130,8 +149,8 @@ function request_allProduct() {
     });
     return dataSucces;
   }
-// request all entreprise
-function request_allEntreprise() {
+  // request all entreprise
+  function request_allEntreprise() {
     let dataSucces;
     $.ajax({
       type: "GET",
@@ -215,18 +234,17 @@ function request_allEntreprise() {
 
   // get user subscription
   function request_getUserSubscription(user_id) {
-
     let dataSucces;
-      $.ajax({
-        type: "GET",
-        url: "/api/user/get/subscriptionById/" + user_id,
-        async: false,
-        success: (data) => {
-          dataSucces = data;
-        },
-      });
-      return dataSucces;
-    }
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/subscriptionById/" + user_id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   // request_changeSubscriptionPrice
   function request_changeSubscriptionPrice(id, price) {
@@ -295,7 +313,6 @@ function request_allEntreprise() {
     return dataSucces;
   }
 
-
   return {
     isConnected() {
       return request_isconnected();
@@ -361,6 +378,9 @@ function request_allEntreprise() {
     },
     getAllEntrepriseOfUser(id) {
       return request_getAllEntrepriseOfUser(id);
-    }
+    },
+    reset_change_password_user() {
+      return request_reset_change_password_user();
+    },
   };
 })();

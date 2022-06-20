@@ -116,6 +116,17 @@ module.exports = function () {
       }
     },
 
+    // Reset password
+    resetPassword: async ({ id, password, temp_pswd}) => {
+      let sql = "UPDATE `user` SET `password` = '" + password + "' WHERE `user`.`id_user` = '" + id + "' AND `user`.`password`='" + temp_pswd+ "';";
+      var rq = await db_query(sql);
+      if (rq.affectedRows == 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+
     // Changer l'email
     updateUserEmail: async ({ userId, newEmail }) => {
       let sql =

@@ -54,6 +54,9 @@ module.exports = function (app, session) {
     // Changer le mot de passe
     app.post("/api/user/update/changePassword", urlencodedParser, api_user.changePassword);
 
+    // Reset password
+    app.post("/api/user/update/resetPassword", urlencodedParser, api_user.resetPassword);
+    
     // Changer le mail
     app.post("/api/user/update/changeMail", urlencodedParser, api_user.changeEmail);
 

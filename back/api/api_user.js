@@ -225,6 +225,19 @@ module.exports = function (session) {
       });
     },
 
+    // Reset password
+    resetPassword: (req, res) => {
+      console.log("API -> resetPassword");
+      let id = req.body.id_user;
+      let password = req.body.password;
+      let temp_pswd = req.body.temp_pswd;
+      console.log(id, password, temp_pswd);
+      db_user.resetPassword({id, password, temp_pswd}).then((result) => {
+        console.log("L'utilisateur \"" + id + '" a réinitialisé son mot de passe');
+        res.json({ err: "", success: result });
+      });
+    },
+
     // Changer l'email
     changeEmail: (req, res) => {
       console.log("API -> changeEmail");

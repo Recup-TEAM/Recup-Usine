@@ -1,3 +1,8 @@
+//hash md5
+function md5(str) {
+    return hex_md5(str);
+}
+
 function changeMail() {
   if (
     $("#new-email").val() == $("#confirm-email").val() &&
