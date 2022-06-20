@@ -66,7 +66,8 @@ module.exports = function (session) {
       console.log("API -> deleteProduct");
       //check if user is connected
       if (check.checkUserConnected(req, res)) {
-        let productId = req.query.productId;
+        let productId = req.params.id;
+        console.log(productId);
 
         db_product.deleteProduct(productId).then(() => {
           res.json({ err: "", success: true });

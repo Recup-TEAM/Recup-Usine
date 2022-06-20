@@ -57,16 +57,26 @@ function pushToHtml(data) {
 
 // is connected
 function isConnected() {
-    data  = api_request.isConnected();
-    console.log(data)
-    if (data.status == "success") {
-        return true;
-    } else {
-        //redirect /
-        //window.location.href = "/";
-        console.log("not connected");
-        return true;
-}}
+    $.ajax({
+         url: "/api/user/get/compteLevel",
+         type: "GET",
+         success: (data) => {
+           console.log(data);
+           if (!data.success) {
+             connected = false;
+             window.location.href = "/";
+           } else {
+             if (data.data.compteLevel != 2) {
+               console.log("compteLevel is false");
+               admin = false;
+               window.location.href = "/";
+             }
+           }
+           return true
+         },
+       });
+       return true;
+   }
 
 // when the page is loaded
 $(document).ready(function() {
