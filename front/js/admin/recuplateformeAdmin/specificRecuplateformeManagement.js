@@ -74,4 +74,9 @@ $(document).ready(function () {
         // window.location.href = "recuplateformeManagement";
     }
     );
+    // #returnBtn onclick
+    $("#returnBtn").click(function () {
+            window.location.href = "recuplateformeManagement";
+        }
+    );
 });
