@@ -1,51 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>collectorInfo</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/collectorCss/collectorInfo.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/styleGuide.css">
-</head>
-<body>
-<div class="collectorinfo screen">
-    <div class="header">
-        <div class="overlap-group0 align-self-flex-start">
-            <img class="logoHeader" src="../../img/logos/logoSansNom.png" />
-            <img class="profileImg" src="../../img/phone/profile.png" />
-        </div>
-    </div>
-    <div class="returnButton">
-        <div class="overlap-group4">
-            <div class="returnBackground"></div>
-            <img class="returnImg" src="../../img/arrow.png" />
-            <div class="returnText">retour</div>
-        </div>
-    </div>
-    <div class="moreInfoDiv">
-        <div class="overlap-group">
-            <div class="factoryName inter-semi-bold-sepia-black-16px">Nom d’entreprise</div>
-            <div class="description inter-normal-nevada-16px">Type de déchets<br />Quantité</div>
-        </div>
-    </div>
-    <div class="moreInfoDiv">
-        <div class="overlap-group">
-            <div class="factoryName inter-semi-bold-sepia-black-16px">Nom d’entreprise</div>
-            <div class="description inter-normal-nevada-16px">Type de déchets<br />Quantité</div>
-        </div>
-    </div>
-    <div class="moreInfoDiv">
-        <div class="overlap-group">
-            <div class="factoryName inter-semi-bold-sepia-black-16px">Nom d’entreprise</div>
-            <div class="description inter-normal-nevada-16px">Type de déchets<br />Quantité</div>
-        </div>
-    </div>
-    <div class="moreInfoDiv">
-        <div class="overlap-group">
-            <div class="factoryName inter-semi-bold-sepia-black-16px">Nom d’entreprise</div>
-            <div class="description inter-normal-nevada-16px">Type de déchets<br />Quantité</div>
-        </div>
-    </div>
-</div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Récup'Team">
+    <title>Récup'Usine</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="icon" href="../../img/favicon.ico">
 
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../js/admin/recupartenaireAdmin/partnerManagement.js"></script>
+    <script src="../../js/admin/recupartenaireAdmin/modules/api_request.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ff4b9bd425.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/styleGuide.css">
+    <<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="../../css/collectorCss/collectorInfo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body class="animate__animated animate__fadeIn">
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a href="/">
+            <img class="logo-header" src="../../img/logos/logoSansNom.png" alt="logoRecup'Usine">
+        </a>
+    </nav>
+</header>
+<main role="main" class="container">
+    <div class="row main-row my-auto">
+        <div class="col-lg-2 col-md-5 text-left">
+            <button type="submit" class="btn btn-add hvr-ripple-out" href="/adminHtml/recupartenaireAdminHtml/partnerManagement"><i class="fa-solid fa-arrow-left"></i>  retour</button>
+        </div>
+        <div class="col-lg-10"></div>
+    </div>
+    <div id="collect-list" class="row card-deck mb-3 mx-auto">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-4 shadow-sm hvr-grow-shadow cardEntreprise">
+            <div class="card-body">
+                <h5 class="font-weight-normal text-center">Nom de l'entreprise</h5>
+                <p class="type">Type de déchets</p>
+                <p class="quantity">Quantité</p>
+                <p class="text-muted">Adresse</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+<footer>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Copyright©2022 : all right reserved | Récup’Usine</div>
+</footer>
 </body>
 </html>

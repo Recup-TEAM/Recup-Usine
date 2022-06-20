@@ -1,141 +1,163 @@
-@import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,600|Mulish:400");
-
-body {
-    margin: 0px;
+@font-face {
+    font-family: "Calibri-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/Calibri-Bold") format("truetype");
+}
+@font-face {
+    font-family: "Calibri-Light";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.animaapp.com/Calibri-Light") format("truetype");
+}
+@font-face {
+    font-family: "Articulat CF-Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.animaapp.com/ArticulatCF-Bold") format("opentype");
+}
+@font-face {
+    font-family: "Calibri-Regular";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.animaapp.com/Calibri-Regular") format("truetype");
 }
 
-.collectorinfo {
-    align-items: center;
-    background-color: var(--white);
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+}
+main{
+    flex: 1;
+}
+body > .container {
+    padding-top: 74px;
 }
 
-.hidden,
-.hidden * {
-    pointer-events: none;
-    visibility: hidden;
+.navbar {
+    background-color: #1bab8d;
+}
+.nav {
+    z-index: 10;
+}
+.search{
+    z-index: 5;
+}
+@media only screen and (min-width: 768px) {
+    .collapse {
+        margin-left: -97px !important;
+    }
 }
 
-/* header */
-
-.header {
-    align-items: flex-start;
-    display: flex;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
-.overlap-group0 {
-    align-items: center;
-    background-color: var(--emerald);
-    display: flex;
-    height: 120px;
-    min-width: 100%;
-}
-
-.logoHeader {
-    align-self: flex-start;
-    margin-left: 1%;
-    margin-top: 1.2%;
+.logo-header {
     cursor: pointer;
-    height: 80%;
     object-fit: cover;
-    clear: right;
+    height: 58px;
+    width: 97px;
+    margin-left: 12px;
 }
-
-.profileImg {
-    align-self: flex-start;
-    margin-left: 67%;
-    margin-top: 1.2%;
-    cursor: pointer;
-    height: 80%;
-    object-fit: cover;
+.nav-link {
+    color: white !important;
+    margin: 0 5px;
+}
+nav a{
+    z-index: 10;
 }
 
 /* end header */
 
-.returnButton {
-    align-items: flex-start;
-    align-self: flex-start;
-    cursor: pointer;
-    display: flex;
-    margin-left: 5%;
-    margin-top: 18%;
-    margin-bottom: 2.5%;
-    width: 25%;
-    height: 10%;
+.row {
+    margin: 20px 0;
 }
 
-.overlap-group4 {
-    height: 78px;
-    position: relative;
-    width: 100%;
+main, .row {
+    height: 100%;
 }
 
-.returnBackground {
+.btn-search, .btn-add {
     background-color: #1bab8d;
-    border-radius: 15px;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    color: white;
 }
 
-.returnImg {
-    height: 30px;
-    left: 16px;
-    position: absolute;
-    top: 24px;
-    width: 40px;
+.btn-edit {
+    background-color: white;
+    border: solid 1px #1bab8d;
+    color: #1bab8d;
+    width: 100px;
 }
 
-.returnText {
-    color: var(--white);
-    font-family: var(--font-family-inter);
-    font-size: 45px;
-    font-weight: 400;
-    letter-spacing: 0;
-    position: absolute;
-    text-align: right;
-    top: 8px;
-    width: 90%;
+.card-deck .card {
+    margin-bottom: 30px;
 }
 
-.moreInfoDiv {
-    align-items: flex-start;
-    display: flex;
-    height: 30%;
-    margin: 2.5% 0;
-    width: 100%;
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 150px !important;
 }
 
-.overlap-group {
-    align-items: flex-start;
-    background-color: var(--aqua-squeeze);
-    border-radius: 20px;
-    box-shadow: 0px 10px 10px #00000040;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 5% 5%;
-    margin: 0 5%;
-    width: 95%;
+.card {
+    box-shadow: 0px 4px 4px #00000040;
+    background-color: #e8f6f3;
+
 }
 
-.factoryName {
-    height: 30%;
-    width: 100%;
+.card-deck, .search {
+    margin-top: 74px;
 }
 
-.description {
-    margin-top: 1%;
-    height: 60%;
-    width: 100%;
+.search {
+    height: 74px;
+    padding: 31px 0 5px 0;
+    background-color: white;
 }
 
+@media only screen and (max-width: 768px) {
+    .btn-add-div {
+        margin-top: -15px !important;
+    }
+    .search {
+        height: 140px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+    .card-deck {
+        margin-top: 20px;
+    }
+}
 
+@media only screen and (width: 768px) {
+    .btn-add-div {
+        margin-top: 0px !important;
+    }
+    .card-deck, .search {
+        margin-top: 74px;
+    }
+
+    .search {
+        height: 74px;
+        padding: 31px 0 5px 0;
+        background-color: white;
+    }
+}
+
+h5, p {
+    margin-bottom: 5px !important;
+}
+
+.btn-light {
+    background-color: #e8f6f3;
+    border-color: #1bab8d;
+}
+
+footer {
+    margin-top: 20px;
+    bottom: 0;
+}
+.footer-copyright {
+    color: white;
+    background-color: #0D5546;
+}
