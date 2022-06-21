@@ -30,7 +30,14 @@ module.exports = function () {
       resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
       return rq;
     },
-    
+
+    // Get all entreprise by id-user
+    acceptRecupartenaire: async (id) => {
+      let sql = "UPDATE entreprise SET accepted = 1 WHERE id_entreprise='" + id + "'";
+      console.log(sql);
+      var rq = await db_query(sql);
+      return rq;
+    },
 
     /* POST */
     // Ajouter une entreprise

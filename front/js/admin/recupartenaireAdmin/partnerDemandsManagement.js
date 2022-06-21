@@ -39,7 +39,7 @@ function pushToHtml(data) {
         '                <p class="adress">' +
         entreprise.adresse +
         "</p>\n" +
-        '                <button id="" type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical btnAcceptRecupartenaire">Accepter <i class="fa fa-check" aria-hidden="true"></i></button> <button id="' + entreprise.id_entreprise + '"type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical btnShowProfile">Voir profil</button>\n' +
+        '                <button id="' + entreprise.id_entreprise + '" type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical btnAcceptRecupartenaire">Accepter <i class="fa fa-check" aria-hidden="true"></i></button> <button id="' + entreprise.id_entreprise + '" type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical btnShowProfile">Voir profil</button>\n' +
         "            </div>\n" +
         "          </div>\n" +
         "        </div>";
@@ -63,6 +63,7 @@ function pushToHtml(data) {
     id = $(this).attr("id");
 
     let data = api_request.acceptRecupartenaire(id);
+    console.log(data);
     if (data.success){
       location.reload();
     }

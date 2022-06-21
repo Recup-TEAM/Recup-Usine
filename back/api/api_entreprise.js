@@ -51,6 +51,16 @@ module.exports = function (session) {
       }
     },
 
+    acceptRecupartenaire:(req, res) => {
+      console.log("API -> acceptRecupartenaire");
+      if (check.checkUserAdmin(req, res)) {
+        let entrepriseId = req.params.id;
+        db_entreprise.acceptRecupartenaire(entrepriseId).then((entreprises) => {
+          res.json({ err:"", success: true, data: entreprises });
+        })
+      }
+    },
+
     /* POST */
     // Ajouter une entreprise
     addEntreprise: (req, res) => {

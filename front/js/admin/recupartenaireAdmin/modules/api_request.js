@@ -271,9 +271,10 @@ function request_allEntreprise() {
   // request_acceptRecupartenaire
   function request_acceptRecupartenaire(id) {
     let dataSucces;
+    console.log(id);
     $.ajax({
-      type: "POST",
-      url: "/api/entreprise/accept/" + id,
+      type: "GET",
+      url: "/api/entreprises/accept/" + id,
       async: false,
       success: (data) => {
         dataSucces = data;

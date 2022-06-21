@@ -87,6 +87,9 @@ module.exports = function (app, session) {
     app.get("/api/entreprises/get/allEntreprisesByUser/:id", urlencodedParser, api_entreprise.getAllEntreprisesByUser);
 
 
+    app.get("/api/entreprises/accept/:id", urlencodedParser, api_entreprise.acceptRecupartenaire);
+
+
 
     /* POST */
     // Ajouter une entreprise
