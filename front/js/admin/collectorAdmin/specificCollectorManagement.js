@@ -25,9 +25,9 @@ $(document).ready(function () {
     console.log(collector.data[0]);
     $("#name").html(collector.data[0].nom + " " + collector.data[0].prenom);
     $("#prenom").html(collector.data[0].prenom);
-    $("#email").html(collector.data[0].email);
+    $("#email").html("<font color='#999999'> Adresse mail : </font><br>" + collector.data[0].email);
     //tour
-    $("#nbrCollect").html(collector.data[0].tour);
+    $("#nbrCollect").html("<font color='#999999'>Nombre de collectes déjà effectuées : </font>" +collector.data[0].tour);
 
     //user = getUserById(id);
 
@@ -43,6 +43,7 @@ $(document).ready(function () {
       dateEnd.setFullYear(dateEnd.getFullYear() + 1);
     }
     dateEnd =
+      "<font color='#999999'>Date d'inscription : </font>" +
       dateEnd.getDay() +
       "/" +
       (dateEnd.getMonth()) +
