@@ -4,17 +4,17 @@ function updateProductInformations(dataProduct) {
   //#nameEntreprise
   $("#nameEntreprise").text(dataProduct.name);
   //#quantity
-  $("#quantity").text(dataProduct.quantity);
+  $("#quantity").html("<font color='#999999'>Quantité : </font>" + dataProduct.quantity);
   //#volume
-$("#volume").text(dataProduct.dimensions);
-//#descProduct
-$("#descProduct").text(dataProduct.material + " " + dataProduct.state);
+  $("#volume").html("<font color='#999999'>Dimension : </font>" + dataProduct.dimensions);
+  //#descProduct
+  $("#descProduct").html("<font color='#999999'>Description : </font>" + dataProduct.material + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + dataProduct.state);
 }
 //update entreprise informations
 function updateEntrepriseInformations(dataEntreprise) {
     console.log(dataEntreprise);
     //#origin = adresse
-    $("#origin").text(dataEntreprise.name + "\n" +dataEntreprise.adresse);
+    $("#origin").html("<font color='#999999'>Provenance : </font>" + dataEntreprise.name + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +dataEntreprise.adresse);
     //#imgEntreprise
     $("#imgEntreprise").attr("src", dataEntreprise.img);
 }

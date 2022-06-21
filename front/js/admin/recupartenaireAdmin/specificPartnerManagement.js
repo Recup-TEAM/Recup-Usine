@@ -22,7 +22,7 @@ function getOneEntreprise(id) {
 function getUserById(id) {
   let data = api_request.getUserById(id);
   //#email
-  $("#email").html(data.data.email);
+  $("#email").html("<font color='#999999'>Adresse mail : </font><br>" + data.data.email);
   return data;
 }
 
@@ -31,12 +31,11 @@ function getSubscription(id) {
   //#subRenouvellement
 
   if (data.data.length == 0) {
-    $("#subRenouvellement").html("Aucune souscription");
-        $("#subInfo").html("0€");
+    $("#subRenouvellement").html("<font color='#999999'>Date de renouvellement : </font>" + "Aucune souscription");
+        $("#subInfo").html("<font color='#999999'>Abonnement : </font>" + "0€");
   } else {
     console.log(data.data[0]);
-    $("#subInfo").html(
-      data.data[0].price + "€ (" + data.data[0].subscription_duration + " mois)"
+    $("#subInfo").html("<font color='#999999'>Abonnement : </font>" + data.data[0].price + "€ (" + data.data[0].subscription_duration + " mois)"
     );
 
     let dateEnd = new Date(data.data[0].start_date);
@@ -61,7 +60,7 @@ function getSubscription(id) {
       "/" +
       dateEnd.getFullYear();
 
-    $("#subRenouvellement").html(dateEnd);
+    $("#subRenouvellement").html("<font color='#999999'>Date de renouvellement : </font>" + dateEnd);
   }
   return data;
 }
@@ -71,9 +70,9 @@ function getProductsByEntrepriseId(id) {
   let data = api_request.getProductsByEntrepriseId(id);
   // if
   if (data.data.length == 0) {
-    $("#products").html("Aucun produit");
-   $("#productscollected").html("0");
-    $("#productsTocollect").html("0");
+    $("#products").html("<font color='#999999'>Type de déchets : </font>" + "Aucun produit");
+    $("#productscollected").html("<font color='#999999'>Déchets collectés : </font>" + "0");
+    $("#productsTocollect").html("<font color='#999999'>Déchets à collecter : </font>" + "0");
 
 
   } else {
@@ -93,7 +92,7 @@ function getProductsByEntrepriseId(id) {
       }
     }
     //#products = materials
-    $("#products").html(materials.join(", "));
+    $("#products").html("<font color='#999999'>Type de déchets : </font>" + materials.join(", "));
     //#productscollected = quantity of each product
     let productscollected = 0;
     let productsTocollect = 0;
@@ -101,8 +100,8 @@ function getProductsByEntrepriseId(id) {
         productscollected += data.data[i].quantity;
         productsTocollect += data.data[i].quantity_to_collect;
         }
-    $("#productscollected").html(productscollected);
-    $("#productsTocollect").html(productsTocollect);  }
+    $("#productscollected").html("<font color='#999999'>Déchets collectés : </font>" + productscollected);
+    $("#productsTocollect").html("<font color='#999999'>Déchets à collecter : </font>" + productsTocollect);  }
 
 
   return data;
