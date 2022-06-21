@@ -313,6 +313,21 @@ let api_request = (function () {
     return dataSucces;
   }
 
+  // request_getOrdersData
+  function request_getOrdersData(user_id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/orders/get/orderByIdUser/" + user_id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+
   return {
     isConnected() {
       return request_isconnected();
@@ -382,5 +397,10 @@ let api_request = (function () {
     reset_change_password_user() {
       return request_reset_change_password_user();
     },
+
+    getOrdersData(id) {
+      return request_getOrdersData(id);
+    }
+
   };
 })();
