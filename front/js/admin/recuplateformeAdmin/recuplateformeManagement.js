@@ -191,14 +191,14 @@ function listToHtml(list) {
     adressEntreprise = data_entreprise.adresse;
     html += `<div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card mb-4 shadow-sm text-center hvr-grow-shadow">
-            <img class="card-img-top" src="${imgEntreprise}" alt="Card image cap">
+            <img class="card-img-top" src="${imgEntreprise}">
             <div class="card-body">
-                <h3 class="my-0 font-weight-bold">${list[i].material}</h3>
-                <p class="">Dimension : ${list[i].dimensions}</p>
-                <p class="">Entreprise : ${nomEntreprise}</p>
-                <p class="">Quantité : ${list[i].quantity}</p>
-                <p class="">Etat : ${list[i].state}</p>
-                <p class="adress">${adressEntreprise}</p>
+                <h3 class="my-0 mb-3 font-weight-bold">${list[i].material}</h3>
+                <p class="mb-2 text-left">${nomEntreprise}</p>
+                <p class="mb-2 text-left"><font color="#999999">Dimension : </font>${list[i].dimensions}</p>
+                <p class="mb-2 text-left"><font color="#999999">Quantité : </font>${list[i].quantity}</p>
+                <p class="mb-2 text-left"><font color="#999999">Etat : </font>${list[i].state}</p>
+                <p class="mb-2 adress">${adressEntreprise}</p>
                 <button type="button" class="btn btn-sm btn-edit hvr-shutter-out-vertical cardProduct" id="product_${list[i].id_product}" id_product="${list[i].id_product}">Editer</button>
             </div>  
         </div>
