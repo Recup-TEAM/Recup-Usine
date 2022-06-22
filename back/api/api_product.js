@@ -75,6 +75,18 @@ module.exports = function (session) {
       }
     },
 
-    // Request a collect
+    // updateQuantity of a product
+    updateQuantity: (req, res) => {
+      console.log("API -> updateQuantity");
+      //check if user is connected
+      if (check.checkUserConnected(req, res)) {
+        let id_product =  req.body.id;
+        let quantity = req.body.quantity;
+        db_product.updateQuantity({ id_product, quantity }).then(() => {
+          res.json({ err: "", success: true });
+        }
+        );
+      }
+    },
   };
 };

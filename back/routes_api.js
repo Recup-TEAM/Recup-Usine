@@ -128,6 +128,9 @@ module.exports = function (app, session) {
     // delete a product by id
     app.post("/api/products/delete/:id", urlencodedParser, api_product.deleteProduct);
 
+    // Update quantity of a product
+    app.post("/api/products/update/quantity", urlencodedParser, api_product.updateQuantity);
+
 
 
 
@@ -170,5 +173,10 @@ module.exports = function (app, session) {
 
     // Get order by id user
     app.get("/api/orders/get/orderByIdUser/:id", urlencodedParser, api_order.getOrderByIdUser);
+
+
+    /* POST */
+    // Create an order
+    app.post("/api/orders/add/orderHistory/", urlencodedParser, api_order.createOrderHistory);
 
 };

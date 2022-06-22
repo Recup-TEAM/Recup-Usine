@@ -21,7 +21,7 @@ function getOneEntreprise(id) {
 //getImgOf
 function getImgOf(material) {
   imgMaterial = "bois.jpg";
-  return "../../img/elements/" + imgMaterial;
+  return "../../img/elements/" + material + ".jpg";
 }
 
 //dataOrders list to display in the table

@@ -37,5 +37,20 @@ module.exports = function (session) {
         res.json({ err: "", success: true, data: order });
       });
     },
+
+
+    /* POST */
+    // Ajouter un order
+    createOrderHistory: (req, res) => {
+      console.log("API -> createOrderHistory");
+      //check if user is connected
+      if (check.checkUserConnected(req, res)) {
+        let id_user = req.session.userId;
+        let jsonOfProducts = req.body.jsonOfProducts;
+        db_order.createOrderHistory(id_user, jsonOfProducts).then(() => {
+          res.json({ err: "", success: true });
+        });
+      }
+    },
   };
 };

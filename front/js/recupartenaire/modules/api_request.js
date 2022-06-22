@@ -331,6 +331,43 @@ let api_request = (function () {
     return dataSucces;
   }
 
+//request_addToOrderHistory
+  function request_addToOrderHistory(jsonOfProductsFiuxed) {
+    // to json jsonOfProductsFiuxed
+    jsonOfProductsFiuxed = JSON.stringify(jsonOfProductsFiuxed);
+    let dataSucces;
+    $.ajax({
+      type: "POST",
+      url: "/api/orders/add/orderHistory/",
+      data: {
+        jsonOfProducts: jsonOfProductsFiuxed,
+      },
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+
+//request_updateProductQuantity
+  function request_updateProductQuantity(id, quantity) {
+    let dataSucces;
+    $.ajax({
+      type: "POST",
+      url: "/api/products/update/quantity",
+      data: {
+        id: id,
+        quantity: quantity,
+      },
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   return {
     isConnected() {
@@ -405,6 +442,14 @@ let api_request = (function () {
     },
     getProductById(id) {
       return request_getProductById(id);
+    },
+
+    updateProductQuantity(id, quantity) {
+      return request_updateProductQuantity(id, quantity);
+    },
+
+    addToOrderHistory(jsonOfProducts) {
+      return request_addToOrderHistory(jsonOfProducts);
     }
 
   };

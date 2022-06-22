@@ -58,5 +58,18 @@ module.exports = function () {
       console.log(sql);
       return rq;
     },
+
+    // Update quantity of a product
+    updateQuantity: async (dataProduct) => {
+      let sql =
+        "UPDATE `product` SET `quantity` = `quantity`-" +
+        dataProduct.quantity +
+        " WHERE `product`.`id_product` = " +
+        dataProduct.id_product +
+        ";";
+      var rq = await db_query(sql);
+      return rq;
+    }
+
   };
 };

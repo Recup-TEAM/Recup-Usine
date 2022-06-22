@@ -25,6 +25,14 @@ module.exports = function () {
       let sql = "SELECT * FROM orderHistory WHERE id_user = ?  and Date between ? and ?";
       var rq = await db_query(sql, [id, jsonIntervalDates.startDate, jsonIntervalDates.endDate]);
       return rq;
-    }
+    },
+
+    /* POST */
+    // Ajouter un order
+    createOrderHistory: async (id_user, jsonOfProducts) => {
+      let sql = "INSERT INTO orderHistory (id_user, articles) VALUES (?, ?)";
+      var rq = await db_query(sql, [id_user, jsonOfProducts]);
+      return rq;
+    },
   };
 };
