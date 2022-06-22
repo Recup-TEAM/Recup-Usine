@@ -9,8 +9,8 @@ var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
 var waypoint2 = "62 Rue du Port, Lille";
 var waypoint3 = "31 Rue du Dr.Bouret, Marq-en-Baroeul";
 var waypoint5 = "3 Boulevard montebello, Lille";
-var waypoint6 = "297 Chemin des Petits Mas, 13420, Gemenos";
-var waypoint7 = "40 Rue Victor Hugo, Paris"
+var waypoint6 = "Gare Lille Europe, Lille";
+var waypoint7 = "2 Rue de wazemmes, Lille"
 
 var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint5, waypoint6, waypoint7];
 

@@ -3,14 +3,14 @@
 
 var Myposition = "ISEN Lille";
 
-var Stop1 = "20 rue Claude Debussy, 59780, Baisieux";
-var Stop2 = "Lille Grand palais, Lille";
-var Stop3 = "Zoo de Lille, Lilles";
-var Stop4 = "267 Rue de l'echoppette, 62400, Locon";
-var Stop5 = "Gare Lille Flandres, Lille"
-var Stop6 = "";
-var Stop7 = "";
-var listWaypoint = [Stop1, Stop2, Stop3, Stop4, Stop5]; // Liste contenant tous les arrêts à réaliser sur le trajet
+var waypoint1 = "20 rue Claude Debussy, 59780, Baisieux";
+var waypoint2 = "62 Rue du Port, Lille";
+var waypoint3 = "31 Rue du Dr.Bouret, Marq-en-Baroeul";
+var waypoint5 = "3 Boulevard montebello, Lille";
+var waypoint6 = "Gare Lille Europe, Lille";
+var waypoint7 = "2 Rue de wazemmes, Lille"
+
+var listWaypoint = [waypoint1, waypoint2, waypoint3, waypoint5, waypoint6, waypoint7]; // Liste contenant tous les arrêts à réaliser sur le trajet
 
 var objectWaypoint = []; // Création de la liste contenant les arrêts avec la mise sous la bonne forme pour le waypoint (calcRoute)
 for (let index = 0; index < listWaypoint.length; index++) {
