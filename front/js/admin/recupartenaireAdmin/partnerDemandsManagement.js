@@ -31,7 +31,7 @@ function pushToHtml(data) {
       html =
         ' <div class="col-lg-4 col-md-6 col-sm-12">\n' +
         '        <div class="card mb-4 shadow-sm hvr-grow-shadow cardEntreprise">\n' +
-        '            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">\n' +
+        '            <img class="card-img-top" src="'+ entreprise.img+'" alt="Card image cap">\n' +
         '            <div class="card-body">\n' +
         '                <h5 class="my-0 font-weight-normal">' +
         entreprise.name +
