@@ -45,7 +45,7 @@ module.exports = function () {
       let sql =
         "INSERT INTO `entreprise` (`id_entreprise`, `name`, `id_user`, `adresse`, `descRegister`, `img`)" +
         "VALUES (NULL, ?,?,?,?,?)";
-        if(dataEntreprise.img == ""){
+        if(!dataEntreprise.img){
           dataEntreprise.img = "https://www.w3schools.com/howto/img_avatar.png";
         }
       var rq = await db_query(sql , [dataEntreprise.name, dataEntreprise.id_dirigeant, dataEntreprise.adresse, dataEntreprise.descRegister, dataEntreprise.imgPath]);
