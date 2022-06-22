@@ -63,7 +63,7 @@
         <div class="col-lg-2 col-md-2 text-left">
             <form action="">
                 <div class="input-group mb-4">
-                    <input type="search" placeholder="Recherche..." aria-describedby="button-addon6" class="form-control">
+                    <input id="search" type="search" placeholder="Recherche..." aria-describedby="button-addon6" class="form-control">
                     <div class="input-group-append">
                         <button id="button-addon6" type="submit" class="btn btn-search hvr-ripple-out"><i class="fa fa-search"></i></button>
                     </div>
@@ -85,12 +85,12 @@
                     <div class="col-md-6" id="income">
                         <div class="d-flex justify-content-start align-items-center">
                             <p class="text-muted mx-3"><i class="fa-solid fa-recycle"></i> Collectes</p>
-                            <p class="money">7</p></div>
+                            <p class="money" id="nb_collect">7</p></div>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex justify-content-md-end align-items-center">
-                            <div class="text-muted mx-3"><i class="fa-solid fa-coins"></i> Dépense</div>
-                            <div class="money">6 €</div>
+                            <div class="text-muted mx-3"><i class="fa-solid fa-coins"></i> Nombre</div>
+                            <div class="money" id="nbTot">0</div>
                         </div>
                     </div>
                 </div>
@@ -103,31 +103,6 @@
                 <div class="table-wrap">
                     <table class="table">
                         <tbody id="tableOrders">
-                        <tr class="alert my-auto">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                    <input type="checkbox">
-                                </label>
-                            </td>
-                            <td width="80px" class="my-auto">
-                                <img class="img-fluid my-auto " src="../../img/elements/bois.jpg">
-                            </td>
-                            <td class="my-auto">
-                                <div class="email">
-                                    <h5 class="mb-0 mt-0">Titre de l'annonce</h5>
-                                    <p class="pb-0 pt-0 mb-0 mt-0">41 boulevard Vauban 590000 LILLE</p>
-                                </div>
-                            </td>
-                            <td class="quantity">
-                                <p class="text-muted">17 juin 2022 10:00</p>
-                            </td>
-                            <td class="quantity">
-                                <p>3€</p>
-                            </td>
-                            <td>
-                                <h5 class="mb-0 mt-0">17 m³</h5>
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>

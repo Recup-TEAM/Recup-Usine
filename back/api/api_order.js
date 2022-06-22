@@ -1,3 +1,5 @@
+const { json } = require("express");
+
 module.exports = function (session) {
   const { body, validationResult } = require("express-validator");
   const check = require("./check")();
@@ -29,7 +31,9 @@ module.exports = function (session) {
     // Get order by id user
     getOrderByIdUser: (req, res) => {
       console.log("API -> getOrderByIdUser");
-      db_order.getOrderByIdUser(req.params.id).then((order) => {
+      id = req.params.id
+      jsonIntervalDates = req.query.jsonIntervalDates
+      db_order.getOrderByIdUser(id, jsonIntervalDates).then((order) => {
         res.json({ err: "", success: true, data: order });
       });
     },

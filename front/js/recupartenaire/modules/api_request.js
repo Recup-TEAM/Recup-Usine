@@ -55,20 +55,7 @@ let api_request = (function () {
     return dataSucces;
   }
 
-  function request_getOneEntreprise(id) {
-    let dataSucces;
-    console.log("getOneCollector");
-    $.ajax({
-      type: "GET",
-      url: "/api/entreprises/get/entrepriseById/" + id,
-      async: false,
-      success: (data) => {
-        console.log("succes:", data);
-        dataSucces = data;
-      },
-    });
-    return dataSucces;
-  }
+
 
   function request_isconnected() {
     let dataSucces;
@@ -314,11 +301,28 @@ let api_request = (function () {
   }
 
   // request_getOrdersData
-  function request_getOrdersData(user_id) {
+  function request_getOrdersData(user_id, jsonIntervalDates) {
     let dataSucces;
     $.ajax({
       type: "GET",
       url: "/api/orders/get/orderByIdUser/" + user_id,
+      data: {
+        jsonIntervalDates: jsonIntervalDates,
+      },
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+//request_getProductById
+  function request_getProductById(id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/products/get/productId/" + id,
       async: false,
       success: (data) => {
         dataSucces = data;
@@ -364,9 +368,7 @@ let api_request = (function () {
     change_password_user() {
       return request_change_password_user();
     },
-    getOneEntreprise(id) {
-      return request_getOneEntreprise(id);
-    },
+
     getUserById(id) {
       return request_getUserById(id);
     },
@@ -398,8 +400,11 @@ let api_request = (function () {
       return request_reset_change_password_user();
     },
 
-    getOrdersData(id) {
-      return request_getOrdersData(id);
+    getOrdersData(id, jsonIntervalDates) {
+      return request_getOrdersData(id,jsonIntervalDates);
+    },
+    getProductById(id) {
+      return request_getProductById(id);
     }
 
   };

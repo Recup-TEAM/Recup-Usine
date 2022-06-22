@@ -21,10 +21,9 @@ module.exports = function () {
     },
 
     // Get order by id user
-    getOrderByIdUser: async (id) => {
-      let sql = "SELECT * FROM orderHistory WHERE id_user = ?";
-      console.log(sql);
-      var rq = await db_query(sql, [id]);
+    getOrderByIdUser: async (id, jsonIntervalDates) => {
+      let sql = "SELECT * FROM orderHistory WHERE id_user = ?  and Date between ? and ?";
+      var rq = await db_query(sql, [id, jsonIntervalDates.startDate, jsonIntervalDates.endDate]);
       return rq;
     }
   };
