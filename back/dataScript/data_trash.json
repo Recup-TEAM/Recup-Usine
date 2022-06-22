@@ -1,6 +1,6 @@
 [
   {
-    "name": "La Reyne Merline",
+    "name": "Le Roy Merlin",
     "id": 0,
     "trashTab": [
       {
@@ -9,7 +9,7 @@
       },
       {
         "trashType": "BoisEtPalettes",
-        "trashFullness": "30"
+        "trashFullness": "70"
       },
       {
         "trashType": "Airbag",
@@ -17,7 +17,7 @@
       },
       {
         "trashType": "DIB",
-        "trashFullness": "75"
+        "trashFullness": "15"
       },
       {
         "trashType": "Inerte",
@@ -25,7 +25,7 @@
       },
       {
         "trashType": "Organique",
-        "trashFullness": "78.9"
+        "trashFullness": "8.9"
       },
       {
         "trashType": "DEEE",
@@ -63,15 +63,15 @@
       },
       {
         "trashType": "DIB",
-        "trashFullness": "75"
+        "trashFullness": "65"
       },
       {
         "trashType": "Inerte",
-        "trashFullness": "25"
+        "trashFullness": "75"
       },
       {
         "trashType": "Organique",
-        "trashFullness": "78.9"
+        "trashFullness": "00.89"
       },
       {
         "trashType": "DEEE",
@@ -109,7 +109,7 @@
       },
       {
         "trashType": "DIB",
-        "trashFullness": "75"
+        "trashFullness": "12"
       },
       {
         "trashType": "Inerte",
@@ -117,11 +117,11 @@
       },
       {
         "trashType": "Organique",
-        "trashFullness": "78.9"
+        "trashFullness": "45.9"
       },
       {
         "trashType": "DEEE",
-        "trashFullness": "57.43"
+        "trashFullness": "77.43"
       },
       {
         "trashType": "Plastique",
@@ -138,7 +138,7 @@
     ]
   },
   {
-    "name": "Reunault Trucks",
+    "name": "Renault Trucks",
     "id": 3,
     "trashTab": [
       {
@@ -151,7 +151,7 @@
       },
       {
         "trashType": "Airbag",
-        "trashFullness": "3.56"
+        "trashFullness": "70.56"
       },
       {
         "trashType": "DIB",
@@ -163,7 +163,7 @@
       },
       {
         "trashType": "Organique",
-        "trashFullness": "78.9"
+        "trashFullness": "69.9"
       },
       {
         "trashType": "DEEE",

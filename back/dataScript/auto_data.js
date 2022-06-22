@@ -27,7 +27,7 @@ module.exports = function () {
                     suppliers.push(supplier);
                 }
 
-                //convertSupplierIntoJson(suppliers, "data_falls");
+                //convertSupplierProdIntoJson(suppliers, "data_falls");
 
             });
         });
@@ -108,12 +108,20 @@ module.exports = function () {
         return quantity;
     }
 
-    function convertSupplierIntoJson(suppliers, fileName){
+    function convertSupplierProdIntoJson(suppliers, fileName){
         let jsonData = JSON.stringify(suppliers, null, 2);
         fs.writeFile('./back/dataScript/' + fileName +'.json', jsonData, (err) => {
             if (err) throw err;
             console.log("Suppliers Data Written to file");
-            db.add_into_db();
+            db.add_prod_into_db();
+        });
+    }
+    function convertSupplierTrashIntoJson(suppliers, fileName){
+        let jsonData = JSON.stringify(suppliers, null, 2);
+        fs.writeFile('./back/dataScript/' + fileName +'.json', jsonData, (err) => {
+            if (err) throw err;
+            console.log("Suppliers Data Written to file");
+            db.add_trash_into_db();
         });
     }
 
@@ -127,7 +135,7 @@ module.exports = function () {
                 let supplier = convertStringInfosIntoObjectForTrash(dataTrashFileString[i], suppliers.length);
                 suppliers.push(supplier);
             }
-            //convertSupplierIntoJson(suppliers, "data_trash");
+            //convertSupplierTrashIntoJson(suppliers, "data_trash");
         });
     }
 
@@ -173,7 +181,7 @@ module.exports = function () {
     }
 
     return {
-        refreshFallsDatabase:  async () => setInterval(async function () {await refreshFallsDatabase()}, 5*60*1000),
-        refreshTrashDatabase : async () => setInterval(async function () {await refreshTrashDatabase()}, 5*60*1000),
+        refreshFallsDatabase:  async () => setInterval(async function () {await refreshFallsDatabase()}, 24*60*60*1000),
+        refreshTrashDatabase : async () => setInterval(async function () {await refreshTrashDatabase()}, 60*60*1000),
     }
 };

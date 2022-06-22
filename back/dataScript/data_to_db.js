@@ -78,8 +78,18 @@ else get the id of the entreprise, check if product already exist with name
     rq = await db_query(sql);
   }
 
-  async function main() {
-    console.log("Refresh data from file to database");
+  //function to updateCollectDemand
+  async function update_collect_demand(id_entreprise){
+    if (id_entreprise === false){
+      console.log("id_entreprise ne marche pas")
+    }
+    else{
+      let sql = "UPDATE entreprise SET need_collect = 1 WHERE id_entreprise = " + id_entreprise;
+      rq = await db_query(sql);
+    }
+  }
+
+  async function add_prod_into_db() {
     // read file and do the main function
     fs.readFile("./back/dataScript/data_falls.json", "utf8", async function (err, data) {
       // check if  entreprise already exist in database
@@ -117,7 +127,24 @@ else get the id of the entreprise, check if product already exist with name
     });
   }
 
+  async function add_trash_into_db() {
+    // read file and do the main function
+    fs.readFile("./back/dataScript/data_trash.json", "utf8", async function (err, data) {
+      // check if entreprise trash is more than 70% fullness
+      let entreprises = JSON.parse(data);
+      for (let i = 0; i < entreprises.length; i++) {
+        for (let j = 0; j < entreprises[i].trashTab.length; j++){
+          if (parseInt(entreprises[i].trashTab[j].trashFullness) >= 70){
+            await update_collect_demand(await check_entreprise(entreprises[i].name));
+            break;
+          }
+        }
+      }
+    });
+  }
+
   return {
-    add_into_db: async () => await main(),
+    add_prod_into_db: async () => await add_prod_into_db(),
+    add_trash_into_db: async () => await add_trash_into_db()
   };
 };

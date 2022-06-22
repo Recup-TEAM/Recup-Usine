@@ -1,11 +1,11 @@
-Fournisseur: La Reyne Merline
-Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|3.56, DIB|75, Inerte|25, Organique|78.9, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
+Fournisseur: Le Roy Merlin
+Remplissage poubelles: Carton|20, BoisEtPalettes|70, Airbag|3.56, DIB|15, Inerte|25, Organique|8.9, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
 \\
 Fournisseur: Michelin
-Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|3.56, DIB|75, Inerte|25, Organique|78.9, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
+Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|3.56, DIB|65, Inerte|75, Organique|00.89, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
 \\
 Fournisseur: Eurocopter
-Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|3.56, DIB|75, Inerte|25, Organique|78.9, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
+Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|3.56, DIB|12, Inerte|25, Organique|45.9, DEEE|77.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
 \\
-Fournisseur: Reunault Trucks
-Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|3.56, DIB|75, Inerte|25, Organique|78.9, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
+Fournisseur: Renault Trucks
+Remplissage poubelles: Carton|20, BoisEtPalettes|30, Airbag|70.56, DIB|75, Inerte|25, Organique|69.9, DEEE|57.43, Plastique|34.9, Textile|12.2, Polystyrène|23.65
