@@ -86,15 +86,9 @@ module.exports = function () {
     createUser: async (dataUser) => {
       let sql =
         "INSERT INTO `user` (`id_user`, `email`, `password`, `compte_level`, `register_date`)" +
-        "VALUES (NULL, '" +
-        dataUser.email +
-        "', '" +
-        dataUser.password +
-        "', '" +
-        dataUser.compteLevel +
-        "', CURRENT_TIMESTAMP)";
+        "VALUES (NULL, ?,?,?, CURRENT_TIMESTAMP)";
 
-      var rq = await db_query(sql);
+      var rq = await db_query(sql, [dataUser.email, dataUser.password, dataUser.compteLevel]);
       return rq.insertId;
     },
 

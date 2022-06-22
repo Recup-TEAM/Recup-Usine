@@ -44,18 +44,8 @@ module.exports = function () {
     addEntreprise: async (dataEntreprise) => {
       let sql =
         "INSERT INTO `entreprise` (`id_entreprise`, `name`, `id_user`, `adresse`, `descRegister`, `img`)" +
-        "VALUES (NULL, '" +
-        dataEntreprise.name +
-        "', '" +
-        dataEntreprise.id_dirigeant +
-        "', '" +
-        dataEntreprise.adresse +
-        "', '" +
-        dataEntreprise.descRegister +
-        "', '" +
-        dataEntreprise.imgPath +
-        "');";
-      var rq = await db_query(sql);
+        "VALUES (NULL, ?,?,?,?,?)";
+      var rq = await db_query(sql , [dataEntreprise.name, dataEntreprise.id_dirigeant, dataEntreprise.adresse, dataEntreprise.descRegister, dataEntreprise.imgPath]);
       return rq;
     },
 
