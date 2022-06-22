@@ -1,0 +1,186 @@
+[
+  {
+    "name": "La Reyne Merline",
+    "id": 0,
+    "trashTab": [
+      {
+        "trashType": "Carton",
+        "trashFullness": "20"
+      },
+      {
+        "trashType": "BoisEtPalettes",
+        "trashFullness": "30"
+      },
+      {
+        "trashType": "Airbag",
+        "trashFullness": "3.56"
+      },
+      {
+        "trashType": "DIB",
+        "trashFullness": "75"
+      },
+      {
+        "trashType": "Inerte",
+        "trashFullness": "25"
+      },
+      {
+        "trashType": "Organique",
+        "trashFullness": "78.9"
+      },
+      {
+        "trashType": "DEEE",
+        "trashFullness": "57.43"
+      },
+      {
+        "trashType": "Plastique",
+        "trashFullness": "34.9"
+      },
+      {
+        "trashType": "Textile",
+        "trashFullness": "12.2"
+      },
+      {
+        "trashType": "Polystyrène",
+        "trashFullness": "23.65"
+      }
+    ]
+  },
+  {
+    "name": "Michelin",
+    "id": 1,
+    "trashTab": [
+      {
+        "trashType": "Carton",
+        "trashFullness": "20"
+      },
+      {
+        "trashType": "BoisEtPalettes",
+        "trashFullness": "30"
+      },
+      {
+        "trashType": "Airbag",
+        "trashFullness": "3.56"
+      },
+      {
+        "trashType": "DIB",
+        "trashFullness": "75"
+      },
+      {
+        "trashType": "Inerte",
+        "trashFullness": "25"
+      },
+      {
+        "trashType": "Organique",
+        "trashFullness": "78.9"
+      },
+      {
+        "trashType": "DEEE",
+        "trashFullness": "57.43"
+      },
+      {
+        "trashType": "Plastique",
+        "trashFullness": "34.9"
+      },
+      {
+        "trashType": "Textile",
+        "trashFullness": "12.2"
+      },
+      {
+        "trashType": "Polystyrène",
+        "trashFullness": "23.65"
+      }
+    ]
+  },
+  {
+    "name": "Eurocopter",
+    "id": 2,
+    "trashTab": [
+      {
+        "trashType": "Carton",
+        "trashFullness": "20"
+      },
+      {
+        "trashType": "BoisEtPalettes",
+        "trashFullness": "30"
+      },
+      {
+        "trashType": "Airbag",
+        "trashFullness": "3.56"
+      },
+      {
+        "trashType": "DIB",
+        "trashFullness": "75"
+      },
+      {
+        "trashType": "Inerte",
+        "trashFullness": "25"
+      },
+      {
+        "trashType": "Organique",
+        "trashFullness": "78.9"
+      },
+      {
+        "trashType": "DEEE",
+        "trashFullness": "57.43"
+      },
+      {
+        "trashType": "Plastique",
+        "trashFullness": "34.9"
+      },
+      {
+        "trashType": "Textile",
+        "trashFullness": "12.2"
+      },
+      {
+        "trashType": "Polystyrène",
+        "trashFullness": "23.65"
+      }
+    ]
+  },
+  {
+    "name": "Reunault Trucks",
+    "id": 3,
+    "trashTab": [
+      {
+        "trashType": "Carton",
+        "trashFullness": "20"
+      },
+      {
+        "trashType": "BoisEtPalettes",
+        "trashFullness": "30"
+      },
+      {
+        "trashType": "Airbag",
+        "trashFullness": "3.56"
+      },
+      {
+        "trashType": "DIB",
+        "trashFullness": "75"
+      },
+      {
+        "trashType": "Inerte",
+        "trashFullness": "25"
+      },
+      {
+        "trashType": "Organique",
+        "trashFullness": "78.9"
+      },
+      {
+        "trashType": "DEEE",
+        "trashFullness": "57.43"
+      },
+      {
+        "trashType": "Plastique",
+        "trashFullness": "34.9"
+      },
+      {
+        "trashType": "Textile",
+        "trashFullness": "12.2"
+      },
+      {
+        "trashType": "Polystyrène",
+        "trashFullness": "23.65"
+      }
+    ]
+  }
+]
