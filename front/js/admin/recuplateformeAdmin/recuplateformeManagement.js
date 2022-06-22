@@ -186,7 +186,7 @@ function listToHtml(list) {
       allMaterial.push(list[i].material);
     }
     data_entreprise = get_data_entreprise(list[i].id_entreprise);
-    imgEntreprise = data_entreprise.img;
+    imgEntreprise = "../../img/elements/" + list[i].material.toLowerCase() + ".jpg";
     nomEntreprise = data_entreprise.name;
     adressEntreprise = data_entreprise.adresse;
     html += `<div class="col-lg-4 col-md-6 col-sm-12">

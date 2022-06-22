@@ -2,7 +2,7 @@ Fournisseur: Le Roy Merlin
 Produits et chutes: Table_V4|Bois|3x3x4|10|Bon, Chaise_8B2C|Bois|6x5x2|3|Passable, Table_V4|Verre|12x9x2|1|Neuf
 \\
 Fournisseur: Le Roi du Matelas
-Produits et chutes: Lit_V81b|Laine|4x4x4|2|Bon, Chaise_86234|Bois|6x5x2|3|Passable, Tabouret_A2|Vice|12x9x2|10|Rayé
+Produits et chutes: Lit_V81b|Laine|4x4x4|2|Bon, Chaise_86234|Bois|6x5x2|3|Passable, Tabouret_A2|Vis|12x9x2|10|Rayé
 \\
 Fournisseur: Bricorama
 Produits et chutes: Perceuse_V8Turbo|Métal|3x6x19|4|Bon
