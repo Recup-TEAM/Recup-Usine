@@ -5,7 +5,8 @@ const http = require("http").Server(app);
 
 require("./back/routes")(express, app, http);
 
-require("./back/dataScript/auto_data")().refreshDatabase();
+require("./back/dataScript/auto_data")().refreshFallsDatabase();
+require("./back/dataScript/auto_data")().refreshTrashDatabase();
 
 let PORT = process.env.PORT || 4444;
 //Start serveur

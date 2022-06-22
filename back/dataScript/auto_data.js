@@ -1,7 +1,7 @@
 const fs = require('fs');
 const db = require("./data_to_db")()
 module.exports = function () {
-    async function refreshDatabase() {
+    async function refreshFallsDatabase() {
         let suppliers = [];
         let suppliersFileString = "", dailyProdFileString = "";
         fs.readFile('./back/dataScript/suppliers.txt', 'utf8', function (err,dataSuppliers) {
@@ -27,7 +27,7 @@ module.exports = function () {
                     suppliers.push(supplier);
                 }
 
-                //convertSuppliersIntoJson(suppliers);
+                //convertSupplierIntoJson(suppliers, "data_falls");
 
             });
         });
@@ -108,17 +108,72 @@ module.exports = function () {
         return quantity;
     }
 
-    function convertSuppliersIntoJson(suppliers){
+    function convertSupplierIntoJson(suppliers, fileName){
         let jsonData = JSON.stringify(suppliers, null, 2);
-        fs.writeFile('./back/dataScript/data_falls.json', jsonData, (err) => {
+        fs.writeFile('./back/dataScript/' + fileName +'.json', jsonData, (err) => {
             if (err) throw err;
             console.log("Suppliers Data Written to file");
             db.add_into_db();
         });
+    }
 
+    async function refreshTrashDatabase(){
+        let suppliers = [];
+        let dataTrashFileString = "";
+        fs.readFile('./back/dataScript/data_daily_trash.txt', 'utf8', function (err,dataTrash) {
+            dataTrashFileString = dataTrash;
+            dataTrashFileString = segmentStringFromFileSuppliers(dataTrashFileString);
+            for (let i = 0; i < dataTrashFileString.length; i++){
+                let supplier = convertStringInfosIntoObjectForTrash(dataTrashFileString[i], suppliers.length);
+                suppliers.push(supplier);
+            }
+            //convertSupplierIntoJson(suppliers, "data_trash");
+        });
+    }
+
+    function convertStringInfosIntoObjectForTrash(string, id){
+        string = string.split(/\r?\n/);
+
+        for (let i = 0; i < string.length; i++){
+            string[i] = string[i].split(': ');
+        }
+
+        for(let i = 0; i < string.length; i++){
+            if (string[i][0] === '') {
+                string.splice(i, 1);
+            }
+        }
+
+        let supplier = {
+            name: string[0][1],
+            id: id,
+            trashTab: string[1][1]
+        }
+
+        //Segment products String Into Objects
+        supplier.trashTab = segmentStringIntoTrashObjects(supplier.trashTab);
+
+        return supplier;
+    }
+
+    function segmentStringIntoTrashObjects(string){
+        let allTrash = [];
+        let tempString = string.split(", ");
+
+        for (let i = 0; i < tempString.length; i++){
+            tempString[i] = tempString[i].split('|');
+            let tempObj = {
+                trashType: tempString[i][0],
+                trashFullness: tempString[i][1]
+            }
+            allTrash.push(tempObj);
+        }
+
+        return allTrash;
     }
 
     return {
-        refreshDatabase:  async () => setInterval(async function () {await refreshDatabase()}, 5*60*1000),
+        refreshFallsDatabase:  async () => setInterval(async function () {await refreshFallsDatabase()}, 5*60*1000),
+        refreshTrashDatabase : async () => setInterval(async function () {await refreshTrashDatabase()}, 5*60*1000),
     }
 };

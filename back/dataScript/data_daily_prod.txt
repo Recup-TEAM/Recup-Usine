@@ -3,3 +3,13 @@ Tabouret_A2 1876
 Lit_V81b 230
 Chaise_86234 12400
 Perceuse_V8Turbo 1292
+Plaque_Cuisson_13vA 20
+Fil_Electrique_B3 2300
+Aile_A370 2
+Matériaux_Impression_e84b 23
+Matériaux_Impression_e84C 87
+Carrosserie_Hybrid8e 346
+Siège_Hybrid8e 231
+Pneu_18PC 127
+Hélice_V2eA 21
+Boîte_Vitesse_MGUa2 14
