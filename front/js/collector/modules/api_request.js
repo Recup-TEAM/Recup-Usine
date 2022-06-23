@@ -150,6 +150,21 @@ let api_request = (function () {
         return dataSucces;
     }
 
+    // /api/collector/get/getItinaryByCollectorId/:id
+    function request_getItinaryByCollectorId(id) {
+        console.log("getItinaryByCollectorId", id);
+        let dataSucces;
+        $.ajax({
+            type: "GET",
+            url: "/api/collector/get/getItinaryByCollectorId/" + id,
+            async: false,
+            success: (data) => {
+                dataSucces = data;
+            },
+        });
+        return dataSucces;
+    }
+
 
     return {
         isConnected() {
@@ -183,5 +198,10 @@ let api_request = (function () {
         reset_change_password_user() {
             return request_reset_change_password_user();
         },
+        // request_getItinaryByCollectorId
+        getItinaryByCollectorId(id) {
+            return request_getItinaryByCollectorId(id);
+        }
+
     };
 })();

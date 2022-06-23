@@ -38,6 +38,14 @@ module.exports = function () {
       resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
       return rq;
     },
+    
+    // getItinaryByCollectorId
+    getItinaryByCollectorId: async (id) => {
+      let sql = "SELECT * FROM `itinary` WHERE `id_collector`=?";
+      var rq = await db_query(sql, [id]);
+      resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
+      return rq;
+    },
 
     /* POST */
     //createDemande

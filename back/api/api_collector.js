@@ -43,6 +43,15 @@ module.exports = function (session) {
       });
     },
 
+    // getItinaryByCollectorId
+    getItinaryByCollectorId: function (req, res) {
+      console.log("API -> getItinaryByCollectorId");
+      id_collector = req.params.id;
+      db_collector.getItinaryByCollectorId(id_collector).then((collector) => {
+        res.json({ err: "", success: true, data: collector });
+      });
+    },
+
     /* POST */
     //createDemande
     createDemande: function (req, res) {

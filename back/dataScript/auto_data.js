@@ -1,6 +1,7 @@
 const fs = require('fs');
 const db = require("./data_to_db")();
-const itinary_Ask = require("../Itinary-ask/itinary_script")();
+const itinary_Ask = require('./itinary')();
+
 module.exports = function () {
     async function refreshFallsDatabase() {
         let suppliers = [];
@@ -185,5 +186,6 @@ module.exports = function () {
     return {
         refreshFallsDatabase:  async () => setInterval(async function () {await refreshFallsDatabase()}, 24*60*60*1000),
         refreshTrashDatabase : async () => setInterval(async function () {await refreshTrashDatabase()}, 60*60*1000),
+        bypass: async () => { await itinary_Ask.makeItinary(); }
     }
 };

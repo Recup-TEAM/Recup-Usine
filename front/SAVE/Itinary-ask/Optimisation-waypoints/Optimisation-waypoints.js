@@ -12,8 +12,12 @@ var waypoint5 = "3 Boulevard montebello, Lille";
 var waypoint6 = "Gare Lille Europe, Lille";
 var waypoint7 = "2 Rue de wazemmes, Lille"
 
-var listWaypoints = [waypoint1, waypoint2, waypoint3, waypoint5, waypoint6, waypoint7];
-
+var listWaypoints = [
+  '93 Rue Félix Faure, 59110 La Madeleine',
+  "Rue de Versailles, 59650 Villeneuve-d'Ascq",
+  '3 Rue Sébastien et Jacques Lorenzi, Place Générale Valérie André, 93440 Dugny',
+  'Rue du Pic au Vent, 59810 Lesquin'
+]
 // DEBUT DE LA FONCTION ------------------------------------------------------------------------------------------------------------------
 
 // PARAMETRAGE DE LA CARTE
@@ -148,3 +152,5 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(URL);
     })          
 });
+
+//when the page is loaded
