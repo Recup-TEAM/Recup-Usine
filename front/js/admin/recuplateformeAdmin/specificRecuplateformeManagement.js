@@ -2,13 +2,13 @@
 function updateProductInformations(dataProduct) {
   console.log(dataProduct);
   //#nameEntreprise
-  $("#nameEntreprise").text(dataProduct.name);
+  $("#nameEntreprise").text(dataProduct.material);
   //#quantity
   $("#quantity").html("<font color='#999999'>Quantité : </font>" + dataProduct.quantity);
   //#volume
   $("#volume").html("<font color='#999999'>Dimension : </font>" + dataProduct.dimensions);
   //#descProduct
-  $("#descProduct").html("<font color='#999999'>Description : </font>" + dataProduct.material + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + dataProduct.state);
+  $("#descProduct").html("<font color='#999999'>Description : </font>Produit originel : " + dataProduct.name + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Produit est " + dataProduct.state.toLowerCase());
 }
 //update entreprise informations
 function updateEntrepriseInformations(dataEntreprise) {
