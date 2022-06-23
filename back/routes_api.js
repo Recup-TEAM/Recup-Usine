@@ -148,6 +148,9 @@ module.exports = function (app, session) {
     // Get collector by id
     app.get("/api/collector/get/collectorById/:id", urlencodedParser, api_collector.getCollectorById);
 
+    // Get all entreprise who need a collect
+    app.get("/api/collector/get/allEntrepriseWhoNeedCollect", urlencodedParser, api_collector.getAllEntrepriseWhoNeedCollect);
+
     /* POST */
     // Create a collector demande
     app.post("/api/collector/add", urlencodedParser, api_collector.createDemande);

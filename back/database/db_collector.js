@@ -31,6 +31,14 @@ module.exports = function () {
       return rq;
     },
 
+    // Get all entreprises who need collect
+    getAllEntrepriseWhoNeedCollect: async () => {
+      let sql = "SELECT * FROM `entreprise` WHERE `need_collect`=1 OR `trash_quantity`>70";
+      var rq = await db_query(sql);
+      resultArray = Object.values(JSON.parse(JSON.stringify(rq)));
+      return rq;
+    },
+
     /* POST */
     //createDemande
     createDemande: async (name, email, prenom, id_user) => {

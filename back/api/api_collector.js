@@ -35,6 +35,13 @@ module.exports = function (session) {
       });
     },
 
+    // Get all entreprises who need collect
+    getAllEntrepriseWhoNeedCollect: function (req, res) {
+      console.log("API -> getAllEntrepriseWhoNeedCollect");
+      db_collector.getAllEntrepriseWhoNeedCollect().then((collector) => {
+        res.json({ err: "", success: true, data: collector });
+      });
+    },
 
     /* POST */
     //createDemande
