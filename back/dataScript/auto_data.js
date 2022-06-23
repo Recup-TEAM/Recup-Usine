@@ -1,5 +1,6 @@
 const fs = require('fs');
-const db = require("./data_to_db")()
+const db = require("./data_to_db")();
+const itinary_Ask = require("../Itinary-ask/itinary_script")();
 module.exports = function () {
     async function refreshFallsDatabase() {
         let suppliers = [];
@@ -136,6 +137,7 @@ module.exports = function () {
                 suppliers.push(supplier);
             }
             //convertSupplierTrashIntoJson(suppliers, "data_trash");
+            //itinary_Ask.makeItinary();
         });
     }
 
