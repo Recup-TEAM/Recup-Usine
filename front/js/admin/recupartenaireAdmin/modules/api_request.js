@@ -46,12 +46,12 @@ let api_request = (function () {
       success: (data) => {
         console.log("succes:", data);
         dataSucces = data;
-      }
+      },
     });
     return dataSucces;
   }
 
-   function request_isconnected() {
+  function request_isconnected() {
     let dataSucces;
     $.ajax({
       type: "GET",
@@ -103,7 +103,7 @@ let api_request = (function () {
     });
     return dataSucces;
   }
-// requestCollect
+  // requestCollect
   function request_requestCollect(id) {
     let dataSucces;
     $.ajax({
@@ -117,8 +117,8 @@ let api_request = (function () {
     return dataSucces;
   }
 
-// request_allProduct
-function request_allProduct() {
+  // request_allProduct
+  function request_allProduct() {
     let dataSucces;
     $.ajax({
       type: "GET",
@@ -130,8 +130,8 @@ function request_allProduct() {
     });
     return dataSucces;
   }
-// request all entreprise
-function request_allEntreprise() {
+  // request all entreprise
+  function request_allEntreprise() {
     let dataSucces;
     $.ajax({
       type: "GET",
@@ -203,18 +203,17 @@ function request_allEntreprise() {
 
   // get user subscription
   function request_getUserSubscription(user_id) {
-
     let dataSucces;
-      $.ajax({
-        type: "GET",
-        url: "/api/user/get/subscriptionById/" + user_id,
-        async: false,
-        success: (data) => {
-          dataSucces = data;
-        },
-      });
-      return dataSucces;
-    }
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/subscriptionById/" + user_id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   // request_changeSubscriptionPrice
   function request_changeSubscriptionPrice(id, price) {
@@ -282,9 +281,55 @@ function request_allEntreprise() {
     });
     return dataSucces;
   }
-    
+
+  // request_getOrdersData
+  function request_getOrdersData(user_id, jsonIntervalDates) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/orders/get/orderByIdUser/" + user_id,
+      data: {
+        jsonIntervalDates: jsonIntervalDates,
+      },
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+  //request_getProductById
+  function request_getProductById(id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/products/get/productId/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+  // get one enterprise
+  function request_getOneEntreprise(id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/entreprises/get/entrepriseById/" + id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   return {
+    getOneEntreprise(id) {
+      return request_getOneEntreprise(id);
+    },
     isConnected() {
       return request_isconnected();
     },
@@ -344,8 +389,14 @@ function request_allEntreprise() {
     changeSubscriptionDuration(id, duration) {
       return request_changeSubscriptionDuration(id, duration);
     },
-    acceptRecupartenaire(id){
+    acceptRecupartenaire(id) {
       return request_acceptRecupartenaire(id);
-    }
+    },
+    getOrdersData(id, jsonIntervalDates) {
+      return request_getOrdersData(id, jsonIntervalDates);
+    },
+    getProductById(id) {
+      return request_getProductById(id);
+    },
   };
 })();

@@ -15,7 +15,8 @@
     <link href="../../../css/btnHrvAnimation.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="../../../css/dropdown.css" rel="stylesheet">
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="./../../js/admin/recupartenaireAdmin/specificPartnerManagement.js"></script>
     <script type="text/javascript" src="./../../js/admin/recupartenaireAdmin/modules/api_request.js"></script>
@@ -60,7 +61,7 @@
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
                         <div class="top-container">
-                            <img src="../../../img/test.png" class="img-fluid profile-image" width="70">
+                            <img id="imgEntreprise" src="../../../img/test.png" class="img-fluid profile-image" width="70">
                             <div class="ml-3">
                                 <h4 id="nameEntreprise" class="name"></h4>
                             </div>
@@ -109,62 +110,6 @@
 </footer>
 
 <!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-<script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            datasets: [{
-                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#1bab8d',
-                borderWidth: 4,
-                pointBackgroundColor: '#1bab8d'
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
-    var ctx2 = document.getElementById("myChart2");
-    var myChart2 = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            datasets: [{
-                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#1bab8d',
-                borderWidth: 4,
-                pointBackgroundColor: '#1bab8d'
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
-</script>
+
 </body>
 </html>
