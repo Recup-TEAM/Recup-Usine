@@ -1,6 +1,6 @@
 # READ ME - RECUP'ROJET 
 
-[![Hey ! I'm Discord](https://cdn.discordapp.com/attachments/978557928195915796/988729043706851338/unknown.png)=250x](https://discord.com/)
+[![Hey ! I'm Discord](https://cdn.discordapp.com/attachments/978557928195915796/988729043706851338/unknown.png=250x)(https://discord.com/)
 
 Le Récuprojet est un projet ayant pour but de limiter les déchets et les trajets inutiles à travers l'optimisation de la récupération, de l'upcycling et du recyclage des déchets générés par les usines.
 
