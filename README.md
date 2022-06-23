@@ -2,12 +2,13 @@
 
 [![Hey ! I'm Discord](https://cdn.discordapp.com/attachments/978557928195915796/988729043706851338/unknown.png)](https://discord.com/)
 
-Le récup'rojet est un projet d'optimisation de récupération des déchets générés par les entreprises ainsi qu'une optimisation de l'upcyclage et du recyclage de ces déchets.
+Le Récuprojet est un projet ayant pour but de limiter les déchets et les trajets inutiles à travers l'optimisation de la récupération, de l'upcycling et du recyclage des déchets générés par les usines.
 
-Pour cela, nous récupérons les informations de production des usines et suivons le remplissages des poubelles en temps réel pour prévoir le moment idéal afin que nos collecteurs viennent récupérer le déchets. 
-Lorsqu'une entreprise à besoin d'une collecte, son addresse s'ajoute à une liste de point de passage obligatoire et le lien d'un trajet MAPS est automatiquement généré sur la page de nos collecteurs. Il y a également la possibilité pour nos récupartenaire de récupérer les déchets, on a donc pour cela une récuplateforme ou les déchets récoltés sont automatiquement ajoutés et les récupartenaires peuvent sélectionner ce qu'ils souhaitent récolter.
+Pour cela, nous récupérons les informations de production des usines et suivons le remplissage des poubelles en temps réel pour prévoir le moment idéal de collecte. 
+Lorsqu'une entreprise à besoin d'une collecte, son adresse s'ajoute à une liste de points de passage obligatoires et le lien d'un trajet MAPS est automatiquement généré sur la page de nos collecteurs. Il y a également la possibilité pour nos récupartenaire de récupérer les déchets, on a donc pour cela une récuplateforme ou les déchets récoltés sont automatiquement ajoutés et les récupartenaires peuvent sélectionner ce qu'ils souhaitent récolter.
 
-## Le fonctionnement du récup'rojet
+## Le fonctionnement du Récuprojet
+
 #### Démarage du projet
 - Faire un gitclone du projet : https://github.com/Recup-TEAM/R-cup-Usine.git
 - Faire un cd R-cup-Usine
@@ -38,13 +39,14 @@ Si vous êtes un administrateur, vous pourrez :
 
 #### Librairies utilisées
 Les librairies utilisées dans ce projet sont :
+
 -- Front --
-- Jquery : "3.3.1" (notamment pour les requètes)
+- Jquery : "3.3.1" (notamment pour les requêtes)
 - bootstrap : "4.0.0" (facilite la mise en place du css)
 - easypick : "1.2.0" (permet la gestion de date)
 - fontawesome : "6.1.1" (mise en page)
 - Animate.css : "4.1.1" (animation de la page html)
-- Over.css : "v2" (animation de la page html)
+- Hover.css : "v2" (animation de la page html)
 
 -- Back --
 - express: "^4.18.1" (création d'une API simple et rapide)
