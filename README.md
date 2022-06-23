@@ -7,13 +7,22 @@ Le Récuprojet est un projet ayant pour but de limiter les déchets et les traje
 Pour cela, nous récupérons les informations de production des usines et suivons le remplissage des poubelles en temps réel pour prévoir le moment idéal de collecte. 
 Lorsqu'une entreprise à besoin d'une collecte, son adresse s'ajoute à une liste de points de passage obligatoires et le lien d'un trajet MAPS est automatiquement généré sur la page de nos collecteurs. Il y a également la possibilité pour nos récupartenaire de récupérer les déchets, on a donc pour cela une récuplateforme ou les déchets récoltés sont automatiquement ajoutés et les récupartenaires peuvent sélectionner ce qu'ils souhaitent récolter.
 
-## Le fonctionnement du Récuprojet
+## Fonctionnement
 
-#### Démarage du projet
-- Faire un gitclone du projet : https://github.com/Recup-TEAM/R-cup-Usine.git
-- Faire un cd R-cup-Usine
-- Faire un npm i
-- Faire un node start
+#### Installation et démarrage
+Exécuter les lignes de commande suivantes dans un terminal GitHub :
+```bash
+git clone 'https://github.com/Recup-TEAM/R-cup-Usine.git'
+```
+```bash
+cd R-cup-Usine
+```
+```bash
+npm i
+```
+```bash
+nodemon start
+```
 
 #### Exemple d'utilisation :
 Pour ce projet, il y a 3 possibilités d'utilisation en fonction de quel est votre role :
