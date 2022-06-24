@@ -7,7 +7,7 @@ require("./back/routes")(express, app, http);
 
 require("./back/dataScript/auto_data")().refreshFallsDatabase();
 require("./back/dataScript/auto_data")().refreshTrashDatabase();
-// require("./back/dataScript/auto_data")().bypass();
+require("./back/dataScript/auto_data")().bypass();
 
 let PORT = process.env.PORT || 4444;
 //Start serveur

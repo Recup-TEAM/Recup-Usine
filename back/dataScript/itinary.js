@@ -18,13 +18,12 @@ module.exports = function () {
     return arrayOfWaypoints;
   }
 
-  function storeDataToDb(waypoint_order, url, totalDistance, totalDuration) {
+  function storeDataToDb(waypoint_order, url, totalDistance, totalDuration, idCollector) {
     // totalDuration in second to 3h34
-    totalDurationInHourMinuteSecond = secondsToDhms(totalDuration);
-
+    let totalDurationInHourMinuteSecond = secondsToDhms(totalDuration);
     let sql =
       "INSERT INTO `itinary` (`id_itinary`, `id_collector`, `list_waypoints`, `map_link`, `duration`, `distance`)" +
-      "VALUES (NULL, '9', '" +
+      "VALUES (NULL, " + idCollector + ", '" +
       waypoint_order.split("'").join(" ")+
       "', '" +
       url +
@@ -33,7 +32,6 @@ module.exports = function () {
       "', '" +
       totalDistance +
       "')";
-      console.log(sql);
     db_query(sql);
   }
 
@@ -76,30 +74,81 @@ module.exports = function () {
 
     await googleMapsClient.directions(
       directionsRoute,
-      function (err, response) {
+      async function (err, response) {
         if (err) {
           console.log(err);
         } else {
-          // get total distance and duration from response.json.routes[0].legs object
-          var totalDistance = 0;
-          var totalDuration = 0;
-          response.json.routes[0].legs.forEach(function (leg) {
-            totalDistance += leg.distance.value;
-            totalDuration += leg.duration.value;
-          });
-          var waypoint_order = response.json.routes[0].waypoint_order;
-          waypoint_sort = [];
-          for (var i = 0; i < waypoint_order.length; i++) {
-            waypoint_sort.push(waypoints[waypoint_order[i]]);
+          let waypoint_order = response.json.routes[0].waypoint_order;
+          let waypoint_sort = [];
+          for (let i = 0; i < waypoint_order.length; i++) {
+            waypoint_sort.push(waypoints[waypoint_order[i]].split(',').join(''));
           }
-          url = createUrl(waypoint_sort);
           //join waypoint_sort to string by ,
-          waypoint_order = waypoint_sort.join(",");
+          waypoint_sort = chunkArray(waypoint_sort, Math.ceil(waypoint_sort.length / 3));
+          let idCollectorTab = await createIdCollectorTab();
 
-          storeDataToDb(waypoint_order, url, totalDistance, totalDuration);
+          for (let i = 0; i < waypoint_sort.length; i++){
+            let durationAndDistance = await calcDurationAndDistance(waypoint_sort[i].split(','));
+            console.log(durationAndDistance);
+            let url = createUrl(waypoint_sort[i].split(','));
+            storeDataToDb(waypoint_sort[i], url, durationAndDistance[0], durationAndDistance[1], idCollectorTab[i].id);
+          }
         }
       }
     );
+  }
+
+  function chunkArray(myArray, chunk_size){
+    let index = 0;
+    let arrayLength = myArray.length;
+    let tempArray = [];
+
+    for (index = 0; index < arrayLength; index += chunk_size) {
+      let myChunk = myArray.slice(index, index+chunk_size);
+      // Do something if you want with the group
+      tempArray.push(myChunk.join(','));
+    }
+
+    return tempArray;
+  }
+
+  async function createIdCollectorTab(){
+    let sql = "SELECT id FROM collector";
+    console.log(await db_query(sql));
+    return await db_query(sql);
+  }
+
+  async function calcDurationAndDistance(waypoints){
+    let directionsRoute = {
+      origin: "ISEN Lille, Lille",
+      destination: "ISEN Lille, Lille",
+      waypoints: waypoints,
+      optimize: true,
+    };
+
+    let totalDistance = 0;
+    let totalDuration = 0;
+
+    let tab =[];
+
+    await googleMapsClient.directions(
+        directionsRoute,
+        async function (err, response) {
+          if (err) {
+            console.log(err);
+          } else {
+            totalDistance = 0;
+            totalDuration = 0;
+            response.json.routes[0].legs.forEach(function (leg) {
+              totalDistance += leg.distance.value;
+              totalDuration += leg.duration.value;
+            });
+            tab.push(totalDistance);
+            tab.push(totalDuration);
+            console.log("lul" + tab);
+            return [totalDuration, totalDistance];
+          }
+        });
   }
 
   return {
