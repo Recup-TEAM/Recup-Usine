@@ -25,6 +25,7 @@ Les librairies utilisées dans ce projet sont :
 * [Hover.css](https://ianlunn.github.io/Hover/) : "v2" (animation de la page html)
 * [easepick](https://easepick.com/) : "1.2.0" (permet la gestion de date)
 * [Jquery](https://jquery.com/) : "3.3.1" (notamment pour les requêtes)
+* [API Google MAPS](https://developers.google.com/maps/documentation/javascript/directions) (calcul de trajet optimisé)
 
 #### Back
 * [Express](https://expressjs.com/fr/) : "^4.18.1" (création d'une API simple et rapide)
