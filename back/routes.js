@@ -8,7 +8,11 @@ module.exports = function (express, app, http) {
             secure: false,
         },
     });
+    const bodyParser = require("body-parser");
     app.use(session);
+    //set limit to 50mb
+    app.use(bodyParser.json({limit: '50mb'}))
+    app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
     const path = require("path");
     const conn = require("./db_config");
     const socket = require("./socket/socket")(http, session);

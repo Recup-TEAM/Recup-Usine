@@ -8,6 +8,13 @@ function listToHtml(list) {
         let trash_quantity = list.data[i].trash_quantity;
         let adress_entreprise = list.data[i].adresse;
         let img_entreprise = list.data[i].img;
+        if (img_entreprise.startsWith("http")) {
+            img_entreprise = img_entreprise;
+        }
+        //else entreprise.img starts with /
+        else {
+            img_entreprise= "../../img/entreprises/" + img_entreprise;
+        }
         html += `<div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card mb-4 shadow-sm hvr-grow-shadow cardEntreprise">
                 <img class="card-img-top" alt="logoEntreprise" src="${img_entreprise}">

@@ -29,6 +29,14 @@ function pushToHtml(data) {
                 <button type="button" class="btn btn-sm btn-edit">Editer</button>
             </div>
         </div>*/
+        //if entreprise.img starts with http
+        if (entreprise.img.startsWith("http")) {
+            entreprise.img = entreprise.img;
+        }
+        //else entreprise.img starts with /
+        else {
+            entreprise.img = "../../img/entreprises/" + entreprise.img;
+        }
         html = " <div class=\"col-lg-4 col-md-6 col-sm-12\">\n" +
             "        <div class=\"card mb-4 shadow-sm hvr-grow-shadow\">\n" +
             "            <img class=\"card-img-top\" src=\"" + entreprise.img+ "\" alt=\"Card image cap\">\n" +

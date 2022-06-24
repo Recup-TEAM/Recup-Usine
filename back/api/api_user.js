@@ -2,6 +2,8 @@ module.exports = function (session) {
   const { body, validationResult } = require("express-validator");
   const check = require("./check")();
   const db_user = require("../database/db_user")();
+  //randomstring
+  const randomstring = require("randomstring");
 
   // Fonctions utilisables dans "./api_user.js"
   return {
@@ -304,8 +306,18 @@ module.exports = function (session) {
         let userId = req.session.userId;
         let url = req.body.url;
 
-        urlUploaded = url;
-          res.json({ url_upload: urlUploaded });
+        url = url.replace(/^data:image\/png;base64,/, "");
+        let buffer = new Buffer.alloc(url.length, url, 'base64');
+        let filename = randomstring.generate(10) + ".png";
+        fs.writeFile("./front/img/entreprises/" + filename, buffer, (err) => {
+          if (err) {
+            console.log(err);
+            res.json({ err: "", success: false });
+          } else {
+            res.json({ err: "", success: true, data: {url: filename} });
+          }
+        });
+
       }
   };
 };

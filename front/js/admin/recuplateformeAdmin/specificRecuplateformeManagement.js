@@ -16,6 +16,13 @@ function updateEntrepriseInformations(dataEntreprise) {
     //#origin = adresse
     $("#origin").html("<font color='#999999'>Provenance : </font>" + dataEntreprise.name + "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +dataEntreprise.adresse);
     //#imgEntreprise
+    if (entreprise.img.startsWith("http")) {
+            entreprise.img = entreprise.img;
+        }
+        //else entreprise.img starts with /
+        else {
+            entreprise.img = "../../img/entreprises/" + entreprise.img;
+        }
     $("#imgEntreprise").attr("src", dataEntreprise.img);
 }
 

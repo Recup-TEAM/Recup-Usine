@@ -1,4 +1,4 @@
-var img;
+var imgUpload = false, imgUrl = "";
 // funtion to hash the password
 function hashPassword(password) {
   tmp = md5(password);
@@ -41,11 +41,20 @@ function register_function() {
   var descriptionRegistration = $("#textarea").val();
   var entreprise_adresse = $("#adress").val();
 
+  
   if (
     isValidEmail(login) &&
     isValidPassword(password) &&
     isSamePassword(password, password2)
-  ) {
+    ) {
+    //check if image is uploaded
+    if (imgUpload) {
+      var img = imgUrl;
+    }
+    else {
+      img = "https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg";
+    }
+    console.log("img :", img);
     logger.sign_up(
       entreprise_adresse,
       login,
@@ -60,19 +69,7 @@ function register_function() {
 }
 
 $(document).ready(function () {
-  window.addEventListener('load', function() {
-    document.querySelector('input[type="file"]').addEventListener('change', function() {
-      console.log(this.files[0]);
-        if (this.files && this.files[0]) {
-          url = URL.createObjectURL(this.files[0]);
-          // upload image to server
-          img = url;
-          data = logger.upload_image(url);
-          console.log("data :", data);
-          
-        }
-    });
-  });
+  console.log()
 
 
 
@@ -82,10 +79,41 @@ $(document).ready(function () {
     type: "GET",
     success: function (data) {
       if (data.connected) {
-        window.location.href = "/";
+        // window.location.href = "/";
       }
     },
-  });
+  })
+
+  // on FormFile change, get the file and display it
+  $("#formFile").change(function () {
+    var file = $("#formFile")[0].files[0];
+        if (file) {
+           url = URL.createObjectURL(file);
+
+          //image encoded in base64
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            img = e.target.result;
+            data = logger.upload_image(img);
+            console.log("data :", data);
+            if (data.success) {
+              imgUpload = true;
+              imgUrl = data.data.url;
+              console.log("imgUrl :", imgUrl);
+              $("#imgPreview").attr("src", url);
+
+              
+            }
+          }
+          reader.readAsDataURL(file);
+
+        }
+
+          
+        
+      }
+    );
+
   //focus  company-name
   $("#company-name").focus();
 

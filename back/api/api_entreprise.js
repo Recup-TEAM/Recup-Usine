@@ -72,7 +72,6 @@ module.exports = function (session) {
         let id_dirigeant = req.session.userId;
         let imgPath = req.body.img;
         let descRegister = req.body.descRegister;
-        console.log("???3", imgPath);
 
         dataEntreprise = { name, id_dirigeant, adresse, descRegister, imgPath};
 

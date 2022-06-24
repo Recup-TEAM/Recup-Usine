@@ -20,6 +20,13 @@ function pushToHtml(data) {
   for (let i = 0; i < data.length; i++) {
     let entreprise = data[i];
     if (entreprise.accepted == 0) {
+       if (entreprise.img.startsWith("http")) {
+            entreprise.img = entreprise.img;
+        }
+        //else entreprise.img starts with /
+        else {
+            entreprise.img = "../../img/entreprises/" + entreprise.img;
+        }
       /* html = <div class="card mb-4 shadow-sm">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
             <div class="card-body">

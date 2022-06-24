@@ -11,6 +11,7 @@
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.16",
+    "randomstring": "^1.2.2",
     "save": "^2.5.0",
     "socket.io": "^4.5.1",
     "socket.io-session": "0.0.5"
