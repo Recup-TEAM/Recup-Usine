@@ -18,13 +18,21 @@ module.exports = function () {
     return arrayOfWaypoints;
   }
 
-  function storeDataToDb(waypoint_order, url, totalDistance, totalDuration, idCollector) {
+  async function storeDataToDb(
+    waypoint_order,
+    url,
+    totalDistance,
+    totalDuration,
+    idCollector
+  ) {
     // totalDuration in second to 3h34
     let totalDurationInHourMinuteSecond = secondsToDhms(totalDuration);
     let sql =
       "INSERT INTO `itinary` (`id_itinary`, `id_collector`, `list_waypoints`, `map_link`, `duration`, `distance`)" +
-      "VALUES (NULL, " + idCollector + ", '" +
-      waypoint_order.split("'").join(" ")+
+      "VALUES (NULL, " +
+      idCollector +
+      ", '" +
+      waypoint_order.split("'").join(" ") +
       "', '" +
       url +
       "', '" +
@@ -32,7 +40,12 @@ module.exports = function () {
       "', '" +
       totalDistance +
       "')";
-    db_query(sql);
+    rq = await db_query(sql);
+
+    // set need_collect to 0 and trash_quantity to 0 where trash_quantity > 70 and need_collect = 1
+    sql =
+      "UPDATE `entreprise` SET `need_collect`=0, `trash_quantity`=0 WHERE `trash_quantity`>70 OR `need_collect`=1";
+    rq = await db_query(sql);
   }
 
   function secondsToDhms(seconds) {
@@ -42,7 +55,7 @@ module.exports = function () {
     var m = Math.floor((seconds % 3600) / 60);
     var s = Math.floor(seconds % 60);
 
-    var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
+    var dDisplay = d > 0 ? d + (d == 1 ? "d" : "d") : "";
     var hDisplay = h > 0 ? h + (h == 1 ? "h" : "h") : "";
     var mDisplay = m > 0 ? m + (m == 1 ? "m" : "m") : "";
     var sDisplay = s > 0 ? s + (s == 1 ? "s" : "s") : "";
@@ -72,85 +85,93 @@ module.exports = function () {
       optimize: true,
     };
 
+    let waypoint_sort = [];
+    /* Do the request */
     await googleMapsClient.directions(
       directionsRoute,
+      /* Callback */
       async function (err, response) {
         if (err) {
           console.log(err);
         } else {
+          /* Sort waypoints by order */
           let waypoint_order = response.json.routes[0].waypoint_order;
-          let waypoint_sort = [];
-          for (let i = 0; i < waypoint_order.length; i++) {
-            waypoint_sort.push(waypoints[waypoint_order[i]].split(',').join(''));
-          }
-          //join waypoint_sort to string by ,
-          waypoint_sort = chunkArray(waypoint_sort, Math.ceil(waypoint_sort.length / 3));
-          let idCollectorTab = await createIdCollectorTab();
 
-          for (let i = 0; i < waypoint_sort.length; i++){
-            let durationAndDistance = await calcDurationAndDistance(waypoint_sort[i].split(','));
-            console.log(durationAndDistance);
-            let url = createUrl(waypoint_sort[i].split(','));
-            storeDataToDb(waypoint_sort[i], url, durationAndDistance[0], durationAndDistance[1], idCollectorTab[i].id);
+          for (let i = 0; i < waypoint_order.length; i++) {
+            waypoint_sort.push(
+              waypoints[waypoint_order[i]].split(",").join("")
+            );// remove , and sort by order
+          }
+
+          waypoint_sort = chunkArray(
+            waypoint_sort,
+            Math.ceil(waypoint_sort.length / 3)
+          ); // split array in array of 3
+
+          let idCollectorTab = await createIdCollectorTab(); // get idCollectorTab
+
+          for (let i = 0; i < waypoint_sort.length; i++) {
+            /* Do another request for each waypoint_sort */
+            await googleMapsClient.directions(
+              (directionsRoute = {
+                origin: "ISEN Lille, Lille",
+                destination: "ISEN Lille, Lille",
+                waypoints: waypoint_sort[i].split(","),
+                optimize: true,
+              }),
+              /* Callback */
+              async function (err, response2) {
+                if (err) {
+                  console.log(err); // TODO: handle error
+                } else {
+                  /* Calculate total distance and duration */
+                  totalDistance = 0;
+                  totalDuration = 0;
+                  response2.json.routes[0].legs.forEach(function (leg) {
+                    totalDistance += leg.distance.value;
+                    totalDuration += leg.duration.value;
+                  });
+
+                  let url = createUrl(waypoint_sort[i].split(",")); // create url for array of waypoints
+                  await storeDataToDb(
+                    waypoint_sort[i],
+                    url,
+                    totalDistance,
+                    totalDuration,
+                    idCollectorTab[i].id
+                  ); // store data to db
+                }
+              }
+            );
+            /* End of the request for each waypoint_sort */
           }
         }
       }
     );
   }
 
-  function chunkArray(myArray, chunk_size){
+  function chunkArray(myArray, chunk_size) {
     let index = 0;
     let arrayLength = myArray.length;
     let tempArray = [];
 
     for (index = 0; index < arrayLength; index += chunk_size) {
-      let myChunk = myArray.slice(index, index+chunk_size);
+      let myChunk = myArray.slice(index, index + chunk_size);
       // Do something if you want with the group
-      tempArray.push(myChunk.join(','));
+      tempArray.push(myChunk.join(","));
     }
 
     return tempArray;
   }
 
-  async function createIdCollectorTab(){
+  async function createIdCollectorTab() {
     let sql = "SELECT id FROM collector";
-    console.log(await db_query(sql));
-    return await db_query(sql);
+    rq = await db_query(sql);
+    // console.log(rq);
+    return rq;
   }
 
-  async function calcDurationAndDistance(waypoints){
-    let directionsRoute = {
-      origin: "ISEN Lille, Lille",
-      destination: "ISEN Lille, Lille",
-      waypoints: waypoints,
-      optimize: true,
-    };
-
-    let totalDistance = 0;
-    let totalDuration = 0;
-
-    let tab =[];
-
-    await googleMapsClient.directions(
-        directionsRoute,
-        async function (err, response) {
-          if (err) {
-            console.log(err);
-          } else {
-            totalDistance = 0;
-            totalDuration = 0;
-            response.json.routes[0].legs.forEach(function (leg) {
-              totalDistance += leg.distance.value;
-              totalDuration += leg.duration.value;
-            });
-            tab.push(totalDistance);
-            tab.push(totalDuration);
-            console.log("lul" + tab);
-            return [totalDuration, totalDistance];
-          }
-        });
-  }
-
+ 
   return {
     makeItinary: async () => {
       await calcRoute();
