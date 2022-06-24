@@ -1,3 +1,4 @@
+var img;
 // funtion to hash the password
 function hashPassword(password) {
   tmp = md5(password);
@@ -28,19 +29,7 @@ function isSamePassword(password, password2) {
   console.log("isSamePassword ;", tmp);
   return tmp;
 }
-// upload image from the form #formFile
-function upload_image() {
-  var form = new formidable.IncomingForm();
-  form.parse(req, function (err, fields, files) {
-    var oldpath = files.filetoupload.path;
-    var newpath = "./public/images/" + files.filetoupload.name;
-    fs.rename(oldpath, newpath, function (err) {
-      if (err) throw err;
-      res.write("File uploaded and moved!");
-      res.end();
-    });
-  });
-}
+
 
 // register_function
 function register_function() {
@@ -50,7 +39,6 @@ function register_function() {
 
   var companyName = $("#company-name").val();
   var descriptionRegistration = $("#textarea").val();
-  var img = $("#formFile").val();
   var entreprise_adresse = $("#adress").val();
 
   if (
@@ -72,6 +60,22 @@ function register_function() {
 }
 
 $(document).ready(function () {
+  window.addEventListener('load', function() {
+    document.querySelector('input[type="file"]').addEventListener('change', function() {
+      console.log(this.files[0]);
+        if (this.files && this.files[0]) {
+          url = URL.createObjectURL(this.files[0]);
+          // upload image to server
+          img = url;
+          data = logger.upload_image(url);
+          console.log("data :", data);
+          
+        }
+    });
+  });
+
+
+
   //if already logged in, redirect to home page
   $.ajax({
     url: "/api/user/get/connected",

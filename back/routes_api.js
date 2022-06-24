@@ -67,6 +67,9 @@ module.exports = function (app, session) {
     // Subscribe to a plan
     app.post("/api/user/update/subscribe", urlencodedParser, api_user.subscribe);
 
+    // Upload image
+    app.post("/api/user/update/uploadImage", urlencodedParser, api_user.uploadAvatar);
+
 
 
 

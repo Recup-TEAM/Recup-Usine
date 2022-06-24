@@ -64,14 +64,15 @@ module.exports = function (session) {
     /* POST */
     // Ajouter une entreprise
     addEntreprise: (req, res) => {
-      console.log("API -> addEntreprise");
+      console.log("API -> addEntreeprise");
       //check if user is connected
       if (check.checkUserConnected(req, res)) {
         let name = req.body.name;
         let adresse = req.body.adresse;
         let id_dirigeant = req.session.userId;
-        let imgPath = req.body.imgPath;
+        let imgPath = req.body.img;
         let descRegister = req.body.descRegister;
+        console.log("???3", imgPath);
 
         dataEntreprise = { name, id_dirigeant, adresse, descRegister, imgPath};
 

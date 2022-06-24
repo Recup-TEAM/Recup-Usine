@@ -31,23 +31,41 @@ let logger = (function () {
     });
 
     // ajax func add subscription to user (/api/user/update/subscribe)
-    $.ajax({
-      type: "POST",
-      url: "/api/user/update/subscribe",
-      async: false,
+      $.ajax({
+        type: "POST",
+        url: "/api/user/update/subscribe",
+        async: false,
 
-      success: (data) => {
-        console.log("AddSubscription :", data);
-        window.location.href = "/";
-      }
-    });
+        success: (data) => {
+          console.log("AddSubscription :", data);
+          window.location.href = "/";
+        }
+      });
   }
 
-
+  // get one enterprise
+  function request_load_image(url) {
+    let dataSucces;
+    $.ajax({
+      type: "POST",
+      url: "/api/user/update/uploadImage",
+      async: false,
+      data: {
+        url: url,
+      },
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
 
   return {
     sign_up(entreprise_adresse, email, password, img, entreprise_name, descriptionRegistration) {
       request_signup(entreprise_adresse, email, password, img, entreprise_name, descriptionRegistration);
     },
+    upload_image(url){
+      return request_load_image(url);
+    }
   };
 })();

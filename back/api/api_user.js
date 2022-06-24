@@ -297,5 +297,15 @@ module.exports = function (session) {
         });
       
     },
+
+    // Upload avatar
+    uploadAvatar: (req, res) => {
+      console.log("API -> uploadAvatar");
+        let userId = req.session.userId;
+        let url = req.body.url;
+
+        urlUploaded = url;
+          res.json({ url_upload: urlUploaded });
+      }
   };
 };
