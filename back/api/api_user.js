@@ -281,23 +281,21 @@ module.exports = function (session) {
     // Subscription  (TODO : if already subscribed)
     subscribe: (req, res) => {
       console.log("API -> subscribe");
-      if (check.checkUserConnected(req, res)) {
         let userId = req.session.userId;
-        let subscriptionLevel = req.body.subscriptionLevel;
+        // let subscriptionLevel = req.body.subscriptionLevel;
 
-        db_user.subscribe({ userId, subscriptionLevel }).then(() => {
+        db_user.subscribe(userId ).then(() => {
           console.log(
             "L'utilisateur \"" +
               userId +
               " ('" +
               req.session.email +
               "')" +
-              "\" s'est abonné au niveau " +
-              subscriptionLevel
+              "\" s'est abonné au niveau "
           );
           res.json({ err: "", success: true });
         });
-      }
+      
     },
   };
 };

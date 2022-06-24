@@ -326,6 +326,34 @@ let api_request = (function () {
     return dataSucces;
   }
 
+  // /api/entreprises/get/allEntreprisesByUser/
+  function request_getAllEntreprisesByUser(user_id) {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/entreprises/get/allEntreprisesByUser/" + user_id,
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
+  ///api/user/get/data
+  function request_getDataUser() {
+    let dataSucces;
+    $.ajax({
+      type: "GET",
+      url: "/api/user/get/data/",
+      async: false,
+      success: (data) => {
+        dataSucces = data;
+      },
+    });
+    return dataSucces;
+  }
+
   return {
     getOneEntreprise(id) {
       return request_getOneEntreprise(id);
@@ -398,5 +426,11 @@ let api_request = (function () {
     getProductById(id) {
       return request_getProductById(id);
     },
+    getAllEntreprisesByUser(user_id) {
+      return request_getAllEntreprisesByUser(user_id);
+    },
+    getDataUser() {
+      return request_getDataUser();
+    }
   };
 })();

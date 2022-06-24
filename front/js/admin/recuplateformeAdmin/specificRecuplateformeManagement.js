@@ -70,8 +70,15 @@ $(document).ready(function () {
         // delete product
         data = api_request.request_deleteProduct(id_product);
         console.log(data);
+        if (data.success) {
+          alert("Produit supprimé");
+          // window.location.href = "/";
+          window.location.href = "recuplateformeManagement";
+        }
+        else {
+          alert(data.err);
+        }
         // redirect to home page
-        // window.location.href = "recuplateformeManagement";
     }
     );
     // #returnBtn onclick

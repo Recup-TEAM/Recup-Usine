@@ -139,7 +139,7 @@ $(document).ready(function () {
   //onclick buttonEditProfil stock id_entreprise in localstorage
   $("#buttonEditProfil").click(function () {
     localStorage.setItem("id_entreprise", id_entreprise);
-    window.location.href = "/adminHtml/recupartenaireAdminHtml/specificPartnerModificationManagement";
+    window.location.href = "/recupartenaireHtml/partnerProfileModification";
   });
 
   // #deleteProfil
@@ -147,7 +147,7 @@ $(document).ready(function () {
     let data = api_request.deleteEntreprise(id_entreprise);
     console.log(data);
     if (data.success) {
-      window.location.href = "/adminHtml/recupartenaireAdminHtml/partnerDemandsManagement";
+      window.location.href = "/";
     }
   })
   // #returnBtn
@@ -159,6 +159,18 @@ $(document).ready(function () {
       window.location.href = "specificPartnerManagement";
     }
   });
+
+  // #requestCollect
+  $("#requestCollect").click(function () {
+    let data = api_request.requestCollect(id_entreprise);
+    console.log(data);
+    if (data.success) {
+      alert("Demande de collecte envoyée");
+    }
+    else {
+      alert(data.err);
+    }
+  })
 
 });
 

@@ -146,14 +146,16 @@ module.exports = function () {
     },
 
     // Subscribe to a plan
-    subscribe: async ({ userId, subscriptionType }) => {
+    subscribe: async (userId ) => {
       let sql =
-        "INSERT INTO `subscription` (`id_subscription`, `id_user`, `subscription_type`, `start_date`)" +
+        "INSERT INTO `subscription` (`id_subscription`, `id_user`, `price`, `subscription_duration`)" +
         "VALUES (NULL, '" +
         userId +
         "', '" +
-        subscriptionType +
-        "', NULL);";
+       "1000" +
+        "', '" +
+        "30" +
+        "');";
       console.log(sql);
       rq = await db_query(sql);
       return rq;

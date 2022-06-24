@@ -27,8 +27,19 @@ let logger = (function () {
       },
       success: (data) => {
         console.log("CreateEntreprise :", data);
-        window.location.href = "/";
       },
+    });
+
+    // ajax func add subscription to user (/api/user/update/subscribe)
+    $.ajax({
+      type: "POST",
+      url: "/api/user/update/subscribe",
+      async: false,
+
+      success: (data) => {
+        console.log("AddSubscription :", data);
+        window.location.href = "/";
+      }
     });
   }
 

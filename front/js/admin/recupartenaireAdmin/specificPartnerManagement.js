@@ -119,21 +119,29 @@ $(document).ready(function () {
   let id = localStorage.getItem("id_entreprise");
   console.log(id);
 
+  user = api_request.getDataUser()
+  console.log(user);
+  if(user.data.compte_level ==2){
+    allEntreprise = api_request.getOneEntreprise(id);
+
+  }
+  else{
+
+    user_id = user.data.id
+    allEntreprise = api_request.getAllEntreprisesByUser(user_id)
+  }
+
   isConnected();
-  entreprise_data = getOneEntreprise(id);
-  id_user = entreprise_data.data[0].id_user;
-  console.log(entreprise_data);
-  id_entreprise = entreprise_data.data[0].id_entreprise
-  console.log(id_user);
+  entreprise_data = allEntreprise.data[0];
+  id_user = entreprise_data.id_user;
+  
+  id_entreprise = entreprise_data.id_entreprise
 
   user_data = getUserById(id_user);
-  console.log(user_data);
 
   subscription_data = getSubscription(id_user);
-  console.log(subscription_data);
 
   products_data = getProductsByEntrepriseId(id);
-  console.log(products_data);
 
 
   //onclick buttonEditProfil stock id_entreprise in localstorage
