@@ -29,7 +29,7 @@ module.exports = function () {
                     suppliers.push(supplier);
                 }
 
-                //convertSupplierProdIntoJson(suppliers, "data_falls");
+                convertSupplierProdIntoJson(suppliers, "data_falls");
 
             });
         });
@@ -137,8 +137,8 @@ module.exports = function () {
                 let supplier = convertStringInfosIntoObjectForTrash(dataTrashFileString[i], suppliers.length);
                 suppliers.push(supplier);
             }
-            //convertSupplierTrashIntoJson(suppliers, "data_trash");
-            //itinary_Ask.makeItinary();
+            convertSupplierTrashIntoJson(suppliers, "data_trash");
+            itinary_Ask.makeItinary();
         });
     }
 
@@ -184,8 +184,8 @@ module.exports = function () {
     }
 
     return {
-        refreshFallsDatabase:  async () => setInterval(async function () {await refreshFallsDatabase()}, 24*60*60*1000),
-        refreshTrashDatabase : async () => setInterval(async function () {await refreshTrashDatabase()}, 60*60*1000),
+        refreshFallsDatabase:  async () => {await refreshFallsDatabase()},//setInterval(async function () {await refreshFallsDatabase()}, 24*60*60*1000),
+        refreshTrashDatabase : async () => {await refreshTrashDatabase();},//setInterval(async function () {await refreshTrashDatabase()}, 60*60*1000),
         bypass: async () => { await itinary_Ask.makeItinary(); }
     }
 };

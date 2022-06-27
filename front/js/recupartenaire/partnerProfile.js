@@ -117,10 +117,20 @@ $(document).ready(function () {
   console.log("ready");
   // get id localstorage
   let id = localStorage.getItem("id_entreprise");
+  
   console.log(id);
 
-  isConnected();
-  entreprise_data = getOneEntreprise(id);
+  if (api_request.isConnected().connected) {
+    dataUser = api_request.getUserData();
+    console.log(dataUser);
+    id = dataUser.data.id;
+    $("#email").html("<font color='#999999'>Adresse mail : </font><br>" + dataUser.data.email);
+  } else {
+    window.location.href = "/";
+  }
+ entreprise_data = api_request.getAllEntrepriseOfUser(id);
+  console.log("Entreprise data", entreprise_data);
+
   id_user = entreprise_data.data[0].id_user;
   console.log(entreprise_data);
   id_entreprise = entreprise_data.data[0].id_entreprise
@@ -205,7 +215,7 @@ function get_orderData(id_user) {
     "/" +
     startDate.getDate();
 
-  endDate = /*today*/ new Date();
+  endDate = /*tomorow */ new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1);
   endDate_str =
     endDate.getFullYear() +
     "/" +
@@ -220,6 +230,7 @@ function get_orderData(id_user) {
   
   console.log("get_orderData ->", id_user, intervalDate);
   dataOrders = api_request.getOrdersData(id_user, intervalDate);
+  console.log(dataOrders)
   allDataOrders = dataOrders.data;
   //do request to stock allentreprises in format {1, "entreprise1"}
     allEntreprisesBuy = {};

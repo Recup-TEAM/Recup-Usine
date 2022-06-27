@@ -27,7 +27,9 @@ function getHtmlListOfOrders(data) {
    html = ""
    for(var i = 0; i < data.length; i++) {
         var product_id = data[i];
+        console.log(product_id);
         product = request_getProductById(product_id)[0];
+        console.log(product);
         entreprise = getOneEntreprise(product.id_entreprise)[0];
         html += `<tr class="alert my-auto" id="${product_id}">
         <td>
@@ -87,7 +89,6 @@ $(document).ready(function () {
   let listOfProduct = JSON.parse(localStorage.getItem("listOfProduct"));
   console.log(listOfProduct);
 
-  listOfProduct = [30, 33, 40, 47, 52]
   localStorage.setItem("listOfProduct", JSON.stringify(listOfProduct));
   getHtmlListOfOrders(listOfProduct);
 
@@ -108,6 +109,7 @@ $(document).ready(function () {
             data = api_request.addToOrderHistory(toHistory);
             if (data.success) {
                 console.log("add to history");
+                alert("Votre commande a été prise en compte");
             }
             else {
                 console.log(data.err);
